@@ -1,36 +1,62 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import { graphql, Link } from "gatsby";
-import Layout from "../layout";
-import PostListing from "../components/PostListing/PostListing";
-import SEO from "../components/SEO/SEO";
-import config from "../../data/SiteConfig";
-import "./listing.css";
+import React from 'react';
+import { Helmet } from 'react-helmet';
+import { graphql, Link } from 'gatsby';
+import Layout from '../layout';
+import PostListing from '../components/PostListing/PostListing';
+import SEO from '../components/SEO/SEO';
+import config from '../../data/SiteConfig';
+import styled from 'styled-components';
+
+const StyledPostList = styled.main`
+  min-height: 100%;
+  width: 100%;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const StyledPagination = styled.div`
+  margin: 2rem auto;
+  a {
+    text-decoration: none;
+    margin: 2rem auto;
+  }
+`;
 
 class Listing extends React.Component {
   renderPaging() {
     const { currentPageNum, pageCount } = this.props.pageContext;
-    const prevPage = currentPageNum - 1 === 1 ? "/" : `/${currentPageNum - 1}/`;
+    const prevPage = currentPageNum - 1 === 1 ? '/' : `/${currentPageNum - 1}/`;
     const nextPage = `/${currentPageNum + 1}/`;
     const isFirstPage = currentPageNum === 1;
     const isLastPage = currentPageNum === pageCount;
 
     return (
-      <div className="paging-container">
-        {!isFirstPage && <Link to={prevPage}>Previous</Link>}
+      <StyledPagination>
+        {!isFirstPage && (
+          <Link rel="prev" to={prevPage}>
+            Previous
+          </Link>
+        )}
         {[...Array(pageCount)].map((_val, index) => {
           const pageNum = index + 1;
           return (
             <Link
               key={`listing-page-${pageNum}`}
-              to={pageNum === 1 ? "/" : `/${pageNum}/`}
+              to={pageNum === 1 ? '/' : `/${pageNum}/`}
             >
               {pageNum}
             </Link>
           );
         })}
-        {!isLastPage && <Link to={nextPage}>Next</Link>}
-      </div>
+        {!isLastPage && (
+          <Link rel="next" to={nextPage}>
+            Next
+          </Link>
+        )}
+      </StyledPagination>
     );
   }
 
@@ -39,14 +65,12 @@ class Listing extends React.Component {
 
     return (
       <Layout>
-        <div className="listing-container">
-          <div className="posts-container">
-            <Helmet title={config.siteTitle} />
-            <SEO />
-            <PostListing postEdges={postEdges} />
-          </div>
+        <Helmet title={config.siteTitle} />
+        <SEO />
+        <StyledPostList>
+          <PostListing postEdges={postEdges} />
           {this.renderPaging()}
-        </div>
+        </StyledPostList>
       </Layout>
     );
   }
