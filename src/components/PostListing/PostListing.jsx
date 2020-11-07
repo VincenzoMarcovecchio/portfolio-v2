@@ -2,6 +2,17 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { device } from '../../styles/Global';
+import video from '../../assets/video.mp4';
+
+const StyledVideo = styled.video`
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  position: relative;
+`;
+
 const PostListStyled = styled.section`
   width: 80%;
   margin: auto;
@@ -68,30 +79,37 @@ class PostListing extends React.Component {
   render() {
     const postList = this.getPostList();
     return (
-      <PostListStyled>
-        {
-          /* Your post list here. */
-          postList.map((post) => (
-            <StyledArticle>
-              <div className="header__article">
-                <Link to={post.path} key={post.title}>
-                  <h1>{post.title}</h1>
-                </Link>
-                <StyledTag>
-                  {post.tags.map((tag) => {
-                    return (
-                      <Link replace to={`/tags/${tag}`}>
-                        {tag}
-                      </Link>
-                    );
-                  })}
-                </StyledTag>
-              </div>
-              <p>{post.excerpt}</p>
-            </StyledArticle>
-          ))
-        }
-      </PostListStyled>
+      <>
+        <StyledVideo src={video} title="Vin's blog" autoPlay muted loop>
+          <source src={video} type="video/mp4" />
+          <source src={video} type="video/ogg" />
+        </StyledVideo>
+        <PostListStyled>
+          {
+            /* Your post list here. */
+            postList.map((post) => (
+              <StyledArticle>
+                <div className="header__article">
+                  <Link to={post.path} key={post.title}>
+                    <h1>{post.title}</h1>
+                  </Link>
+                  <StyledTag>
+                    {post.tags.map((tag, i) => {
+                      let tagga = tag.replace(/\s/g, '-');
+                      return (
+                        <Link key={i} replace to={`/tags/${tagga}`}>
+                          {tag}
+                        </Link>
+                      );
+                    })}
+                  </StyledTag>
+                </div>
+                <p>{post.excerpt}</p>
+              </StyledArticle>
+            ))
+          }
+        </PostListStyled>
+      </>
     );
   }
 }

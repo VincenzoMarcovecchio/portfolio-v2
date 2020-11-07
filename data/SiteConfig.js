@@ -2,7 +2,7 @@ const config = {
   siteTitle: 'Ran Out Of Code', // Site title.
   siteTitleShort: 'A Web Developer Portfolio', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteTitleAlt: 'A Web Developer Portfolio', // Alternative site title for SEO.
-  siteLogo: './engine.png', // Logo used for SEO and manifest.
+  siteLogo: './favicon/engine.png', // Logo used for SEO and manifest.
   siteUrl: 'https://ranoutofcode.com', // Domain of your website without pathPrefix.
   pathPrefix: 'https://github.com/VincenzoMarcovecchio/portfolio-v2', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription:

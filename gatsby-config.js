@@ -28,14 +28,7 @@ module.exports = {
         path: `${__dirname}/static/`,
       },
     },
-    {
-      resolve: `gatsby-plugin-algolia`,
-      options: {
-        appId: `779LNWKXIK`,
-        apiKey: `56936b4655e9cc8b1c2a7cffd9b2a43e`,
-        queries: require('./src/utils/algolia-queries'),
-      },
-    },
+
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -94,16 +87,34 @@ module.exports = {
         display: 'minimal-ui',
         icons: [
           {
-            src: '/logos/logo-192.png',
+            src: './engine.png',
             sizes: '192x192',
             type: 'image/png',
           },
           {
-            src: '/logos/logo-512.png',
+            src: './engine.png',
             sizes: '512x512',
             type: 'image/png',
           },
         ],
+      },
+    },
+
+    {
+      resolve: 'gatsby-plugin-favicons',
+      options: {
+        logo: './src/favicon/engine.png',
+        appName: 'My Website',
+        background: '#fff',
+        icons: {
+          android: true,
+          appleIcon: true,
+          appleStartup: true,
+          coast: false,
+          favicons: true,
+          yandex: false,
+          windows: false,
+        },
       },
     },
     'gatsby-plugin-offline',
@@ -190,6 +201,15 @@ module.exports = {
             title: config.siteRssTitle,
           },
         ],
+      },
+    },
+
+    {
+      resolve: `gatsby-plugin-algolia`,
+      options: {
+        appId: `779LNWKXIK`,
+        apiKey: `56936b4655e9cc8b1c2a7cffd9b2a43e`,
+        queries: require('./src/utils/algolia-queries'),
       },
     },
   ],

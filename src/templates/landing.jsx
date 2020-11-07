@@ -10,7 +10,7 @@ class Landing extends React.Component {
   render() {
     const postEdges = this.props.data.allMarkdownRemark.edges;
     return (
-      <Layout landing={true}>
+      <Layout landing>
         <Helmet title={config.siteTitle} />
         <SEO />
         <PostListing postEdges={postEdges} />

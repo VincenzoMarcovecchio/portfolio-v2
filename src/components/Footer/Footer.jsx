@@ -25,6 +25,10 @@ const FooterStyled = styled.footer`
       height: 4rem;
       flex-direction: column-reverse;
     }
+    a {
+      background-color: black;
+      color: whitesmoke;
+    }
   }
 
   @media (max-width: 640px - 1px) {

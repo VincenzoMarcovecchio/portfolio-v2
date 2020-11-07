@@ -24,6 +24,10 @@ const NavBar = styled.nav`
     @media ${device.tablet} {
       display: none;
     }
+    @media ${device.mobileM} {
+      display: block;
+      width: 4rem;
+    }
   }
   ul {
     list-style: none;
@@ -31,9 +35,9 @@ const NavBar = styled.nav`
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    width: 17rem;
+    width: 12rem;
+    padding: 0;
     @media ${device.mobileM} {
-      width: 100%;
     }
   }
   a {
@@ -51,7 +55,8 @@ const NavBar = styled.nav`
     height: 100%;
   }
   input {
-    margin-right: 2rem;
+    margin-right: 3rem;
+
     @media ${device.tablet} {
       margin-right: 0.5rem;
     }
@@ -73,9 +78,7 @@ export default function Header() {
           <li>
             <Link to="/about">about</Link>
           </li>
-          <li>
-            <Link to="/contact">contact</Link>
-          </li>
+
           <li>
             <Link to="/projects">projects</Link>
           </li>

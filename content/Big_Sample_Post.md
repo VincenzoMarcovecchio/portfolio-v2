@@ -1,6 +1,6 @@
 ---
-title: 'Big Test'
-cover: ''
+title: 'Markdown Cheatsheet'
+cover: '1.pg'
 category: 'moar'
 date: '2018-03-01'
 slug: 'Big-Sample_Test'
@@ -9,7 +9,7 @@ tags:
   - huge
 ---
 
-# NOTE: This "post" is based on [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and is meant to test styling of Markdown generated documents.
+# This "post" is based on [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and is meant to test styling of Markdown generated documents.
 
 <br>
 

@@ -22,7 +22,8 @@ h1,
 h3,
 h4,
 h5,
-h6 {
+h6,
+h2 {
   color: var(--medium-font-color) !important;
 }
 p {
@@ -85,7 +86,8 @@ tbody tr:nth-child(odd) {
 blockquote {
   color: rgba(255, 255, 255, 0.9);
 }
-h2 {
+
+label {
   color: var(--medium-font-color);
 }
 #dark-mode-button {
