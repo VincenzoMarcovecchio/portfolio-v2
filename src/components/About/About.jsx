@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import ReactTypingEffect from 'react-typing-effect';
 import cv from '../../resume.png';
 import styled from 'styled-components';
 
@@ -92,19 +91,6 @@ const StyledAbout = styled.section`
     margin: 2rem auto;
   }
 `;
-const ReactTypingEffecto = () => {
-  return (
-    <>
-      <ReactTypingEffect
-        cursorRenderer={(cursor) => <h1>{cursor}</h1>}
-        text={['I run.', 'I code', 'I eat', 'I repeat']}
-        displayTextRenderer={(text, i) => {
-          return <h1>I run, I eat, I code, I repeat </h1>;
-        }}
-      />
-    </>
-  );
-};
 
 const About = () => {
   const [serverState, setServerState] = useState({
@@ -139,7 +125,7 @@ const About = () => {
 
   return (
     <StyledAbout>
-      <ReactTypingEffecto />
+      <h1>I run, I eat, I code, I repeat </h1>
       <h2>
         Send me a message through this form down below or check out my other
         site&nbsp;
