@@ -14547,14 +14547,6 @@ react-twitter-widgets@^1.9.5:
   dependencies:
     loadjs "^4.2.0"
 
-react-typing-effect@^2.0.4:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/react-typing-effect/-/react-typing-effect-2.0.4.tgz#99eb6d451f394f079793c158aec1bd9d9cf07b97"
-  integrity sha512-G6ZD9S2rxrWOTW55gdDcvWwFotXA4XjB/DZ+P7JAnBkngrEljQrh+21ESRVHT2paVzyQTJzH8AY8O1Am7zyP6A==
-  dependencies:
-    react "^16.13.1"
-    react-dom "^16.13.1"
-
 react-virtualized-auto-sizer@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/react-virtualized-auto-sizer/-/react-virtualized-auto-sizer-1.0.2.tgz#a61dd4f756458bbf63bd895a92379f9b70f803bd"

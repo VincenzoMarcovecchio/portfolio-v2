@@ -224,7 +224,7 @@ export default function project({ data }) {
     'https://resort-beach.vincenzomarcovecchio.now.sh/',
     'https://dine.now.sh/',
     'https://felineknowledge.com',
-    ' https://vincenzomarcovecchio.github.io/Minesweeper/',
+    'https://vincenzomarcovecchio.github.io/Minesweeper/',
     'https://vincenzomarcovecchio.github.io/Spotify-clone/',
   ];
   return (

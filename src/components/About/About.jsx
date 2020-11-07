@@ -99,7 +99,7 @@ const ReactTypingEffecto = () => {
         cursorRenderer={(cursor) => <h1>{cursor}</h1>}
         text={['I run.', 'I code', 'I eat', 'I repeat']}
         displayTextRenderer={(text, i) => {
-          return <h1>{text}</h1>;
+          return <h1>I run, I eat, I code, I repeat </h1>;
         }}
       />
     </>
