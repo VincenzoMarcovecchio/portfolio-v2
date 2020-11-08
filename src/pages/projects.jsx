@@ -211,21 +211,21 @@ const StyledDiv = styled.div`
     }
   }
 `;
-export default function project({ data }) {
+function project({ data }) {
   let links = [
     'https://storage-upload.vercel.app/',
-    'https://vincenzomarcovecchio.github.io/FRAINE-RICICLA/',
+    'https://vincenzomarcovecchio.github.io/Minesweeper/',
     'https://ciatapp.herokuapp.com/',
-    'https://vincenzomarcovecchio.github.io/Intro-Component-With-Sign-Up-Form/',
+    'https://vincenzomarcovecchio.github.io/Spotify-clone/',
     'https://vincenzomarcovecchio.github.io/Manage-Landing-Page/',
-    'https://meme-for-fun.com',
-    'https://vincenzomarcovecchio.github.io/Insure-Website/',
     'https://vincenzomarcovecchio.github.io/BankEasy/',
     'https://resort-beach.vincenzomarcovecchio.now.sh/',
     'https://dine.now.sh/',
+    'https://meme-for-fun.com',
     'https://felineknowledge.com',
-    'https://vincenzomarcovecchio.github.io/Minesweeper/',
-    'https://vincenzomarcovecchio.github.io/Spotify-clone/',
+    'https://vincenzomarcovecchio.github.io/Insure-Website/',
+    'https://vincenzomarcovecchio.github.io/Intro-Component-With-Sign-Up-Form/',
+    'https://vincenzomarcovecchio.github.io/FRAINE-RICICLA/',
   ];
   return (
     <>
@@ -266,3 +266,5 @@ export default function project({ data }) {
     </>
   );
 }
+
+export default React.memo(project);

@@ -7,6 +7,7 @@ const StyledAbout = styled.section`
   text-align: center;
   max-width: 600px;
   margin: auto;
+  padding: 3rem 0;
 
   .my__form {
     width: 90%;
@@ -32,7 +33,7 @@ const StyledAbout = styled.section`
   input {
     box-sizing: border-box;
     width: 100%;
-    height: 2rem;
+    height: 2.3rem;
     padding-left: 0.6rem;
     font-family: inherit;
     background-color: rgb(255, 255, 255);
@@ -87,8 +88,8 @@ const StyledAbout = styled.section`
     margin: 3rem auto;
   }
   img {
-    display: block;
-    margin: 2rem auto;
+    display: inline;
+    width: 5rem;
   }
 `;
 
@@ -126,6 +127,7 @@ const About = () => {
   return (
     <StyledAbout>
       <h1>I run, I eat, I code, I repeat </h1>
+      <img title="download my cv" alt="cv icon" src={cv} />
       <h2>
         Send me a message through this form down below or check out my other
         site&nbsp;
@@ -138,7 +140,6 @@ const About = () => {
         </a>
         . Thanks
       </h2>
-
       <form className="my__form" onSubmit={handleOnSubmit}>
         <div className="form-group">
           <label htmlFor="exampleInputName">Name</label>
@@ -183,7 +184,6 @@ const About = () => {
           </p>
         )}
       </form>
-      <img title="download my cv" alt="cv icon" src={cv} />
     </StyledAbout>
   );
 };

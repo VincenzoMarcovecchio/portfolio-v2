@@ -38,11 +38,12 @@ export default styled(SearchResult)`
       flex-direction: column;
       list-style: none;
       margin-left: 0;
-      width: 100%;
+      width: fit-content;
     }
 
     li.ais-Hits-item {
       margin-bottom: 1em;
+      width: inherit;
 
       a {
         h4 {

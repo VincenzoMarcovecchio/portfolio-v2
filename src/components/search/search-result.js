@@ -15,7 +15,6 @@ const HitCount = connectStateResults(({ searchResults }) => {
   return hitCount > 0 ? (
     <div className="HitCount">
       {hitCount} result{hitCount !== 1 ? `s` : ``}
-      {console.log('ciao')}
     </div>
   ) : (
     <span style={{ height: '6rem' }}>no results found</span>
@@ -24,7 +23,8 @@ const HitCount = connectStateResults(({ searchResults }) => {
 
 const PageHit = ({ hit }) => (
   <div>
-    <Link replace to={`/${hit.slug}`}>
+    {console.log(hit)}
+    <Link replace to={`/${hit.title.toLowerCase().replace(/\s/g, '-')}`}>
       <h4>
         <Highlight attribute="title" hit={hit} tagName="mark" />
       </h4>
@@ -48,7 +48,7 @@ const SearchResult = ({ indices, className }) => (
   <div className={className}>
     {indices.map((index) => (
       <HitsInIndex index={index} key={index.name} />
-    ))}{' '}
+    ))}
     <PoweredBy />
   </div>
 );

@@ -28,6 +28,7 @@ export default class Layout extends React.Component {
           <Helmet>
             <meta name="description" content={config.siteDescription} />
             <html lang="en" />
+            <link rel="stylesheet" href="./reset.css" />
           </Helmet>
           <Header />
 

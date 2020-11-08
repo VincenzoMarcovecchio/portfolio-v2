@@ -8,16 +8,7 @@ exports.onInitialClientRender = () => {
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.id = 'reset';
-    link.href = './reset.css';
+    link.href = './dark.css';
     head.appendChild(link);
-  }
-
-  if (typeof window !== 'undefined') {
-    const headtwo = document.getElementsByTagName('head')[0];
-    const linktwo = document.createElement('link');
-    linktwo.rel = 'stylesheet';
-    linktwo.id = 'reset';
-    linktwo.href = './reset.css';
-    headtwo.appendChild(linktwo);
   }
 };

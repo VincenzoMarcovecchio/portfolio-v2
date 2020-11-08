@@ -23,6 +23,11 @@ const PostListStyled = styled.section`
   @media ${device.tablet} {
     width: 95%;
   }
+
+  h2 {
+    margin: 4rem auto;
+    font-family: 2rem;
+  }
 `;
 const StyledTag = styled.small`
   padding: 0.3rem;
@@ -85,6 +90,7 @@ class PostListing extends React.Component {
           <source src={video} type="video/ogg" />
         </StyledVideo>
         <PostListStyled>
+          <h2>The lastest from the Blog</h2>
           {
             /* Your post list here. */
             postList.map((post) => (

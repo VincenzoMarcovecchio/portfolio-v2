@@ -5,9 +5,15 @@ const pageQuery = `{
       edges {
         node {
           excerpt
+
            frontmatter {
             title
             tags
+            slug
+          }
+
+          fields {
+              slug
           }
         }
       }
