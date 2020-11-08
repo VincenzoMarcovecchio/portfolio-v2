@@ -3,7 +3,7 @@ title: 'Markdown Cheatsheet'
 cover: '1.pg'
 category: 'moar'
 date: '2018-03-01'
-slug: 'Big-Sample_Test'
+slug: 'markdown-cheatsheet'
 tags:
   - test
   - huge

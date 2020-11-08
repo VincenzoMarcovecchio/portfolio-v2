@@ -22,12 +22,13 @@ const FooterStyled = styled.footer`
     background-color: black !important;
     @media ${device.tablet} {
       margin-top: 2rem;
-      height: 4rem;
+      height: 3rem;
       flex-direction: column-reverse;
     }
     a {
       background-color: black;
       color: whitesmoke;
+      padding:0;
     }
   }
 

@@ -38,6 +38,7 @@ const NavBar = styled.nav`
     width: 12rem;
     padding: 0;
     @media ${device.mobileM} {
+        font-size:1.2rem;
     }
   }
   a {

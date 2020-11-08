@@ -33,6 +33,7 @@ const StyledDiv = styled.div`
     font-size: 2rem;
     margin: 3rem auto;
     text-align: left;
+    line-height:1.2;
   }
   .cols {
     display: flex;

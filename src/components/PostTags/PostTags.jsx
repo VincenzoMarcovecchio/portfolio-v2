@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 const StyledPostTags = styled.div`
-  width: 85%;
+  width: 95%;
   margin: 2rem auto;
   display: flex;
   justify-content: flex-end;
@@ -11,12 +11,12 @@ const StyledPostTags = styled.div`
 
   a {
     background-color: white;
-    margin-right: 1rem;
     text-decoration: none;
     color: black;
     padding: 0 0.3rem;
     border-radius: 0.3rem;
     border: 1px solid black;
+    margin-left:0.5rem;
   }
 `;
 class PostTags extends Component {

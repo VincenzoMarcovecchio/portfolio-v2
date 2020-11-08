@@ -25,8 +25,10 @@ const PostListStyled = styled.section`
   }
 
   h2 {
-    margin: 4rem auto;
-    font-family: 2rem;
+    margin: 3rem auto 2rem auto;
+    font-weight: 700;
+    font-size: 2.2rem;
+    line-height: 1.2;
   }
 `;
 const StyledTag = styled.small`
@@ -51,6 +53,7 @@ const StyledArticle = styled.article`
   border-top-left-radius: 0.3rem;
   border-top-right-radius: 0.3rem;
   box-shadow: 0 2px 4px 0 rgba(14, 30, 37, 0.12);
+  overflow: hidden;
 
   .header__article {
     display: flex;
@@ -90,7 +93,7 @@ class PostListing extends React.Component {
           <source src={video} type="video/ogg" />
         </StyledVideo>
         <PostListStyled>
-          <h2>The lastest from the Blog</h2>
+          <h2>The latest from the Blog</h2>
           {
             /* Your post list here. */
             postList.map((post) => (

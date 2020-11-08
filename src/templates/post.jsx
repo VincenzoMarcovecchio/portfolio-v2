@@ -8,13 +8,17 @@ import SocialLinks from '../components/SocialLinks/SocialLinks';
 import SEO from '../components/SEO/SEO';
 import config from '../../data/SiteConfig';
 import styled from 'styled-components';
-
+import { device  } from '../styles/Global';
 const StyledArticle = styled.article`
   padding: 3rem 1.5rem;
   box-shadow: 0 2px 4px 0 rgba(14, 30, 37, 0.12);
   background-color: white;
   width: 80%;
   margin: 1rem auto;
+  @media ${device.tablet} {
+   overflow: hidden;
+   }
+
   h2 {
     margin: 1rem auto;
   }
@@ -23,8 +27,7 @@ const StyledArticle = styled.article`
   }
   ul {
     margin-bottom: 1rem;
-    width: 95%;
-    margin: auto;
+    padding:0 0 0 0.5rem;
   }
 `;
 const StyledSection = styled.section`
@@ -32,7 +35,11 @@ const StyledSection = styled.section`
 `;
 const StyledTitle = styled.h1`
   font-size: 2rem;
+  line-height:1.3;
   margin: 0rem auto 2rem 10%;
+    @media ${device.tablet} {
+  margin: 0rem auto 2rem 4%;
+   }
 `;
 const StyledTime = styled.time`
   font-size: 0.9rem;
@@ -40,6 +47,9 @@ const StyledTime = styled.time`
   text-align: left;
   margin: 0 10% 0 10%;
   color: grey;
+    @media ${device.tablet} {
+  margin: 0rem auto 2rem 4%;
+   }
 `;
 
 export default class PostTemplate extends React.Component {

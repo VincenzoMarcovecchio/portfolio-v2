@@ -8,7 +8,7 @@ import styled from 'styled-components';
 const StyledLayout = styled.div`
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 0 3rem 0;
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Roboto, Arial,
     Noto Sans, sans-serif, Apple Color Emoji, Segoe UI, Segoe UI Emoji,
