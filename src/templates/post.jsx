@@ -8,16 +8,18 @@ import SocialLinks from '../components/SocialLinks/SocialLinks';
 import SEO from '../components/SEO/SEO';
 import config from '../../data/SiteConfig';
 import styled from 'styled-components';
-import { device  } from '../styles/Global';
+import { device } from '../styles/Global';
 const StyledArticle = styled.article`
   padding: 3rem 1.5rem;
+  box-sizing: border-box;
   box-shadow: 0 2px 4px 0 rgba(14, 30, 37, 0.12);
   background-color: white;
   width: 80%;
   margin: 1rem auto;
   @media ${device.tablet} {
-   overflow: hidden;
-   }
+    width: 95%;
+    overflow: hidden;
+  }
 
   h2 {
     margin: 1rem auto;
@@ -27,7 +29,7 @@ const StyledArticle = styled.article`
   }
   ul {
     margin-bottom: 1rem;
-    padding:0 0 0 0.5rem;
+    padding: 0 0 0 0.5rem;
   }
 `;
 const StyledSection = styled.section`
@@ -35,21 +37,22 @@ const StyledSection = styled.section`
 `;
 const StyledTitle = styled.h1`
   font-size: 2rem;
-  line-height:1.3;
-  margin: 0rem auto 2rem 10%;
-    @media ${device.tablet} {
-  margin: 0rem auto 2rem 4%;
-   }
+  line-height: 1.3;
+  width: 80%;
+  margin: 1rem auto 2rem auto;
+  @media ${device.tablet} {
+    width: 95%;
+  }
 `;
 const StyledTime = styled.time`
+  display: block;
   font-size: 0.9rem;
-  width: 100%;
-  text-align: left;
-  margin: 0 10% 0 10%;
+  width: 80%;
   color: grey;
-    @media ${device.tablet} {
-  margin: 0rem auto 2rem 4%;
-   }
+  margin: 1rem auto 2rem auto;
+  @media ${device.tablet} {
+    width: 95%;
+  }
 `;
 
 export default class PostTemplate extends React.Component {

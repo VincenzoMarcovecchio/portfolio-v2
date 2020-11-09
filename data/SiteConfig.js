@@ -6,7 +6,7 @@ const config = {
   siteUrl: 'https://ranoutofcode.com', // Domain of your website without pathPrefix.
   pathPrefix: 'https://github.com/VincenzoMarcovecchio/portfolio-v2', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription:
-    'Documenting and writing about technologies, Junior web developer here', // Website description used for RSS feeds/meta description tag
+    'Documenting and writing about technologies, junior web developer here', // Website description used for RSS feeds/meta description tag
   siteRss: '/rss.xml', // Path to the RSS file.
   siteRssTitle: 'Ran Out Of Code RSS Feed', // Title of the RSS feed
   siteFBAppID: '1190093721349138', // FB Application ID for using app insights

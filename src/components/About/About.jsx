@@ -85,7 +85,6 @@ const StyledAbout = styled.section`
 
   h1 {
     font-size: 2.5rem;
-    margin: 3rem auto;
   }
   img {
     display: inline;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Layout from '../layout';
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
-
+import { device } from '../styles/Global';
 export const query = graphql`
   query Projects {
     allImageSharp {
@@ -31,9 +31,13 @@ const StyledDiv = styled.div`
   }
   h1 {
     font-size: 2rem;
-    margin: 3rem auto;
-    text-align: left;
-    line-height:1.2;
+    width: 90%;
+    padding: 0 1rem;
+    margin: 3rem auto 3rem 0;
+    line-height: 1.2;
+    @media ${device.mobileL} {
+      padding: 0;
+    }
   }
   .cols {
     display: flex;
@@ -189,6 +193,7 @@ const StyledDiv = styled.div`
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 700;
+    color: black !important;
   }
   img {
     object-fit: contain;
@@ -236,7 +241,8 @@ function project({ data }) {
             <h1>Some of my latest projects</h1>
             <div className="cols">
               {data.allImageSharp.edges.map(({ node: work }, index) => {
-                const linkcontent = links[index];
+                let linkcontent = links.reverse();
+                let linkcontento = linkcontent[index];
                 return (
                   <figure key={index} className="col">
                     <div className="container">
@@ -249,7 +255,7 @@ function project({ data }) {
                               target="_blank"
                               name="check out the live site"
                               rel="noopener noreferrer canonical"
-                              href={linkcontent}
+                              href={linkcontento}
                             >
                               live site
                             </a>

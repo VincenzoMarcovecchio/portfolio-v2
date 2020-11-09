@@ -46,7 +46,7 @@ section {
 main {
   background: var(--background) !important;
 }
-div {
+.layout {
   background: var(--background) !important;
 }
 article div {
@@ -98,4 +98,9 @@ pre,
 table {
   color: #fff;
   background-color: #1f2022;
+}
+.wrapper .col .front .back {
+  color: initial !important;
+  background-color: initial !important;
+  background: initial !important;
 }

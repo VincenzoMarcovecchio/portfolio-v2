@@ -15,20 +15,20 @@ const FooterStyled = styled.footer`
 
   .notice-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin-top: 25px;
     background-color: black !important;
     @media ${device.tablet} {
+      width: inherit;
       margin-top: 2rem;
-      height: 3rem;
+      height: fit-content;
       flex-direction: column-reverse;
     }
     a {
       background-color: black;
       color: whitesmoke;
-      padding:0;
+      padding: 0;
     }
   }
 
@@ -38,9 +38,12 @@ const FooterStyled = styled.footer`
     }
   }
 
-  .notice-container h4 {
+  .notice-container h4:first-child {
     text-align: center;
     margin: 0;
+    @media ${device.tablet} {
+      margin-bottom: 1rem;
+    }
   }
 
   a {
