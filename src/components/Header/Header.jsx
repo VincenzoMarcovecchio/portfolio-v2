@@ -15,14 +15,14 @@ const NavBar = styled.nav`
   box-shadow: 0 2px 4px 0 rgba(14, 30, 37, 0.12);
   border-bottom: 0.1rem solid whitesmoke;
   @media ${device.tablet} {
-    padding: 0 1rem;
+    padding: 0 0.5rem;
   }
   img {
     height: 100%;
     width: 5rem;
     object-fit: cover;
     @media ${device.tablet} {
-      display: none;
+      width: 4rem;
     }
     @media ${device.mobileM} {
       display: block;
@@ -35,10 +35,10 @@ const NavBar = styled.nav`
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    width: 12rem;
+    width: 14rem;
     padding: 0;
     @media ${device.mobileM} {
-        font-size:1.2rem;
+      font-size: 1.17em;
     }
   }
   a {

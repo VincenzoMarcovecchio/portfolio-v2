@@ -14,7 +14,6 @@ const StyledLayout = styled.div`
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 0 3rem 0;
-
     line-height: 1.75;
     font-size: 1rem;
     background-color: mintcream;
@@ -31,7 +30,6 @@ export default class Layout extends React.Component {
           <Helmet>
             <meta name="description" content={config.siteDescription} />
             <html lang="en" />
-            <link rel="stylesheet" href="./reset.css" />
           </Helmet>
           <Header />
 

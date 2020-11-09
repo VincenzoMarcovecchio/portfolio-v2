@@ -31,7 +31,7 @@ const config = {
     },
     {
       label: 'Twitter',
-      url: 'https://twitter.com/_Vinny92_',
+      url: 'https://twitter.com/_vinny_92',
       iconClassName: 'fa fa-twitter',
     },
     {
