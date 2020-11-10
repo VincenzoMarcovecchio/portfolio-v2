@@ -58,6 +58,9 @@ footer div {
 span {
   background: var(--background) !important;
 }
+.downloadcv {
+  color: var(--light-background);
+}
 nav {
   background: var(--background) !important;
 }

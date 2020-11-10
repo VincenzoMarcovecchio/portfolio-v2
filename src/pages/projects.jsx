@@ -28,6 +28,7 @@ const StyledDiv = styled.div`
     width: 90%;
     margin: 0 auto;
     max-width: 80rem;
+    padding-bottom: 4rem;
   }
   h1 {
     font-size: 2rem;
@@ -232,6 +233,7 @@ function project({ data }) {
     'https://vincenzomarcovecchio.github.io/Insure-Website/',
     'https://vincenzomarcovecchio.github.io/Intro-Component-With-Sign-Up-Form/',
     'https://vincenzomarcovecchio.github.io/FRAINE-RICICLA/',
+    'https://frainelle.vercel.app/',
   ];
   return (
     <>

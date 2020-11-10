@@ -10,12 +10,12 @@ const NavBar = styled.nav`
   position: static;
   justify-content: space-between;
   align-items: center;
-  padding: 0 10%;
+  padding: 0 10% 0 5%;
   background-color: white;
   box-shadow: 0 2px 4px 0 rgba(14, 30, 37, 0.12);
   border-bottom: 0.1rem solid whitesmoke;
   @media ${device.tablet} {
-    padding: 0 0.5rem;
+    padding: 0 1rem 0 0;
   }
   img {
     height: 100%;

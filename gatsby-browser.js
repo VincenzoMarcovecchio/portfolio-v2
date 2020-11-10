@@ -7,7 +7,7 @@ exports.onInitialClientRender = () => {
     const head = document.getElementsByTagName('head')[0];
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.id = 'reset';
+    link.id = 'dark-mode';
     link.href = './dark.css';
     head.appendChild(link);
   }

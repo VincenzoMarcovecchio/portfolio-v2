@@ -9,6 +9,9 @@ const StyledAbout = styled.section`
   margin: auto;
   padding: 3rem 0;
 
+  span {
+    line-height: 1.3rem;
+  }
   .my__form {
     width: 90%;
     max-width: 600px;
@@ -224,7 +227,7 @@ const About = () => {
           )}
         </form>
         <div className="cv-container">
-          <span>Download my cv</span>
+          <span className="downloadcv">Download my cv</span>
           <svg
             version="1.1"
             id="Layer_1"
