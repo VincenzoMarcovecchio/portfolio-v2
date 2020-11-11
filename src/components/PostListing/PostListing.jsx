@@ -23,6 +23,29 @@ const PostListStyled = styled.section`
   @media ${device.tablet} {
     width: 95%;
   }
+
+  h1 {
+    width: 100%;
+    margin: 4rem auto 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 2rem;
+  }
+
+  h2 {
+    width: 100%;
+    margin: 4rem auto 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 1.6rem;
+    @media ${device.mobileM} {
+      font-size: 1.4rem;
+    }
+  }
 `;
 const StyledTag = styled.small`
   padding: 0.3rem;
@@ -41,7 +64,7 @@ const StyledArticle = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 2rem 1.5rem;
+  padding: 1rem 1.5rem 2rem 1.5rem;
   margin-top: 2rem;
   border-top-left-radius: 0.3rem;
   border-top-right-radius: 0.3rem;
@@ -53,6 +76,7 @@ const StyledArticle = styled.article`
     align-items: center;
     justify-content: space-between;
     margin-bottom: 0.5rem;
+    height: 6rem;
   }
 
   a {
@@ -87,13 +111,14 @@ class PostListing extends React.Component {
         </StyledVideo>
 
         <PostListStyled>
+          <h1>The latest from the blog</h1>
           {
             /* Your post list here. */
             postList.map((post) => (
               <StyledArticle>
                 <div className="header__article">
                   <Link to={post.path} key={post.title}>
-                    <h1>{post.title}</h1>
+                    <h2>{post.title}</h2>
                   </Link>
                   <StyledTag>
                     {post.tags.map((tag, i) => {

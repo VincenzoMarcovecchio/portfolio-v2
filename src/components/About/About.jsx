@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import cv from '../../resume.png';
 import styled from 'styled-components';
+import axios from 'axios';
 
 const StyledAbout = styled.section`
   min-height: 100vh;
@@ -78,7 +79,7 @@ const StyledAbout = styled.section`
     height: 2.3rem;
     width: 8rem;
     cursor: pointer;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
     border: 1px solid rgb(217, 220, 225);
     border-radius: 0.25rem;
     color: white;
@@ -87,11 +88,15 @@ const StyledAbout = styled.section`
   }
 
   h1 {
+    margin-top: unset;
     font-size: 2.5rem;
+    line-height: 1.3;
+  }
+  h2 {
+    line-height: 1.3;
   }
   img {
     width: 30%;
-
     margin-bottom: 4rem;
   }
   span {
@@ -153,7 +158,7 @@ const About = () => {
     e.preventDefault();
     const form = e.target;
     setServerState({ submitting: true });
-    fetch({
+    axios({
       method: 'post',
       url: 'https://getform.io/f/d4fc06ae-d2f0-4f8b-9ea7-7e4176e23cbc',
       data: new FormData(form),
@@ -194,9 +199,7 @@ const About = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="email" required="required">
-              Email address
-            </label>
+            <label htmlFor="email">Email address</label>
             <input
               type="email"
               name="email"

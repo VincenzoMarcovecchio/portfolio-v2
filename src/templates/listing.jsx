@@ -18,10 +18,12 @@ const StyledPostList = styled.main`
 `;
 
 const StyledPagination = styled.div`
-  margin: 2rem auto;
+  margin: 5rem auto 2rem auto;
+  width: inherit;
+  text-align: center;
+  background-color: whitesmoke;
   a {
     text-decoration: none;
-    margin: 2rem auto;
   }
 `;
 

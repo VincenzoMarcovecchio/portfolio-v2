@@ -13,7 +13,7 @@ const StyledLayout = styled.div`
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 0 3rem 0;
-  line-height: 1.75;
+  line-height: 1.3;
   font-size: 1rem;
   background-color: mintcream;
 `;

@@ -26,6 +26,7 @@ const StyledArticle = styled.article`
   }
   p {
     margin-bottom: 1rem;
+    line-height: 1.5;
   }
   ul {
     margin-bottom: 1rem;

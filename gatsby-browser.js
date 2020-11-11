@@ -1,3 +1,5 @@
+require('prismjs/themes/prism-okaidia.css');
+
 exports.onInitialClientRender = () => {
   const theme = typeof window !== 'undefined' && localStorage.getItem('theme');
 

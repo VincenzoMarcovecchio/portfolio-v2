@@ -6,7 +6,7 @@ import { graphql } from 'gatsby';
 import { device } from '../styles/Global';
 export const query = graphql`
   query Projects {
-    allImageSharp {
+    allImageSharp(sort: { fields: fixed___originalName, order: ASC }) {
       edges {
         node {
           fluid {
@@ -220,20 +220,20 @@ const StyledDiv = styled.div`
 `;
 function project({ data }) {
   let links = [
-    'https://storage-upload.vercel.app/',
-    'https://vincenzomarcovecchio.github.io/Minesweeper/',
-    'https://ciatapp.herokuapp.com/',
-    'https://vincenzomarcovecchio.github.io/Spotify-clone/',
-    'https://vincenzomarcovecchio.github.io/Manage-Landing-Page/',
-    'https://vincenzomarcovecchio.github.io/BankEasy/',
-    'https://resort-beach.vincenzomarcovecchio.now.sh/',
-    'https://dine.now.sh/',
+    'https://frainelle.vercel.app/',
     'https://meme-for-fun.com',
+    'https://vincenzomarcovecchio.github.io/Spotify-clone/',
     'https://felineknowledge.com',
-    'https://vincenzomarcovecchio.github.io/Insure-Website/',
     'https://vincenzomarcovecchio.github.io/Intro-Component-With-Sign-Up-Form/',
     'https://vincenzomarcovecchio.github.io/FRAINE-RICICLA/',
-    'https://frainelle.vercel.app/',
+    'https://vincenzomarcovecchio.github.io/BankEasy/',
+    'https://vincenzomarcovecchio.github.io/Insure-Website/',
+    'https://vincenzomarcovecchio.github.io/Manage-Landing-Page/',
+    'https://storage-upload.vercel.app/',
+    'https://dine.now.sh/',
+    'https://ciatapp.herokuapp.com/',
+    'https://resort-beach.vincenzomarcovecchio.now.sh/',
+    'https://vincenzomarcovecchio.github.io/Minesweeper/',
   ];
   return (
     <>
@@ -243,13 +243,10 @@ function project({ data }) {
             <h1>Some of my latest projects</h1>
             <div className="cols">
               {data.allImageSharp.edges.map(({ node: work }, index) => {
-                let linkcontent = links.reverse();
-                let linkcontento = linkcontent[index];
                 return (
                   <figure key={index} className="col">
                     <div className="container">
                       <Img fluid={work.fluid} className="front" />
-
                       <div className="back">
                         <div className="inner">
                           <figcaption>
@@ -257,7 +254,7 @@ function project({ data }) {
                               target="_blank"
                               name="check out the live site"
                               rel="noopener noreferrer canonical"
-                              href={linkcontento}
+                              href={links[index]}
                             >
                               live site
                             </a>

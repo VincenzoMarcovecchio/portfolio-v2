@@ -42,7 +42,7 @@ const FooterStyled = styled.footer`
     text-align: center;
     margin: 0;
     @media ${device.tablet} {
-      margin-bottom: 1rem;
+      margin-bottom: 0rem;
     }
   }
 

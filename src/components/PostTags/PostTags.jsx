@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import { device } from '../../styles/Global';
 const StyledPostTags = styled.div`
-  width: 95%;
+  width: 80%;
   margin: 2rem auto;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  @media ${device.tablet} {
+    width: 95%;
+  }
 
   a {
     background-color: white;
@@ -16,7 +20,6 @@ const StyledPostTags = styled.div`
     padding: 0.3rem;
     border-radius: 0.3rem;
     border: 1px solid black;
-    margin-left: 0.5rem;
   }
 `;
 class PostTags extends Component {
