@@ -24,15 +24,33 @@ export default class Layout extends React.Component {
 
     return (
       <React.Fragment>
-        <StyledLayout className="layout">
-          <Helmet>
-            <meta name="description" content={config.siteDescription} />
-            <html lang="en" />
-          </Helmet>
-          <Header />
+        <Helmet
+          style={[
+            {
+              cssText: `
+            body {
+                box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Roboto, Arial,
+            Noto Sans, sans-serif, Apple Color Emoji, Segoe UI, Segoe UI Emoji,
+            Segoe UI Symbol, Noto Color Emoji;
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 0;
+            line-height: 1.3;
+            font-size: 1rem;
+            background-color: mintcream;
+            }
+        `,
+            },
+          ]}
+        >
+          <meta name="description" content={config.siteDescription} />
+          <html lang="en" />
+        </Helmet>
+        <Header />
 
-          {children}
-        </StyledLayout>
+        {children}
+
         <Footer config={config} />
       </React.Fragment>
     );

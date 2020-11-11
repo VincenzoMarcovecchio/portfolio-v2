@@ -8,9 +8,9 @@ tags:
   - javascript
 ---
 
-In this tutorial I will walk you through a pretty simple form validation using the HTML5 validation attributes for your inputs and we will also submit the message thanks to the super simple <em>getform</em> end point (go create your account right now,it's simple). In the end you will be able to have a contact form working as web standards demands. I expect you to be familiar with JSX because that's what we are going to use in this example.
+In this tutorial I will walk you through a pretty simple form validation using the HTML5 validation attributes and we will also submit the form through the super simple <em>getform</em> end point (go create your account right now, it's simple). In the end you will be able to have a contact form working as web standards demands. I expect you to be familiar with JSX because that's what we are going to use in this example.
 
-We will have two `input` fields and a `text-area` wrapped inside a `form` element
+We will have two `input` fields and a `text-area` wrapped inside a `form` element,
 we will also make sure to have the appropriate labels and to have a button `type=submit` at the bottom. The first input we are going to create is going to be for the name your users have
 
 ```
@@ -25,7 +25,7 @@ we will also make sure to have the appropriate labels and to have a button `type
 
 ```
 
-As you can see we have a label referencing the input through the name attribute (very important for accessibility), the type of the input is text since they are only letters, the required attribute will do the tricks if you don't want to write your custom javascript making sure the user has typed something, to keep it simple in this example we are going to use it. Next is going to be the email input
+As you can see we have a label referencing the input through the name attribute (very important for accessibility), the type of the input is text since they are only letters, the required attribute will do the trick if you don't want to write your custom javascript making sure the user has typed something, to keep it simple in this example we are going to use it. Next is going to be the email input
 
 ```
 <label htmlFor="email">Email address<label>
@@ -53,7 +53,7 @@ Same story here but the input type this time is email. Last is going to be the t
 
 ```
 
-Now will wrap everything inside the form element end we will give it a submit button. the final result will look somenthing like this
+Now will wrap everything inside the form element end we will give it a submit button. the final result will look something like this
 
 ```
 <form className="my__form">
@@ -94,7 +94,7 @@ Now will wrap everything inside the form element end we will give it a submit bu
 
 ```
 
-Input's and labels have been wrapped inside another div for styling purposes and notice at the bottom the submit button. That's it for the markup, we should get into a bit of javascript now. Our next move will be creating a file component where our form will be stored. This component is going to be called Contact and it's going to be a functional component where we will
+Inputs and labels have been wrapped inside another div for styling purposes and notice at the bottom the submit button. That's it for the markup, we should get into a bit of javascript now. Our next move will be creating a component where our form will be stored. This component is going to be called Contact and it's going to be a functional component where we will
 import `useState` from the react library and `axios` for submitting the form data
 
 ```
@@ -185,4 +185,4 @@ const Contact = () => {
 
 ```
 
-And I think this was one of the easiest way to make the contact form of your website, probably the easiest way yes. Hope you have a good one. Peace
+And I think this was one of the easiest way to make the contact form of your website, probably the easiest yes. Hope you have a good one. Peace

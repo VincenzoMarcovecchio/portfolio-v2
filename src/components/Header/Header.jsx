@@ -35,7 +35,7 @@ const NavBar = styled.nav`
     justify-content: space-between;
     align-items: center;
     height: 100%;
-    width: 14rem;
+    width: 13rem;
     padding: 0;
     @media ${device.mobileM} {
       font-size: 1.17em;
