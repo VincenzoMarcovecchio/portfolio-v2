@@ -19,6 +19,7 @@ module.exports = {
     },
   },
   plugins: [
+    'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-lodash',
     {
@@ -83,7 +84,7 @@ module.exports = {
         description: config.siteDescription,
         start_url: config.pathPrefix,
         background_color: config.backgroundColor,
-        theme_color: config.themeColor,
+        theme_color: 'black',
         display: 'minimal-ui',
         icons: [
           {

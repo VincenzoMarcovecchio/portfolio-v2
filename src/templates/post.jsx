@@ -21,9 +21,6 @@ const StyledArticle = styled.article`
     overflow: hidden;
   }
 
-  h2 {
-    margin: 1rem auto;
-  }
   p {
     margin-bottom: 1rem;
     line-height: 1.5;
@@ -40,7 +37,7 @@ const StyledTitle = styled.h1`
   font-size: 2rem;
   line-height: 1.3;
   width: 80%;
-  margin: 1rem auto 2rem auto;
+  margin: 4rem auto 2rem auto;
   @media ${device.tablet} {
     width: 95%;
   }
