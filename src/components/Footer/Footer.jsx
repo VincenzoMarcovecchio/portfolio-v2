@@ -30,6 +30,9 @@ const FooterStyled = styled.footer`
       color: whitesmoke;
       padding: 0;
     }
+    h4 {
+      font-size: 0.8rem;
+    }
   }
 
   @media (max-width: 640px - 1px) {
@@ -51,13 +54,6 @@ const FooterStyled = styled.footer`
     padding: 0.3rem;
     color: black;
     background-color: whitesmoke;
-  }
-
-  small {
-    color: black;
-    background-color: whitesmoke;
-    height: fit-content;
-    padding: unset;
   }
 `;
 

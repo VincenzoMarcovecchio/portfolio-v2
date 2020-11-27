@@ -8,10 +8,7 @@ const Popover = css`
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
   position: absolute;
-  left: 0%;
-  bottom: 30%;
-  right: 0%;
-  width: 80vw;
+  top: 110%;
   margin: auto;
   box-shadow: 0 0 5px 0;
   padding: 1em;
@@ -25,7 +22,6 @@ const Popover = css`
 export default styled(SearchResult)`
   display: ${(props) => (props.show ? `flex` : `none`)};
   ${Popover}
-  color: rgb(188,155,120);
   transtion: display 1s ease-in;
   .HitCount {
     display: flex;
@@ -39,6 +35,7 @@ export default styled(SearchResult)`
       list-style: none;
       margin-left: 0;
       width: fit-content;
+      padding: 0;
     }
 
     li.ais-Hits-item {

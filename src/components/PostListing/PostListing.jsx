@@ -32,29 +32,22 @@ const PostListStyled = styled.section`
     align-items: flex-start;
     justify-content: flex-start;
     font-size: 2rem;
-  }
-
-  h2 {
-    width: 100%;
-    margin: 4rem auto 2rem auto;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    font-size: 1.6rem;
     @media ${device.mobileM} {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
     }
   }
 `;
 const StyledTag = styled.small`
   padding: 0.3rem;
-  background-color: whitesmoke;
-  margin-left: 0.4rem;
   border-radius: 0.2rem;
   text-transform: uppercase;
+  width: fit-content;
+
   @media ${device.tablet} {
     font-size: small;
+  }
+  a {
+    color: lightseagreen !important;
   }
 `;
 const StyledArticle = styled.article`
@@ -64,7 +57,7 @@ const StyledArticle = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 1rem 1.5rem 2rem 1.5rem;
+  padding: 1rem 1.5rem 1rem 1.5rem;
   margin-top: 2rem;
   border-top-left-radius: 0.3rem;
   border-top-right-radius: 0.3rem;
@@ -75,19 +68,40 @@ const StyledArticle = styled.article`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 0.5rem;
-    height: 6rem;
+    @media ${device.mobileM} {
+      margin-bottom: 0.5rem;
+    }
   }
 
   a {
     text-decoration: none;
     color: black;
   }
+  p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    @media ${device.mobileM} {
+      font-size: 1rem;
+    }
+  }
+  h2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 1.6rem;
+    @media ${device.mobileM} {
+      font-size: 1.3rem;
+    }
+  }
 `;
 class PostListing extends React.Component {
   getPostList() {
     const postList = [];
+
     this.props.postEdges.forEach((postEdge) => {
+      console.log(postEdge);
       postList.push({
         path: postEdge.node.fields.slug,
         tags: postEdge.node.frontmatter.tags,
@@ -103,6 +117,7 @@ class PostListing extends React.Component {
 
   render() {
     const postList = this.getPostList();
+
     return (
       <>
         <StyledVideo src={video} title="Vin's blog" autoPlay muted loop>
@@ -114,24 +129,24 @@ class PostListing extends React.Component {
           <h1>The latest from the blog</h1>
           {
             /* Your post list here. */
-            postList.map((post) => (
-              <StyledArticle>
+            postList.map((post, index) => (
+              <StyledArticle key={index}>
                 <div className="header__article">
                   <Link to={post.path} key={post.title}>
                     <h2>{post.title}</h2>
                   </Link>
-                  <StyledTag>
-                    {post.tags.map((tag, i) => {
-                      let tagga = tag.replace(/\s/g, '-');
-                      return (
-                        <Link key={i} replace to={`/tags/${tagga}`}>
-                          {tag}
-                        </Link>
-                      );
-                    })}
-                  </StyledTag>
                 </div>
                 <p>{post.excerpt}</p>
+                <StyledTag>
+                  {post.tags.map((tag, i) => {
+                    let tagga = tag.replace(/\s/g, '-');
+                    return (
+                      <Link key={i} replace to={`/tags/${tagga}`}>
+                        #{tag}&nbsp;&nbsp;
+                      </Link>
+                    );
+                  })}
+                </StyledTag>
               </StyledArticle>
             ))
           }

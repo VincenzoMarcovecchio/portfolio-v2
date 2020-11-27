@@ -21,9 +21,10 @@ const StyledPagination = styled.div`
   margin: 5rem auto 2rem auto;
   width: inherit;
   text-align: center;
-  background-color: whitesmoke;
+
   a {
     text-decoration: none;
+    color: lightseagreen !important;
   }
 `;
 
@@ -94,7 +95,7 @@ export const listingQuery = graphql`
             slug
             date
           }
-          excerpt
+          excerpt(pruneLength: 300, format: PLAIN)
           timeToRead
           frontmatter {
             title

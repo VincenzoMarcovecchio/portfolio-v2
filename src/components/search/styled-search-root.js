@@ -9,7 +9,7 @@ export default styled.div`
   align-self: center;
   justify-self: center;
   @media ${device.tablet} {
-    margin-right: auto;
+    margin-right: 0.5rem;
     margin-left: unset;
   }
 `;

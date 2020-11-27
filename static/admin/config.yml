@@ -1,10 +1,10 @@
 backend:
-  name: github # Refer to https://www.netlifycms.org/docs/authentication-backends/ for auth backend list and instructions
+  name: git-gateway # Refer to https://www.netlifycms.org/docs/authentication-backends/ for auth backend list and instructions
   branch: master # Branch to update
-  repo: VincenzoMarcovecchio/casa-fraine # Repo for pushing new commits. Make sure to replace with your repo!
+  repo: VincenzoMarcovecchio/portfolio-v2 # Repo for pushing new commits. Make sure to replace with your repo!
 
 media_folder: static/assets
-public_folder: public
+public_folder: assets
 
 collections:
   - name: blog
@@ -17,6 +17,8 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Cover Image', name: 'cover', widget: 'image' }
       - { label: 'Slug', name: 'slug', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'text' }
+      - { label: 'Excerpt', name: 'excerpt', widget: 'text' }
       - { label: 'Category', name: 'category', widget: 'string' }
       - { label: 'Tags', name: 'tags', widget: 'list' }
       - { label: 'Body', name: 'body', widget: 'markdown' }

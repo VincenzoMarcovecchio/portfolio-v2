@@ -9,6 +9,7 @@ import config from '../../data/SiteConfig';
 class Landing extends React.Component {
   render() {
     const postEdges = this.props.data.allMarkdownRemark.edges;
+
     return (
       <Layout landing>
         <Helmet title={config.siteTitle} />
@@ -25,14 +26,14 @@ export default Landing;
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query LandingQuery {
-    allMarkdownRemark(sort: { fields: [fields___date], order: DESC }) {
+    allMarkdownRemark {
       edges {
         node {
           fields {
             slug
             date
           }
-          excerpt(format: PLAIN, pruneLength: 300)
+          excerpt(pruneLength: 300, format: PLAIN)
           timeToRead
           frontmatter {
             title

@@ -5,10 +5,11 @@ import axios from 'axios';
 
 const StyledAbout = styled.section`
   min-height: 100vh;
+  max-width: 90vw;
   text-align: center;
   max-width: 600px;
   margin: auto;
-  padding: 3rem 0;
+  padding: 7rem 0;
 
   span {
     line-height: 1.3rem;

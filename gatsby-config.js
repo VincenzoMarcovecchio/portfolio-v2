@@ -129,6 +129,7 @@ module.exports = {
         includeRobots: false,
       },
     },
+
     {
       resolve: 'gatsby-plugin-feed',
       options: {

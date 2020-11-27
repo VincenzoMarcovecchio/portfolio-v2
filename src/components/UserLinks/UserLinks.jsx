@@ -21,7 +21,12 @@ class UserLinks extends Component {
     const { userLinks } = this.props.config;
     const { labeled } = this.props;
     return userLinks.map((link) => (
-      <StyledLink key={link.label} href={link.url}>
+      <StyledLink
+        target="_blank"
+        rel="noopener noreferrer canonical"
+        key={link.label}
+        href={link.url}
+      >
         {labeled ? link.label : ''}
       </StyledLink>
     ));
@@ -35,7 +40,13 @@ class UserLinks extends Component {
     return (
       <StyledUserLinks>
         {this.getLinkElements()}
-        <StyledLink href={this.props.rss}>Rss</StyledLink>
+        <StyledLink
+          target="_blank"
+          rel="noopener noreferrer canonical"
+          href={this.props.rss}
+        >
+          Rss
+        </StyledLink>
       </StyledUserLinks>
     );
   }

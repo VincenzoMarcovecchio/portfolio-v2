@@ -3,6 +3,19 @@ import _ from 'lodash';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { device } from '../../styles/Global';
+const StyledTag = styled.small`
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+  text-transform: uppercase;
+  width: fit-content;
+
+  @media ${device.tablet} {
+    font-size: small;
+  }
+  a {
+    color: lightseagreen !important;
+  }
+`;
 const StyledPostTags = styled.div`
   width: 80%;
   margin: 2rem auto;
@@ -14,12 +27,10 @@ const StyledPostTags = styled.div`
   }
 
   a {
-    background-color: white;
+    color: lightseagreen;
     text-decoration: none;
-    color: black;
+
     padding: 0.3rem;
-    border-radius: 0.3rem;
-    border: 1px solid black;
   }
 `;
 class PostTags extends Component {
@@ -34,7 +45,7 @@ class PostTags extends Component {
               style={{ textDecoration: 'none' }}
               to={`/tags/${_.kebabCase(tag)}`}
             >
-              {tag}
+              #{tag}&nbsp;
             </Link>
           ))}
       </StyledPostTags>

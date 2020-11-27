@@ -64,6 +64,9 @@ span {
 nav {
   background: var(--background) !important;
 }
+ul {
+  background: var(--background) !important;
+}
 code {
   border-width: 1px !important;
   border-color: rgba(0, 0, 0, 0.1);

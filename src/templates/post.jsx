@@ -32,6 +32,9 @@ const StyledArticle = styled.article`
 `;
 const StyledSection = styled.section`
   padding: 2rem 0;
+  @media ${device.tablet} {
+    margin-top: 5rem;
+  }
 `;
 const StyledTitle = styled.h1`
   font-size: 2rem;
@@ -90,7 +93,7 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       timeToRead
-      excerpt
+
       frontmatter {
         title
         cover

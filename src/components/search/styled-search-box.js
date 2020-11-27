@@ -6,16 +6,14 @@ const open = css`
   background: whitesmoke;
   cursor: text;
   padding: 0.3rem;
-  font-family: inherith;
 `;
 
 const closed = css`
   width: 100%;
   background: whitesmoke;
   cursor: text;
-  z-index: 10;
+  z-index: 100;
   padding: 0.3rem;
-  font-family: inherith;
   font-weight: bolder;
 `;
 
@@ -25,6 +23,7 @@ export default styled(SearchBox)`
   align-items: center;
 
   .SearchInput {
+    font-family: inherith;
     outline: none;
     border: ${({ hasFocus }) => (hasFocus ? 'auto' : 'none')};
     font-size: 1em;
