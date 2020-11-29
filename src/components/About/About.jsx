@@ -97,8 +97,8 @@ const StyledAbout = styled.section`
     line-height: 1.3;
   }
   img {
-    width: 30%;
     margin-bottom: 4rem;
+    width: 100%;
   }
   span {
     color: inherit;
@@ -270,7 +270,14 @@ const About = () => {
               />
             </g>
           </svg>
-          <img title="download my cv" alt="cv icon" src={cv} />
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://firebasestorage.googleapis.com/v0/b/myporfolio-d1ae8.appspot.com/o/cv%2FVincenzo%20Marcovecchio1.pdf?alt=media&amp;token=657a7a4a-161d-4b5b-aa98-ffe045ee5b2e"
+            download
+          >
+            <img title="download my cv" alt="cv icon" src={cv} />
+          </a>
         </div>
       </>
     </StyledAbout>

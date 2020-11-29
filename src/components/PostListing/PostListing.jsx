@@ -59,15 +59,26 @@ const StyledArticle = styled.article`
   justify-content: center;
   padding: 1rem 1.5rem 1rem 1.5rem;
   margin-top: 2rem;
-  border-top-left-radius: 0.3rem;
-  border-top-right-radius: 0.3rem;
+  border-top-left-radius: 0.4rem;
+  border-top-right-radius: 0.4rem;
   box-shadow: 0 2px 4px 0 rgba(14, 30, 37, 0.12);
   overflow: hidden;
+  position: relative;
 
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0.8rem;
+    width: 100%;
+    background: lightseagreen;
+  }
   .header__article {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: -0.5rem;
     @media ${device.mobileM} {
       margin-bottom: 0.5rem;
     }
@@ -101,7 +112,6 @@ class PostListing extends React.Component {
     const postList = [];
 
     this.props.postEdges.forEach((postEdge) => {
-      console.log(postEdge);
       postList.push({
         path: postEdge.node.fields.slug,
         tags: postEdge.node.frontmatter.tags,

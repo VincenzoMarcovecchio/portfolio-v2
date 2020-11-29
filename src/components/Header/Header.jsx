@@ -46,7 +46,7 @@ export default function Header() {
     <>
       <NavBar>
         <div className="header__content-wrapper">
-          <Link href="/">
+          <Link to="/">
             <img className="header__logo" src={engine} alt="logo meccanico" />
           </Link>
 
@@ -76,7 +76,7 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <Link className="header__link" href="/about">
+                <Link className="header__link" to="/about">
                   about
                 </Link>
               </li>
@@ -133,7 +133,7 @@ export default function Header() {
 const NavBar = styled.header`
   position: relative;
   z-index: 3;
-  padding: 0 3rem;
+  padding: 0 1.5rem;
   background-color: white;
   box-shadow: 0 2px 4px 0 rgba(14, 30, 37, 0.12);
   border-bottom: 0.1rem solid whitesmoke;
@@ -166,7 +166,7 @@ const NavBar = styled.header`
       position: absolute;
       z-index: 2;
       top: 4rem;
-      left: -3rem;
+      left: -1.5rem;
       width: 100vw;
       height: 0;
       padding-top: 1rem;
@@ -207,6 +207,7 @@ const NavBar = styled.header`
       flex-direction: column;
       align-items: center;
       list-style: none;
+      padding: 0;
 
       & > * {
         opacity: 0;
@@ -380,21 +381,10 @@ const NavBar = styled.header`
   #dark-mode-button {
     cursor: pointer;
   }
+
   .disable-scroll {
     overflow-y: hidden;
     position: relative;
-    &body {
-      &::before {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        height: 100%;
-        background: black;
-        opacity: 0.7;
-      }
-    }
     @media only screen and (min-width: 800px) {
       overflow-y: initial;
     }

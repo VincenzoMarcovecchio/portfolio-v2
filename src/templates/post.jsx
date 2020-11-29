@@ -9,6 +9,7 @@ import SEO from '../components/SEO/SEO';
 import config from '../../data/SiteConfig';
 import styled from 'styled-components';
 import { device } from '../styles/Global';
+import Img from 'gatsby-image';
 const StyledArticle = styled.article`
   padding: 3rem 1.5rem;
   box-sizing: border-box;
@@ -16,6 +17,9 @@ const StyledArticle = styled.article`
   background-color: white;
   width: 80%;
   margin: 1rem auto;
+  border-top-left-radius: 0.3rem;
+  border-top-right-radius: 0.3rem;
+  border-top: 0.8rem solid lightseagreen;
   @media ${device.tablet} {
     width: 95%;
     overflow: hidden;
@@ -23,6 +27,7 @@ const StyledArticle = styled.article`
 
   p {
     margin-bottom: 1rem;
+
     line-height: 1.5;
   }
   ul {
@@ -30,12 +35,27 @@ const StyledArticle = styled.article`
     padding: 0 0 0 0.5rem;
   }
 `;
+
 const StyledSection = styled.section`
   padding: 2rem 0;
+  position: relative;
+  .gatsby-image-wrapper {
+    width: 80%;
+    display: flex !important;
+    justify-self: center;
+    align-self: center;
+    margin: auto;
+    height: 75vh;
+
+    @media ${device.tablet} {
+      width: 95%;
+    }
+  }
   @media ${device.tablet} {
     margin-top: 5rem;
   }
 `;
+
 const StyledTitle = styled.h1`
   font-size: 2rem;
   line-height: 1.3;
@@ -50,7 +70,7 @@ const StyledTime = styled.time`
   font-size: 0.9rem;
   width: 80%;
   color: grey;
-  margin: 1rem auto 2rem auto;
+  margin: 3rem auto 1.5rem auto;
   @media ${device.tablet} {
     width: 95%;
   }
@@ -59,21 +79,42 @@ const StyledTime = styled.time`
 export default class PostTemplate extends React.Component {
   render() {
     const { data, pageContext } = this.props;
-    const { slug } = pageContext;
+    const { slug, image } = pageContext;
     const postNode = data.markdownRemark;
     const post = postNode.frontmatter;
+
     if (!post.id) {
       post.id = slug;
     }
+
+    const match = String(slug).substring(1);
+
+    const result = image.filter((image) => {
+      return image.node.name == match;
+    });
 
     return (
       <Layout>
         <Helmet>
           <title>{`${post.title} | ${config.siteTitle}`}</title>
+          <script
+            src="https://utteranc.es/client.js"
+            repo="https://github.com/VincenzoMarcovecchio/portfolio-v2"
+            issue-term="pathname"
+            label="✨💬✨"
+            theme="github-dark"
+            crossorigin="anonymous"
+            async
+          ></script>
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
         <StyledSection>
           <StyledTitle>{post.title}</StyledTitle>
+          <Img
+            objectFit="cover"
+            fluid={result[0]?.node.childImageSharp.fluid}
+            alt={post.title}
+          />
           <StyledTime>{post.date}</StyledTime>
           <StyledArticle
             dangerouslySetInnerHTML={{ __html: postNode.html }}
@@ -81,6 +122,9 @@ export default class PostTemplate extends React.Component {
           <PostTags tags={post.tags} />
           <SocialLinks postPath={slug} postNode={postNode} />
           <UserInfo config={config} />
+          <br />
+          <br />
+          <br />
         </StyledSection>
       </Layout>
     );
@@ -93,7 +137,6 @@ export const pageQuery = graphql`
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       timeToRead
-
       frontmatter {
         title
         cover

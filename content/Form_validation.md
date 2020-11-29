@@ -1,6 +1,6 @@
 ---
 title: 'Form Validation with React Hooks and getform.io'
-cover: ''
+cover: '../image/react-contact-form.jpg'
 category: 'javascript'
 date: '2020-11-11'
 slug: 'react-contact-form'

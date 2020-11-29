@@ -6,7 +6,10 @@ import { graphql } from 'gatsby';
 import { device } from '../styles/Global';
 export const query = graphql`
   query Projects {
-    allImageSharp(sort: { fields: fixed___originalName, order: ASC }) {
+    allImageSharp(
+      sort: { fields: fixed___originalName, order: ASC }
+      limit: 14
+    ) {
       edges {
         node {
           fluid {

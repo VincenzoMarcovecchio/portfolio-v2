@@ -1,5 +1,3 @@
-/* eslint "no-console": "off" */
-
 const path = require('path');
 const _ = require('lodash');
 const moment = require('moment');
@@ -67,16 +65,43 @@ exports.createPages = async ({ graphql, actions }) => {
       }
     }
   `);
+  const imageQueryResults = await graphql(`
+    {
+      allFile {
+        edges {
+          node {
+            id
+            childImageSharp {
+              fluid {
+                base64
+                tracedSVG
+                srcWebp
+                srcSetWebp
+                originalImg
+                originalName
+              }
+            }
+            name
+          }
+        }
+      }
+    }
+  `);
 
   if (markdownQueryResult.errors) {
     console.error(markdownQueryResult.errors);
     throw markdownQueryResult.errors;
+  }
+  if (imageQueryResults.errors) {
+    console.error(imageQueryResults.errors);
+    throw imageQueryResults.errors;
   }
 
   const tagSet = new Set();
   const categorySet = new Set();
 
   const postsEdges = markdownQueryResult.data.allMarkdownRemark.edges;
+  const imageEdges = imageQueryResults.data.allFile.edges;
 
   // Sort posts
   postsEdges.sort((postA, postB) => {
@@ -150,6 +175,7 @@ exports.createPages = async ({ graphql, actions }) => {
         nextslug: nextEdge.node.fields.slug,
         prevtitle: prevEdge.node.frontmatter.title,
         prevslug: prevEdge.node.fields.slug,
+        image: imageEdges,
       },
     });
   });

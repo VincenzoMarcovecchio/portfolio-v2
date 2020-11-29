@@ -64,6 +64,9 @@ span {
 nav {
   background: var(--background) !important;
 }
+header {
+  background: var(--background) !important;
+}
 ul {
   background: var(--background) !important;
 }

@@ -3,8 +3,8 @@ backend:
   branch: master # Branch to update
   repo: VincenzoMarcovecchio/portfolio-v2 # Repo for pushing new commits. Make sure to replace with your repo!
 
-media_folder: static/assets
-public_folder: assets
+media_folder: static/img
+public_folder: /img
 
 collections:
   - name: blog
@@ -12,6 +12,11 @@ collections:
     folder: 'content'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}.md'
+    media_folder: ''
+    public_folder: ''
+    path: '{{title}}/index'
+    editor:
+      preview: false
     fields:
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
