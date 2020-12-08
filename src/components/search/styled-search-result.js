@@ -11,12 +11,14 @@ const Popover = css`
   top: 110%;
   margin: auto;
   box-shadow: 0 0 5px 0;
-  padding: 1em;
   background: whitesmoke;
+  color: inherit !important;
+  padding: 1em;
   border-radius: 2px;
-  z-index: 50;
+  z-index: 500000;
   flex-direction: column;
   transition: display 0.2s ease in out;
+  font-family: inherit;
 `;
 
 export default styled(SearchResult)`
@@ -29,6 +31,7 @@ export default styled(SearchResult)`
   }
 
   .Hits {
+    font-family: inherit;
     ul {
       display: flex;
       flex-direction: column;
@@ -36,6 +39,7 @@ export default styled(SearchResult)`
       margin-left: 0;
       width: fit-content;
       padding: 0;
+      background: inherit !important;
     }
 
     li.ais-Hits-item {
@@ -45,6 +49,7 @@ export default styled(SearchResult)`
       a {
         h4 {
           margin-bottom: 0.2em;
+          color: black !important;
         }
       }
     }
@@ -65,5 +70,8 @@ export default styled(SearchResult)`
     height: fit-content;
     margin-right: 0.5rem;
     margin-top: 0.3rem;
+  }
+  span {
+    background: whitesmoke !important;
   }
 `;

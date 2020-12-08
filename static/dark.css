@@ -24,7 +24,7 @@ h4,
 h5,
 h6,
 h2 {
-  color: var(--medium-font-color) !important;
+  color: var(--medium-font-color);
 }
 p {
   color: var(--light-font-color) !important;
@@ -38,7 +38,6 @@ nav a {
 }
 article {
   background: var(--light-background) !important;
-  box-shadow: 0 2px 4px 0 var(--link-color-darker) !important;
 }
 section {
   background: var(--background) !important;
@@ -67,9 +66,7 @@ nav {
 header {
   background: var(--background) !important;
 }
-ul {
-  background: var(--background) !important;
-}
+
 code {
   border-width: 1px !important;
   border-color: rgba(0, 0, 0, 0.1);
@@ -102,6 +99,7 @@ label {
 #dark-mode-button {
   color: var(--background) !important;
 }
+
 code,
 pre,
 table {

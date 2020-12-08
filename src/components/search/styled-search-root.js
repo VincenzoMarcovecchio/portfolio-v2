@@ -8,6 +8,8 @@ export default styled.div`
   margin-left: auto;
   align-self: center;
   justify-self: center;
+  font-family: inherit;
+  font-size: inherit;
   @media ${device.tablet} {
     margin-right: 0.5rem;
     margin-left: unset;

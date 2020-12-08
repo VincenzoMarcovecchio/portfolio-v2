@@ -20,15 +20,20 @@ const StyledArticle = styled.article`
   border-top-left-radius: 0.3rem;
   border-top-right-radius: 0.3rem;
   border-top: 0.8rem solid lightseagreen;
+
+  .language-text {
+    padding: 0 0.5rem;
+  }
   @media ${device.tablet} {
     width: 95%;
     overflow: hidden;
+    padding: 1rem 0.4rem;
   }
 
   p {
     margin-bottom: 1rem;
-
     line-height: 1.5;
+    font-size: 18px;
   }
   ul {
     margin-bottom: 1rem;
@@ -51,18 +56,16 @@ const StyledSection = styled.section`
       width: 95%;
     }
   }
-  @media ${device.tablet} {
-    margin-top: 5rem;
-  }
 `;
 
 const StyledTitle = styled.h1`
-  font-size: 2rem;
+  font-size: 2.3rem;
   line-height: 1.3;
   width: 80%;
   margin: 4rem auto 2rem auto;
   @media ${device.tablet} {
     width: 95%;
+    margin: 0rem auto 1.5rem auto;
   }
 `;
 const StyledTime = styled.time`

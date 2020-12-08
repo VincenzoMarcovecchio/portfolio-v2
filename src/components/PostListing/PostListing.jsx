@@ -70,7 +70,7 @@ const StyledArticle = styled.article`
     position: absolute;
     left: 0;
     top: 0;
-    height: 0.8rem;
+    height: 0.5rem;
     width: 100%;
     background: lightseagreen;
   }
@@ -130,7 +130,7 @@ class PostListing extends React.Component {
 
     return (
       <>
-        <StyledVideo src={video} title="Vin's blog" autoPlay muted loop>
+        <StyledVideo src={video} aria-title="Vin's blog" autoPlay muted loop>
           <source src={video} type="video/mp4" />
           <source src={video} type="video/ogg" />
         </StyledVideo>

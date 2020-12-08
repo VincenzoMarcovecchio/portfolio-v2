@@ -8,7 +8,7 @@ export const query = graphql`
   query Projects {
     allImageSharp(
       sort: { fields: fixed___originalName, order: ASC }
-      limit: 14
+      limit: 15
     ) {
       edges {
         node {
@@ -223,12 +223,14 @@ const StyledDiv = styled.div`
 `;
 function project({ data }) {
   let links = [
-    'https://frainelle.vercel.app/',
     'https://meme-for-fun.com',
     'https://vincenzomarcovecchio.github.io/Spotify-clone/',
     'https://felineknowledge.com',
     'https://vincenzomarcovecchio.github.io/Intro-Component-With-Sign-Up-Form/',
     'https://vincenzomarcovecchio.github.io/FRAINE-RICICLA/',
+    'https://fragine.netlify.app/it',
+    'https://frainelle.vercel.app/',
+
     'https://vincenzomarcovecchio.github.io/BankEasy/',
     'https://vincenzomarcovecchio.github.io/Insure-Website/',
     'https://vincenzomarcovecchio.github.io/Manage-Landing-Page/',

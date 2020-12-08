@@ -21,9 +21,8 @@ export default styled(SearchBox)`
   display: flex;
   flex-direction: row-reverse;
   align-items: center;
-
+  font-family: inherith;
   .SearchInput {
-    font-family: inherith;
     outline: none;
     border: ${({ hasFocus }) => (hasFocus ? 'auto' : 'none')};
     font-size: 1em;
