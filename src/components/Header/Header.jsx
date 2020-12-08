@@ -191,7 +191,7 @@ const NavBar = styled.header`
           z-index: 5;
           transform: translate(0);
           transition: all 0.3s ease-out;
-          height: calc(60vh - 5rem);
+          height: calc(56vh - 5rem);
           background: url('../assets/bg-pattern-mobile-nav.svg') white;
           background-position: bottom;
           background-repeat: no-repeat;
@@ -373,11 +373,9 @@ const NavBar = styled.header`
     }
   }
 
-  --color-dark-violet: hsl(256, 26%, 20%);
-  --color-greyish-blue: hsl(216, 30%, 68%);
   --color-very-dark-violet: hsl(270, 9%, 17%);
   --color-dark-greyish-violet: hsl(273, 4%, 51%);
-  --color-very-light-grey: hsl(0, 0%, 98%);
+
   #dark-mode-button {
     cursor: pointer;
   }

@@ -61,7 +61,7 @@ const StyledArticle = styled.article`
   margin-top: 2rem;
   border-top-left-radius: 0.4rem;
   border-top-right-radius: 0.4rem;
-  box-shadow: 0 2px 4px 0 rgba(14, 30, 37, 0.12);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   overflow: hidden;
   position: relative;
 

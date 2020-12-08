@@ -13,7 +13,7 @@ import Img from 'gatsby-image';
 const StyledArticle = styled.article`
   padding: 3rem 1.5rem;
   box-sizing: border-box;
-  box-shadow: 0 2px 4px 0 rgba(14, 30, 37, 0.12);
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   background-color: white;
   width: 80%;
   margin: 1rem auto;
@@ -24,6 +24,7 @@ const StyledArticle = styled.article`
   .language-text {
     padding: 0 0.5rem;
   }
+
   @media ${device.tablet} {
     width: 95%;
     overflow: hidden;

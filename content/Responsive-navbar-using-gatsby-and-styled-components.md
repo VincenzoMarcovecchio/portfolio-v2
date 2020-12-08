@@ -17,7 +17,7 @@ See this magic right here 👇
 
 ![alt text](../static/image/navbar.gif 'Logo Title Text 1')
 
-I promise we will make it work it out 😉
+I promise we will make it work 😉
 
 One thing we should understand first is the structure of the header component, how we are going to be nesting the navbar inside and the links to show, basically this is what we have
 
@@ -29,7 +29,10 @@ Header
 │   │
 │   └───Nav
 │   │    │
-│   │    └───ul
-│   │
+│   │    └─ul
+│   │       └─ li
+│   │           └─ a
+
 ```
-I must say that for what concerns the desktop version, our implementation is very easy to set up, but as many of you know it is better practice to start with the mobile version, so we better get the hard work done first 
+
+I must say that for what concerns the desktop version, our implementation is very easy to set up, but as many of you know it is better practice to start with the mobile version, so we better get the hard work done first 💪.
