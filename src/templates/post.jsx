@@ -24,7 +24,12 @@ const StyledArticle = styled.article`
   .language-text {
     padding: 0 0.5rem;
   }
-
+  img {
+    width: 100%;
+    max-width: 450px;
+    margin: auto;
+    display: flex;
+  }
   @media ${device.tablet} {
     width: 95%;
     overflow: hidden;

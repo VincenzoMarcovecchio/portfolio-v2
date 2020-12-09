@@ -169,7 +169,6 @@ const NavBar = styled.header`
       left: -1.5rem;
       width: 100vw;
       height: 0;
-      padding-top: 1rem;
 
       @media only screen and (min-width: 800px) {
         position: static;
@@ -191,7 +190,7 @@ const NavBar = styled.header`
           z-index: 5;
           transform: translate(0);
           transition: all 0.3s ease-out;
-          height: calc(56vh - 5rem);
+          height: calc(20rem - 5rem);
           background: url('../assets/bg-pattern-mobile-nav.svg') white;
           background-position: bottom;
           background-repeat: no-repeat;

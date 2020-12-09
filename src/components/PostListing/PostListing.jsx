@@ -31,9 +31,9 @@ const PostListStyled = styled.section`
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    font-size: 2rem;
+    font-size: 2.5rem;
     @media ${device.mobileM} {
-      font-size: 1.5rem;
+      font-size: 1.9rem;
     }
   }
 `;
@@ -101,6 +101,7 @@ const StyledArticle = styled.article`
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    margin-bottom: 0;
     font-size: 1.6rem;
     @media ${device.mobileM} {
       font-size: 1.3rem;
