@@ -24,6 +24,9 @@ const StyledArticle = styled.article`
   .language-text {
     padding: 0 0.5rem;
   }
+  pre {
+    padding: 1.8rem 0.5rem !important;
+  }
   img {
     width: 100%;
     max-width: 450px;
@@ -76,7 +79,7 @@ const StyledTitle = styled.h1`
 `;
 const StyledTime = styled.time`
   display: block;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   width: 80%;
   color: grey;
   margin: 3rem auto 1.5rem auto;
@@ -106,15 +109,6 @@ export default class PostTemplate extends React.Component {
       <Layout>
         <Helmet>
           <title>{`${post.title} | ${config.siteTitle}`}</title>
-          <script
-            src="https://utteranc.es/client.js"
-            repo="https://github.com/VincenzoMarcovecchio/portfolio-v2"
-            issue-term="pathname"
-            label="✨💬✨"
-            theme="github-dark"
-            crossorigin="anonymous"
-            async
-          ></script>
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
         <StyledSection>

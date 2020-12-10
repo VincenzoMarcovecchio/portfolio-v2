@@ -47,7 +47,7 @@ const StyledTag = styled.small`
     font-size: small;
   }
   a {
-    color: lightseagreen !important;
+    color: chocolate !important;
   }
 `;
 const StyledArticle = styled.article`

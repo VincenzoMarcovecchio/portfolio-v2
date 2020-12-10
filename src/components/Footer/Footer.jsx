@@ -52,8 +52,8 @@ const FooterStyled = styled.footer`
   a {
     text-decoration: none;
     padding: 0.3rem;
-    color: black;
-    background-color: whitesmoke;
+    color: white;
+    background-color: darkslategray;
   }
 `;
 

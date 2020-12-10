@@ -279,18 +279,6 @@ const NavBar = styled.header`
   .hamburger-menu--open .hamburger-menu__bar--bottom {
     transform: rotate(-45deg) translate(3px, -4px);
   }
-  @-webkit-keyframes fadeInRight {
-    from {
-      -webkit-transform: translateX(5rem);
-      transform: translateX(5rem);
-      opacity: 0;
-    }
-    to {
-      -webkit-transform: translate(0);
-      transform: translate(0);
-      opacity: 1;
-    }
-  }
 
   @keyframes fadeInRight {
     from {
@@ -313,43 +301,7 @@ const NavBar = styled.header`
     }
   }
 
-  .cta {
-    padding: 0 3rem;
 
-    @media only screen and (min-width: 800px) {
-      padding: 0 5rem;
-      margin-bottom: 18rem;
-    }
-
-    &__content-wrapper {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 1110px;
-      margin: 0 auto;
-      padding: 8.5rem 3rem;
-      background-color: var(--color-dark-violet);
-      overflow: hidden;
-
-      @media only screen and (min-width: 800px) {
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding: 8.5rem 10rem;
-      }
-
-      &::before {
-        content: url('../img/bg-pattern-how-we-work-mobile.svg');
-        position: absolute;
-        top: 0;
-        right: 0;
-
-        @media only screen and (min-width: 800px) {
-          content: url('../img/bg-pattern-how-we-work-desktop.svg');
-        }
-      }
-    }
 
     &__heading {
       margin-bottom: 4rem;
