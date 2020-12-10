@@ -301,8 +301,6 @@ const NavBar = styled.header`
     }
   }
 
-
-
     &__heading {
       margin-bottom: 4rem;
       max-width: 44rem;
