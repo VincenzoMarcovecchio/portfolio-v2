@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import SearchResult from './search-result';
+import { device } from '../../styles/Global';
 
 const Popover = css`
   transtion: all 1s linear;
@@ -19,6 +20,9 @@ const Popover = css`
   flex-direction: column;
   transition: display 0.2s ease in out;
   font-family: inherit;
+  @media ${device.tablet} {
+    width: 95vw;
+  }
 `;
 
 export default styled(SearchResult)`

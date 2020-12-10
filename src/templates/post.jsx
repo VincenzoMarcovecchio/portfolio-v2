@@ -34,9 +34,10 @@ const StyledArticle = styled.article`
     display: flex;
   }
   @media ${device.tablet} {
-    width: 95%;
+    width: 98%;
     overflow: hidden;
-    padding: 1rem 0.4rem;
+    padding: 1rem 0.7rem;
+    box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
   }
 
   p {

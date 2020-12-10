@@ -44,7 +44,7 @@ As you can see we have a label referencing the input through the name attribute 
 Same story here but the input type this time is email. Last is going to be the text-area
 
 ```
- <label htmlFor="message">Message</label>
+<label htmlFor="message">Message</label>
 
     <textarea
         aria-label="textarea" //this attribute is also optional, will also work as label and makes sure the lighthouse report is happy

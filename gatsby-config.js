@@ -88,12 +88,12 @@ module.exports = {
         display: 'minimal-ui',
         icons: [
           {
-            src: './engine.png',
+            src: 'src/engine.png',
             sizes: '192x192',
             type: 'image/png',
           },
           {
-            src: './engine.png',
+            src: 'src/engine.png',
             sizes: '512x512',
             type: 'image/png',
           },

@@ -42,6 +42,7 @@ const StyledTag = styled.small`
   border-radius: 0.2rem;
   text-transform: uppercase;
   width: fit-content;
+  display: contents;
 
   @media ${device.tablet} {
     font-size: small;
@@ -61,10 +62,16 @@ const StyledArticle = styled.article`
   margin-top: 2rem;
   border-top-left-radius: 0.4rem;
   border-top-right-radius: 0.4rem;
-  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   overflow: hidden;
+  transition: all 200ms ease-in-out;
   position: relative;
 
+  :hover {
+    transform: translateY(-5px);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  }
   &::before {
     content: '';
     position: absolute;
@@ -131,7 +138,7 @@ class PostListing extends React.Component {
 
     return (
       <>
-        <StyledVideo src={video} aria-title="Vin's blog" autoPlay muted loop>
+        <StyledVideo src={video} aria-label="Vin's blog" autoPlay muted loop>
           <source src={video} type="video/mp4" />
           <source src={video} type="video/ogg" />
         </StyledVideo>
