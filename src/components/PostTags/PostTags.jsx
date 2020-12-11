@@ -9,6 +9,7 @@ const StyledPostTags = styled.div`
   margin: 2rem auto;
   display: flex;
   justify-content: flex-start;
+  flex-direction: column;
   align-items: center;
   @media ${device.tablet} {
     width: 95%;
@@ -17,7 +18,6 @@ const StyledPostTags = styled.div`
   a {
     color: #d94b23 !important;
     text-decoration: none;
-
     padding: 0.3rem;
   }
 `;
