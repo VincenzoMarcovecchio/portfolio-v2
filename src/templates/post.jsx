@@ -27,12 +27,7 @@ const StyledArticle = styled.article`
   pre {
     padding: 1.8rem 0.5rem !important;
   }
-  img {
-    width: 100%;
-    max-width: 450px;
-    margin: auto;
-    display: flex;
-  }
+
   @media ${device.tablet} {
     width: 98%;
     overflow: hidden;
@@ -60,7 +55,7 @@ const StyledSection = styled.section`
     justify-self: center;
     align-self: center;
     margin: auto;
-    height: 75vh;
+    min-height: 78vh;
 
     @media ${device.tablet} {
       width: 95%;

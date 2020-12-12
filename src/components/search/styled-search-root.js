@@ -10,8 +10,10 @@ export default styled.div`
   justify-self: center;
   font-family: inherit;
   font-size: inherit;
+  align-self: flex-end;
   @media ${device.tablet} {
     margin-right: 0.5rem;
     margin-left: unset;
+    align-self: flex-start;
   }
 `;

@@ -9,7 +9,7 @@ const Popover = css`
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
   position: absolute;
-  top: 110%;
+  top: 101%;
   margin: auto;
   box-shadow: 0 0 5px 0;
   background: whitesmoke;
@@ -20,9 +20,6 @@ const Popover = css`
   flex-direction: column;
   transition: display 0.2s ease in out;
   font-family: inherit;
-  @media ${device.tablet} {
-    width: 95vw;
-  }
 `;
 
 export default styled(SearchResult)`

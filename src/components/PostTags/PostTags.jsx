@@ -10,7 +10,7 @@ const StyledPostTags = styled.div`
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  align-items: center;
+
   @media ${device.tablet} {
     width: 95%;
   }

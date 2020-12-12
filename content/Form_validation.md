@@ -29,6 +29,7 @@ we will also make sure to have the appropriate labels and to have a button `type
 As you can see we have a label referencing the input through the name attribute (very important for accessibility), the type of the input is text since they are only letters, the required attribute will do the trick if you don't want to write your custom javascript making sure the user has typed something, to keep it simple in this example we are going to use it. Next is going to be the email input
 
 ```
+
 <label htmlFor="email">Email address<label>
 
 <input

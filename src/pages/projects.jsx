@@ -228,7 +228,7 @@ function project({ data }) {
     'https://felineknowledge.com',
     'https://vincenzomarcovecchio.github.io/Intro-Component-With-Sign-Up-Form/',
     'https://vincenzomarcovecchio.github.io/FRAINE-RICICLA/',
-    'https://fragine.netlify.app/it',
+    'https://fragine.netlify.app/',
     'https://frainelle.vercel.app/',
 
     'https://vincenzomarcovecchio.github.io/BankEasy/',

@@ -2,11 +2,8 @@ import React, { useEffect } from 'react';
 import engine from '../../assets/engine.jpg';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import Search from '../search/index';
 
 export default function Header() {
-  const searchIndices = [{ name: `Pages`, title: `Pages` }];
-
   useEffect(() => {
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const headerNav = document.querySelector('.header__nav');
@@ -71,6 +68,11 @@ export default function Header() {
           <nav className="header__nav">
             <ul className="header__list">
               <li>
+                <Link className="header__link" to="/">
+                  Home
+                </Link>
+              </li>
+              <li>
                 <Link className="header__link" to="/projects">
                   projects
                 </Link>
@@ -118,9 +120,6 @@ export default function Header() {
                     ? '☀️'
                     : '🌙'}
                 </span>
-              </li>
-              <li>
-                <Search indices={searchIndices} />
               </li>
             </ul>
           </nav>
@@ -230,10 +229,14 @@ const NavBar = styled.header`
       text-transform: capitalize;
       color: black;
       font-weight: bolder;
-      font-size: 1.1rem;
+      font-size: 1.1rem !important;
+
 
       &:active {
         transform: scale(1.1);
+      }
+      &:hover {
+        color: firebrick;
       }
 
       @media only screen and (min-width: 800px) {

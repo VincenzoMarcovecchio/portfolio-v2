@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { device } from '../../styles/Global';
 import video from '../../assets/video.mp4';
+import Search from '../search/index';
 
 const StyledVideo = styled.video`
   margin: 0;
@@ -23,7 +24,16 @@ const PostListStyled = styled.section`
   @media ${device.tablet} {
     width: 95%;
   }
-
+  .blog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: bottom;
+    width: 100%;
+    position: relative;
+    @media ${device.tablet} {
+      flex-direction: column;
+    }
+  }
   h1 {
     width: 100%;
     margin: 4rem auto 2rem auto;
@@ -135,7 +145,7 @@ class PostListing extends React.Component {
 
   render() {
     const postList = this.getPostList();
-
+    const searchIndices = [{ name: `Pages`, title: `Pages` }];
     return (
       <>
         <StyledVideo src={video} aria-label="Vin's blog" autoPlay muted loop>
@@ -144,7 +154,11 @@ class PostListing extends React.Component {
         </StyledVideo>
 
         <PostListStyled>
-          <h1>The latest from the blog</h1>
+          <div className="blog-header">
+            <h1>The latest from the blog</h1>
+
+            <Search indices={searchIndices} />
+          </div>
           {
             /* Your post list here. */
             postList.map((post, index) => (
