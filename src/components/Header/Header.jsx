@@ -152,7 +152,7 @@ const NavBar = styled.header`
 
     &__logo {
       margin: 6px auto auto 0;
-      width: 4.6rem;
+      width: 4.8rem;
       margin-left:-1rem;
     }
 
