@@ -92,9 +92,13 @@ const StyledAbout = styled.section`
     margin-top: unset;
     font-size: 2.5rem;
     line-height: 1.3;
+    width: 90%;
+    margin: auto;
   }
   h2 {
     line-height: 1.3;
+    width: 90%;
+    margin: 2rem auto;
   }
   img {
     margin-bottom: 4rem;
