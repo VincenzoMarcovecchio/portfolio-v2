@@ -17,7 +17,7 @@ const config = {
   postsPerPage: 10, // Amount of posts displayed per listing page.
   userName: 'Vincenzo Marcovecchio', // Username to display in the author segment.
   userEmail: 'dev_vincenzo@protonmail.com', // Email used for RSS feed's author segment
-  userTwitter: '', // Optionally renders "Follow Me" in the UserInfo segment.
+  userTwitter: 'https://twitter.com/_vinny_92', // Optionally renders "Follow Me" in the UserInfo segment.
   userLocation: 'North Pole, Earth', // User location to display in the author segment.
   userAvatar: 'https://api.adorable.io/avatars/150/test.png', // User avatar to display in the author segment.
   userDescription:
@@ -48,12 +48,6 @@ const config = {
 // Validate
 
 // Make sure pathPrefix is empty if not needed
-if (config.pathPrefix === '/') {
-  config.pathPrefix = '';
-} else {
-  // Make sure pathPrefix only contains the first forward slash
-  config.pathPrefix = `/${config.pathPrefix.replace(/^\/|\/$/g, '')}`;
-}
 
 // Make sure siteUrl doesn't have an ending forward slash
 if (config.siteUrl.substr(-1) === '/')
