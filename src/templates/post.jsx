@@ -39,6 +39,10 @@ const StyledArticle = styled.article`
     margin-bottom: 1rem;
     line-height: 1.5;
     font-size: 18px;
+
+    & img {
+      width: 100%;
+    }
   }
   ul {
     margin-bottom: 1rem;
