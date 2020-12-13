@@ -17,7 +17,7 @@ class SEO extends Component {
       ({ title } = postMeta);
       description = postMeta.description
         ? postMeta.description
-        : postNode.excerpt;
+        : postNode.html.substring(3, 250) + '...';
       image = postMeta.cover;
       postURL = urljoin(config.siteUrl, postPath);
     } else {

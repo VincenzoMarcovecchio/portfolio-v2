@@ -4,7 +4,7 @@ const config = {
   siteTitleAlt: 'A Web Developer Portfolio', // Alternative site title for SEO.
   siteLogo: './favicon/engine.png', // Logo used for SEO and manifest.
   siteUrl: 'https://ranoutofcode.com', // Domain of your website without pathPrefix.
-  pathPrefix: '', // Prefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
+  pathPrefix: '/', // gatsby buildPrefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription:
     'Documenting and writing about technologies, junior web developer here', // Website description used for RSS feeds/meta description tag
   siteRss: '/rss.xml', // Path to the RSS file.
@@ -48,6 +48,12 @@ const config = {
 // Validate
 
 // Make sure pathPrefix is empty if not needed
+if (config.pathPrefix === '/') {
+  config.pathPrefix = '';
+} else {
+  // Make sure pathPrefix only contains the first forward slash
+  config.pathPrefix = `/${config.pathPrefix.replace(/^\/|\/$/g, '')}`;
+}
 
 // Make sure siteUrl doesn't have an ending forward slash
 if (config.siteUrl.substr(-1) === '/')
