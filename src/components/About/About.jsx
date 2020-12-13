@@ -9,7 +9,7 @@ const StyledAbout = styled.section`
   text-align: center;
   max-width: 600px;
   margin: auto;
-  padding: 7rem 0;
+  padding: 3rem 0;
 
   span {
     line-height: 1.3rem;

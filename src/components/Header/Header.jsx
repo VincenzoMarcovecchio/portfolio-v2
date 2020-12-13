@@ -230,7 +230,7 @@ const NavBar = styled.header`
       text-transform: capitalize;
       color: black;
       font-weight: bolder;
-      font-size: 1.1rem !important;
+      font-size: 1.1rem;
 
 
       &:active {
@@ -243,6 +243,7 @@ const NavBar = styled.header`
       @media only screen and (min-width: 800px) {
         margin-right: 3.5rem;
         margin-bottom: 0;
+        font-size: 1.4rem ;
 
         &:active {
           transform: initial;
