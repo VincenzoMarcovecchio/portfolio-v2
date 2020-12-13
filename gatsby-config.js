@@ -82,7 +82,7 @@ module.exports = {
         name: config.siteTitle,
         short_name: config.siteTitleShort,
         description: config.siteDescription,
-        start_url: 'https://ranoutofcode.com',
+        start_url: '/',
         background_color: config.backgroundColor,
         theme_color: 'black',
         display: 'minimal-ui',
