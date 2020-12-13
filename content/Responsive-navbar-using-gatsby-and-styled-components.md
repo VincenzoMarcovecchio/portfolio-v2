@@ -144,7 +144,7 @@ export default function Header() {
 
 ```
 
-And this ladies and gentlemans was a copy and pasted piece of code, you might notice it was wrote using a simple HTML CSS approach, as I usually do I stick everything inside a `useEffect` function to make sure the components loads with those properties. Be carefull with that copy and paste there 😉. Here is the CSS instead, oh we are using the BEM convention, you know it's all part of the game... be ready!.
+And this ladies and gentlemans was a copy and pasted piece of code, you might notice it was wrote using a simple HTML CSS approach, as I usually do I stick everything inside a `useEffect` function to make sure the components loads with those properties. Be carefull with that copy and paste there 😉. Here is the CSS instead, and we are using the BEM convention, you know it's all part of the game... be ready.
 
 ```
 
@@ -355,4 +355,4 @@ const NavBar = styled.header`
 
 ```
 
-A wild ride wasn't it, plus you have a little bit of pressing effect when you click on the link. Because of the copying and pasting situation I tried to make one styled component and wrap everything inside it. If something is not working you're a bit closer to a solution now anyway 😎
+A wild ride wasn't it, plus you have a little bit of scaling effect when you click on the link. Because of the copying and pasting situation I tried to make one styled component and wrap everything inside it. If something is not working you're a bit closer to a solution now anyway 😎
