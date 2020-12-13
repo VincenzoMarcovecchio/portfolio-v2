@@ -11,7 +11,7 @@ tags:
   - navigation
 ---
 
-This article is about showing you I how implemented this very website navigation bar.
+This article is about showing you how I implemented this very website navigation bar.
 
 See this magic right here 👇
 
