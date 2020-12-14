@@ -9,7 +9,7 @@ tags:
   - javascript
 ---
 
-In this tutorial I will walk you through a pretty simple form validation using the HTML5 validation attributes and we will also submit the form through the super simple <em>getform</em>api end point (go create your account on getform.io right now, it's simple). In the end you will be able to have a contact form working as web standards demands. I expect you to be familiar with JSX because that's what we are going to use in this example.
+In this tutorial I will walk you through a pretty simple form validation using the HTML5 validation attributes and we will also submit the form through the super simple <em>getform</em>&nbsp;api end point (go create your account on getform.io right now, it's simple). In the end you will be able to have a contact form working as web standards demands. I expect you to be familiar with JSX because that's what we are going to use in this example.
 
 We will have two `input` fields and a `text-area` wrapped inside a `form` element,
 we will also make sure to have the appropriate labels and to have a button `type=submit` at the bottom. The first input we are going to create is going to be for the name your users have
