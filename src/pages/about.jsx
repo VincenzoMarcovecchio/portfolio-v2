@@ -17,4 +17,4 @@ class AboutPage extends Component {
   }
 }
 
-export default React.memo(AboutPage);
+export default AboutPage;

@@ -105,7 +105,7 @@ module.exports = {
       resolve: 'gatsby-plugin-favicons',
       options: {
         logo: './src/favicon/engine.png',
-        appName: 'My Website',
+        appName: 'Codingbackyard',
         background: '#fff',
         icons: {
           android: true,
@@ -136,7 +136,7 @@ module.exports = {
         setup(ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata;
           ret.allMarkdownRemark = ref.query.allMarkdownRemark;
-          ret.generator = 'GatsbyJS Advanced Starter';
+          ret.generator = 'Codingbackyard';
           return ret;
         },
         query: `
