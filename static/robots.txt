@@ -1,5 +1,5 @@
 User-agent: *
-Disallow: */tags/
-Disallow: */categories/
+Disallow: /tags/
+Disallow: /categories/
 
-sitemap: https://ranoutofcode.com/sitemap.xml
+sitemap: https://codingbackyard.com/sitemap.xml

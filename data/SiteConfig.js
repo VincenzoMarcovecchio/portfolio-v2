@@ -1,14 +1,14 @@
 const config = {
-  siteTitle: 'Ran Out Of Code', // Site title.
+  siteTitle: 'Coding backyard', // Site title.
   siteTitleShort: 'A Web Developer Portfolio', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteTitleAlt: 'A Web Developer Portfolio', // Alternative site title for SEO.
   siteLogo: './favicon/engine.png', // Logo used for SEO and manifest.
-  siteUrl: 'https://ranoutofcode.com', // Domain of your website without pathPrefix.
+  siteUrl: 'https://codingbackyard.com', // Domain of your website without pathPrefix.
   pathPrefix: '/', // gatsby buildPrefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription:
     'Documenting and writing about technologies, junior web developer here', // Website description used for RSS feeds/meta description tag
   siteRss: '/rss.xml', // Path to the RSS file.
-  siteRssTitle: 'Ran Out Of Code RSS Feed', // Title of the RSS feed
+  siteRssTitle: 'Codingbackyard RSS Feed', // Title of the RSS feed
   siteFBAppID: '1190093721349138', // FB Application ID for using app insights
   googleAnalyticsID: 'UA-167509497-2', // GA tracking ID.
 
@@ -40,7 +40,7 @@ const config = {
       iconClassName: 'fa fa-envelope',
     },
   ],
-  copyright: 'Copyright © 2020 Ranoutofcode', // Copyright string for the footer of the website and RSS feed.
+  copyright: 'Copyright © 2020 Codingbackyard', // Copyright string for the footer of the website and RSS feed.
   themeColor: '#c62828', // Used for setting manifest and progress theme colors.
   backgroundColor: '#e0e0e0', // Used for setting manifest background color.
 };
