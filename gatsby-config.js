@@ -88,12 +88,12 @@ module.exports = {
         display: 'minimal-ui',
         icons: [
           {
-            src: 'src/engine.png',
+            src: 'favicons/android-chrome-36x36.png',
             sizes: '192x192',
             type: 'image/png',
           },
           {
-            src: 'src/engine.png',
+            src: 'favicons/android-chrome-36x36.png',
             sizes: '512x512',
             type: 'image/png',
           },

@@ -132,7 +132,7 @@ export default function Header() {
 const NavBar = styled.header`
   position: relative;
   z-index: 3;
-  padding: 0 1.5rem;
+  padding: 0 1.4rem 0 1.5rem;
   background-color: white;
   box-shadow: 0 2px 4px 0 rgba(14, 30, 37, 0.12);
   border-bottom: 0.1rem solid whitesmoke;

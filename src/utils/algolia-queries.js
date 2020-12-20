@@ -26,6 +26,7 @@ function pageToAlgoliaRecord({ node: { excerpt, frontmatter } }) {
     objectID: Math.random(),
     title: frontmatter.title,
     tags: frontmatter.tags,
+    slug: frontmatter.slug,
     excerpt: excerpt,
   };
 }

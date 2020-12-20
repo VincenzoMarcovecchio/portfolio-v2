@@ -23,7 +23,8 @@ const HitCount = connectStateResults(({ searchResults }) => {
 
 const PageHit = ({ hit }) => (
   <div>
-    <Link replace to={`/${hit.title.toLowerCase().replace(/\s/g, '-')}`}>
+    {console.log(hit)}
+    <Link replace to={`/${hit.slug.toLowerCase().replace(/\s/g, '-')}`}>
       <h4>
         <Highlight attribute="title" hit={hit} tagName="mark" />
       </h4>
