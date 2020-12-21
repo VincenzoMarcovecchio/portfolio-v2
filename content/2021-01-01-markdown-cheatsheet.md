@@ -1,6 +1,6 @@
 ---
 title: 'Markdown Cheatsheet'
-cover: '1.pg'
+cover: 'responsive-navbar-using-gatsby-and-styled-components.jpg'
 category: 'moar'
 date: '2018-03-01'
 slug: 'markdown-cheatsheet'
@@ -8,6 +8,8 @@ slug: 'markdown-cheatsheet'
 tags:
   - test
   - huge
+  - markdown
+  - cheatsheet
 ---
 
 # This "post" is based on [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and is meant to test styling of Markdown generated documents.
