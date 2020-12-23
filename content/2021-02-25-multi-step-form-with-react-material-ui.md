@@ -1,53 +1,475 @@
 ---
-title: 'Decentralized Publishing Model'
+title: 'Multi Step Form With React & Material UI'
 cover: 'decentralized-publishing-model.jpg'
-date: '2017-01-01'
+date: '2021-01-01'
 category: 'tech'
-slug: 'decentralized-publishing-model'
+slug: 'multi-step-form-with-react-and-material-ui'
 
 tags:
-  - internet freedom
+  - react
+  - form
+  - material-ui
 ---
 
-Content on the IPFS network is linked by its hash. A hash looks like this: `QmNuGu4moPdCu3Rrnia77k3wDS2v4jLxmyiE68N7fGEDv5` The cryptography behind these hashes ensures that any random person can provide a copy of the conent, and you can be sure it hasn't been tampered with. But the downside is that any time a piece of content (like this website) is updated, the hash must also change, and that change must be broadcast to the people who want to access the content.
-IPFS has a general solution to this problem called IPNS, which can be very slow. Instead, this site uses the Bitcoin Cash Blockchain (BCH) to syndicate updates. The uncensorable nature of the BCH blockchain ensures that updates to the site can not be blocked, and links to past and present conent can not be lost.
-<br>
-This new, permissionless, censorship-resistant form of publishing makes use of a few tools that I created:
-<br>
+I thought to make a tutorial about this old project of mines, becouse thinking about it today I so like how simple it is to understand, or at least how it looks to my eyes now, I hope by the end of this tutorial you can get this feeling as well. It is nothing too complicated what we are going to build and we will not trigger any real function, but we are not far away from a real example. And then you know, what's better than reading React and Material-ui? This is what we are going to build
 
-- ipfs-web-server is the 'back end' web server running on the Raspberry Pi pictured above. It serves the content in a conventional way, but also syndicates it over the IPFS and Tor networks.
-  <br>
-- gatsby-ipfs-boilerplate is the 'front end' website template used to create this site. You can fork it to create your own website. It includes all the prerequisits for syndicating your site over the IPFS network.
-  <br>
-- memo-push is a tool used to publish the IPFS link on the Bitcoin Cash blockchain, using the Memo.cash protocol. It's important to note that Memo.cash is just a site. The data can be accessed directly off the BCH blockchain.
-  <br>
-  -ipfs-stay-connected (optional) Will connect your local IPFS node to an array of other IPFS nodes, and will renew the connection every couple minutes to ensure nodes stay connected. It's very useful when uploading and syndicating data over the IPFS network.
-  <br>
+<video width="100%" aria-title="my poster" controls>
+<source src="../static/image/material-ui-contact-form.webp" type="video/webm" />
+</video>
 
-## Decentralized Publishing Model
+This project was bootrapped with the `create-react-app` boilerplate, create a new folder and open it up with VS code, in your terminal type `npx create-react-app my-multi-step-form`. You can delete what you don't need, and keep going. Create a folder called components
+in which
+we are going to have our 5 main operation stored in a .js file. The thing here is wrapping your head around material-ui naming conventions a little bit, you know what I mean, there is nothing wrong with it, it is a good UI framework. We will now create the components we are going to use to make our main component `UserForm.js` work. The first component we are going to create we will name it `FormUserDetails.js` and will look something like this
 
-Below is a model illustrating the different ways this website can be accessed over the internet.
-<br>
+```
 
-- The website is updated on a Dev Box. Updated content is uploaded to the IPFS network and the new link is published to the BCH blockchain. The Raspberry Pi periodically checks the BCH network for updates published to a specific address. If an update is detected, the updates are downloaded from the IPFS network.
-  <br>
-- The Rasberry Pi then serves the content over the clearnet and Tor darkweb. It also begins pinging IPFS public gateways so that other servers begin downloading and syndicating the IPFS content.
-  <br>
-- Mirror servers, Random IPFS users, and distributed web apps (dapps) can independently and permissionlessly check the BCH address and syndicate the IPFS data too. This all taps into the Streisand Effect, causing content to be easier to syndicate if an authority-in-power tries to censor it.
-  <br>
+import React, { Component } from 'react';
+import Dialog from '@material-ui/core/Dialog';
+import AppBar from '@material-ui/core/AppBar';
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
-## How You Can Help
+export class FormUserDetails extends Component {
+  continue = e => {
+    e.preventDefault();
+    this.props.nextStep();
+  };
 
-You can help distribute this site and any other content on IPFS by running your own node and pinning the content. This allows your node to download and share the content with anyone else in the network.
-<br>
+  render() {
+    const { values, handleChange } = this.props;
+    return (
+      <MuiThemeProvider>
+        <>
+          <Dialog
+            open
+            fullWidth
+            maxWidth='sm'
+          >
+            <AppBar title="Enter User Details" />
+            <TextField
+              placeholder="Enter Your First Name"
+              label="First Name"
+              onChange={handleChange('firstName')}
+              defaultValue={values.firstName}
+              margin="normal"
+              fullWidth
+            />
+            <br />
+            <TextField
+              placeholder="Enter Your Last Name"
+              label="Last Name"
+              onChange={handleChange('lastName')}
+              defaultValue={values.lastName}
+              margin="normal"
+              fullWidth
+            />
+            <br />
+            <TextField
+              placeholder="Enter Your Email"
+              label="Email"
+              onChange={handleChange('email')}
+              defaultValue={values.email}
+              margin="normal"
+              fullWidth
+            />
+            <br />
+            <Button
+              color="primary"
+              variant="contained"
+              onClick={this.continue}
+            >Continue</Button>
+          </Dialog>
+        </>
+      </MuiThemeProvider>
+    );
+  }
+}
 
-- Install IPFS on your own computer.
-  <br>
-- Get the latest IPFS hash of this blog from this memo.cash feed.
-  <br>
-- Run ipfs pin add -r hash to download and share the content. Replace 'hash' with the hash at the top of the memo.cash feed.
-  <br>
+export default FormUserDetails;
 
-- Check out the boilerplate here https://github.com/christroutner/gatsby-ipfs-boilerplate
+```
 
-## You are now doing your part to fight censorship on the internet!
+Next component is going to be called `FormPersonalDetails.js`
+
+```
+
+import React, { Component } from 'react';
+import Dialog from '@material-ui/core/Dialog';
+import AppBar from '@material-ui/core/AppBar';
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+
+export class FormPersonalDetails extends Component {
+  continue = e => {
+    e.preventDefault();
+    this.props.nextStep();
+  };
+
+  back = e => {
+    e.preventDefault();
+    this.props.prevStep();
+  };
+
+  render() {
+    const { values, handleChange } = this.props;
+    return (
+      <MuiThemeProvider>
+        <>
+          <Dialog
+            open
+            fullWidth
+            maxWidth='sm'
+          >
+            <AppBar title="Enter Personal Details" />
+            <TextField
+              placeholder="Enter Your Occupation"
+              label="Occupation"
+              onChange={handleChange('occupation')}
+              defaultValue={values.occupation}
+              margin="normal"
+              fullWidth
+            />
+            <br />
+            <TextField
+              placeholder="Enter Your City"
+              label="City"
+              onChange={handleChange('city')}
+              defaultValue={values.city}
+              margin="normal"
+              fullWidth
+            />
+            <br />
+            <TextField
+              placeholder="Enter Your Bio"
+              label="Bio"
+              onChange={handleChange('bio')}
+              defaultValue={values.bio}
+              margin="normal"
+              fullWidth
+            />
+            <br />
+
+            <Button
+              color="secondary"
+              variant="contained"
+              onClick={this.back}
+            >Back</Button>
+
+            <Button
+              color="primary"
+              variant="contained"
+              onClick={this.continue}
+            >Continue</Button>
+          </Dialog>
+        </>
+      </MuiThemeProvider>
+    );
+  }
+}
+
+export default FormPersonalDetails;
+
+```
+
+Last step of the operation, usually before submitting every multi step form is confirming the details you entered, also this is where you would normally do your calls to the back end so that you
+could actually submit the data to do
+something but we're not going to do that
+this is strictly front end, create a component called `Confirm.js`
+
+```
+import React, { Component } from 'react';
+import Dialog from '@material-ui/core/Dialog';
+import AppBar from '@material-ui/core/AppBar';
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+import { List, ListItem, ListItemText } from '@material-ui/core/';
+import Button from '@material-ui/core/Button';
+
+export class Confirm extends Component {
+  continue = e => {
+    e.preventDefault();
+    // PROCESS FORM //
+    this.props.nextStep();
+  };
+
+  back = e => {
+    e.preventDefault();
+    this.props.prevStep();
+  };
+
+  render() {
+    const {
+      values: { firstName, lastName, email, occupation, city, bio }
+    } = this.props;
+    return (
+      <MuiThemeProvider>
+        <>
+          <Dialog
+            open
+            fullWidth
+            maxWidth='sm'
+          >
+            <AppBar title="Confirm User Data" />
+            <List>
+              <ListItem>
+                <ListItemText primary="First Name" secondary={firstName} />
+              </ListItem>
+              <ListItem>
+                <ListItemText primary="Last Name" secondary={lastName} />
+              </ListItem>
+              <ListItem>
+                <ListItemText primary="Email" secondary={email} />
+              </ListItem>
+              <ListItem>
+                <ListItemText primary="Occupation" secondary={occupation} />
+              </ListItem>
+              <ListItem>
+                <ListItemText primary="City" secondary={city} />
+              </ListItem>
+              <ListItem>
+                <ListItemText primary="Bio" secondary={bio} />
+              </ListItem>
+            </List>
+            <br />
+
+            <Button
+              color="secondary"
+              variant="contained"
+              onClick={this.back}
+            >Back</Button>
+
+            <Button
+              color="primary"
+              variant="contained"
+              onClick={this.continue}
+            >Confirm & Continue</Button>
+          </Dialog>
+        </>
+      </MuiThemeProvider>
+    );
+  }
+}
+
+export default Confirm;
+
+```
+
+And also you would want the `Success.js` component
+
+```
+import React, { Component } from 'react';
+import Dialog from '@material-ui/core/Dialog';
+import AppBar from '@material-ui/core/AppBar';
+import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+
+export class Success extends Component {
+  continue = e => {
+    e.preventDefault();
+    // PROCESS FORM //
+    this.props.nextStep();
+  };
+
+  back = e => {
+    e.preventDefault();
+    this.props.prevStep();
+  };
+
+  render() {
+    return (
+      <MuiThemeProvider>
+        <>
+          <Dialog
+            open
+            fullWidth
+            maxWidth='sm'
+          >
+            <AppBar title="Success" />
+            <h1>Thank You For Your Submission</h1>
+            <p>You will get an email with further instructions.</p>
+          </Dialog>
+        </>
+      </MuiThemeProvider>
+    );
+  }
+}
+
+export default Success;
+
+```
+
+Last and most important is going to be the `UserForm.js` component.
+
+```
+
+import React, { Component } from "react";
+import { render } from "react-dom";
+import { FormUserDetails } from "./FormUserDetails";
+import FormPersonalDetails from "./FormPersonalDetails";
+import Confirm from "./Confirm";
+import Success from "./Success";
+export class UserForm extends Component {
+  state = {
+    step: 1,
+    firstName: "",
+    lastName: "",
+    email: "",
+    occupation: "",
+    city: "",
+    bio: ""
+  };
+
+  //Proceed to the next step
+  nextStep = () => {
+    const { step } = this.state;
+    this.setState({
+      step: step + 1
+    });
+  };
+
+  // go back to previous step
+  prevStep = () => {
+    const { step } = this.state;
+    this.setState({
+      step: step - 1
+    });
+  };
+
+  //handle fields change
+  handleChange = input => e => {
+    this.setState({ [input]: e.target.value });
+  };
+
+  render() {
+    const { step } = this.state;
+    const { firstName, lastName, email, occupation, city, bio } = this.state;
+    const values = {
+      firstName,
+      lastName,
+      email,
+      occupation,
+      city,
+      bio
+    };
+
+    switch (step) {
+      case 1:
+        return (
+          <FormUserDetails
+            nextStep={this.nextStep}
+            handleChange={this.handleChange}
+            values={values}
+          />
+        );
+      case 2:
+        return (
+          <FormPersonalDetails
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            handleChange={this.handleChange}
+            values={values}
+          />
+        );
+      case 3:
+        return (
+          <Confirm
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            values={values}
+          />
+        );
+      case 4:
+        return <Success />;
+    }
+  }
+}
+
+export default UserForm;
+
+```
+
+Take everything in you `App.js` like so
+
+```
+import React, { Component } from 'react';
+import FormUserDetails from './FormUserDetails';
+import FormPersonalDetails from './FormPersonalDetails';
+import Confirm from './Confirm';
+import Success from './Success';
+
+export class UserForm extends Component {
+  state = {
+    step: 1,
+    firstName: '',
+    lastName: '',
+    email: '',
+    occupation: '',
+    city: '',
+    bio: ''
+  };
+
+  // Proceed to next step
+  nextStep = () => {
+    const { step } = this.state;
+    this.setState({
+      step: step + 1
+    });
+  };
+
+  // Go back to prev step
+  prevStep = () => {
+    const { step } = this.state;
+    this.setState({
+      step: step - 1
+    });
+  };
+
+  // Handle fields change
+  handleChange = input => e => {
+    this.setState({ [input]: e.target.value });
+  };
+
+  render() {
+    const { step } = this.state;
+    const { firstName, lastName, email, occupation, city, bio } = this.state;
+    const values = { firstName, lastName, email, occupation, city, bio };
+
+    switch (step) {
+      case 1:
+        return (
+          <FormUserDetails
+            nextStep={this.nextStep}
+            handleChange={this.handleChange}
+            values={values}
+          />
+        );
+      case 2:
+        return (
+          <FormPersonalDetails
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            handleChange={this.handleChange}
+            values={values}
+          />
+        );
+      case 3:
+        return (
+          <Confirm
+            nextStep={this.nextStep}
+            prevStep={this.prevStep}
+            values={values}
+          />
+        );
+      case 4:
+        return <Success />;
+      default:
+        (console.log('This is a multi-step form built with React.'))
+    }
+  }
+}
+
+export default UserForm;
+
+```
+
+Check out the repo [Here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
