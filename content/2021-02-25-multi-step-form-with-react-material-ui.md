@@ -1,8 +1,8 @@
 ---
 title: 'Multi Step Form With React & Material UI'
-cover: 'decentralized-publishing-model.jpg'
-date: '2021-01-01'
-category: 'tech'
+cover: 'multi-step-form-with-react-and-material-ui.jpg'
+date: '2020-12-24'
+category: 'javascript'
 slug: 'multi-step-form-with-react-and-material-ui'
 
 tags:
@@ -14,15 +14,14 @@ tags:
 I thought to make a tutorial about this old project of mines, becouse thinking about it today I so like how simple it is to understand, or at least how it looks to my eyes now, I hope by the end of this tutorial you can get this feeling as well. It is nothing too complicated what we are going to build and we will not trigger any real function, but we are not far away from a real example. And then you know, what's better than reading React and Material-ui? This is what we are going to build
 
 <video width="100%" aria-title="my poster" controls>
-<source src="../static/image/material-ui-contact-form.webp" type="video/webm" />
+<source src="../static/image/material-ui-contact-form.mp4" type="video/mp4" />
 </video>
 
-This project was bootrapped with the `create-react-app` boilerplate, create a new folder and open it up with VS code, in your terminal type `npx create-react-app my-multi-step-form`. You can delete what you don't need, and keep going. Create a folder called components
+This project was bootrapped with the `create-react-app` boilerplate, to get started create a new folder and open it up with VS code, in your terminal type `npx create-react-app my-multi-step-form`. You can delete what you don't need, and keep going. Create a folder called components
 in which
 we are going to have our 5 main operation stored in a .js file. The thing here is wrapping your head around material-ui naming conventions a little bit, you know what I mean, there is nothing wrong with it, it is a good UI framework. We will now create the components we are going to use to make our main component `UserForm.js` work. The first component we are going to create we will name it `FormUserDetails.js` and will look something like this
 
 ```
-
 import React, { Component } from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import AppBar from '@material-ui/core/AppBar';
@@ -298,7 +297,7 @@ export default Success;
 
 ```
 
-Last and most important is going to be the `UserForm.js` component.
+Last and most important is going to be the `UserForm.js` component, were the actual state is.
 
 ```
 
@@ -391,85 +390,20 @@ export default UserForm;
 Take everything in you `App.js` like so
 
 ```
-import React, { Component } from 'react';
-import FormUserDetails from './FormUserDetails';
-import FormPersonalDetails from './FormPersonalDetails';
-import Confirm from './Confirm';
-import Success from './Success';
 
-export class UserForm extends Component {
-  state = {
-    step: 1,
-    firstName: '',
-    lastName: '',
-    email: '',
-    occupation: '',
-    city: '',
-    bio: ''
-  };
+import React from 'react';
+import { UserForm } from './components/UserForm';
 
-  // Proceed to next step
-  nextStep = () => {
-    const { step } = this.state;
-    this.setState({
-      step: step + 1
-    });
-  };
-
-  // Go back to prev step
-  prevStep = () => {
-    const { step } = this.state;
-    this.setState({
-      step: step - 1
-    });
-  };
-
-  // Handle fields change
-  handleChange = input => e => {
-    this.setState({ [input]: e.target.value });
-  };
-
-  render() {
-    const { step } = this.state;
-    const { firstName, lastName, email, occupation, city, bio } = this.state;
-    const values = { firstName, lastName, email, occupation, city, bio };
-
-    switch (step) {
-      case 1:
-        return (
-          <FormUserDetails
-            nextStep={this.nextStep}
-            handleChange={this.handleChange}
-            values={values}
-          />
-        );
-      case 2:
-        return (
-          <FormPersonalDetails
-            nextStep={this.nextStep}
-            prevStep={this.prevStep}
-            handleChange={this.handleChange}
-            values={values}
-          />
-        );
-      case 3:
-        return (
-          <Confirm
-            nextStep={this.nextStep}
-            prevStep={this.prevStep}
-            values={values}
-          />
-        );
-      case 4:
-        return <Success />;
-      default:
-        (console.log('This is a multi-step form built with React.'))
-    }
-  }
+const App = () => {
+  return (
+    <div className="App">
+      <UserForm />
+    </div>
+  );
 }
 
-export default UserForm;
+export default App;
 
 ```
 
-Check out the repo [Here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+Check out the repo [here](https://github.com/bradtraversy/react_step_form/)
