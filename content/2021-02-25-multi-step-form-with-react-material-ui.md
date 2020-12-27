@@ -89,7 +89,7 @@ export default FormUserDetails;
 
 ```
 
-Next component is going to be called `FormPersonalDetails.js`
+Next component is going to be called `FormPersonalDetails.js` and is going to recieve other informations from the user
 
 ```
 
@@ -407,3 +407,5 @@ export default App;
 ```
 
 Check out the repo [here](https://github.com/bradtraversy/react_step_form/)
+
+Merry Christmas ☃️☃️🎄🎄

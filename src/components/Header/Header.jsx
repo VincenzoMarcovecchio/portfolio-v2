@@ -44,7 +44,13 @@ export default function Header() {
       <NavBar>
         <div className="header__content-wrapper">
           <Link to="/">
-            <img className="header__logo" src={engine} alt="logo meccanico" />
+            <img
+              className="header__logo"
+              src={engine}
+              width="100%"
+              height="100%"
+              alt="logo meccanico"
+            />
           </Link>
 
           <button

@@ -1,8 +1,8 @@
 ---
 title: 'Markdown Cheatsheet'
 cover: 'responsive-navbar-using-gatsby-and-styled-components.jpg'
-category: 'moar'
 date: '2018-03-01'
+category: 'cheatsheet'
 slug: 'markdown-cheatsheet'
 
 tags:

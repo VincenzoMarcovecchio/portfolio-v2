@@ -88,12 +88,12 @@ module.exports = {
         display: 'minimal-ui',
         icons: [
           {
-            src: 'favicons/android-chrome-36x36.png',
+            src: 'src/favicon/engine.png',
             sizes: '192x192',
             type: 'image/png',
           },
           {
-            src: 'favicons/android-chrome-36x36.png',
+            src: 'src/favicon/engine.png',
             sizes: '512x512',
             type: 'image/png',
           },
@@ -104,7 +104,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-favicons',
       options: {
-        logo: './src/favicon/engine.png',
+        logo: 'src/favicon/engine.png',
         appName: 'Codingbackyard',
         background: '#fff',
         icons: {
