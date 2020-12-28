@@ -104,7 +104,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-favicons',
       options: {
-        logo: 'src/favicon/engine.png',
+        logo: './src/favicon/engine.png',
         appName: 'Codingbackyard',
         background: '#fff',
         icons: {

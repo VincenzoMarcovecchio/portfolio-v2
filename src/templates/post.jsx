@@ -118,7 +118,7 @@ export default class PostTemplate extends React.Component {
             fluid={result[0]?.node.childImageSharp.fluid}
             alt={post.title}
           />
-          <StyledTime>{post.date}</StyledTime>
+          <StyledTime datetime={post.date}>{post.date}</StyledTime>
           <StyledArticle
             dangerouslySetInnerHTML={{ __html: postNode.html }}
           ></StyledArticle>
