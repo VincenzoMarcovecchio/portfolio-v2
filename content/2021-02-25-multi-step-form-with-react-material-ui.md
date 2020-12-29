@@ -21,7 +21,7 @@ This project was bootrapped with the `create-react-app` boilerplate, to get star
 in which
 we are going to have our 5 main operation stored in a .js file. The thing here is wrapping your head around material-ui naming conventions a little bit, you know what I mean, there is nothing wrong with it, it is a good UI framework. We will now create the components we are going to use to make our main component `UserForm.js` work. The first component we are going to create we will name it `FormUserDetails.js` and will look something like this
 
-```
+```jsx
 import React, { Component } from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import AppBar from '@material-ui/core/AppBar';
@@ -30,7 +30,7 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 export class FormUserDetails extends Component {
-  continue = e => {
+  continue = (e) => {
     e.preventDefault();
     this.props.nextStep();
   };
@@ -40,11 +40,7 @@ export class FormUserDetails extends Component {
     return (
       <MuiThemeProvider>
         <>
-          <Dialog
-            open
-            fullWidth
-            maxWidth='sm'
-          >
+          <Dialog open fullWidth maxWidth="sm">
             <AppBar title="Enter User Details" />
             <TextField
               placeholder="Enter Your First Name"
@@ -73,11 +69,9 @@ export class FormUserDetails extends Component {
               fullWidth
             />
             <br />
-            <Button
-              color="primary"
-              variant="contained"
-              onClick={this.continue}
-            >Continue</Button>
+            <Button color="primary" variant="contained" onClick={this.continue}>
+              Continue
+            </Button>
           </Dialog>
         </>
       </MuiThemeProvider>
@@ -86,13 +80,11 @@ export class FormUserDetails extends Component {
 }
 
 export default FormUserDetails;
-
 ```
 
 Next component is going to be called `FormPersonalDetails.js` and is going to recieve other informations from the user
 
-```
-
+```jsx
 import React, { Component } from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import AppBar from '@material-ui/core/AppBar';
@@ -101,12 +93,12 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 export class FormPersonalDetails extends Component {
-  continue = e => {
+  continue = (e) => {
     e.preventDefault();
     this.props.nextStep();
   };
 
-  back = e => {
+  back = (e) => {
     e.preventDefault();
     this.props.prevStep();
   };
@@ -116,11 +108,7 @@ export class FormPersonalDetails extends Component {
     return (
       <MuiThemeProvider>
         <>
-          <Dialog
-            open
-            fullWidth
-            maxWidth='sm'
-          >
+          <Dialog open fullWidth maxWidth="sm">
             <AppBar title="Enter Personal Details" />
             <TextField
               placeholder="Enter Your Occupation"
@@ -150,17 +138,13 @@ export class FormPersonalDetails extends Component {
             />
             <br />
 
-            <Button
-              color="secondary"
-              variant="contained"
-              onClick={this.back}
-            >Back</Button>
+            <Button color="secondary" variant="contained" onClick={this.back}>
+              Back
+            </Button>
 
-            <Button
-              color="primary"
-              variant="contained"
-              onClick={this.continue}
-            >Continue</Button>
+            <Button color="primary" variant="contained" onClick={this.continue}>
+              Continue
+            </Button>
           </Dialog>
         </>
       </MuiThemeProvider>
@@ -169,7 +153,6 @@ export class FormPersonalDetails extends Component {
 }
 
 export default FormPersonalDetails;
-
 ```
 
 Last step of the operation, usually before submitting every multi step form is confirming the details you entered, also this is where you would normally do your calls to the back end so that you
@@ -177,7 +160,7 @@ could actually submit the data to do
 something but we're not going to do that
 this is strictly front end, create a component called `Confirm.js`
 
-```
+```jsx
 import React, { Component } from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import AppBar from '@material-ui/core/AppBar';
@@ -186,29 +169,25 @@ import { List, ListItem, ListItemText } from '@material-ui/core/';
 import Button from '@material-ui/core/Button';
 
 export class Confirm extends Component {
-  continue = e => {
+  continue = (e) => {
     e.preventDefault();
     // PROCESS FORM //
     this.props.nextStep();
   };
 
-  back = e => {
+  back = (e) => {
     e.preventDefault();
     this.props.prevStep();
   };
 
   render() {
     const {
-      values: { firstName, lastName, email, occupation, city, bio }
+      values: { firstName, lastName, email, occupation, city, bio },
     } = this.props;
     return (
       <MuiThemeProvider>
         <>
-          <Dialog
-            open
-            fullWidth
-            maxWidth='sm'
-          >
+          <Dialog open fullWidth maxWidth="sm">
             <AppBar title="Confirm User Data" />
             <List>
               <ListItem>
@@ -232,17 +211,13 @@ export class Confirm extends Component {
             </List>
             <br />
 
-            <Button
-              color="secondary"
-              variant="contained"
-              onClick={this.back}
-            >Back</Button>
+            <Button color="secondary" variant="contained" onClick={this.back}>
+              Back
+            </Button>
 
-            <Button
-              color="primary"
-              variant="contained"
-              onClick={this.continue}
-            >Confirm & Continue</Button>
+            <Button color="primary" variant="contained" onClick={this.continue}>
+              Confirm & Continue
+            </Button>
           </Dialog>
         </>
       </MuiThemeProvider>
@@ -251,25 +226,24 @@ export class Confirm extends Component {
 }
 
 export default Confirm;
-
 ```
 
 And also you would want the `Success.js` component
 
-```
+```jsx
 import React, { Component } from 'react';
 import Dialog from '@material-ui/core/Dialog';
 import AppBar from '@material-ui/core/AppBar';
 import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
 
 export class Success extends Component {
-  continue = e => {
+  continue = (e) => {
     e.preventDefault();
     // PROCESS FORM //
     this.props.nextStep();
   };
 
-  back = e => {
+  back = (e) => {
     e.preventDefault();
     this.props.prevStep();
   };
@@ -278,11 +252,7 @@ export class Success extends Component {
     return (
       <MuiThemeProvider>
         <>
-          <Dialog
-            open
-            fullWidth
-            maxWidth='sm'
-          >
+          <Dialog open fullWidth maxWidth="sm">
             <AppBar title="Success" />
             <h1>Thank You For Your Submission</h1>
             <p>You will get an email with further instructions.</p>
@@ -294,35 +264,33 @@ export class Success extends Component {
 }
 
 export default Success;
-
 ```
 
 Last and most important is going to be the `UserForm.js` component, were the actual state is.
 
-```
-
-import React, { Component } from "react";
-import { render } from "react-dom";
-import { FormUserDetails } from "./FormUserDetails";
-import FormPersonalDetails from "./FormPersonalDetails";
-import Confirm from "./Confirm";
-import Success from "./Success";
+```jsx
+import React, { Component } from 'react';
+import { render } from 'react-dom';
+import { FormUserDetails } from './FormUserDetails';
+import FormPersonalDetails from './FormPersonalDetails';
+import Confirm from './Confirm';
+import Success from './Success';
 export class UserForm extends Component {
   state = {
     step: 1,
-    firstName: "",
-    lastName: "",
-    email: "",
-    occupation: "",
-    city: "",
-    bio: ""
+    firstName: '',
+    lastName: '',
+    email: '',
+    occupation: '',
+    city: '',
+    bio: '',
   };
 
   //Proceed to the next step
   nextStep = () => {
     const { step } = this.state;
     this.setState({
-      step: step + 1
+      step: step + 1,
     });
   };
 
@@ -330,12 +298,12 @@ export class UserForm extends Component {
   prevStep = () => {
     const { step } = this.state;
     this.setState({
-      step: step - 1
+      step: step - 1,
     });
   };
 
   //handle fields change
-  handleChange = input => e => {
+  handleChange = (input) => (e) => {
     this.setState({ [input]: e.target.value });
   };
 
@@ -348,7 +316,7 @@ export class UserForm extends Component {
       email,
       occupation,
       city,
-      bio
+      bio,
     };
 
     switch (step) {
@@ -384,13 +352,11 @@ export class UserForm extends Component {
 }
 
 export default UserForm;
-
 ```
 
 Take everything in you `App.js` like so
 
-```
-
+```jsx
 import React from 'react';
 import { UserForm } from './components/UserForm';
 
@@ -400,10 +366,9 @@ const App = () => {
       <UserForm />
     </div>
   );
-}
+};
 
 export default App;
-
 ```
 
 Check out the repo [here](https://github.com/bradtraversy/react_step_form/)

@@ -10,6 +10,7 @@ import config from '../../data/SiteConfig';
 import styled from 'styled-components';
 import { device } from '../styles/Global';
 import Img from 'gatsby-image';
+import { Link } from 'gatsby';
 const StyledArticle = styled.article`
   padding: 3rem 1.5rem;
   box-sizing: border-box;
@@ -77,6 +78,22 @@ const StyledTitle = styled.h1`
     margin: 0rem auto 1.5rem auto;
   }
 `;
+const Bottomlinks = styled.div`
+  width: 90%;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    width: fit-content;
+    @media ${device.tablet} {
+      font-size: 0.9rem;
+    }
+  }
+`;
 const StyledTime = styled.time`
   display: block;
   font-size: 1.2rem;
@@ -91,7 +108,14 @@ const StyledTime = styled.time`
 export default class PostTemplate extends React.Component {
   render() {
     const { data, pageContext } = this.props;
-    const { slug, image } = pageContext;
+    const {
+      slug,
+      image,
+      nexttitle,
+      nextslug,
+      prevtitle,
+      prevslug,
+    } = pageContext;
     const postNode = data.markdownRemark;
     const post = postNode.frontmatter;
 
@@ -124,6 +148,10 @@ export default class PostTemplate extends React.Component {
           ></StyledArticle>
           <PostTags tags={post.tags} />
           <SocialLinks postPath={slug} postNode={postNode} />
+          <Bottomlinks>
+            <Link to={prevslug}>&lArr;&nbsp;{prevtitle}</Link>
+            <Link to={nextslug}>{nexttitle}&nbsp;&rArr;</Link>
+          </Bottomlinks>
           <UserInfo config={config} />
           <br />
           <br />

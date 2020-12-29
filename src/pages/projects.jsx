@@ -230,6 +230,7 @@ function project({ data }) {
     'https://vincenzomarcovecchio.github.io/FRAINE-RICICLA/',
     'https://fragine.netlify.app/',
     'https://lemiepoesie.com/',
+    'https://prolocofraine.netlify.app/',
     'https://frainelle.vercel.app/',
 
     'https://vincenzomarcovecchio.github.io/BankEasy/',

@@ -1,9 +1,9 @@
 ---
 title: 'Form Validation with React Hooks and getform.io'
-cover: 'react-contact-form.jpg'
+cover: 'form-validation-with-react-hooks-and-getformio.jpg'
 date: '2020-11-11'
 category: 'javascript'
-slug: 'Form Validation with React Hooks and getformio'
+slug: 'form-validation-with-react-hooks-and-getformio'
 
 tags:
   - javascript
@@ -14,7 +14,7 @@ In this tutorial I will walk you through a pretty simple form validation using t
 We will have two `input` fields and a `text-area` wrapped inside a `form` element,
 we will also make sure to have the appropriate labels and to have a button `type=submit` at the bottom. The first input we are going to create is going to be for the name your users have
 
-```
+```jsx
 <label htmlFor="name">Name</label>
 
 <input
@@ -28,7 +28,7 @@ we will also make sure to have the appropriate labels and to have a button `type
 
 As you can see we have a label referencing the input through the name attribute (very important for accessibility), the type of the input is text since they are only letters, the required attribute will do the trick if you don't want to write your custom javascript making sure the user has typed something, to keep it simple in this example we are going to use it. Next is going to be the email input
 
-```
+```jsx
 
 <label htmlFor="email">Email address<label>
 
@@ -44,7 +44,7 @@ As you can see we have a label referencing the input through the name attribute 
 
 Same story here but the input type this time is email. Last is going to be the text-area
 
-```
+```jsx
 <label htmlFor="message">Message</label>
 
     <textarea
@@ -57,49 +57,31 @@ Same story here but the input type this time is email. Last is going to be the t
 
 Now will wrap everything inside the form element end we will give it a submit button. the final result will look something like this
 
-```
+```jsx
 <form className="my__form">
+  <div className="form-group">
+    <label htmlFor="name">Name</label>
+    <input type="text" name="name" placeholder="Enter your name" />
+  </div>
 
-   <div className="form-group">
-       <label htmlFor="name">Name</label>
-           <input
-             type="text"
-             name="name"
-             placeholder="Enter your name"
-           />
-         </div>
+  <div className="form-group">
+    <label htmlFor="email">Email address</label>
+    <input type="email" name="email" placeholder="Enter email" required />
+  </div>
 
-         <div className="form-group">
-           <label htmlFor="email">Email address</label>
-           <input
-             type="email"
-             name="email"
-             placeholder="Enter email"
-             required
-           />
-         </div>
+  <div className="form-group">
+    <label htmlFor="message">Message</label>
+    <textarea placeholder="Write your message here" name="message"></textarea>
+  </div>
 
-         <div className="form-group">
-           <label htmlFor="message">Message</label>
-           <textarea
-             placeholder="Write your message here"
-             name="message"
-           ></textarea>
-         </div>
-
-         <button type="submit">
-           Submit
-         </button>
-
+  <button type="submit">Submit</button>
 </form>
-
-
 ```
 
 Inputs and labels have been wrapped inside another div for styling purposes and notice at the bottom the submit button. That's it for the markup, we should get into a bit of javascript now. Our next move will be creating a component where our form will be stored. This component is going to be called Contact and it's going to be a functional component where we will
 import `useState` from the react library and `axios` for submitting the form data
 
-```
+```jsx
 import React, { useState } from 'react';
 import axios from 'axios';
 

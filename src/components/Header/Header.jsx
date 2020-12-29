@@ -242,7 +242,7 @@ const NavBar = styled.header`
         transform: scale(1.1);
       }
       &:hover {
-        color: firebrick;
+        color: firebrick !important;
       }
 
       @media only screen and (min-width: 800px) {
