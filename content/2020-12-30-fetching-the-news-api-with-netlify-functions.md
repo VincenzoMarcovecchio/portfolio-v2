@@ -1,6 +1,6 @@
 ---
 title: 'Fetching data with Netlify functions'
-cover: 'fetching-an-api-with-netlify-functions .jpg'
+cover: 'fetching-an-api-with-netlify-functions.jpg'
 date: '2020-12-30'
 category: 'tech'
 slug: 'fetching-an-api-with-netlify-functions'
