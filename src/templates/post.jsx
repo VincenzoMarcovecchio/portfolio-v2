@@ -46,8 +46,10 @@ const StyledArticle = styled.article`
     }
   }
   ul {
-    margin-bottom: 1rem;
-    padding: 0 0 0 0.5rem;
+    padding-left: 1.1rem;
+    & li {
+      margin-bottom: 1rem;
+    }
   }
 `;
 
@@ -84,14 +86,20 @@ const Bottomlinks = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  @media ${device.tablet} {
+    width: 95%;
+  }
   a {
     text-decoration: none;
     color: inherit;
     width: fit-content;
+    transition: color 200ms linear;
     @media ${device.tablet} {
       font-size: 0.9rem;
     }
+  }
+  a:hover {
+    color: firebrick;
   }
 `;
 const StyledTime = styled.time`

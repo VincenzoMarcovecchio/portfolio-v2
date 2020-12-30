@@ -65,12 +65,7 @@ module.exports = {
         trackingId: config.googleAnalyticsID,
       },
     },
-    // {
-    //   resolve: `gatsby-plugin-gitalk`,
-    //   options: {
-    //     config: gitalkConfig,
-    //   },
-    // },
+
     {
       resolve: 'gatsby-plugin-nprogress',
       options: {
