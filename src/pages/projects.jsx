@@ -34,13 +34,14 @@ const StyledDiv = styled.div`
     padding-bottom: 4rem;
   }
   h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     width: 90%;
     padding: 0 1rem;
     margin: 3rem auto 3rem 0;
     line-height: 1.2;
     @media ${device.mobileL} {
       padding: 0;
+      font-size: 1.9rem;
     }
   }
   .cols {
@@ -231,6 +232,7 @@ function project({ data }) {
     'https://fragine.netlify.app/',
     'https://lemiepoesie.com/',
     'https://prolocofraine.netlify.app/',
+    'https://vincenzomarcovecchio.github.io/BookMark-Landing-Page/',
     'https://frainelle.vercel.app/',
 
     'https://vincenzomarcovecchio.github.io/BankEasy/',
@@ -242,6 +244,7 @@ function project({ data }) {
     'https://resort-beach.vincenzomarcovecchio.now.sh/',
     'https://vincenzomarcovecchio.github.io/Minesweeper/',
   ];
+
   return (
     <>
       <Layout>
@@ -280,4 +283,4 @@ function project({ data }) {
   );
 }
 
-export default React.memo(project);
+export default project;
