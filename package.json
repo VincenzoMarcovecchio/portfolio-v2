@@ -2,7 +2,7 @@
   "name": "gatsby-starter-advanced",
   "description": "GatsbyJS starter that includes examples for advanced use cases.",
   "version": "1.1.0",
-  "author": "Vincenzo Marcovecchio <vagr9k@gmail.com>",
+  "author": "Vincenzo Marcovecchio <vinceoldmark@gmail.com>",
   "dependencies": {
     "babel-plugin-styled-components": "^1.11.1",
     "gatsby": "^2.22.15",

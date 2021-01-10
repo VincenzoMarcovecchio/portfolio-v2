@@ -232,7 +232,9 @@ function project({ data }) {
     'https://fragine.netlify.app/',
     'https://lemiepoesie.com/',
     'https://prolocofraine.netlify.app/',
+
     'https://vincenzomarcovecchio.github.io/BookMark-Landing-Page/',
+
     'https://frainelle.vercel.app/',
 
     'https://vincenzomarcovecchio.github.io/BankEasy/',
