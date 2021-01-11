@@ -142,6 +142,7 @@ class PostListing extends React.Component {
     });
     return postList;
   }
+  tag = this.props.tag;
 
   render() {
     const postList = this.getPostList();
@@ -155,7 +156,7 @@ class PostListing extends React.Component {
 
         <PostListStyled>
           <div className="blog-header">
-            <h1>The latest from the blog</h1>
+            <h1>The latest from the {this.tag ? this.tag : 'blog'}</h1>
 
             <Search indices={searchIndices} />
           </div>
