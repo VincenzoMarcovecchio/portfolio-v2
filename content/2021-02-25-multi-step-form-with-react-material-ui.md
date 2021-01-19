@@ -13,7 +13,7 @@ tags:
 
 I thought to make a tutorial about this old project of mines, becouse thinking about it today I so like how simple it is to understand, or at least how it looks to my eyes now, I hope by the end of this tutorial you can get this feeling as well. It is nothing too complicated what we are going to build and we will not trigger any real function, but we are not far away from a real example. And then you know, what's better than reading React and Material-ui? This is what we are going to build
 
-<video width="100%" aria-title="my poster" controls>
+<video width="100%" style="min-height:50vh" aria-title="my poster" controls>
 <source src="../static/image/material-ui-contact-form.mp4" type="video/mp4" />
 </video>
 

@@ -61,4 +61,6 @@ The website is&nbsp;<a href="https://prolocofraine.netlify.app" target="_blank" 
 
 If you like the banner at the bottom of the page, it was made with CSS only, I might show you how in the next tutorial.
 
+_Quick update_ I called the api at build time with `gatsby-custom-api` or something like that to make the url canonical to bots I guess?
+
 Happy coding

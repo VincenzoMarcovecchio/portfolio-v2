@@ -1,5 +1,5 @@
 ---
-title: 'How to change the URI (URL) of your remote Git repository?'
+title: 'How to change the URI (URL) of your remote Git repository'
 cover: ''
 date: '2021-01-14'
 category: 'tech'

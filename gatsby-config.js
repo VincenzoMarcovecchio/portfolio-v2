@@ -99,6 +99,9 @@ module.exports = {
             type: 'image/png',
           },
         ],
+        icon_options: {
+          purpose: `any maskable`,
+        },
       },
     },
 
@@ -215,5 +218,6 @@ module.exports = {
         queries: require('./src/utils/algolia-queries'),
       },
     },
+    `gatsby-plugin-no-javascript`,
   ],
 };
