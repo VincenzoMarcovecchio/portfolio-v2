@@ -80,10 +80,10 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: config.siteTitle,
-        short_name: config.siteTitleShort,
+        name: "Vincenzo's portfolio",
+        short_name: 'Vincenzo Dev',
         description: config.siteDescription,
-        start_url: '/',
+        start_url: `/`,
         background_color: config.backgroundColor,
         theme_color: 'black',
         display: 'minimal-ui',
@@ -208,6 +208,6 @@ module.exports = {
         queries: require('./src/utils/algolia-queries'),
       },
     },
-    `gatsby-plugin-no-javascript`,
+    `gatsby-plugin-offline`,
   ],
 };
