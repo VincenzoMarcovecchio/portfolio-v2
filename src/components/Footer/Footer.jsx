@@ -69,7 +69,7 @@ class Footer extends Component {
       <FooterStyled>
         <UserLinks config={config} rss={url} labeled />
         <div className="notice-container">
-          <h4>{copyright}</h4>
+          <h6>{copyright}</h6>
           <h4>
             Based on &nbsp;
             <a href="https://github.com/Vagr9K/gatsby-advanced-starter">

@@ -92,7 +92,6 @@ module.exports = {
         icon_options: {
           purpose: `any maskable`,
         },
-
       },
     },
 
