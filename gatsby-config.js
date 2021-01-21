@@ -87,21 +87,12 @@ module.exports = {
         background_color: config.backgroundColor,
         theme_color: 'black',
         display: 'minimal-ui',
-        icons: [
-          {
-            src: 'src/favicon/engine.png',
-            sizes: '192x192',
-            type: 'image/png',
-          },
-          {
-            src: 'src/favicon/engine.png',
-            sizes: '512x512',
-            type: 'image/png',
-          },
-        ],
+        icon: 'src/favicon/engine.png',
+        lang: `en`,
         icon_options: {
           purpose: `any maskable`,
         },
+
       },
     },
 
