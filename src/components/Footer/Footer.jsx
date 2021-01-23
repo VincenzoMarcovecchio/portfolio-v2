@@ -30,7 +30,7 @@ const FooterStyled = styled.footer`
       color: whitesmoke;
       padding: 0;
     }
-    h4 {
+    p {
       font-size: 0.8rem;
     }
   }
@@ -41,7 +41,7 @@ const FooterStyled = styled.footer`
     }
   }
 
-  .notice-container h4:first-child {
+  .notice-container p:first-child {
     text-align: center;
     margin: 0;
     @media ${device.tablet} {
@@ -69,13 +69,13 @@ class Footer extends Component {
       <FooterStyled>
         <UserLinks config={config} rss={url} labeled />
         <div className="notice-container">
-          <h6>{copyright}</h6>
-          <h4>
+          <p>{copyright}</p>
+          <p>
             Based on &nbsp;
             <a href="https://github.com/Vagr9K/gatsby-advanced-starter">
               Gatsby Advanced Starter
             </a>
-          </h4>
+          </p>
         </div>
       </FooterStyled>
     );
