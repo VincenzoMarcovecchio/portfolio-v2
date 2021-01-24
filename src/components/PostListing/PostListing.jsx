@@ -97,6 +97,7 @@ const StyledArticle = styled.article`
     justify-content: space-between;
     margin-bottom: -0.5rem;
     @media ${device.mobileM} {
+      margin-top: 0.7rem;
       margin-bottom: 0.5rem;
     }
   }

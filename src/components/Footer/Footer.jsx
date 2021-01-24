@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'gatsby';
 import UserLinks from '../UserLinks/UserLinks';
 import styled from 'styled-components';
 import { device } from '../../styles/Global';
