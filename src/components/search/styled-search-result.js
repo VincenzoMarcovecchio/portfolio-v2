@@ -6,6 +6,7 @@ const Popover = css`
   transtion: all 1s linear;
   max-height: 50vh;
   min-height: 50vh;
+  line-break: anywhere;
   overflow: scroll;
   -webkit-overflow-scrolling: touch;
   position: absolute;
