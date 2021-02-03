@@ -40,7 +40,7 @@ class Listing extends React.Component {
       <StyledPagination>
         {!isFirstPage && (
           <Link rel="prev" to={prevPage}>
-            Previous
+            Previous&nbsp;
           </Link>
         )}
         {[...Array(pageCount)].map((_val, index) => {
@@ -50,13 +50,13 @@ class Listing extends React.Component {
               key={`listing-page-${pageNum}`}
               to={pageNum === 1 ? '/' : `/${pageNum}/`}
             >
-              {pageNum}
+              {pageNum}&nbsp;
             </Link>
           );
         })}
         {!isLastPage && (
           <Link rel="next" to={nextPage}>
-            Next
+            Next&nbsp;
           </Link>
         )}
       </StyledPagination>
@@ -68,7 +68,7 @@ class Listing extends React.Component {
 
     return (
       <Layout>
-        <Helmet title={config.siteTitle} />
+        <Helmet title={config.siteTitle} description={config.siteDescription} />
         <SEO />
         <StyledPostList>
           <PostListing postEdges={postEdges} />

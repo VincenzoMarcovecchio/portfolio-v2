@@ -1,20 +1,21 @@
 const config = {
-  siteTitle: 'Coding backyard', // Site title.
+  siteTitle: `Vincezo's codes`, // Site title.
   siteTitleShort: 'A Web Developer Portfolio', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteTitleAlt: 'A Web Developer Portfolio', // Alternative site title for SEO.
   siteLogo: './favicon/engine.png', // Logo used for SEO and manifest.
-  siteUrl: 'https://codingbackyard.com', // Domain of your website without pathPrefix.
+  siteUrl: 'https://vincenzo.codes', // Domain of your website without pathPrefix.
   pathPrefix: '/', // gatsby buildPrefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription:
-    'Documenting and writing about technologies, junior web developer here', // Website description used for RSS feeds/meta description tag
+    'Documenting and writing about technologies, junior web developer here, when I can I try to imporove my front end skills but not only, I have a secret hacking passion', // Website description used for RSS feeds/meta description tagy
+
   siteRss: '/rss.xml', // Path to the RSS file.
-  siteRssTitle: 'Codingbackyard RSS Feed', // Title of the RSS feed
+  siteRssTitle: 'Codes RSS Feed', // Title of the RSS feed
   siteFBAppID: '1190093721349138', // FB Application ID for using app insights
   googleAnalyticsID: 'UA-167509497-2', // GA tracking ID.
 
   dateFromFormat: 'YYYY-MM-DD', // Date format used in the frontmatter.
   dateFormat: 'DD/MM/YYYY', // Date format for display.
-  postsPerPage: 10, // Amount of posts displayed per listing page.
+  postsPerPage: 5, // Amount of posts displayed per listing page.
   userName: 'Vincenzo Marcovecchio', // Username to display in the author segment.
   userEmail: 'dev_vincenzo@protonmail.com', // Email used for RSS feed's author segment
   userTwitter: 'https://twitter.com/_vinny_92', // Optionally renders "Follow Me" in the UserInfo segment.
@@ -40,7 +41,7 @@ const config = {
       iconClassName: 'fa fa-envelope',
     },
   ],
-  copyright: 'Copyright © 2020 Codingbackyard', // Copyright string for the footer of the website and RSS feed.
+  copyright: 'Copyright © 2020 codes', // Copyright string for the footer of the website and RSS feed.
   themeColor: '#c62828', // Used for setting manifest and progress theme colors.
   backgroundColor: '#e0e0e0', // Used for setting manifest background color.
 };

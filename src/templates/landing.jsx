@@ -12,9 +12,8 @@ class Landing extends React.Component {
 
     return (
       <Layout landing>
-        <Helmet title={config.siteTitle} />
+        <Helmet title={config.siteTitle} description={config.siteDescription} />
         <SEO />
-
         <PostListing landing postEdges={postEdges} />
       </Layout>
     );

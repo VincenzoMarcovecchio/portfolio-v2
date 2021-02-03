@@ -32,7 +32,6 @@ export default class Layout extends React.Component {
             },
           ]}
         >
-          <meta name="description" content={config.siteDescription} />
           <html lang="en" />
         </Helmet>
         <Header />

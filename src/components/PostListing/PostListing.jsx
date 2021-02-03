@@ -2,13 +2,14 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { device } from '../../styles/Global';
-import video from '../../assets/video.mp4';
+import video from '../../assets/wetcode.webp';
 import Search from '../search/index';
 
-const StyledVideo = styled.video`
+const StyledPicture = styled.img`
   margin: 0;
   padding: 0;
-  width: 100%;
+  width: 100vw;
+  max-width: 1180px;
   height: 60vh;
   object-fit: cover;
   position: relative;
@@ -21,6 +22,8 @@ const PostListStyled = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
+
   @media ${device.tablet} {
     width: 95%;
   }
@@ -45,6 +48,22 @@ const PostListStyled = styled.section`
     @media ${device.mobileM} {
       font-size: 1.9rem;
     }
+  }
+
+  &::before {
+    content: 'Junior dev in pursuit of DRY';
+    display: block;
+    position: absolute;
+    height: 1rem;
+    width: fit-content;
+    left: 0.5rem;
+    top: -4em;
+    font-size: 1.2rem;
+    color: white;
+    z-index: 30;
+    padding-bottom: 0.3rem;
+    border-bottom: 2px solid yellow;
+    font-family: inherit;
   }
 `;
 const StyledTag = styled.small`
@@ -150,14 +169,15 @@ class PostListing extends React.Component {
     const searchIndices = [{ name: `Pages`, title: `Pages` }];
     return (
       <>
-        <StyledVideo src={video} aria-label="Vin's blog" autoPlay muted loop>
-          <source src={video} type="video/mp4" />
-          <source src={video} type="video/ogg" />
-        </StyledVideo>
+        <picture>
+          <source srcset={video} type="image/webp" />
+          <source srcset={video} type="image/jpeg" />
+          <StyledPicture src={video} alt="wet code" />
+        </picture>
 
         <PostListStyled>
           <div className="blog-header">
-            <h1>The latest from the {this.tag ? this.tag : 'blog'}</h1>
+            <h1>The latest from {this.tag ? this.tag : 'mines'}</h1>
 
             <Search indices={searchIndices} />
           </div>
