@@ -1,5 +1,5 @@
 const config = {
-  siteTitle: `Vincezo's codes`, // Site title.
+  siteTitle: `Vincenzo's codes`, // Site title.
   siteTitleShort: 'A Web Developer Portfolio', // Short site title for homescreen (PWA). Preferably should be under 12 characters to prevent truncation.
   siteTitleAlt: 'A Web Developer Portfolio', // Alternative site title for SEO.
   siteLogo: './favicon/engine.png', // Logo used for SEO and manifest.
