@@ -6,7 +6,7 @@ const config = {
   siteUrl: 'https://vincenzo.codes', // Domain of your website without pathPrefix.
   pathPrefix: '/', // gatsby buildPrefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription:
-    'Documenting and writing about technologies, junior web developer here, when I can I try to imporove my front end skills but not only, I have a secret hacking passion', // Website description used for RSS feeds/meta description tagy
+    'This is my portfolio website where I show my old projects and I also take notes of all the news in web development', // Website description used for RSS feeds/meta description tagy
 
   siteRss: '/rss.xml', // Path to the RSS file.
   siteRssTitle: 'Codes RSS Feed', // Title of the RSS feed

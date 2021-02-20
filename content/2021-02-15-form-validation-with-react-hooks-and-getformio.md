@@ -100,8 +100,8 @@ const Contact = () => {
     if (ok) {
       form.reset();
     }
-  }; //our magic will work thanks to the getform response
-  and will be stored in this state sample
+  };
+
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
@@ -118,13 +118,11 @@ const Contact = () => {
       .catch((r) => {
         handleServerResponse(false, r.response.data.error, form);
       });
-  }; //and that's how you get the actual data
-  through the entire form event.target that has gone through
-  the html5 security assesments
+  };
 
     return (
 
-   <form className="my__form" onSubmit={handleOnSubmit}>
+   <form className="myForm" onSubmit={handleOnSubmit}>
           <div className="form-group">
             <label htmlFor="name">Name</label>
             <input

@@ -49,22 +49,6 @@ const PostListStyled = styled.section`
       font-size: 1.9rem;
     }
   }
-
-  &::before {
-    content: 'Junior dev in pursuit of DRY';
-    display: block;
-    position: absolute;
-    height: 1rem;
-    width: fit-content;
-    left: 0.5rem;
-    top: -4em;
-    font-size: 1.2rem;
-    color: white;
-    z-index: 30;
-    padding-bottom: 0.3rem;
-    border-bottom: 2px solid yellow;
-    font-family: inherit;
-  }
 `;
 const StyledTag = styled.small`
   padding: 0.3rem;

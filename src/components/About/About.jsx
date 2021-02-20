@@ -178,8 +178,7 @@ const About = () => {
 
   return (
     <StyledAbout>
-
-      <h1>I run, I eat, I code, I repeat </h1>
+      <h1>I would like to work with you </h1>
       <h2>
         Send me a message through this form down below or check out my other
         site&nbsp;
@@ -234,7 +233,7 @@ const About = () => {
           </p>
         )}
       </form>
-        <div className="cv-container">
+      <div className="cv-container">
         <span className="downloadcv">Download my cv</span>
         <svg
           version="1.1"
