@@ -277,7 +277,7 @@ const About = () => {
           target="_blank"
           style={{ zIndex: '50000' }}
           rel="noopener noreferrer"
-          href="https://firebasestorage.googleapis.com/v0/b/myporfolio-d1ae8.appspot.com/o/cv%2FVincenzo%20Marcovecchio1.pdf?alt=media&amp;token=657a7a4a-161d-4b5b-aa98-ffe045ee5b2e"
+          href="https://firebasestorage.googleapis.com/v0/b/myporfolio-d1ae8.appspot.com/o/curriculumvitae.pdf?alt=media&token=eae7de58-092d-42a1-bc9a-5e0285c99e36"
           download
         >
           <img title="download my cv" alt="cv icon" src={cv} />
