@@ -9,7 +9,7 @@ const StyledPicture = styled.img`
   margin: 0;
   padding: 0;
   width: 100vw;
-  max-width: 1180px;
+  max-width: inherith;
   height: 60vh;
   object-fit: cover;
   position: relative;
@@ -161,7 +161,7 @@ class PostListing extends React.Component {
 
         <PostListStyled>
           <div className="blog-header">
-            <h1>The latest from {this.tag ? this.tag : 'mines'}</h1>
+            <h1>The latest from {this.tag ? this.tag : 'the blog'}</h1>
 
             <Search indices={searchIndices} />
           </div>
