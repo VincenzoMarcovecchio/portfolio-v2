@@ -4,6 +4,7 @@ import Layout from '../layout';
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import { device } from '../styles/Global';
+
 export const query = graphql`
   query Projects {
     allImageSharp(
@@ -278,6 +279,18 @@ function project({ data }) {
                 );
               })}
             </div>
+            <h2>Technologies I use</h2>
+            <ul>
+              <li>
+                React, create-react-app (useState, useEffect, useMemo,
+                useCallback)
+              </li>
+              <li>Next.js (api routes, prisma, strapi, mongodb)</li>
+              <li>D3 for data visualization and some other React libraries</li>
+              <li>CSS SCSS styled components material ui bootstrap</li>
+              <li>express express-router handlebars ejs passportjs Oauth</li>
+              <li>stripe snipcart paypal for payment handling</li>
+            </ul>
           </section>
         </StyledDiv>
       </Layout>

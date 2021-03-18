@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { device } from '../../styles/Global';
-import video from '../../assets/wetcode.webp';
+import video from '../../assets/wetcode.gif';
 import Search from '../search/index';
 
 const StyledPicture = styled.img`
