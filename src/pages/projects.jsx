@@ -279,7 +279,7 @@ function project({ data }) {
                 );
               })}
             </div>
-            <h2>Technologies I use</h2>
+            <h2>Technologies I use 🚧🚧</h2>
             <ul>
               <li>
                 React, create-react-app (useState, useEffect, useMemo,

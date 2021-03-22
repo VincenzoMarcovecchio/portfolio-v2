@@ -8,7 +8,7 @@ import Search from '../search/index';
 const StyledPicture = styled.img`
   margin: 0;
   padding: 0;
-  width: 100vw;
+  width: 100%;
   max-width: inherith;
   height: 60vh;
   object-fit: cover;
@@ -101,7 +101,7 @@ const StyledArticle = styled.article`
     margin-bottom: -0.5rem;
     @media ${device.mobileM} {
       margin-top: 0.7rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.3rem;
     }
   }
 
@@ -111,7 +111,7 @@ const StyledArticle = styled.article`
   }
   p {
     font-size: 1.1rem;
-    line-height: 1.5;
+    line-height: 1.4;
     @media ${device.mobileM} {
       font-size: 1rem;
     }
@@ -161,7 +161,7 @@ class PostListing extends React.Component {
 
         <PostListStyled>
           <div className="blog-header">
-            <h1>The latest from {this.tag ? this.tag : 'the blog'}</h1>
+            <h1>Notes and {this.tag ? this.tag : 'the blog'}</h1>
 
             <Search indices={searchIndices} />
           </div>
