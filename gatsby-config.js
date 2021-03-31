@@ -220,7 +220,7 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-remark-amp`,
+      resolve: `gatsby-plugin-google-amp`,
       options: {
         analytics: {
           type: 'gtag',
