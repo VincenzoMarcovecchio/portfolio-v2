@@ -152,8 +152,8 @@ export default class PostTemplate extends React.Component {
             layout="responsive"
           >  <div fallback>
           <amp-img
-            src={src}
-            width={result[0]?.node.childImageSharp.fluid.src}
+            
+            src={result[0]?.node.childImageSharp.fluid.src}
           
             layout="responsive"
           />
