@@ -66,6 +66,9 @@ module.exports = {
       },
     },
 
+
+    
+
     {
       resolve: 'gatsby-plugin-nprogress',
       options: {
@@ -77,6 +80,14 @@ module.exports = {
     'gatsby-plugin-catch-links',
     'gatsby-plugin-twitter',
     'gatsby-plugin-sitemap',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.vincenzo.codes',
+        sitemap: 'https://www.vincenzo.codes/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }]
+      }
+    }
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -206,6 +217,31 @@ module.exports = {
         appId: `779LNWKXIK`,
         apiKey: `56936b4655e9cc8b1c2a7cffd9b2a43e`,
         queries: require('./src/utils/algolia-queries'),
+      },
+    },
+    {
+      resolve: `gatsby-remark-amp`,
+      options: {
+        analytics: {
+          type: 'gtag',
+          dataCredentials: 'include',
+          config: {
+            vars: {
+              gtag_id: config.googleAnalyticsID,
+              config: {
+                "UA-167509497-2": {
+                  page_location: '{{pathname}}'
+                },
+              },
+            },
+          },
+        },
+        canonicalBaseUrl: 'http://www.vincenzo.codes',
+        components: ['amp-form'],
+        excludedPaths: ['/404*', '/'],
+        pathIdentifier: '/amp/',
+        relAmpHtmlPattern: '{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}',
+        useAmpClientIdApi: true,
       },
     },
     `gatsby-plugin-preact`,
