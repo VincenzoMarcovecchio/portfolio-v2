@@ -146,8 +146,8 @@ export default class PostTemplate extends React.Component {
         <StyledSection>
           <StyledTitle>{post.title}</StyledTitle>
           <amp-img
-            objectFit="cover"
-            fluid={result[0]?.node.childImageSharp.fluid.srcWepb}
+         
+            src={result[0]?.node.childImageSharp.fluid.srcWepb}
             alt={post.title}
             layout="responsive"
           >  <div fallback>
