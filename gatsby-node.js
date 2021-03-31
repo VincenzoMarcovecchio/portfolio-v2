@@ -178,6 +178,21 @@ exports.createPages = async ({ graphql, actions }) => {
         image: imageEdges,
       },
     });
+
+
+    createPage({
+      path: `${edge.node.fields.slug}/amp`,
+      component: path.resolve("./src/templates/post.amp.jsx"),
+      context: {
+        slug: edge.node.fields.slug,
+        nexttitle: nextEdge.node.frontmatter.title,
+        nextslug: nextEdge.node.fields.slug,
+        prevtitle: prevEdge.node.frontmatter.title,
+        prevslug: prevEdge.node.fields.slug,
+        image: imageEdges,
+      },
+   
+    });
   });
 
   //  Create tag pages

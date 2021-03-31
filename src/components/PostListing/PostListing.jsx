@@ -129,6 +129,17 @@ const StyledArticle = styled.article`
     }
   }
 `;
+
+// .back {
+   
+//   left:0;
+//   bottom:0;
+//   width:100vw;
+//   height:100vh;
+//   object-fit:cover;
+//   z-index: -2;
+ 
+// }
 class PostListing extends React.Component {
   getPostList() {
     const postList = [];
@@ -161,7 +172,7 @@ class PostListing extends React.Component {
 
         <PostListStyled>
           <div className="blog-header">
-            <h1>Notes and {this.tag ? this.tag : 'the blog'}</h1>
+            <h1>{this.tag ? this.tag : 'Blog'}&nbsp;📝</h1>
 
             <Search indices={searchIndices} />
           </div>

@@ -4,7 +4,7 @@ import Layout from '../layout';
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import { device } from '../styles/Global';
-
+import background from "../assets/backgroundportfolioprojects.png"
 export const query = graphql`
   query Projects {
     allImageSharp(
@@ -28,11 +28,14 @@ export const query = graphql`
 `;
 
 const StyledDiv = styled.div`
+
   .wrapper {
     width: 90%;
     margin: 0 auto;
     max-width: 80rem;
     padding-bottom: 4rem;
+    
+
   }
   h1 {
     font-size: 2.5rem;
@@ -222,6 +225,9 @@ const StyledDiv = styled.div`
       margin: 0 0 2rem 0;
     }
   }
+
+
+ 
 `;
 function project({ data }) {
   let links = [
@@ -252,8 +258,11 @@ function project({ data }) {
     <>
       <Layout>
         <StyledDiv>
+         
           <section className="wrapper">
-            <h1>Some of my latest projects</h1>
+          
+            
+            <h1>Some of my latest projects 🛠️</h1>
             <div className="cols">
               {data.allImageSharp.edges.map(({ node: work }, index) => {
                 return (
@@ -291,6 +300,7 @@ function project({ data }) {
               <li>express express-router handlebars ejs passportjs Oauth</li>
               <li>stripe snipcart paypal for payment handling</li>
             </ul>
+ 
           </section>
         </StyledDiv>
       </Layout>

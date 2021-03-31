@@ -185,6 +185,7 @@ const NavBar = styled.header`
       &--active {
         .header__list {
           z-index: 5;
+          display: flex;
         }
         @media only screen and (max-width: 800px) {
           z-index: 5;
@@ -202,7 +203,7 @@ const NavBar = styled.header`
     }
 
     &__list {
-      display: flex;
+      display: none;
       flex-direction: column;
       align-items: center;
       list-style: none;
@@ -215,7 +216,7 @@ const NavBar = styled.header`
       @media only screen and (min-width: 800px) {
         flex-direction: row;
         align-self: right;
-
+        display:flex;
         & > * {
           opacity: 1;
         }
