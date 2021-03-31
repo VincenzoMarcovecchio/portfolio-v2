@@ -87,7 +87,7 @@ module.exports = {
         sitemap: 'https://www.vincenzo.codes/sitemap.xml',
         policy: [{ userAgent: '*', allow: '/' }]
       }
-    }
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
