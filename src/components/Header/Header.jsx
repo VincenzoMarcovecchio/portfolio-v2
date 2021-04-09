@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 export default function Header() {
+
   useEffect(() => {
     const hamburgerMenu = document.querySelector('.hamburger-menu');
     const headerNav = document.querySelector('.header__nav');
@@ -41,6 +42,10 @@ export default function Header() {
 
   return (
     <>
+    <div style={{backgroundColor:"lightseagreen",padding:"0.3rem",color:"white"}}><center>
+    🔥 checkout my latest react-native <a href="https://github.com/VincenzoMarcovecchio/Frainegram" target="_blank" rel="noopener noreferrer">project</a> 🔥
+      </center>
+    </div>
       <NavBar>
         <div className="header__content-wrapper">
           <Link to="/">
