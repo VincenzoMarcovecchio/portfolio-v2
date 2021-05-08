@@ -67,7 +67,7 @@ module.exports = {
     },
 
 
-    
+
 
     {
       resolve: 'gatsby-plugin-nprogress',
@@ -96,7 +96,7 @@ module.exports = {
         description: config.siteDescription,
         start_url: `/`,
         background_color: config.backgroundColor,
-        theme_color: 'black',
+        theme_color: '#57b3ab',
         display: 'minimal-ui',
         icon: 'src/favicon/engine.png',
         lang: `en`,
@@ -219,31 +219,7 @@ module.exports = {
         queries: require('./src/utils/algolia-queries'),
       },
     },
-    {
-      resolve: `gatsby-plugin-google-amp`,
-      options: {
-        analytics: {
-          type: 'gtag',
-          dataCredentials: 'include',
-          config: {
-            vars: {
-              gtag_id: config.googleAnalyticsID,
-              config: {
-                "UA-167509497-2": {
-                  page_location: '{{pathname}}'
-                },
-              },
-            },
-          },
-        },
-        canonicalBaseUrl: 'http://www.vincenzo.codes',
-        components: ['amp-form'],
-        excludedPaths: ['/404*', '/'],
-        pathIdentifier: '/amp/',
-        relAmpHtmlPattern: '{{canonicalBaseUrl}}{{pathname}}{{pathIdentifier}}',
-        useAmpClientIdApi: true,
-      },
-    },
+
     `gatsby-plugin-preact`,
     `gatsby-plugin-offline`,
   ],

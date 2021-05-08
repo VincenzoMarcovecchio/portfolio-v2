@@ -34,7 +34,7 @@ const StyledDiv = styled.div`
     margin: 0 auto;
     max-width: 80rem;
     padding-bottom: 4rem;
-    
+
 
   }
   h1 {
@@ -227,7 +227,7 @@ const StyledDiv = styled.div`
   }
 
 
- 
+
 `;
 function project({ data }) {
   let links = [
@@ -241,6 +241,7 @@ function project({ data }) {
     'https://prolocofraine.org/',
 
     'https://vincenzomarcovecchio.github.io/BookMark-Landing-Page/',
+    'https://vincenzomarcovecchio.github.io/MyFriend-Barber-Website/',
 
     'https://frainelle.vercel.app/',
 
@@ -258,11 +259,23 @@ function project({ data }) {
     <>
       <Layout>
         <StyledDiv>
-         
+
           <section className="wrapper">
-          
-            
+
+
             <h1>Some of my latest projects 🛠️</h1>
+            <h2>Technologies I use 🚧🚧</h2>
+            <ul>
+              <li>
+                React, create-react-app (useState, useEffect, useMemo,
+                useCallback)
+              </li>
+              <li>Next.js (api routes, prisma, strapi, mongodb)</li>
+              <li>D3 for data visualization and some other React libraries</li>
+              <li>CSS SCSS styled components material ui bootstrap tailwind</li>
+              <li>express express-router handlebars ejs passportjs Oauth</li>
+              <li>stripe snipcart paypal for payment handling</li>
+            </ul>
             <div className="cols">
               {data.allImageSharp.edges.map(({ node: work }, index) => {
                 return (
@@ -288,19 +301,8 @@ function project({ data }) {
                 );
               })}
             </div>
-            <h2>Technologies I use 🚧🚧</h2>
-            <ul>
-              <li>
-                React, create-react-app (useState, useEffect, useMemo,
-                useCallback)
-              </li>
-              <li>Next.js (api routes, prisma, strapi, mongodb)</li>
-              <li>D3 for data visualization and some other React libraries</li>
-              <li>CSS SCSS styled components material ui bootstrap</li>
-              <li>express express-router handlebars ejs passportjs Oauth</li>
-              <li>stripe snipcart paypal for payment handling</li>
-            </ul>
- 
+
+
           </section>
         </StyledDiv>
       </Layout>

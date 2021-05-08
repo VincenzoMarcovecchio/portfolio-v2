@@ -189,7 +189,7 @@ const About = () => {
         >
           here
         </a>
-        . Thanks 
+        . Thanks
       </h2>
       <form className="my__form" onSubmit={handleOnSubmit}>
         <div className="form-group">
