@@ -26,7 +26,10 @@ h6,
 h2 {
   color: var(--medium-font-color);
 }
-p, ul   {
+p ul   {
+  color: var(--light-font-color) !important;
+}
+ul {
   color: var(--light-font-color) !important;
 }
 body {

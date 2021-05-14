@@ -243,7 +243,7 @@ function project({ data }) {
     'https://vincenzomarcovecchio.github.io/BookMark-Landing-Page/',
     'https://vincenzomarcovecchio.github.io/MyFriend-Barber-Website/',
 
-    'https://frainelle.vercel.app/',
+    'https://resort-beach.vercel.app/rooms',
 
     'https://vincenzomarcovecchio.github.io/BankEasy/',
     'https://vincenzomarcovecchio.github.io/Insure-Website/',
