@@ -24,7 +24,7 @@ export default Landing;
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query LandingQuery {
+  query LandingQueryl {
     allMarkdownRemark {
       edges {
         node {
