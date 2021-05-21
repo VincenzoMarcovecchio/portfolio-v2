@@ -106,23 +106,7 @@ module.exports = {
       },
     },
 
-    {
-      resolve: 'gatsby-plugin-favicons',
-      options: {
-        logo: './src/favicon/engine.png',
-        appName: 'Codingbackyard',
-        background: '#fff',
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: true,
-          favicons: true,
-          yandex: true,
-          windows: true,
-        },
-      },
-    },
+
     'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-netlify-cms',
