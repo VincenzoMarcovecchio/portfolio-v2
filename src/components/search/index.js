@@ -1,4 +1,3 @@
-import React from "react";
 import algoliasearch from "algoliasearch/lite";
 import { createRef, default as React, useState } from "react";
 import { InstantSearch } from "react-instantsearch-dom";
