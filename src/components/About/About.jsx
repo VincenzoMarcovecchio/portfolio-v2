@@ -178,7 +178,7 @@ const About = () => {
 
   return (
     <StyledAbout>
-      <h1>Any idea? Any project? Want to to chat? sure I want</h1>
+      <h1>Any idea? Any project? Want to chat? sure I want</h1>
       <h2>
         Send me a message through this form down below or check out my other
         site&nbsp;

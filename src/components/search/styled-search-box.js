@@ -1,32 +1,40 @@
-import styled, { css } from 'styled-components';
-import SearchBox from './search-box';
-
+import styled, { css } from "styled-components";
+import SearchBox from "./search-box";
 const open = css`
-  background: whitesmoke;
+  width: 10em;
+  background: ${({ theme }) => theme.background};
   cursor: text;
-  padding: 0.3rem;
+  margin-left: -1.6em;
+  padding-left: 1.6em;
 `;
-
 const closed = css`
-  background: whitesmoke;
-  cursor: text;
-  z-index: 100;
-  padding: 0.3rem;
-  font-weight: bolder;
+  width: 0;
+  background: transparent;
+  cursor: pointer;
+  margin-left: -1em;
+  padding-left: 1em;
 `;
-
 export default styled(SearchBox)`
-  font-family: inherith;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-bottom: 0;
   .SearchInput {
     outline: none;
-    border: ${({ hasFocus }) => (hasFocus ? 'auto' : 'none')};
+    border: ${({ hasFocus }) => (hasFocus ? "auto" : "none")};
     font-size: 1em;
+    transition: 100ms;
     border-radius: 2px;
-    position: relative;
-    color: #22252a;
+    color: ${({ theme }) => theme.foreground};
     ::placeholder {
-      color: ${({ hasFocus }) => (hasFocus ? '#22252a' : 'unset')};
+      color: ${({ theme }) => theme.faded};
     }
     ${({ hasFocus }) => (hasFocus ? open : closed)}
+  }
+  .SearchIcon {
+    width: 1em;
+    margin: 0.3em;
+    color: ${({ theme }) => theme.foreground};
+    pointer-events: none;
   }
 `;

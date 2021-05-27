@@ -1,13 +1,11 @@
 ---
-title: 'Multi Step Form With React & Material UI'
-cover: 'multi-step-form-with-react-and-material-ui.jpg'
-date: '2020-12-24'
-category: 'javascript'
-slug: 'multi-step-form-with-react-and-material-ui'
+title: "Multi Step Form With React & Material UI"
+cover: "multi-step-form-with-react-and-material-ui.jpg"
+date: "2020-12-24"
+category: "javascript"
+slug: "multi-step-form-with-react-and-material-ui"
 
 tags:
-  - react
-  - form
   - material-ui
 ---
 
@@ -22,12 +20,12 @@ in which
 we are going to have our 5 main operation stored in a .js file. The thing here is wrapping your head around material-ui naming conventions a little bit, you know what I mean, there is nothing wrong with it, it is a good UI framework. We will now create the components we are going to use to make our main component `UserForm.js` work. The first component we are going to create we will name it `FormUserDetails.js` and will look something like this
 
 ```jsx
-import React, { Component } from 'react';
-import Dialog from '@material-ui/core/Dialog';
-import AppBar from '@material-ui/core/AppBar';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+import React, { Component } from "react";
+import Dialog from "@material-ui/core/Dialog";
+import AppBar from "@material-ui/core/AppBar";
+import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
 export class FormUserDetails extends Component {
   continue = (e) => {
@@ -45,7 +43,7 @@ export class FormUserDetails extends Component {
             <TextField
               placeholder="Enter Your First Name"
               label="First Name"
-              onChange={handleChange('firstName')}
+              onChange={handleChange("firstName")}
               defaultValue={values.firstName}
               margin="normal"
               fullWidth
@@ -54,7 +52,7 @@ export class FormUserDetails extends Component {
             <TextField
               placeholder="Enter Your Last Name"
               label="Last Name"
-              onChange={handleChange('lastName')}
+              onChange={handleChange("lastName")}
               defaultValue={values.lastName}
               margin="normal"
               fullWidth
@@ -63,7 +61,7 @@ export class FormUserDetails extends Component {
             <TextField
               placeholder="Enter Your Email"
               label="Email"
-              onChange={handleChange('email')}
+              onChange={handleChange("email")}
               defaultValue={values.email}
               margin="normal"
               fullWidth
@@ -85,12 +83,12 @@ export default FormUserDetails;
 Next component is going to be called `FormPersonalDetails.js` and is going to recieve other informations from the user
 
 ```jsx
-import React, { Component } from 'react';
-import Dialog from '@material-ui/core/Dialog';
-import AppBar from '@material-ui/core/AppBar';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+import React, { Component } from "react";
+import Dialog from "@material-ui/core/Dialog";
+import AppBar from "@material-ui/core/AppBar";
+import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
 export class FormPersonalDetails extends Component {
   continue = (e) => {
@@ -113,7 +111,7 @@ export class FormPersonalDetails extends Component {
             <TextField
               placeholder="Enter Your Occupation"
               label="Occupation"
-              onChange={handleChange('occupation')}
+              onChange={handleChange("occupation")}
               defaultValue={values.occupation}
               margin="normal"
               fullWidth
@@ -122,7 +120,7 @@ export class FormPersonalDetails extends Component {
             <TextField
               placeholder="Enter Your City"
               label="City"
-              onChange={handleChange('city')}
+              onChange={handleChange("city")}
               defaultValue={values.city}
               margin="normal"
               fullWidth
@@ -131,7 +129,7 @@ export class FormPersonalDetails extends Component {
             <TextField
               placeholder="Enter Your Bio"
               label="Bio"
-              onChange={handleChange('bio')}
+              onChange={handleChange("bio")}
               defaultValue={values.bio}
               margin="normal"
               fullWidth
@@ -161,12 +159,12 @@ something but we're not going to do that
 this is strictly front end, create a component called `Confirm.js`
 
 ```jsx
-import React, { Component } from 'react';
-import Dialog from '@material-ui/core/Dialog';
-import AppBar from '@material-ui/core/AppBar';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
-import { List, ListItem, ListItemText } from '@material-ui/core/';
-import Button from '@material-ui/core/Button';
+import React, { Component } from "react";
+import Dialog from "@material-ui/core/Dialog";
+import AppBar from "@material-ui/core/AppBar";
+import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
+import { List, ListItem, ListItemText } from "@material-ui/core/";
+import Button from "@material-ui/core/Button";
 
 export class Confirm extends Component {
   continue = (e) => {
@@ -231,10 +229,10 @@ export default Confirm;
 And also you would want the `Success.js` component
 
 ```jsx
-import React, { Component } from 'react';
-import Dialog from '@material-ui/core/Dialog';
-import AppBar from '@material-ui/core/AppBar';
-import { ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
+import React, { Component } from "react";
+import Dialog from "@material-ui/core/Dialog";
+import AppBar from "@material-ui/core/AppBar";
+import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
 
 export class Success extends Component {
   continue = (e) => {
@@ -269,21 +267,21 @@ export default Success;
 Last and most important is going to be the `UserForm.js` component, were the actual state is.
 
 ```jsx
-import React, { Component } from 'react';
-import { render } from 'react-dom';
-import { FormUserDetails } from './FormUserDetails';
-import FormPersonalDetails from './FormPersonalDetails';
-import Confirm from './Confirm';
-import Success from './Success';
+import React, { Component } from "react";
+import { render } from "react-dom";
+import { FormUserDetails } from "./FormUserDetails";
+import FormPersonalDetails from "./FormPersonalDetails";
+import Confirm from "./Confirm";
+import Success from "./Success";
 export class UserForm extends Component {
   state = {
     step: 1,
-    firstName: '',
-    lastName: '',
-    email: '',
-    occupation: '',
-    city: '',
-    bio: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    occupation: "",
+    city: "",
+    bio: "",
   };
 
   //Proceed to the next step
@@ -357,8 +355,8 @@ export default UserForm;
 Take everything in you `App.js` like so
 
 ```jsx
-import React from 'react';
-import { UserForm } from './components/UserForm';
+import React from "react";
+import { UserForm } from "./components/UserForm";
 
 const App = () => {
   return (

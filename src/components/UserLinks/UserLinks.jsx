@@ -21,6 +21,7 @@ class UserLinks extends Component {
     const { userLinks } = this.props.config;
     const { labeled } = this.props;
     return userLinks.map((link) => (
+      <>
       <StyledLink
         target="_blank"
         rel="noopener noreferrer canonical"
@@ -29,6 +30,8 @@ class UserLinks extends Component {
       >
         {labeled ? link.label : ''}
       </StyledLink>
+
+        </>
     ));
   }
 
@@ -46,6 +49,14 @@ class UserLinks extends Component {
           href={this.props.rss}
         >
           Rss
+        </StyledLink>
+        <StyledLink
+          target="_blank"
+          rel="noopener noreferrer canonical"
+
+          href="https://codepen.io/Vinny92"
+        >
+         codepen
         </StyledLink>
       </StyledUserLinks>
     );
