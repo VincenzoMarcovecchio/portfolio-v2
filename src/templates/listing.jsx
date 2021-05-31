@@ -83,7 +83,7 @@ export default Listing;
 
 /* eslint no-undef: "off" */
 export const listingQuery = graphql`
-  query ListingQueryl($skip: Int!, $limit: Int!) {
+  query ListingQueryl2($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
       sort: { fields: [fields___date], order: DESC }
       limit: $limit

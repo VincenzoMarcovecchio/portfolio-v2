@@ -172,7 +172,7 @@ export default class PostTemplate extends React.Component {
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query BlogPostBySlugl($slug: String!) {
+  query BlogPostBySlugl2($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       timeToRead

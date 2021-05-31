@@ -24,7 +24,7 @@ export default class CategoryTemplate extends React.Component {
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query CategoryPagel($category: String) {
+  query CategoryPagel33($category: String) {
     allMarkdownRemark(
       limit: 1000
       sort: { fields: [fields___date], order: DESC }

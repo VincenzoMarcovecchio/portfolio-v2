@@ -5,8 +5,9 @@ import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import { device } from '../styles/Global';
 import background from "../assets/backgroundportfolioprojects.png"
+
 export const query = graphql`
-  query Projects {
+  query Projects2 {
     allImageSharp(
       sort: { fields: fixed___originalName, order: ASC }
       limit: 15

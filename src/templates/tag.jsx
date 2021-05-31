@@ -25,7 +25,7 @@ export default class TagTemplate extends React.Component {
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query TagPagel($tag: String) {
+  query TagPagel2($tag: String) {
     allMarkdownRemark(
       limit: 1000
       sort: { fields: [fields___date], order: DESC }
