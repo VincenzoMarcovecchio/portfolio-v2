@@ -26,7 +26,9 @@ h6,
 h2 {
   color: var(--medium-font-color);
 }
-p ul   {
+p, 
+ul,
+a   {
   color: var(--light-font-color) !important;
 }
 ul {
