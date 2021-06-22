@@ -22,7 +22,7 @@ The Heroku Command Line Interface (CLI) makes it easy to create and manage your 
 
 <a href="https://cli-assets.heroku.com/heroku-x86.exe" target="_blank" rel="noopener noreferrer canonical">32-bit installer</a>
 
-- <h2>FOR THE REST OF US NORMAL PEOPLE</h2>
+- <h2>FOR THE REST OF US NORMAL PEOPLE:</h2>
 
 This installation method is instead required for users on ARM and BSD. You must have node and npm installed already.
 
