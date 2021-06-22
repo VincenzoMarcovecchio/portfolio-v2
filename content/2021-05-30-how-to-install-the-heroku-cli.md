@@ -13,14 +13,16 @@ tags:
 The Heroku Command Line Interface (CLI) makes it easy to create and manage your Heroku apps directly from the terminal. It’s an essential part of using Heroku.
 
 
-- <h2>MAC:</h2> 
+- <h2>MAC:</h2>
 `brew tap heroku/brew && brew install heroku`
 
-- <h2>WINDOWS:</h2> 
+- <h2>WINDOWS:</h2>
 <a href="https://cli-assets.heroku.com/heroku-x64.exe" target="_blank" rel="noopener noreferrer canonical">64-bit intaller</a>
 
 
 <a href="https://cli-assets.heroku.com/heroku-x86.exe" target="_blank" rel="noopener noreferrer canonical">32-bit installer</a>
+
+- <h2>FOR THE REST OF US NORMAL PEOPLE</h2>
 
 This installation method is instead required for users on ARM and BSD. You must have node and npm installed already.
 
@@ -29,7 +31,7 @@ This installation method is instead required for users on ARM and BSD. You must 
 Verifying your installation
 To verify your CLI installation, use the heroku --version command:
 
-```jsx 
+```jsx
 heroku --version
 heroku/7.0.0 (darwin-x64) node-v8.0.0
 
