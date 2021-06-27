@@ -125,20 +125,21 @@ const StyledArticle = styled.article`
     margin-bottom: 0;
     font-size: 1.6rem;
     @media ${device.mobileM} {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
+      margin-bottom: - 0.5rem;
     }
   }
 `;
 
 // .back {
-   
+
 //   left:0;
 //   bottom:0;
 //   width:100vw;
 //   height:100vh;
 //   object-fit:cover;
 //   z-index: -2;
- 
+
 // }
 class PostListing extends React.Component {
   getPostList() {

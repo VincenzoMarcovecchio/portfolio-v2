@@ -5,7 +5,7 @@ const StyledUserLinks = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  align-items: center;
+  height: 7rem;
   max-width: 100%;
   @media ${device.tablet} {
     justify-content: space-between;
@@ -13,7 +13,7 @@ const StyledUserLinks = styled.div`
 `;
 const StyledLink = styled.a`
   background-color: whitesmoke;
-  margin-right: 0.5rem;
+  margi: auto;
   border-radius: 0.3rem;
 `;
 class UserLinks extends Component {
