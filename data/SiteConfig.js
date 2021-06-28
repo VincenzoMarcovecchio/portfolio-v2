@@ -6,7 +6,7 @@ const config = {
   siteUrl: 'https://vincenzo.codes', // Domain of your website without pathPrefix.
   pathPrefix: '/', // gatsby buildPrefixes all links. For cases when deployed to example.github.io/gatsby-advanced-starter/.
   siteDescription:
-    'This is my portfolio website where I show my old projects and I also take notes of all the news in web development', // Website description used for RSS feeds/meta description tagy
+    "What I've been up to in the world of web development, this is my portfolio as a junior developer, it is meant to keep me motivated along the journey. In my spare time I always try to improve my front end skills and keep updated with the upcoming technologies but not only, I have a secret hacking passion", // Website description used for RSS feeds/meta description tagy
 
   siteRss: '/rss.xml', // Path to the RSS file.
   siteRssTitle: 'Codes RSS Feed', // Title of the RSS feed
@@ -44,24 +44,24 @@ const config = {
   copyright: 'Copyright © 2020 codes', // Copyright string for the footer of the website and RSS feed.
   themeColor: '#c62828', // Used for setting manifest and progress theme colors.
   backgroundColor: '#e0e0e0', // Used for setting manifest background color.
-};
+}
 
 // Validate
 
 // Make sure pathPrefix is empty if not needed
 if (config.pathPrefix === '/') {
-  config.pathPrefix = '';
+  config.pathPrefix = ''
 } else {
   // Make sure pathPrefix only contains the first forward slash
-  config.pathPrefix = `/${config.pathPrefix.replace(/^\/|\/$/g, '')}`;
+  config.pathPrefix = `/${config.pathPrefix.replace(/^\/|\/$/g, '')}`
 }
 
 // Make sure siteUrl doesn't have an ending forward slash
 if (config.siteUrl.substr(-1) === '/')
-  config.siteUrl = config.siteUrl.slice(0, -1);
+  config.siteUrl = config.siteUrl.slice(0, -1)
 
 // Make sure siteRss has a starting forward slash
 if (config.siteRss && config.siteRss[0] !== '/')
-  config.siteRss = `/${config.siteRss}`;
+  config.siteRss = `/${config.siteRss}`
 
-module.exports = config;
+module.exports = config
