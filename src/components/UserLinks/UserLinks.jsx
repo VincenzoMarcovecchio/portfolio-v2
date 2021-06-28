@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { device } from '../../styles/Global';
+
 const StyledUserLinks = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   height: 7rem;
-  max-width: 100%;
+  max-width: 24rem;
+  width: 100%;
+}
   @media ${device.tablet} {
     justify-content: space-between;
   }
