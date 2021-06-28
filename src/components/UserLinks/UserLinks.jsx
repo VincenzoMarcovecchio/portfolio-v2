@@ -13,9 +13,10 @@ const StyledUserLinks = styled.div`
 `;
 const StyledLink = styled.a`
   background-color: whitesmoke;
-  margi: auto;
+  margin: auto;
   border-radius: 0.3rem;
 `;
+
 class UserLinks extends Component {
   getLinkElements() {
     const { userLinks } = this.props.config;
