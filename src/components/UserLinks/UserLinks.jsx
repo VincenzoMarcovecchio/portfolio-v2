@@ -6,17 +6,18 @@ const StyledUserLinks = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  height: 7rem;
+  height: unset;
   max-width: 24rem;
   width: 100%;
 }
   @media ${device.tablet} {
     justify-content: space-between;
+    height: 7rem;
   }
 `;
 const StyledLink = styled.a`
   background-color: whitesmoke;
-  margin: auto;
+  margin: auto auto auto 0;
   border-radius: 0.3rem;
 `;
 
