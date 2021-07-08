@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import UserLinks from "../UserLinks/UserLinks";
 import styled from "styled-components";
 import { device } from "../../styles/Global";
+import { Link } from "gatsby";
 const FooterStyled = styled.footer`
   justify-content: center;
   align-content: center;
@@ -64,6 +65,7 @@ class Footer extends Component {
     if (!copyright) {
       return null;
     }
+
     return (
       <FooterStyled>
         <UserLinks config={config} rss={url} labeled />
@@ -74,6 +76,15 @@ class Footer extends Component {
             <a href="https://github.com/Vagr9K/gatsby-advanced-starter">
               Gatsby Advanced Starter
             </a>
+          </p>
+          <p>
+            <img
+              width="27"
+              height="15"
+              src="/image/hot2x.gif"
+              alt="hot topic"
+            />
+            <Link to="/upcoming-hacking-events-worldwide">Hacking events</Link>
           </p>
         </div>
       </FooterStyled>
