@@ -25,7 +25,7 @@ const StyledTable = styled.table`
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
   hyphens: auto;
-  @media ${device.mobileL} {
+  @media ${device.tablet} {
     width: 95%;
   }
 `;
@@ -138,7 +138,9 @@ const BasicTable = ({ data }) => {
           textAlign: "center",
         }}
       >
-        <h1 style={{ textAlign: "center" }}>📅 List of hacking events 🌎</h1>
+        <h1 style={{ textAlign: "center" }}>
+          📅 List of (upcoming) hacking events 🌎
+        </h1>
         <small>
           <u>List is kept updated and mantained here:</u>{" "}
           <a
