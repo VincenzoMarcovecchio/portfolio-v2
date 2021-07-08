@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import UserLinks from '../UserLinks/UserLinks';
-import styled from 'styled-components';
-import { device } from '../../styles/Global';
+import React, { Component } from "react";
+import UserLinks from "../UserLinks/UserLinks";
+import styled from "styled-components";
+import { device } from "../../styles/Global";
 const FooterStyled = styled.footer`
   justify-content: center;
   align-content: center;

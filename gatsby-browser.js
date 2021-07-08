@@ -1,16 +1,16 @@
-require('prismjs/themes/prism-okaidia.css');
-exports.onServiceWorkerUpdateReady = () => window.location.reload();
+require('prismjs/themes/prism-okaidia.css')
+exports.onServiceWorkerUpdateReady = () => window.location.reload()
 exports.onInitialClientRender = () => {
-  const theme = typeof window !== 'undefined' && localStorage.getItem('theme');
+  const theme = typeof window !== 'undefined' && localStorage.getItem('theme')
 
   if (typeof window !== 'undefined' && theme === 'dark') {
-    localStorage.setItem('theme', 'dark');
-    document.getElementById('dark-mode-button').textContent = '☀️';
-    const head = document.getElementsByTagName('head')[0];
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.id = 'dark-mode';
-    link.href = './dark.css';
-    head.appendChild(link);
+    localStorage.setItem('theme', 'dark')
+    document.getElementById('dark-mode-button').textContent = '☀️'
+    const head = document.getElementsByTagName('head')[0]
+    const link = document.createElement('link')
+    link.rel = 'stylesheet'
+    link.id = 'dark-mode'
+    link.href = './dark.css'
+    head.appendChild(link)
   }
-};
+}
