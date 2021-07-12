@@ -122,7 +122,7 @@ export default class PostTemplate extends React.Component {
   componentDidMount() {
     const script = document.createElement("script");
     script.src = "https://utteranc.es/client.js";
-    script.setAttribute("repo", "VincenzoMarcovecchio/portfolio-v2/");
+    script.setAttribute("repo", "VincenzoMarcovecchio/portfolio-v2");
     script.setAttribute("issue-term", "pathname");
     script.setAttribute("theme", "dark-blue");
     script.setAttribute("crossorigin", "anonymous");
@@ -171,12 +171,9 @@ export default class PostTemplate extends React.Component {
             <Link to={prevslug}>&lArr;&nbsp;{prevtitle}</Link>
             <Link to={nextslug}>{nexttitle}&nbsp;&rArr;</Link>
           </Bottomlinks>
-
           <Bottomlinks>
             <div id="comments-container"></div>
           </Bottomlinks>
-
-          <UserInfo config={config} />
           <br />
           <br />
           <br />

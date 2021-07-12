@@ -71,12 +71,12 @@ class Footer extends Component {
         <UserLinks config={config} rss={url} labeled />
         <div className="notice-container">
           <p>{copyright}</p>
-          <p>
+          {/* <p>
             Based on &nbsp;
             <a href="https://github.com/Vagr9K/gatsby-advanced-starter">
               Gatsby Advanced Starter
             </a>
-          </p>
+          </p> */}
           <p>
             <img
               width="27"
