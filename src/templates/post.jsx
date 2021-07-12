@@ -11,8 +11,7 @@ import styled from "styled-components";
 import { device } from "../styles/Global";
 import Img from "gatsby-image";
 import { Link } from "gatsby";
-import "gitalk/dist/gitalk.css";
-import GitalkComponent from "gitalk/dist/gitalk-component";
+
 const StyledArticle = styled.article`
   padding: 3rem 1.5rem;
   box-sizing: border-box;
@@ -120,6 +119,18 @@ const StyledTime = styled.time`
 `;
 
 export default class PostTemplate extends React.Component {
+  componentDidMount() {
+    const script = document.createElement("script");
+    script.src = "https://utteranc.es/client.js";
+    script.setAttribute("repo", "VincenzoMarcovecchio/portfolio-v2/");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "dark-blue");
+    script.setAttribute("crossorigin", "anonymous");
+    script.async = true;
+    const comments = document.getElementById("comments-container");
+    if (comments) comments.appendChild(script);
+  }
+
   render() {
     const { data, pageContext } = this.props;
     const { slug, image, nexttitle, nextslug, prevtitle, prevslug } =
@@ -162,17 +173,7 @@ export default class PostTemplate extends React.Component {
           </Bottomlinks>
 
           <Bottomlinks>
-            <GitalkComponent
-              options={{
-                clientID: "Iv1.2c411a9994765bfb",
-                clientSecret: "3367c25e767c9249770f95b260ce6cd4d61989cc",
-                repo: "https://github.com/VincenzoMarcovecchio/portfolio-v2", // The repository of store comments,
-                owner: "https://github.com/VincenzoMarcovecchio",
-                admin: ["https://github.com/VincenzoMarcovecchio"],
-                id: `/content/${post.date}-${slug}`,
-                distractionFreeMode: false,
-              }}
-            />
+            <div id="comments-container"></div>
           </Bottomlinks>
 
           <UserInfo config={config} />
