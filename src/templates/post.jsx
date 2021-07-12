@@ -1,16 +1,18 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import { graphql } from 'gatsby';
-import Layout from '../layout';
-import UserInfo from '../components/UserInfo/UserInfo';
-import PostTags from '../components/PostTags/PostTags';
-import SocialLinks from '../components/SocialLinks/SocialLinks';
-import SEO from '../components/SEO/SEO';
-import config from '../../data/SiteConfig';
-import styled from 'styled-components';
-import { device } from '../styles/Global';
-import Img from 'gatsby-image';
-import { Link } from 'gatsby';
+import React from "react";
+import { Helmet } from "react-helmet";
+import { graphql } from "gatsby";
+import Layout from "../layout";
+import UserInfo from "../components/UserInfo/UserInfo";
+import PostTags from "../components/PostTags/PostTags";
+import SocialLinks from "../components/SocialLinks/SocialLinks";
+import SEO from "../components/SEO/SEO";
+import config from "../../data/SiteConfig";
+import styled from "styled-components";
+import { device } from "../styles/Global";
+import Img from "gatsby-image";
+import { Link } from "gatsby";
+import "gitalk/dist/gitalk.css";
+import GitalkComponent from "gitalk/dist/gitalk-component";
 const StyledArticle = styled.article`
   padding: 3rem 1.5rem;
   box-sizing: border-box;
@@ -101,6 +103,10 @@ const Bottomlinks = styled.div`
   a:hover {
     color: firebrick;
   }
+  div {
+    width: 100%;
+    align-self: center;
+  }
 `;
 const StyledTime = styled.time`
   display: block;
@@ -116,14 +122,8 @@ const StyledTime = styled.time`
 export default class PostTemplate extends React.Component {
   render() {
     const { data, pageContext } = this.props;
-    const {
-      slug,
-      image,
-      nexttitle,
-      nextslug,
-      prevtitle,
-      prevslug,
-    } = pageContext;
+    const { slug, image, nexttitle, nextslug, prevtitle, prevslug } =
+      pageContext;
     const postNode = data.markdownRemark;
     const post = postNode.frontmatter;
 
@@ -160,6 +160,21 @@ export default class PostTemplate extends React.Component {
             <Link to={prevslug}>&lArr;&nbsp;{prevtitle}</Link>
             <Link to={nextslug}>{nexttitle}&nbsp;&rArr;</Link>
           </Bottomlinks>
+
+          <Bottomlinks>
+            <GitalkComponent
+              options={{
+                clientID: "Iv1.2c411a9994765bfb",
+                clientSecret: "3367c25e767c9249770f95b260ce6cd4d61989cc",
+                repo: "https://github.com/VincenzoMarcovecchio/portfolio-v2", // The repository of store comments,
+                owner: "https://github.com/VincenzoMarcovecchio",
+                admin: ["https://github.com/VincenzoMarcovecchio"],
+                id: `/content/${post.date}-${slug}`,
+                distractionFreeMode: false,
+              }}
+            />
+          </Bottomlinks>
+
           <UserInfo config={config} />
           <br />
           <br />
