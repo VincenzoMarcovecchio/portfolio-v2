@@ -1,6 +1,6 @@
 ---
 title: "I scraped the Indeed job list, here's how I did it"
-cover: "web-scraping.jpg"
+cover: "i-scraped-the-indeed-job-list-here-is-how-i-did-it.jpg"
 date: "2021-07-17"
 category: "scraping"
 slug: "i-scraped-the-indeed-job-list-here-is-how-i-did-it"
