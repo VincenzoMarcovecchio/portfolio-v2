@@ -1,6 +1,6 @@
 ---
 title: "I scraped the Indeed job list, here's how I did it"
-cover: "web-scraping.jpg"
+cover: 'web-scraping.jpg'
 date: "2021-07-17"
 category: "scraping"
 slug: "i-scraped-the-indeed-job-list-here-is-how-i-did-it"
@@ -16,7 +16,7 @@ Basically I installed puppeteer on a heroku server and let node.js (express) do 
 
 Here is the code I hosted on heroku
 
-```jsx
+```js
 const puppeteer = require('puppeteer')
 const express = require('express')
 const app = express()
@@ -75,12 +75,16 @@ app.listen(PORT, function () {
 
 ```
 
+
 Easy right? One more thing you need to know is that your heroku buildpacks (look into settings) must provide these additional packages
+
+<blockquote>
 
 `https://github.com/minted/heroku-buildpack-chrome-headless`
 
 `https://github.com/jontewks/puppeteer-heroku-buildpack`
 
+</blockquote?>
 
 
 Now if everything goes well and your app is up and running, you should be able to call the home route and retrieve the data.
