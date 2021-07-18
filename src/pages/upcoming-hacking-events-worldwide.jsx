@@ -141,8 +141,8 @@ const BasicTable = ({ data }) => {
         <h1 style={{ textAlign: "center" }}>
           📅 List of (upcoming) hacking events 🌎
         </h1>
-        <small>
-          <u>List is kept updated and mantained here:</u>{" "}
+        <p>
+          List is kept updated and mantained here:{" "}
           <a
             href="https://api.cfptime.org/api/docs"
             target="_blank"
@@ -150,7 +150,7 @@ const BasicTable = ({ data }) => {
           >
             https://api.cfptime.org/api/docs
           </a>
-        </small>
+        </p>
       </div>
       <div
         style={{
