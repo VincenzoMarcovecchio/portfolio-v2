@@ -12,7 +12,9 @@ const FooterStyled = styled.footer`
   width: inherit;
   max-width: 1440px;
   margin: auto;
-
+  @media ${device.tablet} {
+    padding: 5rem 1rem 1rem 2rem;
+  }
   .notice-container {
     display: flex;
     justify-content: space-between;

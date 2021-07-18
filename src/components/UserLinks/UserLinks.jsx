@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import { device } from '../../styles/Global';
+import React, { Component } from "react";
+import styled from "styled-components";
+import { device } from "../../styles/Global";
 
 const StyledUserLinks = styled.div`
   display: flex;
@@ -19,6 +19,10 @@ const StyledLink = styled.a`
   background-color: whitesmoke;
   margin: auto auto auto 0;
   border-radius: 0.3rem;
+  @media ${device.tablet} {
+    margin: unset;
+    height: fit-content;
+  }
 `;
 
 class UserLinks extends Component {
@@ -27,16 +31,15 @@ class UserLinks extends Component {
     const { labeled } = this.props;
     return userLinks.map((link) => (
       <>
-      <StyledLink
-        target="_blank"
-        rel="noopener noreferrer canonical"
-        key={link.label}
-        href={link.url}
-      >
-        {labeled ? link.label : ''}
-      </StyledLink>
-
-        </>
+        <StyledLink
+          target="_blank"
+          rel="noopener noreferrer canonical"
+          key={link.label}
+          href={link.url}
+        >
+          {labeled ? link.label : ""}
+        </StyledLink>
+      </>
     ));
   }
 
@@ -58,10 +61,9 @@ class UserLinks extends Component {
         <StyledLink
           target="_blank"
           rel="noopener noreferrer canonical"
-
           href="https://codepen.io/Vinny92"
         >
-         codepen
+          codepen
         </StyledLink>
       </StyledUserLinks>
     );
