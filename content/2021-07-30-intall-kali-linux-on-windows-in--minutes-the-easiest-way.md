@@ -1,5 +1,5 @@
 ---
-title: "Run Kali linux as an App"
+title: "Run Kali linux as a Windows app"
 cover: "install-kali-linux-on-windows-in-5-minutes-the-easiest-way.jpg"
 date: "2021-07-20"
 category: "kali"
