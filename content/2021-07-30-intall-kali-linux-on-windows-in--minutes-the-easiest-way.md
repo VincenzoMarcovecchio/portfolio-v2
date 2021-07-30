@@ -9,9 +9,9 @@ tags:
   - kali
 ---
 
-I came across this solution after trying to install the kali linux .iso file on vmWare, not able to extract .iso with 7zip I than came up with this new solution that first of all works but also it can be a good practice as you have to install modules one by one as you need.
+I came across this solution after trying to install the kali linux .iso file on VMware, not able to extract .iso with 7zip I than wanted to go this way that, to this day, it still works, but also it can be a good practice as you have to install modules one by one as you need.
 
-The process is pretty simple 
+The process is this 
 
 🔦🔦🔦COMMANDS:🔦🔦🔦
 
@@ -52,4 +52,4 @@ XRDP
 ⚙️ sudo service xrdp start
 
 
-I don' t really see it as the best for privacy oriented solutions but it might be a fast one. And also rember hacking is illegal you are responsible for what you do, so stick to hackthebox and common ctf challenges
+I don' t really see it as the best privacy oriented solution but it might be a fast one. And also rember hacking is illegal you are responsible for what you do, so stick to hackthebox and common ctf challenges. Bye
