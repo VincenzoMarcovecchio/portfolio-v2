@@ -9,9 +9,9 @@ tags:
   - kali
 ---
 
-I came across this solution after trying to install the kali linux .iso file on VMware, not able to extract .iso with 7zip I than wanted to go this way that, to this day, it still works, but also it can be a good practice as you have to install modules one by one as you need.
+I came across this solution after trying to install the kali linux .iso file on VMware, not able to extract .iso with 7zip I than wanted to go this way, to this day, it still works, but I must say it comes empty without metasploit sqlmap... I guess it can be a good practice as you have to install modules one by one as you need.
 
-The process is this 
+Follow these steps and you will be able to get it 
 
 🔦🔦🔦COMMANDS:🔦🔦🔦
 
