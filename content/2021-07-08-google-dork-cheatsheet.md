@@ -17,11 +17,11 @@ tags:
 
 (taken from nahamsec video interview, while pentesting department of defense)
 
-site:.mil inurl:*/admin/*
-site:.mil ext:xlsx
-site:.mil ext:pdf intitle:Setup
-site:.mil ext:pdf intext:Setup
-site:.mil ext:html
+`site:.mil inurl:*/admin/*` |
+`site:.mil ext:xlsx` |
+`site:.mil ext:pdf intitle:Setup` |
+`site:.mil ext:pdf intext:Setup` |
+`site:.mil ext:html` |
 
 
 ## Search filters
