@@ -112,7 +112,7 @@ class Blogg extends React.Component {
         />
 
         <section style={{ margin: "0 auto", padding:"0.5rem" }}>
-          <h2 align="center">This is a source of public programs listed on <a href="https://chaos.projectdiscovery.io" target="_blank" rel="canonical noopener noreferrer">chaos.projectdiscovery.io</a>&nbsp;Please send pull-request of public bug bounty programs that you want to include in our public list with recon data.</h2>
+          <h2 align="center">This is a source of public programs listed on <a href="https://chaos.projectdiscovery.io" target="_blank" rel="canonical noopener noreferrer">chaos.projectdiscovery.io</a>&nbsp;Please send pull-request of public bug bounty programs that you want to include in the public list with recon data.</h2>
           <div style={{ margin: "0 auto", padding:"0.5rem" }}>
             <form onSubmit={this.handleSubmit}>
               <div style={{ margin: "0.5rem auto" }}>
