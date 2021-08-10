@@ -65,7 +65,7 @@ function getFlagEmoji(countryCode) {
   return String.fromCodePoint(...codePoints);
 }
 const BasicTable = ({ data }) => {
-  console.log(data);
+  
 
   const renderHeader = React.useCallback(() => {
     let headerElements = ["Name", "City", "Description"];

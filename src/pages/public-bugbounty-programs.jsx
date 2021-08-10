@@ -61,7 +61,7 @@ class Blogg extends React.Component {
    * in which the results will be added to the state
    */
   searchData = (e) => {
-    console.log(e.target.value)
+    
     const { search } = this.state;
     const queryResult = search.search(e.target.value);
     this.setState({ searchQuery: e.target.value, searchResults: queryResult });
