@@ -10,7 +10,7 @@ tags:
   - express
 ---
 
-I wanted to scrape indeed for all job queries related to my area, but let me tell you it wasn't really an easy thing do, in the end I came up with a decent solution that I still would consider just a first step. I say decent because what I did was trowing a bunch of html code through the dangerouslySetInnerHTML API and that was it. You will see what I'm talking about
+I wanted to scrape indeed for all job queries related to my area, but let me tell you, scraping is a dirty job, in the end I came up with a decent solution that I still would consider just a first step. What I did was trowing a bunch of html code through the dangerouslySetInnerHTML API and that was it. You will see what I'm talking about
 
 Basically I installed puppeteer on a heroku server and let node.js (express) do the work for me, I was than able to fetch the data from my gatsby front-end as you normally would with any REST API
 

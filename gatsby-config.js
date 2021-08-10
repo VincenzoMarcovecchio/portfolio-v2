@@ -41,6 +41,16 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-custom-api',
+      options: {
+        url: {
+          development: 'https://raw.githubusercontent.com/projectdiscovery/public-bugbounty-programs/master/chaos-bugbounty-list.json', // on "gatsby develop"
+          production: 'https://raw.githubusercontent.com/projectdiscovery/public-bugbounty-programs/master/chaos-bugbounty-list.json', // on "gatsby build"
+        },
+        rootKey: 'bugs',
+      },
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',

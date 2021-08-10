@@ -44,7 +44,7 @@ export default function Header() {
     // nz98
     <>
     <div style={{backgroundColor:"lightseagreen",padding:"0.3rem",color:"white"}}><center>
-    🔥 checkout my latest react-native <a href="https://github.com/VincenzoMarcovecchio/Frainegram" target="_blank" rel="noopener noreferrer">project</a> 🔥
+    🔥 What's hot? <a href="https://github.com/VincenzoMarcovecchio/Frainegram" target="_blank" rel="noopener noreferrer">this react-native project</a>&nbsp;&&nbsp;<Link to="/public-bugbounty-programs/" replace >Bug Bounties</Link> 🔥
       </center>
     </div>
       <NavBar>
