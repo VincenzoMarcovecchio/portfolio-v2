@@ -4,7 +4,43 @@ import Layout from "../layout";
 // import InfiniteScroll from "react-infinite-scroll-component"
 import SEO from "../components/SEO/SEO";
 import * as JsSearch from "js-search";
+import styled from "styled-components";
 
+const StyledTable = styled.table`
+
+  width: 100%
+  borderCollapse: collapse
+  borderRadius: 4px
+  border: 1px solid #d3d3d3
+
+
+  thead {
+  border: 1px solid #808080;
+
+  th {
+    textAlign: left;
+    padding: 5px;
+    fontSize: 14px;
+    fontWeight: 600;
+    borderBottom: 2px solid #d3d3d3;
+    cursor: pointer;
+  }
+
+
+  }
+
+
+`
+
+const StyledSection = styled.section`
+ margin:auto;
+`
+
+const StyledDiv = styled.section`
+ margin: 0 auto;
+ padding: 0.5rem;
+  
+  `
 class Blogg extends React.Component {
   state = {
     bookList: [],
@@ -111,9 +147,9 @@ class Blogg extends React.Component {
           description="Community curated list of public bug bounty and responsible disclosure programs."
         />
 
-        <section style={{ margin: "0 auto", padding:"0.5rem" }}>
+        <StyledSection>
           <h2 align="center">This is a source of public programs listed on <a href="https://chaos.projectdiscovery.io" target="_blank" rel="canonical noopener noreferrer">chaos.projectdiscovery.io</a>&nbsp;Please send pull-request of public bug bounty programs that you want to include in the public list with recon data.</h2>
-          <div style={{ margin: "0 auto", padding:"0.5rem" }}>
+          <StyledDiv>
             <form onSubmit={this.handleSubmit}>
               <div style={{ margin: "0.5rem auto" }}>
                 <label htmlFor="Search" style={{ paddingRight: "10px" }}>
@@ -131,49 +167,24 @@ class Blogg extends React.Component {
             <div>
               Number of items:
               {queryResults.length}
-              <table
-                style={{
-                  width: "100%",
-                  borderCollapse: "collapse",
-                  borderRadius: "4px",
-                  border: "1px solid #d3d3d3",
-                }}
+              <StyledTable
+        
+                
               >
-                <thead style={{ border: "1px solid #808080" }}>
+                <thead >
                   <tr>
                     <th
-                      style={{
-                        textAlign: "left",
-                        padding: "5px",
-                        fontSize: "14px",
-                        fontWeight: 600,
-                        borderBottom: "2px solid #d3d3d3",
-                        cursor: "pointer",
-                      }}
+                    
                     >
                       Name 📇
                     </th>
                     <th
-                      style={{
-                        textAlign: "left",
-                        padding: "5px",
-                        fontSize: "14px",
-                        fontWeight: 600,
-                        borderBottom: "2px solid #d3d3d3",
-                        cursor: "pointer",
-                      }}
+                    
                     >
                       Bounty 🤑
                     </th>
                     <th
-                      style={{
-                        textAlign: "left",
-                        padding: "5px",
-                        fontSize: "14px",
-                        fontWeight: 600,
-                        borderBottom: "2px solid #d3d3d3",
-                        cursor: "pointer",
-                      }}
+                
                     >
                       Domains 💻
                     </th>
@@ -213,10 +224,10 @@ class Blogg extends React.Component {
                     );
                   })}
                 </tbody>
-              </table>
+              </StyledTable>
             </div>
-          </div>
-        </section>
+          </StyledDiv>
+        </StyledSection>
       </Layout>
     );
   }
