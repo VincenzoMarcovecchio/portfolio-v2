@@ -30,17 +30,16 @@ const StyledTable = styled.table`
   }
 
 
-`
+`;
 
 const StyledSection = styled.section`
- margin:auto;
-`
+  margin: auto;
+`;
 
 const StyledDiv = styled.section`
- margin: 0 auto;
- padding: 0.5rem;
-  
-  `
+  margin: 0 auto;
+  padding: 0.5rem;
+`;
 class Blogg extends React.Component {
   state = {
     bookList: [],
@@ -88,7 +87,7 @@ class Blogg extends React.Component {
      */
     dataToSearch.searchIndex = new JsSearch.TfIdfSearchIndex(`name`);
     dataToSearch.addIndex(`bounty`); // sets the index attribute for the data
-    dataToSearch.addIndex(`url`) // sets the index attribute for the data
+    dataToSearch.addIndex(`url`); // sets the index attribute for the data
     dataToSearch.addDocuments(bookList); // adds the data to be searched
     this.setState({ search: dataToSearch, isLoading: false });
   };
@@ -97,7 +96,6 @@ class Blogg extends React.Component {
    * in which the results will be added to the state
    */
   searchData = (e) => {
-    
     const { search } = this.state;
     const queryResult = search.search(e.target.value);
     this.setState({ searchQuery: e.target.value, searchResults: queryResult });
@@ -106,39 +104,44 @@ class Blogg extends React.Component {
     e.preventDefault();
   };
   render() {
-    const {
-      isError,
-      isLoading,
-      bookList,
-      searchResults,
-      searchQuery,
-    } = this.state
-    const queryResults = searchQuery === `` ? bookList : searchResults
+    const { isError, isLoading, bookList, searchResults, searchQuery } =
+      this.state;
+    const queryResults = searchQuery === `` ? bookList : searchResults;
 
     if (isLoading) {
       return (
-        <div style={{ margin: `1.2rem 1rem 1.2rem 1rem` }}>
-          <h1 style={{ marginTop: `3em`, textAlign: `center` }}>
-            Getting the search all setup
-          </h1>
-        </div>
-      )
+        <Layout>
+          <SEO
+            title="Public Bug Bounty Programs"
+            description="Community curated list of public bug bounty and responsible disclosure programs."
+          />
+          <div style={{ margin: `1.2rem 1rem 1.2rem 1rem` }}>
+            <h1 style={{ marginTop: `3em`, textAlign: `center` }}>
+              Getting the search all setup
+            </h1>
+          </div>
+        </Layout>
+      );
     }
     if (isError) {
       return (
-        <div style={{ margin: `1.2rem 1rem 1.2rem 1rem` }}>
-          <h1 style={{ marginTop: `3em`, textAlign: `center` }}>Ohh no!!!!!</h1>
-          <h3
-            style={{
-              marginTop: `2em`,
-              padding: `2em 0em`,
-              textAlign: `center`,
-            }}
-          >
-            Something really bad happened
-          </h3>
-        </div>
-      )
+        <Layout>
+          <div style={{ margin: `1.2rem 1rem 1.2rem 1rem` }}>
+            <h1 style={{ marginTop: `3em`, textAlign: `center` }}>
+              Ohh no!!!!!
+            </h1>
+            <h3
+              style={{
+                marginTop: `2em`,
+                padding: `2em 0em`,
+                textAlign: `center`,
+              }}
+            >
+              Something really bad happened
+            </h3>
+          </div>
+        </Layout>
+      );
     }
     return (
       <Layout>
@@ -148,7 +151,18 @@ class Blogg extends React.Component {
         />
 
         <StyledSection>
-          <h2 align="center">This is a source of public programs listed on <a href="https://chaos.projectdiscovery.io" target="_blank" rel="canonical noopener noreferrer">chaos.projectdiscovery.io</a>&nbsp;Please send pull-request of public bug bounty programs that you want to include in the public list with recon data.</h2>
+          <h2 align="center">
+            This is a source of public programs listed on{" "}
+            <a
+              href="https://chaos.projectdiscovery.io"
+              target="_blank"
+              rel="canonical noopener noreferrer"
+            >
+              chaos.projectdiscovery.io
+            </a>
+            &nbsp;Please send pull-request of public bug bounty programs that
+            you want to include in the public list with recon data.
+          </h2>
           <StyledDiv>
             <form onSubmit={this.handleSubmit}>
               <div style={{ margin: "0.5rem auto" }}>
@@ -167,27 +181,12 @@ class Blogg extends React.Component {
             <div>
               Number of items:
               {queryResults.length}
-              <StyledTable
-        
-                
-              >
-                <thead >
+              <StyledTable>
+                <thead>
                   <tr>
-                    <th
-                    
-                    >
-                      Name 📇
-                    </th>
-                    <th
-                    
-                    >
-                      Bounty 🤑
-                    </th>
-                    <th
-                
-                    >
-                      Domains 💻
-                    </th>
+                    <th>Name 📇</th>
+                    <th>Bounty 🤑</th>
+                    <th>Domains 💻</th>
                   </tr>
                 </thead>
                 <tbody>
