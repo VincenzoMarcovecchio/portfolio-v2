@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import cv from '../../resume.png';
-import styled from 'styled-components';
-import axios from 'axios';
+import React, { useState } from "react";
+import cv from "../../resume.png";
+import styled from "styled-components";
+import axios from "axios";
+import { device } from '../../styles/Global';
 
 const StyledAbout = styled.section`
   min-height: 100vh;
@@ -91,9 +92,12 @@ const StyledAbout = styled.section`
   h1 {
     margin-top: unset;
     font-size: 2.3rem;
-    line-height: 1.3;
+    line-height: 1.2;
     width: 90%;
     margin: auto;
+    @media ${device.mobileL} {
+      font-size: 1.9rem;
+    }
   }
   h2 {
     line-height: 1.3;
@@ -164,12 +168,12 @@ const About = () => {
     const form = e.target;
     setServerState({ submitting: true });
     axios({
-      method: 'post',
-      url: 'https://getform.io/f/d4fc06ae-d2f0-4f8b-9ea7-7e4176e23cbc',
+      method: "post",
+      url: "https://getform.io/f/d4fc06ae-d2f0-4f8b-9ea7-7e4176e23cbc",
       data: new FormData(form),
     })
       .then((r) => {
-        handleServerResponse(true, 'Thanks!', form);
+        handleServerResponse(true, "Thanks!", form);
       })
       .catch((r) => {
         handleServerResponse(false, r.response.data.error, form);
@@ -228,7 +232,7 @@ const About = () => {
           Submit
         </button>
         {serverState.status && (
-          <p className={!serverState.status.ok ? 'errorMsg' : 'errorMsg'}>
+          <p className={!serverState.status.ok ? "errorMsg" : "errorMsg"}>
             {serverState.status.msg}
           </p>
         )}
@@ -275,7 +279,7 @@ const About = () => {
         </svg>
         <a
           target="_blank"
-          style={{ zIndex: '50000' }}
+          style={{ zIndex: "50000" }}
           rel="noopener noreferrer"
           href="https://firebasestorage.googleapis.com/v0/b/myporfolio-d1ae8.appspot.com/o/curriculumvitae.pdf?alt=media&token=eae7de58-092d-42a1-bc9a-5e0285c99e36"
           download
