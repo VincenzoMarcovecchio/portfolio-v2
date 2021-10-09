@@ -70,8 +70,8 @@ exports.createPages = async ({ graphql, actions }) => {
   console.log(resultim);
 
   resultim.data.length &&
-    (await resultim.data.forEach((id) => {
-      const resulta = axios.get(`${storyUrl + id}.json`);
+    (await resultim.data.forEach(async (id) => {
+      const resulta = await axios.get(`${storyUrl + id}.json`);
       return selectFields.push(resulta.data);
     }));
 
