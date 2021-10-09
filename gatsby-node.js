@@ -1,7 +1,6 @@
 const path = require("path");
 const _ = require("lodash");
 const moment = require("moment");
-const axios = require("axios").default;
 const siteConfig = require("./data/SiteConfig");
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -49,6 +48,7 @@ exports.onCreatePage = ({ page, actions }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
+
   const postPage = path.resolve("src/templates/post.jsx");
   const tagPage = path.resolve("src/templates/tag.jsx");
   const categoryPage = path.resolve("src/templates/category.jsx");
@@ -63,7 +63,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const resultim = await fetch(
     `https://hacker-news.firebaseio.com/v0/newstories.json`
-  );
+  ).then((data) => data.json());
 
   const selectFields = ({ id, by, url, time, title } = {}) => ({
     id,
@@ -76,7 +76,9 @@ exports.createPages = async ({ graphql, actions }) => {
   console.log(resultim);
 
   const urls = resultim.forEach(async (id) => {
-    const resulta = await fetch(`${storyUrl + id}.json`);
+    const resulta = await fetch(`${storyUrl + id}.json`).then((data) =>
+      data.json()
+    );
     return selectFields(resulta);
   });
 
