@@ -1,51 +1,94 @@
-const path = require('path')
-const _ = require('lodash')
-const moment = require('moment')
-const siteConfig = require('./data/SiteConfig')
-
-
+const path = require("path");
+const _ = require("lodash");
+const moment = require("moment");
+const axios = require("axios");
+const siteConfig = require("./data/SiteConfig");
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-  let slug
-  if (node.internal.type === 'MarkdownRemark') {
-    const fileNode = getNode(node.parent)
-    const parsedFilePath = path.parse(fileNode.relativePath)
+  const { createNodeField } = actions;
+  let slug;
+  if (node.internal.type === "MarkdownRemark") {
+    const fileNode = getNode(node.parent);
+    const parsedFilePath = path.parse(fileNode.relativePath);
     if (
-      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
-      Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
+      Object.prototype.hasOwnProperty.call(node, "frontmatter") &&
+      Object.prototype.hasOwnProperty.call(node.frontmatter, "title")
     ) {
-      slug = `/${_.kebabCase(node.frontmatter.title)}`
-    } else if (parsedFilePath.name !== 'index' && parsedFilePath.dir !== '') {
-      slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`
-    } else if (parsedFilePath.dir === '') {
-      slug = `/${parsedFilePath.name}/`
+      slug = `/${_.kebabCase(node.frontmatter.title)}`;
+    } else if (parsedFilePath.name !== "index" && parsedFilePath.dir !== "") {
+      slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`;
+    } else if (parsedFilePath.dir === "") {
+      slug = `/${parsedFilePath.name}/`;
     } else {
-      slug = `/${parsedFilePath.dir}/`
+      slug = `/${parsedFilePath.dir}/`;
     }
 
-    if (Object.prototype.hasOwnProperty.call(node, 'frontmatter')) {
-      if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug'))
-        slug = `/${_.kebabCase(node.frontmatter.slug)}`
-      if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'date')) {
-        const date = moment(node.frontmatter.date, siteConfig.dateFromFormat)
+    if (Object.prototype.hasOwnProperty.call(node, "frontmatter")) {
+      if (Object.prototype.hasOwnProperty.call(node.frontmatter, "slug"))
+        slug = `/${_.kebabCase(node.frontmatter.slug)}`;
+      if (Object.prototype.hasOwnProperty.call(node.frontmatter, "date")) {
+        const date = moment(node.frontmatter.date, siteConfig.dateFromFormat);
         if (!date.isValid)
-          console.warn(`WARNING: Invalid date.`, node.frontmatter)
+          console.warn(`WARNING: Invalid date.`, node.frontmatter);
 
-        createNodeField({ node, name: 'date', value: date.toISOString() })
+        createNodeField({ node, name: "date", value: date.toISOString() });
       }
     }
-    createNodeField({ node, name: 'slug', value: slug })
+    createNodeField({ node, name: "slug", value: slug });
   }
-}
+};
 
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage } = actions;
+
+  if (page.path.match(`/`)) {
+    page.context.layout = "landing";
+    createPage(page);
+  }
+};
 exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions
-  const postPage = path.resolve('src/templates/post.jsx')
-  const tagPage = path.resolve('src/templates/tag.jsx')
-  const categoryPage = path.resolve('src/templates/category.jsx')
-  const listingPage = path.resolve('./src/templates/listing.jsx')
-  const landingPage = path.resolve('./src/templates/landing.jsx')
+
+  const { createPage } = actions;
+  const postPage = path.resolve("src/templates/post.jsx");
+  const tagPage = path.resolve("src/templates/tag.jsx");
+  const categoryPage = path.resolve("src/templates/category.jsx");
+  const listingPage = path.resolve("./src/templates/listing.jsx");
+  const landingPage = path.resolve("./src/templates/landing.jsx");
+  const hacking = path.resolve("./src/templates/hacka.jsx");
+
+  const baseUrl = "https://hacker-news.firebaseio.com/v0/";
+  const newStoriesUrl = `${baseUrl}newstories.json`;
+  const storyUrl = `${baseUrl}item/`;
+
+  const resultim = await axios.get(newStoriesUrl);
+
+  const selectFields = ({ id, by, url, time, title } = {}) => ({
+    id,
+    by,
+    url,
+    time,
+    title,
+  });
+
+  console.log(resultim);
+
+  const urls = resultim.data?.forEach(async (id) => {
+    const resulta = await axios.get(`${storyUrl + id}.json`);
+    return selectFields(resulta.data);
+  });
+
+  console.log(urls);
+
+  urls &&
+    urls.data.forEach((tag) => {
+      const urla = new URL(tag.url);
+      const rel = urla.toString().substring(urla.origin.length);
+      createPage({
+        path: rel,
+        component: hacking,
+        context: { tag },
+      });
+    });
 
   // Get a full list of markdown posts
   const markdownQueryResult = await graphql(`
@@ -66,7 +109,8 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }
-  `)
+  `);
+
   const imageQueryResults = await graphql(`
     {
       allFile {
@@ -88,41 +132,47 @@ exports.createPages = async ({ graphql, actions }) => {
         }
       }
     }
-  `)
+  `);
 
   if (markdownQueryResult.errors) {
-    console.error(markdownQueryResult.errors)
-    throw markdownQueryResult.errors
+    console.error(markdownQueryResult.errors);
+    throw markdownQueryResult.errors;
   }
   if (imageQueryResults.errors) {
-    console.error(imageQueryResults.errors)
-    throw imageQueryResults.errors
+    console.error(imageQueryResults.errors);
+    throw imageQueryResults.errors;
   }
 
-  const tagSet = new Set()
-  const categorySet = new Set()
+  const tagSet = new Set();
+  const categorySet = new Set();
 
-  const postsEdges = markdownQueryResult.data.allMarkdownRemark.edges
-  const imageEdges = imageQueryResults.data.allFile.edges
+  const postsEdges = markdownQueryResult.data.allMarkdownRemark.edges;
+  const imageEdges = imageQueryResults.data.allFile.edges;
 
   // Sort posts
   postsEdges.sort((postA, postB) => {
-    const dateA = moment(postA.node.frontmatter.date, siteConfig.dateFromFormat)
+    const dateA = moment(
+      postA.node.frontmatter.date,
+      siteConfig.dateFromFormat
+    );
 
-    const dateB = moment(postB.node.frontmatter.date, siteConfig.dateFromFormat)
+    const dateB = moment(
+      postB.node.frontmatter.date,
+      siteConfig.dateFromFormat
+    );
 
-    if (dateA.isBefore(dateB)) return 1
-    if (dateB.isBefore(dateA)) return -1
+    if (dateA.isBefore(dateB)) return 1;
+    if (dateB.isBefore(dateA)) return -1;
 
-    return 0
-  })
+    return 0;
+  });
 
   // Paging
-  const { postsPerPage } = siteConfig
+  const { postsPerPage } = siteConfig;
   if (postsPerPage) {
-    const pageCount = Math.ceil(postsEdges.length / postsPerPage)
+    const pageCount = Math.ceil(postsEdges.length / postsPerPage);
 
-    ;[...Array(pageCount)].forEach((_val, pageNum) => {
+    [...Array(pageCount)].forEach((_val, pageNum) => {
       createPage({
         path: pageNum === 0 ? `/` : `/${pageNum + 1}/`,
         component: listingPage,
@@ -132,8 +182,8 @@ exports.createPages = async ({ graphql, actions }) => {
           pageCount,
           currentPageNum: pageNum + 1,
         },
-      })
-    })
+      });
+    });
   } else {
     // Load the landing page instead
     // createPage({
@@ -147,20 +197,20 @@ exports.createPages = async ({ graphql, actions }) => {
     // Generate a list of tags
     if (edge.node.frontmatter.tags) {
       edge.node.frontmatter.tags.forEach((tag) => {
-        tagSet.add(tag)
-      })
+        tagSet.add(tag);
+      });
     }
 
     // Generate a list of categories
     if (edge.node.frontmatter.category) {
-      categorySet.add(edge.node.frontmatter.category)
+      categorySet.add(edge.node.frontmatter.category);
     }
 
     // Create post pages
-    const nextID = index + 1 < postsEdges.length ? index + 1 : 0
-    const prevID = index - 1 >= 0 ? index - 1 : postsEdges.length - 1
-    const nextEdge = postsEdges[nextID]
-    const prevEdge = postsEdges[prevID]
+    const nextID = index + 1 < postsEdges.length ? index + 1 : 0;
+    const prevID = index - 1 >= 0 ? index - 1 : postsEdges.length - 1;
+    const nextEdge = postsEdges[nextID];
+    const prevEdge = postsEdges[prevID];
 
     createPage({
       path: edge.node.fields.slug,
@@ -173,8 +223,8 @@ exports.createPages = async ({ graphql, actions }) => {
         prevslug: prevEdge.node.fields.slug,
         image: imageEdges,
       },
-    })
-  })
+    });
+  });
 
   //  Create tag pages
   tagSet.forEach((tag) => {
@@ -182,8 +232,8 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `/tags/${_.kebabCase(tag)}/`,
       component: tagPage,
       context: { tag },
-    })
-  })
+    });
+  });
 
   // Create category pages
   categorySet.forEach((category) => {
@@ -191,6 +241,6 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `/categories/${_.kebabCase(category)}/`,
       component: categoryPage,
       context: { category },
-    })
-  })
-}
+    });
+  });
+};

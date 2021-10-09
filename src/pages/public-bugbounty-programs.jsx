@@ -1,6 +1,5 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../layout";
 // import InfiniteScroll from "react-infinite-scroll-component"
 import SEO from "../components/SEO/SEO";
 import * as JsSearch from "js-search";
@@ -144,7 +143,7 @@ class Blogg extends React.Component {
       );
     }
     return (
-      <Layout>
+      <>
         <SEO
           title="Public Bug Bounty Programs"
           description="Community curated list of public bug bounty and responsible disclosure programs."
@@ -227,7 +226,7 @@ class Blogg extends React.Component {
             </div>
           </StyledDiv>
         </StyledSection>
-      </Layout>
+      </>
     );
   }
 }

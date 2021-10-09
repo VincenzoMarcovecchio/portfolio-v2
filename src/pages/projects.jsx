@@ -258,7 +258,7 @@ function project({ data }) {
 
   return (
     <>
-      <Layout>
+      
         <StyledDiv>
 
           <section className="wrapper">
@@ -306,7 +306,7 @@ function project({ data }) {
 
           </section>
         </StyledDiv>
-      </Layout>
+     
     </>
   );
 }

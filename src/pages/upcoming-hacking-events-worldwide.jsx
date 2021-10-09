@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Layout from "../layout";
 import { graphql } from "gatsby";
 import { device } from "../styles/Global";
 import { Helmet } from "react-helmet";
@@ -126,7 +125,7 @@ const BasicTable = ({ data }) => {
   };
 
   return (
-    <Layout>
+    <>
       <Helmet
         title={`Vincenzo's | List of hacking events`}
         description={"A list of hacking events worldwide spread"}
@@ -166,7 +165,7 @@ const BasicTable = ({ data }) => {
       <StyledTable>
         <tbody>{renderBody()}</tbody>
       </StyledTable>
-    </Layout>
+    </>
   );
 };
 export default BasicTable;

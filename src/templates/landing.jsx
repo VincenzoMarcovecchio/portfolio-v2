@@ -7,15 +7,19 @@ import SEO from '../components/SEO/SEO';
 import config from '../../data/SiteConfig';
 
 class Landing extends React.Component {
+  
+
+
   render() {
     const postEdges = this.props.data.allMarkdownRemark.edges;
-
+    const { landing } = this.props.pageContext.layout;
+   
     return (
-      <Layout landing>
+      <>
         <Helmet title={config.siteTitle} description={config.siteDescription} />
         <SEO />
         <PostListing landing postEdges={postEdges} />
-      </Layout>
+   </>
     );
   }
 }

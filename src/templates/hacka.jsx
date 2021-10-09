@@ -116,88 +116,16 @@ const StyledTime = styled.time`
   }
 `;
 
-export default class PostTemplate extends React.Component {
-  componentDidMount() {
-    const script = document.createElement("script");
-    script.src = "https://utteranc.es/client.js";
-    script.setAttribute("repo", "VincenzoMarcovecchio/portfolio-v2");
-    script.setAttribute("issue-term", "pathname");
-    script.setAttribute("theme", "dark-blue");
-    script.setAttribute("crossorigin", "anonymous");
-    script.async = true;
-    const comments = document.getElementById("comments-container");
-    if (comments) comments.appendChild(script);
-  }
-
+export default class PostTemplates extends React.Component {
   render() {
-    const { data, pageContext } = this.props;
-    const { slug, image, nexttitle, nextslug, prevtitle, prevslug } =
-      pageContext;
-    const postNode = data.markdownRemark;
-    const post = postNode.frontmatter;
-
-    if (!post.id) {
-      post.id = slug;
-    }
-
-    const match = String(slug).substring(1);
-
-    const result = image.filter((image) => {
-      return image.node.name == match;
-    });
+    console.log(pageContext);
 
     return (
       <>
-        <Helmet>
-          <title>{`${post.title} | ${config.siteTitle}`}</title>
-        </Helmet>
-        <SEO postPath={slug} postNode={postNode} postSEO />
-        <StyledSection>
-          <StyledTitle>{post.title}</StyledTitle>
-          <Img
-            objectFit="cover"
-            fluid={result[0]?.node.childImageSharp.fluid}
-            alt={post.title}
-          />
-          <StyledTime datetime={post.date}>{post.date}</StyledTime>
-          <StyledArticle
-            dangerouslySetInnerHTML={{ __html: postNode.html }}
-          ></StyledArticle>
-          <PostTags tags={post.tags} />
-          <SocialLinks postPath={slug} postNode={postNode} />
-          <Bottomlinks>
-            <Link to={prevslug}>&lArr;&nbsp;{prevtitle}</Link>
-            <Link to={nextslug}>{nexttitle}&nbsp;&rArr;</Link>
-          </Bottomlinks>
-          <Bottomlinks>
-            <div id="comments-container"></div>
-          </Bottomlinks>
-          <br />
-          <br />
-          <br />
-        </StyledSection>
+        <h1>jello</h1>
       </>
     );
   }
 }
 
-/* eslint no-undef: "off" */
-export const pageQuery = graphql`
-  query BlogPostBySlugl2($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      timeToRead
-      frontmatter {
-        title
-        cover
-        date(formatString: "MMMM Do YYYY")
-        category
-        tags
-      }
-      fields {
-        slug
-        date
-      }
-    }
-  }
-`;
+

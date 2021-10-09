@@ -1,9 +1,9 @@
-import React from 'react';
-import { Helmet } from 'react-helmet';
-import config from '../../data/SiteConfig';
-import Footer from '../components/Footer/Footer';
-import Header from '../components/Header/Header';
-import styled from 'styled-components';
+import React from "react";
+import { Helmet } from "react-helmet";
+import config from "../../data/SiteConfig";
+import Footer from "../components/Footer/Footer";
+import Header from "../components/Header/Header";
+import styled from "styled-components";
 
 export default class Layout extends React.Component {
   render() {
@@ -34,12 +34,11 @@ export default class Layout extends React.Component {
         >
           <html lang="en" />
           <meta
-  name="viewport"
-  content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no"
-/>
+            name="viewport"
+            content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no"
+          />
         </Helmet>
         <Header />
-
         {children}
 
         <Footer config={config} />

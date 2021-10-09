@@ -12,7 +12,7 @@ tags:
 
 I wanted to scrape indeed for all job queries related to my area, but let me tell you, scraping is a dirty job, in the end I came up with a decent solution that I still would consider just a first step. What I did was trowing a bunch of html code through the dangerouslySetInnerHTML API and that was it. You will see what I'm talking about
 
-Basically I installed puppeteer on a heroku server and let node.js (express) do the work for me, I was than able to fetch the data from my gatsby front-end as you normally would with any REST API
+Basically I installed puppeteer on a heroku server and let node.js (express) do the work for me, I was than able to fetch the data from my gatsby front-end as you normally would with any RESTFul API
 
 Here is the code I hosted on heroku
 
@@ -26,7 +26,7 @@ const cors = require('cors')
 
 app.use(cors()) //set it like this and will accept queries from any origin
 
-app.get('/', async function async(req, res) {
+app.get('/', async function (req, res) {
 
 
   async function scrap() {

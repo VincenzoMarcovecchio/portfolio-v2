@@ -50,6 +50,15 @@ module.exports = {
         rootKey: 'bugs',
       },
     },
+ 
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/layout/index.jsx`),
+      },
+    },
+
+    
     {
       resolve: 'gatsby-source-filesystem',
       options: {

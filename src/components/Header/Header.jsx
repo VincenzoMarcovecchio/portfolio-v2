@@ -1,26 +1,25 @@
-import React, { useEffect } from 'react';
-import engine from '../../assets/engine.jpg';
-import { Link } from 'gatsby';
-import styled from 'styled-components';
+import React, { useEffect } from "react";
+import engine from "../../assets/engine.jpg";
+import { Link } from "gatsby";
+import styled from "styled-components";
 
 export default function Header() {
-
   useEffect(() => {
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const headerNav = document.querySelector('.header__nav');
-    const headerNavItems = document.querySelectorAll('.header__list > *');
+    const hamburgerMenu = document.querySelector(".hamburger-menu");
+    const headerNav = document.querySelector(".header__nav");
+    const headerNavItems = document.querySelectorAll(".header__list > *");
     function openHamburgerMenu() {
-      hamburgerMenu.classList.toggle('hamburger-menu--open');
+      hamburgerMenu.classList.toggle("hamburger-menu--open");
     }
 
     function showNav() {
-      headerNav.classList.toggle('header__nav--active');
+      headerNav.classList.toggle("header__nav--active");
     }
 
     function animateNavItems() {
       headerNavItems.forEach((item, index) => {
         if (item.style.animation) {
-          item.style.animation = '';
+          item.style.animation = "";
         } else {
           item.style.animation = `fadeInRight 1s ease forwards ${index / 7}s`;
         }
@@ -28,7 +27,7 @@ export default function Header() {
     }
 
     function disableScroll() {
-      document.body.classList.toggle('disable-scroll');
+      document.body.classList.toggle("disable-scroll");
     }
 
     function toggleNav() {
@@ -37,16 +36,35 @@ export default function Header() {
       animateNavItems();
       disableScroll();
     }
-    hamburgerMenu.addEventListener('click', toggleNav);
+    hamburgerMenu.addEventListener("click", toggleNav);
   }, []);
 
-   return ( 
-    // nz98
+  return (
+  
     <>
-    <div style={{backgroundColor:"lightseagreen",padding:"0.3rem",color:"white"}}><center>
-    🔥 What's hot? <a href="https://github.com/VincenzoMarcovecchio/Frainegram" target="_blank" rel="noopener noreferrer">this react-native project</a>&nbsp;&&nbsp;<Link to="/public-bugbounty-programs/" replace >Bug Bounties</Link> 🔥
-      </center>
-    </div>
+      <div
+        style={{
+          backgroundColor: "lightseagreen",
+          padding: "0.3rem",
+          color: "white",
+        }}
+      >
+        <center>
+          🔥 What's hot?{" "}
+          <a
+            href="https://github.com/VincenzoMarcovecchio/Frainegram"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            this react-native project
+          </a>
+          &nbsp;&&nbsp;
+          <Link to="/public-bugbounty-programs/" replace>
+            Bug Bounties
+          </Link>{" "}
+          🔥
+        </center>
+      </div>
       <NavBar>
         <div className="header__content-wrapper">
           <Link to="/">
@@ -95,36 +113,36 @@ export default function Header() {
                   id="dark-mode-button"
                   onClick={(event) => {
                     const theme =
-                      typeof window !== 'undefined' &&
-                      localStorage.getItem('theme');
+                      typeof window !== "undefined" &&
+                      localStorage.getItem("theme");
 
-                    if (theme === 'dark') {
-                      typeof window !== 'undefined' &&
-                        localStorage.removeItem('theme');
-                      const link = document.querySelectorAll('#dark-mode');
+                    if (theme === "dark") {
+                      typeof window !== "undefined" &&
+                        localStorage.removeItem("theme");
+                      const link = document.querySelectorAll("#dark-mode");
 
                       if (link) {
                         link.forEach((el) => el.remove());
-                        event.target.textContent = '🌙';
+                        event.target.textContent = "🌙";
                       }
                     } else {
-                      typeof window !== 'undefined' &&
-                        localStorage.setItem('theme', 'dark');
-                      event.target.textContent = '☀️';
-                      const head = document.getElementsByTagName('head')[0];
-                      const link = document.createElement('link');
-                      link.rel = 'stylesheet';
-                      link.id = 'dark-mode';
-                      link.href = './dark.css';
+                      typeof window !== "undefined" &&
+                        localStorage.setItem("theme", "dark");
+                      event.target.textContent = "☀️";
+                      const head = document.getElementsByTagName("head")[0];
+                      const link = document.createElement("link");
+                      link.rel = "stylesheet";
+                      link.id = "dark-mode";
+                      link.href = "./dark.css";
 
                       head.appendChild(link);
                     }
                   }}
                 >
-                  {typeof window !== 'undefined' &&
-                  localStorage.getItem('theme') === 'dark'
-                    ? '☀️'
-                    : '🌙'}
+                  {typeof window !== "undefined" &&
+                  localStorage.getItem("theme") === "dark"
+                    ? "☀️"
+                    : "🌙"}
                 </span>
               </li>
             </ul>

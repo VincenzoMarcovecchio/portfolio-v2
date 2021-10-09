@@ -5,6 +5,7 @@
   "author": "Vincenzo Marcovecchio <vinceoldmark@gmail.com>",
   "dependencies": {
     "@styled-icons/fa-solid": "^10.32.0",
+    "axios": "^0.22.0",
     "babel-plugin-styled-components": "^1.12.0",
     "gatsby": "^3.5.1",
     "gatsby-image": "^3.5.0",
@@ -12,6 +13,7 @@
     "gatsby-plugin-catch-links": "^3.5.0",
     "gatsby-plugin-feed": "^3.5.0",
     "gatsby-plugin-google-analytics": "^3.5.0",
+    "gatsby-plugin-layout": "^2.14.0",
     "gatsby-plugin-lodash": "^4.5.0",
     "gatsby-plugin-manifest": "^3.5.0",
     "gatsby-plugin-netlify-cms": "^5.5.0",
@@ -32,6 +34,7 @@
     "gatsby-remark-responsive-iframe": "^4.2.1",
     "gatsby-source-custom-api": "^2.1.4",
     "gatsby-source-filesystem": "^3.5.0",
+    "gatsby-source-hacker-news": "^3.14.0",
     "gatsby-transformer-remark": "^4.2.0",
     "gatsby-transformer-sharp": "^3.5.0",
     "js-search": "^2.0.0",
