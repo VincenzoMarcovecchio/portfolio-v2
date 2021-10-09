@@ -1,7 +1,7 @@
 const path = require("path");
 const _ = require("lodash");
 const moment = require("moment");
-import fetch from 'node-fetch';
+const axios = require("axios").default;
 const siteConfig = require("./data/SiteConfig");
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -48,9 +48,7 @@ exports.onCreatePage = ({ page, actions }) => {
 };
 
 exports.createPages = async ({ graphql, actions }) => {
- 
   const { createPage } = actions;
-
   const postPage = path.resolve("src/templates/post.jsx");
   const tagPage = path.resolve("src/templates/tag.jsx");
   const categoryPage = path.resolve("src/templates/category.jsx");
@@ -63,29 +61,24 @@ exports.createPages = async ({ graphql, actions }) => {
   const newStoriesUrl = `${baseUrl}newstories.json`;
   const storyUrl = `${baseUrl}item/`;
 
-  const resultim = await fetch(
+  const resultim = await axios.get(
     `https://hacker-news.firebaseio.com/v0/newstories.json`
-  ).then((data) => data.json());
+  );
 
-  const selectFields = ({ id, by, url, time, title } = {}) => ({
-    id,
-    by,
-    url,
-    time,
-    title,
-  });
+  const selectFields = []
 
   console.log(resultim);
 
-  const urls = resultim.forEach((id) => {
-    const resulta = fetch(`${storyUrl + id}.json`).then((data) => data.json());
-    return selectFields(resulta);
-  });
+  resultim &&
+    resultim?.data?.forEach((id) => {
+      const resulta = axios.get(`${storyUrl + id}.json`);
+      return selectFields.push(resulta.data);
+    });
 
-  console.log(urls);
+  console.log(selectFields);
 
-  urls &&
-    urls.forEach((tag) => {
+  selectFields &&
+  selectFields.forEach((tag) => {
       const urla = new URL(tag.url);
       const rel = urla.toString().substring(urla.origin.length);
 
