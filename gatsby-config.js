@@ -113,7 +113,7 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://www.vincenzo.codes",
-        sitemap: "https://www.vincenzo.codes/sitemap.xml",
+        sitemap: "https://www.vincenzo.codes/sitemap-pages.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
