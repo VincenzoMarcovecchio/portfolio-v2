@@ -61,34 +61,6 @@ exports.createPages = async ({ graphql, actions }) => {
   const newStoriesUrl = `${baseUrl}newstories.json`;
   const storyUrl = `${baseUrl}item/`;
 
-  const resultim = await axios.get(
-    `https://hacker-news.firebaseio.com/v0/newstories.json`
-  );
-
-  const selectFields = [];
-
-  console.log(resultim);
-
-  resultim.data.length &&
-    (await resultim.data.map(async (id) => {
-      const resulta = await axios.get(`${storyUrl + id}.json`);
-      return selectFields.push(resulta.data);
-    }));
-
-  console.log(selectFields);
-
-  selectFields &&
-    selectFields.forEach((tag) => {
-      const urla = new URL(tag.url);
-      const rel = urla.toString().substring(urla.origin.length);
-
-      createPage({
-        path: rel,
-        component: hacking,
-        context: { data: tag },
-      });
-    });
-
   // Get a full list of markdown posts
   const markdownQueryResult = await graphql(`
     {
