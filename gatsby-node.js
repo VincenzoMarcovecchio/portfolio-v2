@@ -75,10 +75,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
   console.log(resultim);
 
-  const urls = resultim.forEach(async (id) => {
-    const resulta = await fetch(`${storyUrl + id}.json`).then((data) =>
-      data.json()
-    );
+  const urls = resultim.forEach((id) => {
+    const resulta = fetch(`${storyUrl + id}.json`).then((data) => data.json());
     return selectFields(resulta);
   });
 
