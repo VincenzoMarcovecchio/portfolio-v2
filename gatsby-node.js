@@ -1,7 +1,7 @@
 const path = require("path");
 const _ = require("lodash");
 const moment = require("moment");
-const axios = require("axios");
+var axios = require('axios').default;
 const siteConfig = require("./data/SiteConfig");
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -72,7 +72,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   console.log(resultim);
 
-  const urls = resultim.data?.forEach(async (id) => {
+  const urls = resultim.data.forEach(async (id) => {
     const resulta = await axios.get(`${storyUrl + id}.json`);
     return selectFields(resulta.data);
   });

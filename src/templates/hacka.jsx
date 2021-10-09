@@ -127,5 +127,3 @@ export default class PostTemplates extends React.Component {
     );
   }
 }
-
-
