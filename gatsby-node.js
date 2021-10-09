@@ -65,20 +65,20 @@ exports.createPages = async ({ graphql, actions }) => {
     `https://hacker-news.firebaseio.com/v0/newstories.json`
   );
 
-  const selectFields = []
+  const selectFields = [];
 
   console.log(resultim);
 
-  resultim &&
-    resultim?.data?.forEach((id) => {
+  resultimresultim.data.length &&
+    (await resultim.data.forEach((id) => {
       const resulta = axios.get(`${storyUrl + id}.json`);
       return selectFields.push(resulta.data);
-    });
+    }));
 
   console.log(selectFields);
 
   selectFields &&
-  selectFields.forEach((tag) => {
+    selectFields.forEach((tag) => {
       const urla = new URL(tag.url);
       const rel = urla.toString().substring(urla.origin.length);
 
