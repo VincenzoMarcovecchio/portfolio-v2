@@ -18,10 +18,12 @@ module.exports = {
       copyright: config.copyright,
     },
   },
+  
   plugins: [
     'gatsby-plugin-styled-components',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-lodash',
+    'gatsby-plugin-sitemap',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -105,7 +107,7 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-twitter',
-    'gatsby-plugin-sitemap',
+   
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {

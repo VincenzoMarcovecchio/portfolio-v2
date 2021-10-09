@@ -1,7 +1,7 @@
 const path = require("path");
 const _ = require("lodash");
 const moment = require("moment");
-var axios = require('axios').default;
+const axios = require("axios").default;
 const siteConfig = require("./data/SiteConfig");
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -46,12 +46,13 @@ exports.onCreatePage = ({ page, actions }) => {
     createPage(page);
   }
 };
-exports.createPages = async ({ graphql, actions }) => {
 
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
   const postPage = path.resolve("src/templates/post.jsx");
   const tagPage = path.resolve("src/templates/tag.jsx");
   const categoryPage = path.resolve("src/templates/category.jsx");
+
   const listingPage = path.resolve("./src/templates/listing.jsx");
   const landingPage = path.resolve("./src/templates/landing.jsx");
   const hacking = path.resolve("./src/templates/hacka.jsx");
@@ -60,7 +61,9 @@ exports.createPages = async ({ graphql, actions }) => {
   const newStoriesUrl = `${baseUrl}newstories.json`;
   const storyUrl = `${baseUrl}item/`;
 
-  const resultim = await axios.get(newStoriesUrl);
+  const resultim = await fetch(
+    `https://hacker-news.firebaseio.com/v0/newstories.json`
+  );
 
   const selectFields = ({ id, by, url, time, title } = {}) => ({
     id,
@@ -72,21 +75,22 @@ exports.createPages = async ({ graphql, actions }) => {
 
   console.log(resultim);
 
-  const urls = resultim.data.forEach(async (id) => {
-    const resulta = await axios.get(`${storyUrl + id}.json`);
-    return selectFields(resulta.data);
+  const urls = resultim.forEach(async (id) => {
+    const resulta = await fetch(`${storyUrl + id}.json`);
+    return selectFields(resulta);
   });
 
   console.log(urls);
 
   urls &&
-    urls.data.forEach((tag) => {
+    urls.forEach((tag) => {
       const urla = new URL(tag.url);
       const rel = urla.toString().substring(urla.origin.length);
+
       createPage({
         path: rel,
         component: hacking,
-        context: { tag },
+        context: { data: tag },
       });
     });
 
