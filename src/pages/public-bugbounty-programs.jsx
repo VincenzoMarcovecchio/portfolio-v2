@@ -109,7 +109,7 @@ class Blogg extends React.Component {
 
     if (isLoading) {
       return (
-        <Layout>
+        <>
           <SEO
             title="Public Bug Bounty Programs"
             description="Community curated list of public bug bounty and responsible disclosure programs."
@@ -119,12 +119,12 @@ class Blogg extends React.Component {
               Getting the search all setup
             </h1>
           </div>
-        </Layout>
+        </>
       );
     }
     if (isError) {
       return (
-        <Layout>
+        <>
           <div style={{ margin: `1.2rem 1rem 1.2rem 1rem` }}>
             <h1 style={{ marginTop: `3em`, textAlign: `center` }}>
               Ohh no!!!!!
@@ -139,7 +139,7 @@ class Blogg extends React.Component {
               Something really bad happened
             </h3>
           </div>
-        </Layout>
+        </>
       );
     }
     return (
