@@ -230,7 +230,7 @@ module.exports = {
         queries: require("./src/utils/algolia-queries"),
       },
     },
-    "gatsby-plugin-sitemap",
+    `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-preact`,
     `gatsby-plugin-offline`,
   ],

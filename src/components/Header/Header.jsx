@@ -119,7 +119,7 @@ export default function Header() {
                     if (theme === "dark") {
                       typeof window !== "undefined" &&
                         localStorage.removeItem("theme");
-                      const link = document.querySelectorAll("#dark-mode");
+                      const link = document.querySelectorAll("#dark-mode-button");
 
                       if (link) {
                         link.forEach((el) => el.remove());
