@@ -27,6 +27,9 @@ export default class Layout extends React.Component {
 
 
             }
+            .minheight {
+              min-height:100vh;
+            }
         `,
             },
           ]}
@@ -38,8 +41,7 @@ export default class Layout extends React.Component {
           />
         </Helmet>
         <Header />
-        {children}
-
+        <div className="minheight">{children}</div>
         <Footer config={config} />
       </React.Fragment>
     );
