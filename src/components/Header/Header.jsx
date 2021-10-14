@@ -1,12 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import engine from "../../assets/engine.jpg";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
 export default function Header() {
-
-
-
   return (
     <>
       <div
@@ -59,22 +56,22 @@ export default function Header() {
           <nav className="header__nav">
             <ul className="header__list">
               <li>
-                <Link className="header__link" to="/" replace>
+                <Link className="header__link" to="/">
                   Home
                 </Link>
               </li>
               <li>
-                <Link className="header__link" to="/projects/" replace>
+                <Link className="header__link" to="/projects">
                   projects
                 </Link>
               </li>
               <li>
-                <Link className="header__link" to="/osint-investigation/" replace>
+                <Link className="header__link" to="/osint-investigation">
                   tools
                 </Link>
               </li>
               <li>
-                <Link className="header__link" to="/about/" replace>
+                <Link className="header__link" to="/about">
                   about
                 </Link>
               </li>
