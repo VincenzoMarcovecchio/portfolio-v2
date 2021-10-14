@@ -146,7 +146,7 @@ class Blogg extends React.Component {
     }
     return (
       <>
-        <SEO
+      <Helmet
           title="Public Bug Bounty Programs"
           description="Community curated list of public bug bounty and responsible disclosure programs."
         />
