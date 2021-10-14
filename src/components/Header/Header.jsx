@@ -4,6 +4,8 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 
 export default function Header() {
+
+  
   useEffect(() => {
     const hamburgerMenu = document.querySelector(".hamburger-menu");
     const headerNav = document.querySelector(".header__nav");
@@ -36,7 +38,9 @@ export default function Header() {
       animateNavItems();
       disableScroll();
     }
+
     hamburgerMenu.addEventListener("click", toggleNav);
+    headerNavItems.addEventListener("click", toggleNav);
   }, []);
 
   return (

@@ -93,17 +93,13 @@ const StyledAbout = styled.section`
     margin-top: unset;
     font-size: 2.3rem;
     line-height: 1.2;
-    width: 90%;
+    width: 95%;
     margin: auto;
     @media ${device.mobileL} {
       font-size: 1.9rem;
     }
   }
-  h2 {
-    line-height: 1.3;
-    width: 90%;
-    margin: 2rem auto;
-  }
+
   img {
     margin-bottom: 4rem;
     width: 100%;
@@ -183,7 +179,7 @@ const About = () => {
   return (
     <StyledAbout>
       <h1>Any idea? Any project? Want to chat? sure I want</h1>
-      <h2>
+      <h3>
         Send me a message through this form down below or check out my other
         site&nbsp;
         <a
@@ -194,7 +190,7 @@ const About = () => {
           here
         </a>
         . Thanks
-      </h2>
+      </h3>
       <form className="my__form" onSubmit={handleOnSubmit}>
         <div className="form-group">
           <label htmlFor="exampleInputName">Name</label>

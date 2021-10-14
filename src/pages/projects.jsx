@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import Layout from '../layout';
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import { device } from '../styles/Global';
@@ -37,6 +36,10 @@ const StyledDiv = styled.div`
     padding-bottom: 4rem;
 
 
+  }
+  ul {
+    padding: 1rem;
+    list-style: mongolian;
   }
   h1 {
     font-size: 2.5rem;
@@ -232,7 +235,7 @@ const StyledDiv = styled.div`
 `;
 function project({ data }) {
   let links = [
-    'https://meme-for-fun.com',
+  
     'https://vincenzomarcovecchio.github.io/Spotify-clone/',
     'https://www.orbitaterrestre.com/',
     'https://vincenzomarcovecchio.github.io/Intro-Component-With-Sign-Up-Form/',
