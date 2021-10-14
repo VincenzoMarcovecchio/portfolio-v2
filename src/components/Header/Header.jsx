@@ -101,6 +101,11 @@ export default function Header() {
                 </Link>
               </li>
               <li>
+                <Link className="header__link" to="/osint-investigation">
+                  tools
+                </Link>
+              </li>
+              <li>
                 <Link className="header__link" to="/about">
                   about
                 </Link>

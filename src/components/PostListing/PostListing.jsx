@@ -9,10 +9,10 @@ const StyledPicture = styled.img`
   margin: 0;
   padding: 0;
   width: 100%;
-  max-width: inherith;
+  max-width: 100vw;
   height: 60vh;
   object-fit: cover;
-  position: relative;
+  
 `;
 
 const PostListStyled = styled.section`

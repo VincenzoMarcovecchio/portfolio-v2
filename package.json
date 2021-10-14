@@ -4,6 +4,7 @@
   "version": "1.1.0",
   "author": "Vincenzo Marcovecchio <vinceoldmark@gmail.com>",
   "dependencies": {
+    "@loadable/component": "^5.15.0",
     "@styled-icons/fa-solid": "^10.32.0",
     "axios": "^0.22.0",
     "babel-plugin-styled-components": "^1.12.0",
