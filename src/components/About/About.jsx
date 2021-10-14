@@ -99,6 +99,10 @@ const StyledAbout = styled.section`
       font-size: 1.9rem;
     }
   }
+  h3 {
+    width: 95%;
+    margin: 1rem auto;
+  }
 
   img {
     margin-bottom: 4rem;

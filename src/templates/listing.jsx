@@ -7,7 +7,7 @@ import config from '../../data/SiteConfig';
 import styled from 'styled-components';
 
 const StyledPostList = styled.main`
-  min-height: 100%;
+  min-height: 100vh;
   width: 100%;
   max-width: 100vw;
   display: flex;

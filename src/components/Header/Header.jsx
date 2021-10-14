@@ -5,43 +5,7 @@ import styled from "styled-components";
 
 export default function Header() {
 
-  
-  useEffect(() => {
-    const hamburgerMenu = document.querySelector(".hamburger-menu");
-    const headerNav = document.querySelector(".header__nav");
-    const headerNavItems = document.querySelectorAll(".header__list > *");
-    function openHamburgerMenu() {
-      hamburgerMenu.classList.toggle("hamburger-menu--open");
-    }
 
-    function showNav() {
-      headerNav.classList.toggle("header__nav--active");
-    }
-
-    function animateNavItems() {
-      headerNavItems.forEach((item, index) => {
-        if (item.style.animation) {
-          item.style.animation = "";
-        } else {
-          item.style.animation = `fadeInRight 1s ease forwards ${index / 7}s`;
-        }
-      });
-    }
-
-    function disableScroll() {
-      document.body.classList.toggle("disable-scroll");
-    }
-
-    function toggleNav() {
-      openHamburgerMenu();
-      showNav();
-      animateNavItems();
-      disableScroll();
-    }
-
-    hamburgerMenu.addEventListener("click", toggleNav);
-    headerNavItems.addEventListener("click", toggleNav);
-  }, []);
 
   return (
     <>
@@ -95,22 +59,22 @@ export default function Header() {
           <nav className="header__nav">
             <ul className="header__list">
               <li>
-                <Link className="header__link" to="/">
+                <Link className="header__link" to="/" replace>
                   Home
                 </Link>
               </li>
               <li>
-                <Link className="header__link" to="/projects">
+                <Link className="header__link" to="/projects/" replace>
                   projects
                 </Link>
               </li>
               <li>
-                <Link className="header__link" to="/osint-investigation">
+                <Link className="header__link" to="/osint-investigation/" replace>
                   tools
                 </Link>
               </li>
               <li>
-                <Link className="header__link" to="/about">
+                <Link className="header__link" to="/about/" replace>
                   about
                 </Link>
               </li>
