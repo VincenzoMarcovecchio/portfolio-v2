@@ -6,7 +6,15 @@ import SEO from '../components/SEO/SEO';
 import config from '../../data/SiteConfig';
 import styled from 'styled-components';
 
-
+const StyledPostList = styled.main`
+  min-height: 100vh;
+  width: 100%;
+  max-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
 const StyledPagination = styled.div`
   margin: 5rem auto 2rem auto;

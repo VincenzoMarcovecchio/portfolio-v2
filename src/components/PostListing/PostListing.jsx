@@ -1,9 +1,9 @@
-import React from "react";
-import { Link } from "gatsby";
-import styled from "styled-components";
-import { device } from "../../styles/Global";
-import video from "../../assets/wetcode.gif";
-import Search from "../search/index";
+import React from 'react';
+import { Link } from 'gatsby';
+import styled from 'styled-components';
+import { device } from '../../styles/Global';
+import video from '../../assets/wetcode.gif';
+import Search from '../search/index';
 
 const StyledPicture = styled.img`
   margin: 0;
@@ -12,11 +12,11 @@ const StyledPicture = styled.img`
   max-width: 100vw;
   height: 60vh;
   object-fit: cover;
+  
 `;
 
 const PostListStyled = styled.section`
   width: 80%;
-  min-height: 100vh;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -86,7 +86,7 @@ const StyledArticle = styled.article`
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
   }
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     top: 0;
@@ -126,10 +126,11 @@ const StyledArticle = styled.article`
     font-size: 1.6rem;
     @media ${device.mobileM} {
       font-size: 1.4rem;
-      margin-bottom: -0.5rem;
+      margin-bottom: - 0.5rem;
     }
   }
 `;
+
 
 class PostListing extends React.Component {
   getPostList() {
@@ -163,7 +164,7 @@ class PostListing extends React.Component {
 
         <PostListStyled>
           <div className="blog-header">
-            <h1>{this.tag ? this.tag : "Blog"}&nbsp;📝</h1>
+            <h1>{this.tag ? this.tag : 'Blog'}&nbsp;📝</h1>
 
             <Search indices={searchIndices} />
           </div>
@@ -179,7 +180,7 @@ class PostListing extends React.Component {
                 <p>{post.excerpt}</p>
                 <StyledTag>
                   {post.tags.map((tag, i) => {
-                    let tagga = tag.replace(/\s/g, "-");
+                    let tagga = tag.replace(/\s/g, '-');
                     return (
                       <Link key={i} replace to={`/tags/${tagga}`}>
                         #{tag}&nbsp;&nbsp;
