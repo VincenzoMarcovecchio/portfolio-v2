@@ -1,9 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
 // import InfiniteScroll from "react-infinite-scroll-component"
-import SEO from "../components/SEO/SEO";
 import * as JsSearch from "js-search";
 import styled from "styled-components";
+import { Helmet } from 'react-helmet';
+
 
 const StyledTable = styled.table`
 
@@ -110,10 +111,11 @@ class Blogg extends React.Component {
     if (isLoading) {
       return (
         <>
-          <SEO
-            title="Public Bug Bounty Programs"
-            description="Community curated list of public bug bounty and responsible disclosure programs."
-          />
+         <Helmet
+          title="Public Bug Bounty Programs"
+          description="Community curated list of public bug bounty and responsible disclosure programs."
+        />
+        
           <div style={{ margin: `1.2rem 1rem 1.2rem 1rem` }}>
             <h1 style={{ marginTop: `3em`, textAlign: `center` }}>
               Getting the search all setup

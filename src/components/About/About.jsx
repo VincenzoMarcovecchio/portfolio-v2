@@ -101,7 +101,7 @@ const StyledAbout = styled.section`
   }
   h3 {
     width: 95%;
-    margin: 1rem auto;
+    margin: 2rem auto;
   }
 
   img {

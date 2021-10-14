@@ -10,7 +10,7 @@ const StyledPicture = styled.img`
   padding: 0;
   width: 100%;
   max-width: 100vw;
-  height: 60vh;
+  min-height: 60vh;
   object-fit: cover;
   
 `;

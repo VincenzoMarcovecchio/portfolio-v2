@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Img from 'gatsby-image';
 import { graphql } from 'gatsby';
 import { device } from '../styles/Global';
-import background from "../assets/backgroundportfolioprojects.png"
 
 export const query = graphql`
   query Projects2 {
@@ -38,13 +37,13 @@ const StyledDiv = styled.div`
 
   }
   ul {
-    padding: 1rem;
+    padding: 1.1rem;
     list-style: mongolian;
   }
   h1 {
     font-size: 2.5rem;
-    width: 90%;
-    padding: 0 1rem;
+    width: 95%;
+    
     margin: 3rem auto 3rem 0;
     line-height: 1.2;
     @media ${device.mobileL} {
