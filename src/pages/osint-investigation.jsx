@@ -210,10 +210,11 @@ class OsintPage extends Component {
         }
       });
     };
-    if (w.attachEvent) {
-      w.attachEvent("onload", l);
+    
+    if (isBrowser() && w.attachEvent) {
+      isBrowser() &&   w.attachEvent("onload", l);
     } else {
-      w.addEventListener("load", l, false);
+      isBrowser() &&   w.addEventListener("load", l, false);
     }
     return (
       <>
