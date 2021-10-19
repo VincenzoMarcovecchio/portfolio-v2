@@ -5,7 +5,7 @@ class OsintPage extends Component {
   render() {
     const isBrowser = () => typeof window !== "undefined";
     const w = isBrowser() && window;
-    const d = document;
+    const d = isBrowser() && document;
 
     const l = () => {
       const s = d.createElement("script");
