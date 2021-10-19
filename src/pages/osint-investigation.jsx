@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Helmet } from "react-helmet";
-import "../../public/js/d3.v3.min.js";
+import "../../js/d3.v3.min.js.js";
 class OsintPage extends Component {
   render() {
     var margin = [20, 120, 20, 140],
