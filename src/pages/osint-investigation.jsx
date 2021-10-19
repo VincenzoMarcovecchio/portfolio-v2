@@ -59,13 +59,15 @@ path.link {
         <Helmet
           title={`Osint Tools | Find out who the scammer is`}
           description="OSINT tools"
-        />
+        >
+         
+          <script type="text/javascript" src="/d3.v3.min.js"></script>
+          <script src="/arf.js"></script>
+        </Helmet>
         <body>
           <div id="body">
             <div id="header">OSINT Framework</div>
           </div>
-
-          <script src="js/arf.js"></script>
         </body>
       </>
     );
