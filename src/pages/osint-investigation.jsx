@@ -3,8 +3,10 @@ import { Helmet } from "react-helmet";
 
 class OsintPage extends Component {
   render() {
-    const w = window;
+    const isBrowser = () => typeof window !== "undefined";
+    const w = isBrowser() && window;
     const d = document;
+
     const l = () => {
       const s = d.createElement("script");
       s.type = "text/javascript";
