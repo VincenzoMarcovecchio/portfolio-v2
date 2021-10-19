@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Helmet } from "react-helmet";
-import "../../js/d3.v3.min.js.js";
+
 class OsintPage extends Component {
   render() {
     var margin = [20, 120, 20, 140],
@@ -248,7 +248,12 @@ path.link {
           title={`Osint Tools | Find out who the scammer is`}
           description="OSINT tools"
         >
-         
+          <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.1.1/d3.min.js"
+            integrity="sha512-COTaPOlz12cG4fSfcBsxZsjauBAyldqp+8FQUM/dZHm+ts/jR4AFoJhCqxy8K10Jrf3pojfsbq7fAPTb1XaVkg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+          ></script>
         </Helmet>
         <body>
           <div id="body">
