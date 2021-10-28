@@ -4,11 +4,12 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 
 export default function Header() {
+  
   useEffect(() => {
     const hamburgerMenu = document.querySelector(".hamburger-menu");
     const headerNav = document.querySelector(".header__nav");
     const headerNavItems = document.querySelectorAll(".header__list > *");
-    const headerLinks = document.querySelectorAll(".header__link");
+    const headerLinks = document.querySelectorAll(".header__list > *");
 
     function openHamburgerMenu() {
       hamburgerMenu.classList.toggle("hamburger-menu--open");
