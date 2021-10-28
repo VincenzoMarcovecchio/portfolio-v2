@@ -9,7 +9,7 @@ export default function Header() {
     const hamburgerMenu = document.querySelector(".hamburger-menu");
     const headerNav = document.querySelector(".header__nav");
     const headerNavItems = document.querySelectorAll(".header__list > *");
-    const headerLinks = document.querySelectorAll(".header__list li");
+    const headerLinks = document.querySelectorAll(".header__link");
 
     function openHamburgerMenu() {
       hamburgerMenu.classList.toggle("hamburger-menu--open");
