@@ -14,6 +14,8 @@ export default class Layout extends React.Component {
           style={[
             {
               cssText: `
+
+              
             body {
                 box-sizing: border-box;
             font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Roboto, Arial,
@@ -29,6 +31,14 @@ export default class Layout extends React.Component {
             }
             .minheight {
               min-height:100vh;
+            }
+
+            iframe {
+              border: 0;
+              width: 100%;
+              height: 100%;
+              min-height: 100vh;
+            
             }
         `,
             },

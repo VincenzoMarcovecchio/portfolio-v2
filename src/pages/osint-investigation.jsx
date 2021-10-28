@@ -10,7 +10,7 @@ class OsintPage extends Component {
           title={`Osint Tools | Find out who the scammer is`}
           description="OSINT tools"
         ></Helmet>
-        <iframe src="https://osintframework.com/" />
+        <iframe  src="https://osintframework.com/" />
       </>
     );
   }
