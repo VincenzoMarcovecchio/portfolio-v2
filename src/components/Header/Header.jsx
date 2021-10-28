@@ -4,42 +4,48 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 
 export default function Header() {
-  const hamburgerMenu = document.querySelector(".hamburger-menu");
-  const headerNav = document.querySelector(".header__nav");
-  const headerNavItems = document.querySelectorAll(".header__list > *");
-  const headerLinks = document.querySelectorAll(".header__link");
+  useEffect(() => {
+    const hamburgerMenu = document.querySelector(".hamburger-menu");
+    const headerNav = document.querySelector(".header__nav");
+    const headerNavItems = document.querySelectorAll(".header__list > *");
+    const headerLinks = document.querySelectorAll(".header__link");
 
-  function openHamburgerMenu() {
-    hamburgerMenu.classList.toggle("hamburger-menu--open");
-  }
+    function openHamburgerMenu() {
+      hamburgerMenu.classList.toggle("hamburger-menu--open");
+    }
 
-  function showNav() {
-    headerNav.classList.toggle("header__nav--active");
-  }
+    function showNav() {
+      headerNav.classList.toggle("header__nav--active");
+    }
 
-  function animateNavItems() {
-    headerNavItems.forEach((item, index) => {
-      if (item.style.animation) {
-        item.style.animation = "";
-      } else {
-        item.style.animation = `fadeInRight 1s ease forwards ${index / 7}s`;
-      }
-    });
-  }
+    function animateNavItems() {
+      headerNavItems.forEach((item, index) => {
+        if (item.style.animation) {
+          item.style.animation = "";
+        } else {
+          item.style.animation = `fadeInRight 1s ease forwards ${index / 7}s`;
+        }
+      });
+    }
 
-  function disableScroll() {
-    document.body.classList.toggle("disable-scroll");
-  }
+    function disableScroll() {
+      document.body.classList.toggle("disable-scroll");
+    }
 
-  function toggleNav() {
-    openHamburgerMenu();
-    showNav();
-    animateNavItems();
-    disableScroll();
-  }
+    function toggleNav() {
+      openHamburgerMenu();
+      showNav();
+      animateNavItems();
+      disableScroll();
+    }
 
-  hamburgerMenu.addEventListener("click", toggleNav);
-  headerLinks.addEventListener("click", toggleNav);
+    hamburgerMenu.addEventListener("click", toggleNav);
+    headerLinks.addEventListener("click", toggleNav);
+    return () => {
+      hamburgerMenu.removeEventListener("click", toggleNav);
+      headerLinks.removeEventListener("click", toggleNav);
+    };
+  }, []);
 
   return (
     <>
