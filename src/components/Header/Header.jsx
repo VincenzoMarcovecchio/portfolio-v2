@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import engine from "../../assets/engine.jpg";
 import { Link } from "gatsby";
 import styled from "styled-components";
@@ -218,6 +218,7 @@ const NavBar = styled.header`
 `;
 export default function Header() {
   const [open, setOpen] = useState(false);
+
   useEffect(() => {
     const hamburgerMenu = document.querySelector(".hamburger-menu");
     const headerNav = document.querySelector(".header__nav");
@@ -256,10 +257,6 @@ export default function Header() {
     return () => {
       hamburgerMenu.removeEventListener("click", toggleNav);
     };
-  }, []);
-
-  const handleChange = useCallback(() => {
-    setOpen(!open);
   }, []);
 
   return (
@@ -304,7 +301,7 @@ export default function Header() {
 
           <nav className="header__nav">
             <ul
-              onClick={handleChange}
+              onClick={() => setOpen(!open)}
               className={`${open && "header__nav--active"} header__list`}
             >
               <li>
