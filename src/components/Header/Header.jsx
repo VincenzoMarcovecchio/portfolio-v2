@@ -1,4 +1,4 @@
-import React, { useEffect,useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import engine from "../../assets/engine.jpg";
 import { Link } from "gatsby";
 import styled from "styled-components";
@@ -217,7 +217,7 @@ const NavBar = styled.header`
   }
 `;
 export default function Header() {
-  const [open,setOpen]=useState(false)
+  const [open, setOpen] = useState(false);
   useEffect(() => {
     const hamburgerMenu = document.querySelector(".hamburger-menu");
     const headerNav = document.querySelector(".header__nav");
@@ -258,10 +258,9 @@ export default function Header() {
     };
   }, []);
 
-
-const handleChange = useCallback(()=> {
-  setOpen(!open)
-},[])
+  const handleChange = useCallback(() => {
+    setOpen(!open);
+  }, []);
 
   return (
     <React.Fragment>
@@ -304,7 +303,10 @@ const handleChange = useCallback(()=> {
           </button>
 
           <nav className="header__nav">
-            <ul onClick={handleChange} className={`${open && "header__nav--active"} header__list`}>
+            <ul
+              onClick={handleChange}
+              className={`${open && "header__nav--active"} header__list`}
+            >
               <li>
                 <Link className="header__link" to="/">
                   Home
@@ -329,7 +331,6 @@ const handleChange = useCallback(()=> {
           </nav>
         </div>
       </NavBar>
- </React.Fragment>>
+    </React.Fragment>
   );
 }
-
