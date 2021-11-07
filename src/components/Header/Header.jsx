@@ -299,11 +299,8 @@ export default function Header() {
             ></span>
           </button>
 
-          <nav className="header__nav">
-            <ul
-              onClick={() => setOpen(!open)}
-              className={`${open && "header__nav--active"} header__list`}
-            >
+          <nav className={`${open ? "header__nav--active" : "header__nav"}`}>
+            <ul onClick={() => setOpen(!open)} className="header__list">
               <li>
                 <Link className="header__link" to="/">
                   Home
