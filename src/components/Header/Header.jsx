@@ -252,8 +252,17 @@ export default function Header() {
     disableScroll();
   }
 
-  hamburgerMenu.addEventListener("click", toggleNav);
-  headerNavItems.addEventListener("click", toggleNav);
+  useEffect(() => {
+    hamburgerMenu.addEventListener("click", toggleNav);
+    headerNavItems.addEventListener("click", toggleNav);
+    // cleanup this component
+    return () => {
+      hamburgerMenu.removeEventListener("click", toggleNav);
+      headerNavItems.removeEventListener("click", toggleNav);
+  
+    };
+  }, []);
+
  
 
   return (
@@ -301,7 +310,7 @@ export default function Header() {
               open ? "header__nav header__nav--active" : "header__nav"
             }`}
           >
-            <ul onClick={() => setOpen(!open)} className="header__list">
+            <ul  className="header__list">
               <li>
                 <Link className="header__link" to="/">
                   Home
