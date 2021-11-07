@@ -1,135 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState, useCallback } from "react";
 import engine from "../../assets/engine.jpg";
 import { Link } from "gatsby";
 import styled from "styled-components";
-
-export default function Header() {
-  useEffect(() => {
-    const hamburgerMenu = document.querySelector(".hamburger-menu");
-    const headerNav = document.querySelector(".header__nav");
-    const headerNavItems = document.querySelectorAll(".header__list > *");
-
-    function openHamburgerMenu() {
-      hamburgerMenu.classList.toggle("hamburger-menu--open");
-    }
-
-    function showNav() {
-      headerNav.classList.toggle("header__nav--active");
-    }
-
-    function animateNavItems() {
-      headerNavItems.forEach((item, index) => {
-        if (item.style.animation) {
-          item.style.animation = "";
-        } else {
-          item.style.animation = `fadeInRight 1s ease forwards ${index / 7}s`;
-        }
-      });
-    }
-
-    function disableScroll() {
-      document.body.classList.toggle("disable-scroll");
-    }
-
-    function toggleNav() {
-      openHamburgerMenu();
-      showNav();
-      animateNavItems();
-      disableScroll();
-    }
-
-    hamburgerMenu.addEventListener("click", toggleNav);
-    return () => {
-      hamburgerMenu.removeEventListener("click", toggleNav);
-    };
-  }, []);
-
-  useEffect(() => {
-    const headerLinks = document.querySelectorAll(".header__link");
-
-    function showNav() {
-      headerNav.classList.toggle("header__nav--active");
-    }
-
-    function toggleNav() {
-      showNav();
-    }
-
-    headerLinks.addEventListener("click", toggleNav);
-    return () => {
-      headerLinks.removeEventListener("click", toggleNav);
-    };
-  }, []);
-
-  return (
-    <>
-      <div
-        style={{
-          backgroundColor: "lightseagreen",
-          padding: "0.3rem",
-          color: "white",
-        }}
-      >
-        <center>
-          <Link to="/public-bugbounty-programs/" replace>
-            🔥 Bug Bounties
-          </Link>{" "}
-          🔥
-        </center>
-      </div>
-      <NavBar>
-        <div className="header__content-wrapper">
-          <Link to="/">
-            <img className="header__logo" src={engine} alt="logo meccanico" />
-          </Link>
-
-          <button
-            aria-label="menu button"
-            className="hamburger-menu header__hamburger-menu"
-          >
-            <span
-              aria-hidden="true"
-              className="hamburger-menu__bar hamburger-menu__bar--top"
-            ></span>
-            <span
-              aria-hidden="true"
-              className="hamburger-menu__bar hamburger-menu__bar--middle"
-            ></span>
-            <span
-              aria-hidden="true"
-              className="hamburger-menu__bar hamburger-menu__bar--bottom"
-            ></span>
-          </button>
-
-          <nav className="header__nav">
-            <ul className="header__list">
-              <li>
-                <Link className="header__link" to="/">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link className="header__link" to="/projects">
-                  projects
-                </Link>
-              </li>
-              <li>
-                <Link className="header__link" to="/osint-investigation">
-                  tools
-                </Link>
-              </li>
-              <li>
-                <Link className="header__link" to="/about">
-                  about
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </NavBar>
-    </>
-  );
-}
 
 const NavBar = styled.header`
   position: relative;
@@ -344,3 +216,120 @@ const NavBar = styled.header`
     }
   }
 `;
+export default function Header() {
+  const [open,setOpen]=useState(false)
+  useEffect(() => {
+    const hamburgerMenu = document.querySelector(".hamburger-menu");
+    const headerNav = document.querySelector(".header__nav");
+    const headerNavItems = document.querySelectorAll(".header__list > *");
+
+    function openHamburgerMenu() {
+      hamburgerMenu.classList.toggle("hamburger-menu--open");
+    }
+
+    function showNav() {
+      headerNav.classList.toggle("header__nav--active");
+    }
+
+    function animateNavItems() {
+      headerNavItems.forEach((item, index) => {
+        if (item.style.animation) {
+          item.style.animation = "";
+        } else {
+          item.style.animation = `fadeInRight 1s ease forwards ${index / 7}s`;
+        }
+      });
+    }
+
+    function disableScroll() {
+      document.body.classList.toggle("disable-scroll");
+    }
+
+    function toggleNav() {
+      openHamburgerMenu();
+      showNav();
+      animateNavItems();
+      disableScroll();
+    }
+
+    hamburgerMenu.addEventListener("click", toggleNav);
+    return () => {
+      hamburgerMenu.removeEventListener("click", toggleNav);
+    };
+  }, []);
+
+
+const handleChange = useCallback(()=> {
+  setOpen(!open)
+},[])
+
+  return (
+    <React.Fragment>
+      <div
+        style={{
+          backgroundColor: "lightseagreen",
+          padding: "0.3rem",
+          color: "white",
+        }}
+      >
+        <center>
+          <Link to="/public-bugbounty-programs/" replace>
+            🔥 Bug Bounties
+          </Link>{" "}
+          🔥
+        </center>
+      </div>
+      <NavBar>
+        <div className="header__content-wrapper">
+          <Link to="/">
+            <img className="header__logo" src={engine} alt="logo meccanico" />
+          </Link>
+
+          <button
+            aria-label="menu button"
+            className="hamburger-menu header__hamburger-menu"
+          >
+            <span
+              aria-hidden="true"
+              className="hamburger-menu__bar hamburger-menu__bar--top"
+            ></span>
+            <span
+              aria-hidden="true"
+              className="hamburger-menu__bar hamburger-menu__bar--middle"
+            ></span>
+            <span
+              aria-hidden="true"
+              className="hamburger-menu__bar hamburger-menu__bar--bottom"
+            ></span>
+          </button>
+
+          <nav className="header__nav">
+            <ul onClick={handleChange} className={`${open && "header__nav--active"} header__list`}>
+              <li>
+                <Link className="header__link" to="/">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link className="header__link" to="/projects">
+                  projects
+                </Link>
+              </li>
+              <li>
+                <Link className="header__link" to="/osint-investigation">
+                  tools
+                </Link>
+              </li>
+              <li>
+                <Link className="header__link" to="/about">
+                  about
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </NavBar>
+ </React.Fragment>>
+  );
+}
+
