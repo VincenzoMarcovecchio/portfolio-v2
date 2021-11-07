@@ -219,9 +219,14 @@ const NavBar = styled.header`
 export default function Header() {
   const [open, setOpen] = useState(false);
 
-  const hamburgerMenu = document.querySelector(".hamburger-menu");
-  const headerNav = document.querySelector(".header__nav");
-  const headerNavItems = document.querySelectorAll(".header__list > *");
+  const hamburgerMenu =
+    typeof document !== "undefined" &&
+    document.querySelector(".hamburger-menu");
+  const headerNav =
+    typeof document !== "undefined" && document.querySelector(".header__nav");
+  const headerNavItems =
+    typeof document !== "undefined" &&
+    document.querySelectorAll(".header__list > *");
 
   function openHamburgerMenu() {
     hamburgerMenu.classList.toggle("hamburger-menu--open");
@@ -230,7 +235,7 @@ export default function Header() {
   function showNav() {
     headerNav.classList.toggle("header__nav--active");
   }
-  
+
   function animateNavItems() {
     headerNavItems.forEach((item, index) => {
       if (item.style.animation) {
@@ -242,7 +247,8 @@ export default function Header() {
   }
 
   function disableScroll() {
-    document.body.classList.toggle("disable-scroll");
+    typeof document !== "undefined" &&
+      document.body.classList.toggle("disable-scroll");
   }
 
   function toggleNav() {
@@ -259,11 +265,8 @@ export default function Header() {
     return () => {
       hamburgerMenu.removeEventListener("click", toggleNav);
       headerNavItems.removeEventListener("click", toggleNav);
-  
     };
   }, []);
-
- 
 
   return (
     <React.Fragment>
@@ -310,7 +313,7 @@ export default function Header() {
               open ? "header__nav header__nav--active" : "header__nav"
             }`}
           >
-            <ul  className="header__list">
+            <ul className="header__list">
               <li>
                 <Link className="header__link" to="/">
                   Home
