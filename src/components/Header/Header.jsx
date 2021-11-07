@@ -217,16 +217,17 @@ const NavBar = styled.header`
   }
 `;
 export default function Header() {
-  const [open, setOpen] = useState(false);
 
   const hamburgerMenu =
     typeof document !== "undefined" &&
     document.querySelector(".hamburger-menu");
+
   const headerNav =
     typeof document !== "undefined" && document.querySelector(".header__nav");
+
   const headerNavItems =
     typeof document !== "undefined" &&
-    document.querySelectorAll(".header__list > *");
+    document.querySelector(".header__nav .header__list");
 
   function openHamburgerMenu() {
     hamburgerMenu.classList.toggle("hamburger-menu--open");
@@ -308,11 +309,7 @@ export default function Header() {
             ></span>
           </button>
 
-          <nav
-            className={`${
-              open ? "header__nav header__nav--active" : "header__nav"
-            }`}
-          >
+          <nav className="header__nav ">
             <ul className="header__list">
               <li>
                 <Link className="header__link" to="/">
