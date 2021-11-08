@@ -5,10 +5,17 @@ import styled from "styled-components";
 
 export default function Header() {
   useEffect(() => {
-    const hamburgerMenu = typeof document !== "undefined" && document.querySelector(".hamburger-menu");
-    const headerNav = typeof document !== "undefined" && document.querySelector(".header__nav");
-    const headerNavItems = typeof document !== "undefined" && document.querySelectorAll(".header__list > *");
-    const headerLinks = typeof document !== "undefined" && document.querySelectorAll(".header__link");
+    const hamburgerMenu =
+      typeof document !== "undefined" &&
+      document.querySelector(".hamburger-menu");
+    const headerNav =
+      typeof document !== "undefined" && document.querySelector(".header__nav");
+    const headerNavItems =
+      typeof document !== "undefined" &&
+      document.querySelectorAll(".header__list > *");
+    const headerLinks =
+      typeof document !== "undefined" &&
+      document.querySelectorAll(".header__list");
 
     function openHamburgerMenu() {
       hamburgerMenu.classList.toggle("hamburger-menu--open");
@@ -39,12 +46,12 @@ export default function Header() {
       disableScroll();
     }
 
-     hamburgerMenu.addEventListener("click", toggleNav);
-     headerNavItems.addEventListener("click", toggleNav);
-  
+    hamburgerMenu.addEventListener("click", toggleNav);
+    headerLinks.addEventListener("click", toggleNav);
+
     return () => {
       hamburgerMenu.removeEventListener("click", toggleNav);
-      headerNavItems.removeEventListener("click", toggleNav);
+      headerLinks.removeEventListener("click", toggleNav);
     };
   }, []);
 
@@ -58,18 +65,11 @@ export default function Header() {
         }}
       >
         <center>
-          🔥 What's hot?{" "}
-          <a
-            href="https://github.com/VincenzoMarcovecchio/Frainegram"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            this react-native project
-          </a>
-          &nbsp;&&nbsp;
+          🔥
           <Link to="/public-bugbounty-programs/" replace>
-            Bug Bounties
-          </Link>{" "}
+            {" "}
+            Bug Bounties{" "}
+          </Link>
           🔥
         </center>
       </div>
