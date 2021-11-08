@@ -5,10 +5,10 @@ import styled from "styled-components";
 
 export default function Header() {
   useEffect(() => {
-    const hamburgerMenu = document.querySelector(".hamburger-menu");
-    const headerNav = document.querySelector(".header__nav");
-    const headerNavItems = document.querySelectorAll(".header__list > *");
-    const headerLinks = document.querySelectorAll(".header__link");
+    const hamburgerMenu = typeof document !== "undefined" && document.querySelector(".hamburger-menu");
+    const headerNav = typeof document !== "undefined" && document.querySelector(".header__nav");
+    const headerNavItems = typeof document !== "undefined" && document.querySelectorAll(".header__list > *");
+    const headerLinks = typeof document !== "undefined" && document.querySelectorAll(".header__link");
 
     function openHamburgerMenu() {
       hamburgerMenu.classList.toggle("hamburger-menu--open");
@@ -39,8 +39,13 @@ export default function Header() {
       disableScroll();
     }
 
-    hamburgerMenu.addEventListener("click", toggleNav);
-    headerLinks.addEventListener("click", toggleNav);
+     hamburgerMenu.addEventListener("click", toggleNav);
+     headerNavItems.addEventListener("click", toggleNav);
+  
+    return () => {
+      hamburgerMenu.removeEventListener("click", toggleNav);
+      headerNavItems.removeEventListener("click", toggleNav);
+    };
   }, []);
 
   return (
