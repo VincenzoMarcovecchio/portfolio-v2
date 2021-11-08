@@ -15,7 +15,7 @@ export default function Header() {
       document.querySelectorAll(".header__list > *");
     const headerLinks =
       typeof document !== "undefined" &&
-      document.querySelectorAll(".header__list");
+      document.querySelectorAll(".header__link");
 
     function openHamburgerMenu() {
       hamburgerMenu.classList.toggle("hamburger-menu--open");
@@ -47,11 +47,16 @@ export default function Header() {
     }
 
     hamburgerMenu.addEventListener("click", toggleNav);
-    headerLinks.addEventListener("click", toggleNav);
+
+    headerNavItems.forEach((item) => {
+      item.addEventListener("click", toggleNav);
+    });
 
     return () => {
       hamburgerMenu.removeEventListener("click", toggleNav);
-      headerLinks.removeEventListener("click", toggleNav);
+      headerNavItems.forEach((item) => {
+        item.removeEventListener("click", toggleNav);
+      });
     };
   }, []);
 
