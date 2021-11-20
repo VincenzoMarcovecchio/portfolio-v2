@@ -1,79 +1,82 @@
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
 import engine from "../../assets/engine.jpg";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
 export default function Header() {
-  const [isMobile, setIsMobile] = useState(false)
- 
-//choose the screen size 
-const handleResize = () => {
-  if (window.innerWidth < 720) {
-      setIsMobile(true)
-  } else {
-      setIsMobile(false)
-  }
-}
+  const [isMobile, setIsMobile] = useState(false);
 
-// create an event listener
-useEffect(() => {
-  window.addEventListener("resize", handleResize)
-})
+  //choose the screen size
+  const handleResize = () => {
+    if (window.innerWidth < 720) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+
+  // create an event listener
   useEffect(() => {
-    const hamburgerMenu =
-      typeof document !== "undefined" &&
-      document.querySelector(".hamburger-menu");
-    const headerNav =
-      typeof document !== "undefined" && document.querySelector(".header__nav");
-    const headerNavItems =
-      typeof document !== "undefined" &&
-      document.querySelectorAll(".header__list > *");
-    const headerLinks =
-      typeof document !== "undefined" &&
-      document.querySelectorAll(".header__link");
+    window.addEventListener("resize", handleResize);
+  });
+  if (isMobile) {
+    useEffect(() => {
+      const hamburgerMenu =
+        typeof document !== "undefined" &&
+        document.querySelector(".hamburger-menu");
+      const headerNav =
+        typeof document !== "undefined" &&
+        document.querySelector(".header__nav");
+      const headerNavItems =
+        typeof document !== "undefined" &&
+        document.querySelectorAll(".header__list > *");
+      const headerLinks =
+        typeof document !== "undefined" &&
+        document.querySelectorAll(".header__link");
 
-    function openHamburgerMenu() {
-      hamburgerMenu.classList.toggle("hamburger-menu--open");
-    }
+      function openHamburgerMenu() {
+        hamburgerMenu.classList.toggle("hamburger-menu--open");
+      }
 
-    function showNav() {
-      headerNav.classList.toggle("header__nav--active");
-    }
+      function showNav() {
+        headerNav.classList.toggle("header__nav--active");
+      }
 
-    function animateNavItems() {
-      isMobile && headerNavItems.forEach((item, index) => {
-        if (item.style.animation) {
-          item.style.animation = "";
-        } else {
-          item.style.animation = `fadeInRight 1s ease forwards ${index / 7}s`;
-        }
-      });
-    }
+      function animateNavItems() {
+        headerNavItems.forEach((item, index) => {
+          if (item.style.animation) {
+            item.style.animation = "";
+          } else {
+            item.style.animation = `fadeInRight 1s ease forwards ${index / 7}s`;
+          }
+        });
+      }
 
-    function disableScroll() {
-      document.body.classList.toggle("disable-scroll");
-    }
+      function disableScroll() {
+        document.body.classList.toggle("disable-scroll");
+      }
 
-    function toggleNav() {
-      openHamburgerMenu();
-      showNav();
-      animateNavItems();
-      disableScroll();
-    }
+      function toggleNav() {
+        openHamburgerMenu();
+        showNav();
+        animateNavItems();
+        disableScroll();
+      }
 
-    headerNavItems.forEach((item) => {
-      item.addEventListener("click", toggleNav);
-    });
-
-    hamburgerMenu.addEventListener("click", toggleNav);
-
-    return () => {
       headerNavItems.forEach((item) => {
-        item.removeEventListener("click", toggleNav);
+        item.addEventListener("click", toggleNav);
       });
-      hamburgerMenu.removeEventListener("click", toggleNav);
-    };
-  }, []);
+
+      hamburgerMenu.addEventListener("click", toggleNav);
+
+      return () => {
+        headerNavItems.forEach((item) => {
+          item.removeEventListener("click", toggleNav);
+        });
+        hamburgerMenu.removeEventListener("click", toggleNav);
+      };
+    });
+  }
 
   return (
     <>
