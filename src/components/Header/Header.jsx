@@ -1,9 +1,24 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import engine from "../../assets/engine.jpg";
 import { Link } from "gatsby";
 import styled from "styled-components";
 
 export default function Header() {
+  const [isMobile, setIsMobile] = useState(false)
+ 
+//choose the screen size 
+const handleResize = () => {
+  if (window.innerWidth < 720) {
+      setIsMobile(true)
+  } else {
+      setIsMobile(false)
+  }
+}
+
+// create an event listener
+useEffect(() => {
+  window.addEventListener("resize", handleResize)
+})
   useEffect(() => {
     const hamburgerMenu =
       typeof document !== "undefined" &&
@@ -26,7 +41,7 @@ export default function Header() {
     }
 
     function animateNavItems() {
-      headerNavItems.forEach((item, index) => {
+      isMobile && headerNavItems.forEach((item, index) => {
         if (item.style.animation) {
           item.style.animation = "";
         } else {
@@ -264,6 +279,8 @@ const NavBar = styled.div`
       }
     }
   }
+
+  @media only screen and (max-width: 800px) {
   .hamburger-menu--open .hamburger-menu__bar--top {
     transform: rotate(45deg) translate(3px, 4px);
   }
@@ -273,6 +290,7 @@ const NavBar = styled.div`
   .hamburger-menu--open .hamburger-menu__bar--bottom {
     transform: rotate(-45deg) translate(3px, -4px);
   }
+}
   @keyframes fadeInRight {
     from {
       -webkit-transform: translateX(5rem);
