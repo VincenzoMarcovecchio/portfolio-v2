@@ -4,64 +4,62 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 
 export default function Header() {
-  if (typeof document !== "undefined" && window.innerWidth < 720) {
-    useEffect(() => {
-      const hamburgerMenu =
-        typeof document !== "undefined" &&
-        document.querySelector(".hamburger-menu");
-      const headerNav =
-        typeof document !== "undefined" &&
-        document.querySelector(".header__nav");
-      const headerNavItems =
-        typeof document !== "undefined" &&
-        document.querySelectorAll(".header__list > *");
-      const headerLinks =
-        typeof document !== "undefined" &&
-        document.querySelectorAll(".header__link");
+  useEffect(() => {
+    const hamburgerMenu =
+      typeof document !== "undefined" &&
+      document.querySelector(".hamburger-menu");
+    const headerNav =
+      typeof document !== "undefined" && document.querySelector(".header__nav");
+    const headerNavItems =
+      typeof document !== "undefined" &&
+      document.querySelectorAll(".header__list > *");
+    const headerLinks =
+      typeof document !== "undefined" &&
+      document.querySelectorAll(".header__link");
 
-      function openHamburgerMenu() {
-        hamburgerMenu.classList.toggle("hamburger-menu--open");
-      }
+    function openHamburgerMenu() {
+      hamburgerMenu.classList.toggle("hamburger-menu--open");
+    }
 
-      function showNav() {
-        headerNav.classList.toggle("header__nav--active");
-      }
+    function showNav() {
+      headerNav.classList.toggle("header__nav--active");
+    }
 
-      function animateNavItems() {
-        headerNavItems.forEach((item, index) => {
-          if (item.style.animation) {
-            item.style.animation = "";
-          } else {
-            item.style.animation = `fadeInRight 1s ease forwards ${index / 7}s`;
-          }
-        });
-      }
-
-      function disableScroll() {
-        document.body.classList.toggle("disable-scroll");
-      }
-
-      function toggleNav() {
-        openHamburgerMenu();
-        showNav();
-        animateNavItems();
-        disableScroll();
-      }
-
-      headerNavItems.forEach((item) => {
-        item.addEventListener("click", toggleNav);
+    function animateNavItems() {
+      headerNavItems.forEach((item, index) => {
+        if (item.style.animation) {
+          item.style.animation = "";
+        } else {
+          item.style.animation = `fadeInRight 1s ease forwards ${index / 7}s`;
+        }
       });
+    }
 
-      hamburgerMenu.addEventListener("click", toggleNav);
+    function disableScroll() {
+      document.body.classList.toggle("disable-scroll");
+    }
 
-      return () => {
-        headerNavItems.forEach((item) => {
-          item.removeEventListener("click", toggleNav);
-        });
-        hamburgerMenu.removeEventListener("click", toggleNav);
-      };
-    }, []);
-  }
+    function toggleNav() {
+      openHamburgerMenu();
+      showNav();
+      animateNavItems();
+      disableScroll();
+    }
+
+    headerNavItems.forEach((item) => {
+      item.addEventListener("click", toggleNav);
+    });
+
+    hamburgerMenu.addEventListener("click", toggleNav);
+
+    return () => {
+      headerNavItems.forEach((item) => {
+        item.removeEventListener("click", toggleNav);
+      });
+      hamburgerMenu.removeEventListener("click", toggleNav);
+    };
+  }, []);
+
   return (
     <>
       <div
@@ -181,12 +179,15 @@ const NavBar = styled.div`
         opacity: 1;
         margin-left: auto;
       }
-      &--active {
+    
+     
+        @media only screen and (max-width: 800px) { 
+        
+          &--active {
         .header__list {
           z-index: 5;
           display: flex;
         }
-        @media only screen and (max-width: 800px) {
           z-index: 5;
           transform: translate(0);
           transition: all 0.3s ease-out;
@@ -200,6 +201,7 @@ const NavBar = styled.div`
         }
       }
     }
+
     &__list {
       display: none;
       flex-direction: column;
@@ -243,6 +245,7 @@ const NavBar = styled.div`
       }
     }
   }
+  
   .hamburger-menu {
     border: 2px solid var(--color-very-dark-violet);
     padding: 9px 4.5px;
