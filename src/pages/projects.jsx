@@ -1,8 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import Img from 'gatsby-image';
-import { graphql } from 'gatsby';
-import { device } from '../styles/Global';
+import React from "react";
+import styled from "styled-components";
+import Img from "gatsby-image";
+import { graphql } from "gatsby";
+import { device } from "../styles/Global";
+import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import 'react-tabs/style/react-tabs.css';
 
 export const query = graphql`
   query Projects2 {
@@ -27,23 +29,20 @@ export const query = graphql`
 `;
 
 const StyledDiv = styled.div`
-
   .wrapper {
     width: 90%;
     margin: 0 auto;
     max-width: 80rem;
     padding-bottom: 4rem;
-
-
   }
   ul {
-    padding: 1.1rem;
+    padding: 1.5rem;
     list-style: mongolian;
   }
   h1 {
     font-size: 2.5rem;
     width: 95%;
-    
+
     margin: 3rem auto 3rem 0;
     line-height: 1.2;
     @media ${device.mobileL} {
@@ -107,7 +106,7 @@ const StyledDiv = styled.div`
     z-index: 1;
     width: 100%;
     height: 100%;
-    content: '';
+    content: "";
     display: block;
     opacity: 0.1;
     background-color: #000;
@@ -183,7 +182,7 @@ const StyledDiv = styled.div`
   }
 
   .front .inner p:after {
-    content: '';
+    content: "";
     width: 4rem;
     height: 2px;
     position: absolute;
@@ -197,7 +196,7 @@ const StyledDiv = styled.div`
 
   .front .inner span {
     color: rgba(255, 255, 255, 0.7);
-    font-family: 'Montserrat';
+    font-family: "Montserrat";
     font-weight: 300;
   }
 
@@ -228,87 +227,106 @@ const StyledDiv = styled.div`
       margin: 0 0 2rem 0;
     }
   }
-
-
-
 `;
+
+
+
 function project({ data }) {
   let links = [
-  
-    'https://vincenzomarcovecchio.github.io/Spotify-clone/',
-    'https://www.orbitaterrestre.com/',
-    'https://vincenzomarcovecchio.github.io/Intro-Component-With-Sign-Up-Form/',
-    'https://vincenzomarcovecchio.github.io/FRAINE-RICICLA/',
-    'https://fragine.netlify.app/',
-    'https://lemiepoesie.com/',
-    'https://prolocofraine.org/',
+    "https://vincenzomarcovecchio.github.io/Spotify-clone/",
+    "https://www.orbitaterrestre.com/",
+    "https://vincenzomarcovecchio.github.io/Intro-Component-With-Sign-Up-Form/",
+    "https://vincenzomarcovecchio.github.io/FRAINE-RICICLA/",
+    "https://fragine.netlify.app/",
+    "https://lemiepoesie.com/",
+    "https://prolocofraine.org/",
 
-    'https://vincenzomarcovecchio.github.io/BookMark-Landing-Page/',
-    'https://vincenzomarcovecchio.github.io/MyFriend-Barber-Website/',
+    "https://vincenzomarcovecchio.github.io/BookMark-Landing-Page/",
+    "https://vincenzomarcovecchio.github.io/MyFriend-Barber-Website/",
 
-    'https://resort-beach.vercel.app/rooms',
+    "https://resort-beach.vercel.app/rooms",
 
-    'https://vincenzomarcovecchio.github.io/BankEasy/',
-    'https://vincenzomarcovecchio.github.io/Insure-Website/',
-    'https://vincenzomarcovecchio.github.io/Manage-Landing-Page/',
-    'https://storage-upload.vercel.app/',
-    'https://dine.now.sh/',
-    'https://ciatapp.herokuapp.com/',
-    'https://resort-beach.vincenzomarcovecchio.now.sh/',
-    'https://vincenzomarcovecchio.github.io/Minesweeper/',
+    "https://vincenzomarcovecchio.github.io/BankEasy/",
+    "https://vincenzomarcovecchio.github.io/Insure-Website/",
+    "https://vincenzomarcovecchio.github.io/Manage-Landing-Page/",
+    "https://storage-upload.vercel.app/",
+    "https://dine.now.sh/",
+    "https://ciatapp.herokuapp.com/",
+    "https://resort-beach.vincenzomarcovecchio.now.sh/",
+    "https://vincenzomarcovecchio.github.io/Minesweeper/",
   ];
 
   return (
     <>
-      
-        <StyledDiv>
+      <StyledDiv>
+        <Tabs>
+          <TabList>
+            <Tab>Development</Tab>
+            <Tab>Hacking</Tab>
+          </TabList>
 
-          <section className="wrapper">
-
-
-            <h1>Some of my latest projects 🛠️</h1>
-            <h2>Technologies I use 🚧🚧</h2>
-            <ul>
-              <li>
-                React, create-react-app (useState, useEffect, useMemo,
-                useCallback)
-              </li>
-              <li>Next.js (api routes, prisma, strapi, mongodb)</li>
-              <li>D3 for data visualization and some other React libraries</li>
-              <li>CSS SCSS styled components material ui bootstrap tailwind</li>
-              <li>express express-router handlebars ejs passportjs Oauth</li>
-              <li>stripe snipcart paypal for payment handling</li>
-            </ul>
-            <div className="cols">
-              {data.allImageSharp.edges.map(({ node: work }, index) => {
-                return (
-                  <figure key={index} className="col">
-                    <div className="container">
-                      <Img fluid={work.fluid} className="front" />
-                      <div className="back">
-                        <div className="inner">
-                          <figcaption>
-                            <a
-                              target="_blank"
-                              name="check out the live site"
-                              rel="noopener noreferrer canonical"
-                              href={links[index]}
-                            >
-                              live site
-                            </a>
-                          </figcaption>
+          <TabPanel>
+            <section className="wrapper">
+              <h1>Some of my latest projects 🛠️</h1>
+              <h2>Technologies I use 🚧🚧</h2>
+              <ul>
+                <li>
+                  React, create-react-app (useState, useEffect, useMemo,
+                  useCallback)
+                </li>
+                <li>Next.js (api routes, prisma, strapi, mongodb)</li>
+                <li>
+                  D3 for data visualization and some other React libraries
+                </li>
+                <li>
+                  CSS SCSS styled components material ui bootstrap tailwind
+                </li>
+                <li>express express-router handlebars ejs passportjs Oauth</li>
+                <li>stripe snipcart paypal for payment handling</li>
+              </ul>
+              <div className="cols">
+                {data.allImageSharp.edges.map(({ node: work }, index) => {
+                  return (
+                    <figure key={index} className="col">
+                      <div className="container">
+                        <Img fluid={work.fluid} className="front" />
+                        <div className="back">
+                          <div className="inner">
+                            <figcaption>
+                              <a
+                                target="_blank"
+                                name="check out the live site"
+                                rel="noopener noreferrer canonical"
+                                href={links[index]}
+                              >
+                                live site
+                              </a>
+                            </figcaption>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </figure>
-                );
-              })}
-            </div>
-
-
-          </section>
-        </StyledDiv>
+                      <div>hover me!</div>
+                    </figure>
+                  );
+                })}
+              </div>
+            </section>
+          </TabPanel>
+          <TabPanel>
+          <section className="wrapper">
      
+              <ul>
+                <li>
+                 Ip spoofing leading to creadentials stealing (asp.net)
+                </li>
+                
+              </ul>
+             
+             
+            </section>
+          </TabPanel>
+        </Tabs>
+      </StyledDiv>
     </>
   );
 }
