@@ -59,9 +59,9 @@ module.exports = {
       options: {
         url: {
           development:
-            "https://github.com/arkadiyt/bounty-targets-data/blob/master/data/yeswehack_data.json",
+            "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/yeswehack_data.json",
           production:
-            "https://github.com/arkadiyt/bounty-targets-data/blob/master/data/yeswehack_data",
+            "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/yeswehack_data.json",
         },
         rootKey: "yeswehack",
       },
