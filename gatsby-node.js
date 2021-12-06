@@ -1,7 +1,7 @@
+import fetch from "node-fetch";
 const path = require("path");
 const _ = require("lodash");
 const moment = require("moment");
-const fetch = require("node-fetch");
 const siteConfig = require("./data/SiteConfig");
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
