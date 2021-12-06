@@ -1,7 +1,7 @@
-const path = require("path")
-const _ = require("lodash")
-const moment = require("moment")
-const siteConfig = require("./data/SiteConfig")
+const path = require("path");
+const _ = require("lodash");
+const moment = require("moment");
+const siteConfig = require("./data/SiteConfig");
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
@@ -215,12 +215,27 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  const yeswehackdata = await fetch(
-    "https://github.com/arkadiyt/bounty-targets-data/blob/master/data/yeswehack_data.json"
-  );
-  const jessy = await yeswehackdata.json();
-  
-  jessy.forEach((pro) => {
+  const yeswehackdata = await graphql(`
+    {
+      yeswehack {
+        id
+        name
+        public
+        disabled
+        managed
+        min_bounty
+        max_bounty
+        targets {
+          in_scope {
+            target
+            type
+          }
+        }
+      }
+    }
+  `);
+
+  yeswehackdata.data.forEach((pro) => {
     createPage({
       path: `/yeswehackdata/${pro.id}/`,
       component: singleProgram,
