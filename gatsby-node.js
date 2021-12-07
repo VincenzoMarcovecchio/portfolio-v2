@@ -1,5 +1,6 @@
 const path = require("path");
 const _ = require("lodash");
+const axios = require("axios");
 const moment = require("moment");
 const siteConfig = require("./data/SiteConfig");
 
@@ -76,26 +77,6 @@ exports.createPages = async ({ graphql, actions }) => {
               category
               date
             }
-          }
-        }
-      }
-    }
-  `);
-
-  const yeswehackdata = await graphql(`
-    {
-      yeswehack {
-        id
-        name
-        public
-        disabled
-        managed
-        min_bounty
-        max_bounty
-        targets {
-          in_scope {
-            target
-            type
           }
         }
       }
@@ -235,11 +216,15 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  yeswehackdata.data.forEach((pro) => {
+  let datacustom = await axios(
+    `https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/yeswehack_data.json`
+  );
+
+  datacustom.data.forEach((pro) => {
     createPage({
-      path: `/yeswehackdata/${pro.yeswehack.id}/`,
+      path: `/yeswehackdata/${pro.id}/`,
       component: singleProgram,
-      context: pro.yeswehack,
+      context: pro,
     });
   });
 };

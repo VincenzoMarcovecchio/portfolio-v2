@@ -54,18 +54,6 @@ module.exports = {
         rootKey: "bugs",
       },
     },
-    {
-      resolve: "gatsby-source-custom-api",
-      options: {
-        url: {
-          development:
-            "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/yeswehack_data.json",
-          production:
-            "https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/yeswehack_data.json",
-        },
-        rootKey: "yeswehack",
-      },
-    },
 
     {
       resolve: `gatsby-plugin-layout`,
