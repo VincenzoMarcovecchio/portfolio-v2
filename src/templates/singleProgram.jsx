@@ -1,7 +1,7 @@
 import React from "react";
 
 export default class singleProgram extends React.Component {
-  console.log(pageContext);
+  console.log(this.props.pageContext);
   render() {
     
 
