@@ -220,8 +220,8 @@ exports.createPages = async ({ graphql, actions }) => {
     `https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/yeswehack_data.json`
   );
 
-  datacustom.data.forEach((pro) => {
-    createPage({
+  datacustom.data.forEach(async (pro) => {
+    await createPage({
       path: `/yeswehackdata/${pro.id}/`,
       component: singleProgram,
       context: pro,
