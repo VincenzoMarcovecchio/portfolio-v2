@@ -82,6 +82,26 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
+  const yeswehackdata = await graphql(`
+    {
+      yeswehack {
+        id
+        name
+        public
+        disabled
+        managed
+        min_bounty
+        max_bounty
+        targets {
+          in_scope {
+            target
+            type
+          }
+        }
+      }
+    }
+  `);
+
   const imageQueryResults = await graphql(`
     {
       allFile {
@@ -215,33 +235,11 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  const yeswehackdata = await graphql(`
-    {
-      yeswehack {
-        id
-        name
-        public
-        disabled
-        managed
-        min_bounty
-        max_bounty
-        targets {
-          in_scope {
-            target
-            type
-          }
-        }
-      }
-    }
-  `);
-
-  console.log(yeswehackdata);
-
-  yeswehackdata.data.yeswehack.forEach((pro) => {
+  yeswehackdata.data.forEach((pro) => {
     createPage({
-      path: `/yeswehackdata/${pro.id}/`,
+      path: `/yeswehackdata/${pro.yeswehack.id}/`,
       component: singleProgram,
-      context: pro,
+      context: pro.yeswehack,
     });
   });
 };
