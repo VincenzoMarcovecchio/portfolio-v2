@@ -235,6 +235,8 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
+  console.log(yeswehackdata);
+
   yeswehackdata.data.yeswehack.forEach((pro) => {
     createPage({
       path: `/yeswehackdata/${pro.id}/`,
