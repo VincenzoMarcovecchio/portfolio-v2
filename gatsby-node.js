@@ -224,7 +224,7 @@ exports.createPages = async ({ graphql, actions }) => {
     await createPage({
       path: `/yeswehackdata/${pro.id}/`,
       component: singleProgram,
-      context: pro,
+      context: { pro },
     });
   });
 };
