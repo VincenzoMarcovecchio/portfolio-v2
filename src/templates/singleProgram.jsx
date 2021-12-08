@@ -130,7 +130,7 @@ const singleProgram = ({ pageContext }) => {
         <meta property="og:title" content={pageContext.pro.name} />
         <meta
           property="og:description"
-          content={pageContext.pro.targets[0].in_scope}
+          content="What are you hacking on"
         />
       </Helmet>
       <StyledSection>
