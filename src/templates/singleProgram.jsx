@@ -1,11 +1,8 @@
 import React from "react";
 
-export default class singleProgram extends React.Component {
-  render() {
-    return (
-      <>
-        <h1>hello{this.props.pageContext.id}</h1>
-      </>
-    );
-  }
-}
+const singleProgram = ({ pageContext }) => {
+  console.log(pageContext);
+  return <h1>hello</h1>;
+};
+
+export default singleProgram;
