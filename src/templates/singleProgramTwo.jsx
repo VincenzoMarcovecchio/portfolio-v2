@@ -55,4 +55,4 @@ const singleProgramTwo = ({ pageContext }) => {
   );
 };
 
-export default singleProgram;
+export default singleProgramTwo;
