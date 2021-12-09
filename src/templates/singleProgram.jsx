@@ -1,16 +1,10 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import { graphql } from "gatsby";
-import PostTags from "../components/PostTags/PostTags";
-import SocialLinks from "../components/SocialLinks/SocialLinks";
-import SEO from "../components/SEO/SEO";
-import config from "../../data/SiteConfig";
 import styled from "styled-components";
 import { device } from "../styles/Global";
-import Img from "gatsby-image";
-import { Link } from "gatsby";
 
-const StyledArticle = styled.article`
+
+export const StyledArticle = styled.article`
   padding: 3rem 1.5rem;
   box-sizing: border-box;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
@@ -52,7 +46,7 @@ const StyledArticle = styled.article`
   }
 `;
 
-const StyledSection = styled.section`
+export const StyledSection = styled.section`
   padding: 2rem 0;
   position: relative;
   .gatsby-image-wrapper {
@@ -69,7 +63,7 @@ const StyledSection = styled.section`
   }
 `;
 
-const StyledTitle = styled.h1`
+export const StyledTitle = styled.h1`
   font-size: 2.3rem;
   line-height: 1.3;
   width: 80%;
@@ -138,11 +132,11 @@ const singleProgram = ({ pageContext }) => {
 
         <StyledArticle>
           <ul>
-            <li>Disabled:&nbsp;{pageContext.pro.disabled}</li>
-            <li>Managed:&nbsp;{pageContext.pro.manages}</li>
+            <li>Disabled:&nbsp;{pageContext.pro.disabled.toString()}</li>
+            <li>Managed:&nbsp;{pageContext.pro.manages.toString()}</li>
             <li>Max Bounty:&nbsp;{pageContext.pro.max_bounty}</li>
             <li>Min Bounty:&nbsp;{pageContext.pro.min_bounty}</li>
-            <li>Public:&nbsp;{pageContext.pro.true}</li>
+            <li>Public:&nbsp;{pageContext.pro.public.toString()}</li>
           </ul>
 
           <h2>In scope:</h2>

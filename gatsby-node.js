@@ -56,6 +56,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const listingPage = path.resolve("./src/templates/listing.jsx");
   const landingPage = path.resolve("./src/templates/landing.jsx");
   const singleProgram = path.resolve("./src/templates/singleProgram.jsx");
+  const singleProgramTwo = path.resolve("./src/templates/singleProgramTwo.jsx");
   const hacking = path.resolve("./src/templates/hacka.jsx");
 
   const baseUrl = "https://hacker-news.firebaseio.com/v0/";
@@ -224,6 +225,18 @@ exports.createPages = async ({ graphql, actions }) => {
     await createPage({
       path: `/yeswehackdata/${pro.id}/`,
       component: singleProgram,
+      context: { pro },
+    });
+  });
+
+  let datacusti = await axios(
+    `https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/hackerone_data.json`
+  );
+
+  datacusti.data.forEach(async (pro) => {
+    await createPage({
+      path: `/hackerone/${pro.name.toLowerCase()}/`,
+      component: singleProgramTwo,
       context: { pro },
     });
   });
