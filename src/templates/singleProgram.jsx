@@ -133,7 +133,7 @@ const singleProgram = ({ pageContext }) => {
         <StyledArticle>
           <ul>
             <li>Disabled:&nbsp;{pageContext.pro.disabled.toString()}</li>
-            <li>Managed:&nbsp;{pageContext.pro.manages.toString()}</li>
+            <li>Managed:&nbsp;{pageContext.pro.managed.toString()}</li>
             <li>Max Bounty:&nbsp;{pageContext.pro.max_bounty}</li>
             <li>Min Bounty:&nbsp;{pageContext.pro.min_bounty}</li>
             <li>Public:&nbsp;{pageContext.pro.public.toString()}</li>
