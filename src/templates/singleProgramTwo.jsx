@@ -32,9 +32,17 @@ const singleProgramTwo = ({ pageContext }) => {
                 <li>{co.asset_type}</li>
                 <li>{co.availability_requirement}</li>
                 <li>{co.confidentiality_requirement}</li>
-                <li>{co.eligible_for_bounty.toString() || ""}</li>
+                <li>
+                  {(co.eligible_for_bounty &&
+                    co.eligible_for_bounty.toString()) ||
+                    ""}
+                </li>
 
-                <li>{co.eligible_for_submission.toString()}</li>
+                <li>
+                  {(co.eligible_for_submission &&
+                    co.eligible_for_submission.toString()) ||
+                    ""}
+                </li>
                 <li>{co.instruction}</li>
                 <li>{co.integrity_requirement}</li>
                 <li>{co.max_severity}</li>
@@ -42,7 +50,6 @@ const singleProgramTwo = ({ pageContext }) => {
             );
           })}
         </StyledArticle>
-    
 
         <br />
         <br />
