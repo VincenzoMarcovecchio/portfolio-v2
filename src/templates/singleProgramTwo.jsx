@@ -42,10 +42,7 @@ const singleProgramTwo = ({ pageContext }) => {
             );
           })}
         </StyledArticle>
-        <SocialLinks
-          postPath={`https://vincenzo.codes/${pageContext.pro.name.toLowerCase()}`}
-          postNode={""}
-        />
+    
 
         <br />
         <br />
