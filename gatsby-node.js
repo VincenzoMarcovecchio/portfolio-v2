@@ -235,7 +235,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   datacusti.data.forEach(async (pro) => {
     await createPage({
-      path: `/hackerone/${pro.name.toLowerCase().replace(" ", "-")}/`,
+      path: `/hackeronedata/${pro.name.toLowerCase().replace(/\s+/g, "-")}/`,
       component: singleProgramTwo,
       context: { pro },
     });

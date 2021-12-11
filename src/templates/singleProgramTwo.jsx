@@ -135,6 +135,10 @@ const singleProgramTwo = ({ pageContext }) => {
                   <b>Max severity:&nbsp;</b>
                   {co.max_severity}
                 </li>
+
+                <br />
+                <br />
+                <br />
               </>
             );
           })}
