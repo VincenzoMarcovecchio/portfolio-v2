@@ -254,7 +254,7 @@ exports.createPages = async ({ graphql, actions }) => {
          * to configure js-search
          */
         createPage({
-          path: "/search",
+          path: "/public-bugbounty-programs",
           component: path.resolve(`./src/templates/ClientSearchTemplate.jsx`),
           context: {
             bugsData: {
