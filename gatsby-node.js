@@ -258,7 +258,7 @@ exports.createPages = async ({ graphql, actions }) => {
           component: path.resolve(`./src/templates/ClientSearchTemplate.jsx`),
           context: {
             bugsData: {
-              allbugs: data,
+              allBugs: data.programs,
               options: {
                 indexStrategy: "Prefix match",
                 searchSanitizer: "Lower Case",
