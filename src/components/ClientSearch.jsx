@@ -49,7 +49,7 @@ class ClientSearch extends Component {
     } = this.state;
     const { bugs } = this.props;
 
-    const dataToSearch = new JsSearch.Search("isbn");
+    const dataToSearch = new JsSearch.Search("name");
 
     if (removeStopWords) {
       dataToSearch.tokenizer = new JsSearch.StopWordsTokenizer(
@@ -78,7 +78,7 @@ class ClientSearch extends Component {
       ? (dataToSearch.sanitizer = new JsSearch.CaseSensitiveSanitizer())
       : (dataToSearch.sanitizer = new JsSearch.LowerCaseSanitizer());
     termFrequency === true
-      ? (dataToSearch.searchIndex = new JsSearch.TfIdfSearchIndex("isbn"))
+      ? (dataToSearch.searchIndex = new JsSearch.TfIdfSearchIndex("name"))
       : (dataToSearch.searchIndex = new JsSearch.UnorderedSearchIndex());
 
     // sets the index attribute for the data
@@ -109,7 +109,7 @@ class ClientSearch extends Component {
   render() {
     const { searchResults, searchQuery } = this.state;
     const { bugs } = this.props;
-    const queryResults = searchQuery === "" ? books : searchResults;
+    const queryResults = searchQuery === "" ? bugs : searchResults;
     return (
       <div>
         <div style={{ margin: "0 auto" }}>

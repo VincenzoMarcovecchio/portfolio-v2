@@ -241,7 +241,7 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  new Promise((resolve, reject) => {
+  return new Promise((resolve, reject) => {
     axios
       .get(
         "https://raw.githubusercontent.com/projectdiscovery/public-bugbounty-programs/master/chaos-bugbounty-list.json"
@@ -255,7 +255,7 @@ exports.createPages = async ({ graphql, actions }) => {
          */
         createPage({
           path: "/search",
-          component: path.resolve(`./src/templates/ClientSearchTemplate.js`),
+          component: path.resolve(`./src/templates/ClientSearchTemplate.jsx`),
           context: {
             bugsData: {
               allbugs: data.programs,
