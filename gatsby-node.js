@@ -240,4 +240,42 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { pro },
     });
   });
+
+  new Promise((resolve, reject) => {
+    axios
+      .get(
+        "https://raw.githubusercontent.com/projectdiscovery/public-bugbounty-programs/master/chaos-bugbounty-list.json"
+      )
+      .then((result) => {
+        const { data } = result;
+        /**
+         * creates a dynamic page with the data received
+         * injects the data into the context object alongside with some options
+         * to configure js-search
+         */
+        createPage({
+          path: "/search",
+          component: path.resolve(`./src/templates/ClientSearchTemplate.js`),
+          context: {
+            bugsData: {
+              allbugs: data.programs,
+              options: {
+                indexStrategy: "Prefix match",
+                searchSanitizer: "Lower Case",
+                TitleIndex: true,
+                AuthorIndex: true,
+                SearchByTerm: true,
+              },
+            },
+          },
+        });
+        resolve();
+      })
+      .catch((err) => {
+        console.log("====================================");
+        console.log(`error creating Page:${err}`);
+        console.log("====================================");
+        reject(new Error(`error on page creation:\n${err}`));
+      });
+  });
 };
