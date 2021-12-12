@@ -110,7 +110,7 @@ const StyledTime = styled.time`
 `;
 
 const singleProgram = ({ pageContext }) => {
-  console.log(pageContext);
+ 
   return (
     <>
       <Helmet>
