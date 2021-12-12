@@ -109,7 +109,7 @@ class ClientSearch extends Component {
   render() {
     const { searchResults, searchQuery } = this.state;
     const { bugs } = this.props;
-    const queryResults = searchQuery === "" ? bugs : searchResults;
+    const queryResults = searchQuery === "" ? bugs.programs : searchResults;
     return (
       <div>
         <div style={{ margin: "0 auto" }}>
