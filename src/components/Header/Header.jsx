@@ -45,6 +45,14 @@ export default function Header() {
         }
       });
     }
+    function animateNavItemsa() {
+      headerNavItems.forEach((item, index) => {
+        item.addEventListener(
+          "click",
+          item.classList.toggle("header__nav--active")
+        );
+      });
+    }
 
     function disableScroll() {
       document.body.classList.toggle("disable-scroll");
@@ -55,6 +63,7 @@ export default function Header() {
       showNav();
       animateNavItems();
       disableScroll();
+      animateNavItemsa();
     }
 
     hamburgerMenu.addEventListener("click", toggleNav);
