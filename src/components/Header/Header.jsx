@@ -63,17 +63,12 @@ export default function Header() {
         disableScroll();
       }
 
-      headerNavItems.forEach((item) => {
-        item.addEventListener("click", toggleNav);
-      });
 
       hamburgerMenu.addEventListener("click", toggleNav);
 
       return () => {
-        headerNavItems.forEach((item) => {
-          item.removeEventListener("click", toggleNav);
-        });
-        hamburgerMenu.removeEventListener("click", toggleNav);
+      
+  
       };
     });
   }
