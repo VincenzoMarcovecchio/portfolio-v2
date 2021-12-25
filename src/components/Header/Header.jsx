@@ -46,12 +46,7 @@ export default function Header() {
       });
     }
 
-    headerNavItems.forEach((item, index) => {
-      item.addEventListener(
-        "click",
-        item.classList.toggle("header__nav--active")
-      );
-    });
+
 
     function disableScroll() {
       document.body.classList.toggle("disable-scroll");
@@ -68,12 +63,7 @@ export default function Header() {
 
     return () => {
       hamburgerMenu.removeEventListener("click", toggleNav);
-      headerNavItems.forEach((item, index) => {
-        item.removeEventListener(
-          "click",
-          item.classList.toggle("header__nav--active")
-        );
-      });
+
     };
   });
 
