@@ -49,7 +49,7 @@ export default function Header() {
     headerNavItems.forEach((item, index) => {
       item.addEventListener(
         "click",
-        classList.toggle("header__nav--active")
+        item.classList.toggle("header__nav--active")
       );
     });
 
@@ -68,6 +68,12 @@ export default function Header() {
 
     return () => {
       hamburgerMenu.removeEventListener("click", toggleNav);
+      headerNavItems.forEach((item, index) => {
+        item.removeEventListener(
+          "click",
+          item.classList.toggle("header__nav--active")
+        );
+      });
     };
   });
 
