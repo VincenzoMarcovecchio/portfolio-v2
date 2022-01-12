@@ -1,143 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import engine from "../../assets/engine.jpg";
 import { Link } from "gatsby";
 import styled from "styled-components";
-
-export default function Header() {
-  const [isMobile, setIsMobile] = useState(false);
-
-  //choose the screen size
-  const handleResize = () => {
-    if (window.innerWidth < 720) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
-  };
-
-  useEffect(() => {
-    const hamburgerMenu =
-      typeof document !== "undefined" &&
-      document.querySelector(".hamburger-menu");
-    const headerNav =
-      typeof document !== "undefined" && document.querySelector(".header__nav");
-    const headerNavItems =
-      typeof document !== "undefined" &&
-      document.querySelectorAll(".header__list > *");
-    const headerLinks =
-      typeof document !== "undefined" &&
-      document.querySelectorAll(".header__link");
-
-    function openHamburgerMenu() {
-      hamburgerMenu.classList.toggle("hamburger-menu--open");
-    }
-
-    function showNav() {
-      headerNav.classList.toggle("header__nav--active");
-    }
-
-    function animateNavItems() {
-      headerNavItems.forEach((item, index) => {
-        if (item.style.animation) {
-          item.style.animation = "";
-        } else {
-          item.style.animation = `fadeInRight 1s ease forwards ${index / 7}s`;
-        }
-      });
-    }
-
-
-
-    function disableScroll() {
-      document.body.classList.toggle("disable-scroll");
-    }
-
-    function toggleNav() {
-      openHamburgerMenu();
-      showNav();
-      animateNavItems();
-      disableScroll();
-    }
-
-    hamburgerMenu.addEventListener("click", toggleNav);
-
-    return () => {
-      hamburgerMenu.removeEventListener("click", toggleNav);
-
-    };
-  });
-
-  return (
-    <>
-      <div
-        style={{
-          backgroundColor: "lightseagreen",
-          padding: "0.3rem",
-          color: "white",
-        }}
-      >
-        <center>
-          🔥
-          <Link to="/public-bugbounty-programs/" replace>
-            {" "}
-            Bug Bounties{" "}
-          </Link>
-          🔥
-        </center>
-      </div>
-      <NavBar>
-        <div className="header__content-wrapper">
-          <Link to="/">
-            <img className="header__logo" src={engine} alt="logo meccanico" />
-          </Link>
-
-          <button
-            aria-label="menu button"
-            className="hamburger-menu header__hamburger-menu"
-          >
-            <span
-              aria-hidden="true"
-              className="hamburger-menu__bar hamburger-menu__bar--top"
-            ></span>
-            <span
-              aria-hidden="true"
-              className="hamburger-menu__bar hamburger-menu__bar--middle"
-            ></span>
-            <span
-              aria-hidden="true"
-              className="hamburger-menu__bar hamburger-menu__bar--bottom"
-            ></span>
-          </button>
-
-          <nav className="header__nav">
-            <ul className="header__list">
-              <li>
-                <Link className="header__link" to="/">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link className="header__link" to="/projects">
-                  projects
-                </Link>
-              </li>
-              <li>
-                <Link className="header__link" to="/osint-investigation">
-                  tools
-                </Link>
-              </li>
-              <li>
-                <Link className="header__link" to="/about">
-                  about
-                </Link>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </NavBar>
-    </>
-  );
-}
 
 const NavBar = styled.div`
   position: relative;
@@ -283,6 +147,7 @@ const NavBar = styled.div`
     transform: rotate(-45deg) translate(3px, -4px);
   }
 }
+@media only screen and (max-width: 800px) {
   @keyframes fadeInRight {
     from {
       -webkit-transform: translateX(5rem);
@@ -294,6 +159,7 @@ const NavBar = styled.div`
       transform: translate(0);
       opacity: 1;
     }
+  }
   }
   .disable-scroll {
     overflow-y: hidden;
@@ -331,3 +197,147 @@ const NavBar = styled.div`
     }
   }
 `;
+
+export default function Header() {
+  
+  const [isMobile, setIsMobile] = useState(false);
+  const box = useRef(0);
+
+
+  //choose the screen size
+  const handleResize = () => {
+    if (window.innerWidth < 720) {
+      setIsMobile(true);
+    } else {
+      setIsMobile(false);
+    }
+  };
+
+  useEffect(() => {
+    const hamburgerMenu =
+      typeof document !== "undefined" &&
+      document.querySelector(".hamburger-menu");
+    const headerNav =
+      typeof document !== "undefined" && document.querySelector(".header__nav");
+    const headerNavItems =
+      typeof document !== "undefined" &&
+      document.querySelectorAll(".header__list > *");
+    const headerLinks =
+      typeof document !== "undefined" &&
+      document.querySelectorAll(".header__link");
+
+    function openHamburgerMenu() {
+      hamburgerMenu.classList.toggle("hamburger-menu--open");
+    }
+
+    function showNav() {
+      headerNav.classList.toggle("header__nav--active");
+    }
+
+    function animateNavItems() {
+      headerNavItems.forEach((item, index) => {
+        if (item.style.animation) {
+          item.style.animation = "";
+        } else {
+          item.style.animation = `fadeInRight 1s ease forwards ${index / 7}s`;
+        }
+      });
+    }
+
+    function disableScroll() {
+      document.body.classList.toggle("disable-scroll");
+    }
+
+    function toggleNav() {
+      openHamburgerMenu();
+      showNav();
+      animateNavItems();
+      disableScroll();
+    }
+    function toggleNava() {
+      openHamburgerMenu();
+      showNav();
+      animateNavItems();
+      disableScroll();
+    }
+
+    hamburgerMenu.addEventListener("click", toggleNav);
+    box.current.addEventListener("click", toggleNava);
+
+    return () => {
+      hamburgerMenu.removeEventListener("click", toggleNav);
+      box.current.removeEventListener("click", toggleNava);
+    };
+  });
+
+  return (
+    <>
+      <div
+        style={{
+          backgroundColor: "lightseagreen",
+          padding: "0.3rem",
+          color: "white",
+        }}
+      >
+        <center>
+          🔥
+          <Link to="/public-bugbounty-programs/" replace>
+            {" "}
+            Bug Bounties{" "}
+          </Link>
+          🔥
+        </center>
+      </div>
+      <NavBar>
+        <div className="header__content-wrapper">
+          <Link to="/">
+            <img className="header__logo" src={engine} alt="logo meccanico" />
+          </Link>
+
+          <button
+            aria-label="menu button"
+            className="hamburger-menu header__hamburger-menu"
+          >
+            <span
+              aria-hidden="true"
+              className="hamburger-menu__bar hamburger-menu__bar--top"
+            ></span>
+            <span
+              aria-hidden="true"
+              className="hamburger-menu__bar hamburger-menu__bar--middle"
+            ></span>
+            <span
+              aria-hidden="true"
+              className="hamburger-menu__bar hamburger-menu__bar--bottom"
+            ></span>
+          </button>
+
+          <nav className="header__nav">
+            <ul  ref={box} className="header__list">
+              <li>
+                <Link className="header__link" to="/">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link className="header__link" to="/projects">
+                  projects
+                </Link>
+              </li>
+              <li>
+                <Link className="header__link" to="/osint-investigation">
+                  tools
+                </Link>
+              </li>
+              <li>
+                <Link className="header__link" to="/about">
+                  about
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </NavBar>
+    </>
+  );
+}
