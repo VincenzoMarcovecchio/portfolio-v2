@@ -238,7 +238,7 @@ function project({ data }) {
     "https://vincenzomarcovecchio.github.io/Intro-Component-With-Sign-Up-Form/",
     "https://vincenzomarcovecchio.github.io/FRAINE-RICICLA/",
     "https://fragine.netlify.app/",
-    "https://lemiepoesie.com/",
+    "https://eventbrite-notifier.vercel.app/",
     "https://prolocofraine.org/",
 
     "https://vincenzomarcovecchio.github.io/BookMark-Landing-Page/",
