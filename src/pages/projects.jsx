@@ -269,7 +269,7 @@ function project({ data }) {
             <section className="wrapper">
               <h1>Some of my latest projects 🛠️</h1>
               <h2>Technologies I use 🚧🚧</h2>
-              <h3><a href="https://www.frontendmentor.io/profile/VincenzoMarcovecchio" targe"_blank" rel="noopener noreferrer canonical">Please check out my frontend mentor profile!</a>
+              <h3><a href="https://www.frontendmentor.io/profile/VincenzoMarcovecchio" target="_blank" rel="noopener noreferrer canonical">Please check out my frontend mentor profile!</a></h3>
               <ul>
                 <li>
                   React, create-react-app (useState, useEffect, useMemo,
