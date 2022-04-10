@@ -238,8 +238,8 @@ function Encoder() {
           <h1>URL Decoder/Encoder</h1>
           <textarea cols="100" rows="20" id="dencoder"></textarea>
           <div>
-            <input type="button" onClick={encode()} value="Encode" />
-            <input type="button" onClick={decode()} value="Decode" />
+            <input type="button" onClick={encode} value="Encode" />
+            <input type="button" onClick={decode} value="Decode" />
           </div>
           <ul>
             <li>Input a string of text and encode or decode it as you like.</li>
