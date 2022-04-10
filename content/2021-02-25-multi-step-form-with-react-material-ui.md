@@ -80,7 +80,7 @@ export class FormUserDetails extends Component {
 export default FormUserDetails;
 ```
 
-Next component is going to be called `FormPersonalDetails.js` and is going to recieve other informations from the user
+Next component is going to be called `FormPersonalDetails.js` and is going to receive other information from the user
 
 ```jsx
 import React, { Component } from "react";
