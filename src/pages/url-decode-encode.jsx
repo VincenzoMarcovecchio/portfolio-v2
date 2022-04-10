@@ -216,17 +216,21 @@ textarea {background: #EEF;}
 
 
 function Encoder() {
-  
-function encode() {
-  var obj = typeof window !== 'undefined' && document.getElementById('dencoder');
-  var unencoded = obj.value;
-  obj.value = encodeURIComponent(unencoded).replace(/'/g, "%27").replace(/"/g, "%22");
-}
-function decode() {
-  var obj = typeof window !== 'undefined' && document.getElementById('dencoder');
-  var encoded = obj.value;
-  obj.value = decodeURIComponent(encoded.replace(/\+/g, " "));
-}
+
+  function encode() {
+    if (typeof window !== 'undefined') {
+      var obj = document.getElementById('dencoder');
+      var unencoded = obj.value;
+      obj.value = encodeURIComponent(unencoded).replace(/'/g, "%27").replace(/"/g, "%22");
+    }
+  }
+  function decode() {
+    if (typeof window !== 'undefined') {
+      var obj = document.getElementById('dencoder');
+      var encoded = obj.value;
+      obj.value = decodeURIComponent(encoded.replace(/\+/g, " "));
+    }
+  }
   return (
     <>
       <StyledDiv>
