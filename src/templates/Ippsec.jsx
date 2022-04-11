@@ -143,9 +143,6 @@ export default class PostTemplatess extends React.Component {
             dangerouslySetInnerHTML={{ __html: <a href={link} rel={`canonical noopener noreferrer`} target={`__blank`}>{link}</a> }}
           ></StyledArticle>
           <p>That's all there is here. Hope you find this resource helpfull! Cheers</p>
-          <PostTags tags={post.tags} />
-          <SocialLinks postPath={slug} postNode={postNode} />
- 
           <Bottomlinks>
             <div id="comments-container"></div>
           </Bottomlinks>
