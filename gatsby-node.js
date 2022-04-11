@@ -58,6 +58,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const singleProgram = path.resolve("./src/templates/singleProgram.jsx");
   const singleProgramTwo = path.resolve("./src/templates/singleProgramTwo.jsx");
   const hacking = path.resolve("./src/templates/hacka.jsx");
+  const Ippsec = path.resolve("./src/templates/Ippsec.jsx");
 
   const baseUrl = "https://hacker-news.firebaseio.com/v0/";
   const newStoriesUrl = `${baseUrl}newstories.json`;
@@ -226,6 +227,18 @@ exports.createPages = async ({ graphql, actions }) => {
       path: `/yeswehackdata/${pro.id}/`,
       component: singleProgram,
       context: { pro },
+    });
+  });
+
+  let datacustoma = await axios(
+    `https://search.redteam.fail/dataset.json`
+  );
+
+  datacustoma.data.forEach(async (pro) => {
+    await createPage({
+      path: `/${_.kebabCase(pro.line)}/`,
+      component: Ippsec,
+      context: { pro: pro, slug:`${_.kebabCase(pro.line)}`},
     });
   });
 
