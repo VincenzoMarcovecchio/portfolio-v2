@@ -140,9 +140,12 @@ export default class PostTemplatess extends React.Component {
         <StyledSection>
           <StyledTitle>{line}</StyledTitle>
           <StyledArticle
-            dangerouslySetInnerHTML={{ __html: <a href={link} rel={`canonical noopener noreferrer`} target={`__blank`}>{link}</a> }}
-          ></StyledArticle>
-          <p>That's all there is here. Hope you find this resource helpfull! Cheers</p>
+          
+          >
+            <a href={link} rel={`canonical noopener noreferrer`} target={`__blank`}>{link}</a>
+            <p>That's all there is here. Hope you find this resource helpfull! Cheers</p>
+          </StyledArticle>
+      
           <Bottomlinks>
             <div id="comments-container"></div>
           </Bottomlinks>
