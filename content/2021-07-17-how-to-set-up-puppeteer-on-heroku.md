@@ -3,11 +3,12 @@ title: "I scraped the Indeed job list, here's how I did it"
 cover: "i-scraped-the-indeed-job-list-here-is-how-i-did-it.jpg"
 date: "2021-07-17"
 category: "scraping"
-slug: "i-scraped-the-indeed-job-list-here-is-how-i-did-it"
+slug: "how-to-set-up-puppeteer-on-heroku"
 
 tags:
   - puppeteer
   - express
+  - heroku
 ---
 
 I wanted to scrape indeed for all job queries related to my area, but let me tell you, scraping is a dirty job (in terms of copyrigths and I do not recommend it without further investigating more), in the end I came up with a decent solution that I still would consider just a first step. What I did was trowing a bunch of html code through the dangerouslySetInnerHTML API and that was it. You will see what I'm talking about
