@@ -1,6 +1,6 @@
 ---
 title: "Create a lovely card animation using Framer Motion"
-cover: "card-animation-using-react-and-framer-motion.png"
+cover: "card-animation-using-react-and-framer-motion.jng"
 date: "2022-04-22"
 category: "framer-motion"
 slug: "setting-up-framer-motion-in-react-card-component"
@@ -10,7 +10,7 @@ tags:
   - react
 ---
 
-When it comes to page transitions, fade animations and all that good stuff, framer motion is certanly something that will pop up with the first results in your google search, it is a well mantained project backed by amazing developers and it is also easy to use.
+When it comes to page transitions, fade animations and all that good stuff, framer motion is certanly something that will show up with the first results in your google search, it is a well mantained project backed by amazing developers and it is also easy to use.
 
 With React installed in you package.json go ahead and install framer-motion 
 
@@ -20,7 +20,6 @@ Will have a look at the App.js file
 
 
 ```jsx
-
 import * as React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -85,7 +84,6 @@ My Index.js file
 
 
 ```jsx
-
 import { render } from "react-dom";
 import App from "./App";
 
@@ -96,4 +94,4 @@ render(<App />, rootElement);
 ```
 
 
-Pretty neat uh. Check out the <a href="https://vincenzomarcovecchio.github.io/framermotioncard/" target="_blank" rel="noopener noreferre nocanonical">live</a> example. Thanks
+Pretty neat uh. Check out the <a href="https://vincenzomarcovecchio.github.io/framermotioncard/" target="_blank" rel="noopener noreferre canonical">live</a> example. Thanks
