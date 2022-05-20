@@ -6,12 +6,15 @@ const SearchTemplate = (props) => {
   const { allBugs, options } = bugsData;
   return (
     <div>
-      <h1 style={{ marginTop: `3em`, textAlign: `center` }}>
-        Search data using JS Search using Gatsby API
-      </h1>
-      <div>
-        <ClientSearch bugs={allBugs} engine={options} />
-      </div>
+      <section className="wrapper">
+
+        <h1 style={{ marginTop: `3em`, textAlign: `center` }}>
+          Search data using JS Search using Gatsby API
+        </h1>
+        <div>
+          <ClientSearch bugs={allBugs} engine={options} />
+        </div>
+      </section>
     </div>
   );
 };
