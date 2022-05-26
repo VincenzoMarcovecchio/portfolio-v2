@@ -1,6 +1,6 @@
 import React from "react";
 import ClientSearch from "../components/ClientSearch";
-import { StyledSection } from "./pos";
+import { StyledSection } from "./post";
 const SearchTemplate = (props) => {
   const { pageContext } = props;
   const { bugsData } = pageContext;
