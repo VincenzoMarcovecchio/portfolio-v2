@@ -1,12 +1,15 @@
 import React from "react";
 import ClientSearch from "../components/ClientSearch";
+import { StyledSection } from "./pos";
 const SearchTemplate = (props) => {
   const { pageContext } = props;
   const { bugsData } = pageContext;
   const { allBugs, options } = bugsData;
+
+
   return (
-    <div>
-      <section className="wrapper">
+   
+      <StyledSection>
 
         <h1 style={{ marginTop: `3em`, textAlign: `center` }}>
           Search data using JS Search using Gatsby API
@@ -14,8 +17,8 @@ const SearchTemplate = (props) => {
         <div>
           <ClientSearch bugs={allBugs} engine={options} />
         </div>
-      </section>
-    </div>
+        </StyledSection>
+ 
   );
 };
 export default SearchTemplate;
