@@ -62,7 +62,7 @@ const NavBar = styled.div`
           z-index: 5;
           transform: translate(0);
           transition: all 0.3s ease-out;
-          height: calc(20rem - 5rem);
+          height: calc(20rem - 2rem);
           background: url('../assets/bg-pattern-mobile-nav.svg') white;
           background-position: bottom;
           background-repeat: no-repeat;
