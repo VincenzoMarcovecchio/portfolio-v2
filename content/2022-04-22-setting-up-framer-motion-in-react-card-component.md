@@ -1,6 +1,6 @@
 ---
 title: "Create a lovely card animation using Framer Motion"
-cover: "card-animation-using-react-and-framer-motion.jng"
+cover: "card-animation-using-react-and-framer-motion.jpg"
 date: "2022-04-22"
 category: "framer-motion"
 slug: "setting-up-framer-motion-in-react-card-component"
