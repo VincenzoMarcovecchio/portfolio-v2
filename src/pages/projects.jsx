@@ -10,7 +10,7 @@ export const query = graphql`
   query Projects2 {
     allImageSharp(
       sort: { fields: fixed___originalName, order: ASC }
-      limit: 15
+      limit: 16
     ) {
       edges {
         node {
@@ -234,7 +234,7 @@ const StyledDiv = styled.div`
 function project({ data }) {
   let links = [
     "https://vincenzomarcovecchio.github.io/Spotify-clone/",
-    "https://www.orbitaterrestre.com/",
+    "https://www.firststepintospace.com/",
     "https://vincenzomarcovecchio.github.io/Intro-Component-With-Sign-Up-Form/",
     "https://vincenzomarcovecchio.github.io/FRAINE-RICICLA/",
     "https://fragine.netlify.app/",
@@ -244,7 +244,7 @@ function project({ data }) {
     "https://vincenzomarcovecchio.github.io/BookMark-Landing-Page/",
     "https://vincenzomarcovecchio.github.io/MyFriend-Barber-Website/",
 
-    "https://resort-beach.vercel.app/rooms",
+    "https://resort-beach.vercel.app/",
 
     "https://vincenzomarcovecchio.github.io/BankEasy/",
     "https://vincenzomarcovecchio.github.io/Insure-Website/",
@@ -296,7 +296,7 @@ function project({ data }) {
                             <figcaption>
                               <a
                                 target="_blank"
-                                name="check out the live site"
+                                title="check out the live site"
                                 rel="noopener noreferrer canonical"
                                 href={links[index]}
                               >
@@ -314,16 +314,17 @@ function project({ data }) {
             </section>
           </TabPanel>
           <TabPanel>
-          <section className="wrapper">
-     
+            <section className="wrapper">
+
               <ul>
                 <li>
-                 Ip spoofing leading to creadentials stealing (asp.net)
+                  Ip spoofing leading to creadentials stealing (asp.net)
                 </li>
-                
+                <li>Open Redirect (out of scope)</li>
+                <li>PHP info found (disclosure of information)</li>
               </ul>
-             
-             
+
+
             </section>
           </TabPanel>
         </Tabs>

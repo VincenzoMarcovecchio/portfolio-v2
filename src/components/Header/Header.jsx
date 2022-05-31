@@ -330,6 +330,11 @@ export default function Header() {
                 </Link>
               </li>
               <li>
+                <Link className="header__link" to="/url-encode-decode">
+                  url encode/decode
+                </Link>
+              </li>
+              <li>
                 <Link className="header__link" to="/about">
                   about
                 </Link>
