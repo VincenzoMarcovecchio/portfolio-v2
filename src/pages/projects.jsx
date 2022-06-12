@@ -10,7 +10,7 @@ export const query = graphql`
   query Projects2 {
     allImageSharp(
       sort: { fields: fixed___originalName, order: ASC }
-      limit: 16
+      limit: 17
     ) {
       edges {
         node {
@@ -252,6 +252,7 @@ function project({ data }) {
     "https://storage-upload.vercel.app/",
     "https://dine.now.sh/",
     "https://ciatapp.herokuapp.com/",
+    "https://mrtoastvastomarina.com/",
     "https://resort-beach.vincenzomarcovecchio.now.sh/",
     "https://vincenzomarcovecchio.github.io/Minesweeper/",
   ];
