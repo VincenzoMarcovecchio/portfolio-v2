@@ -1,6 +1,6 @@
 ---
 title: "Sample Exam ISTQB® Foundation Level 2018 Syllabus "
-cover: "sample-exam-ISTQB-foundational-level-2018-sillabus"
+cover: "sample-exam-ISTQB-foundational-level-2018-sillabus.png"
 date: "2022-06-13"
 category: "test"
 slug: "sample-exam-ISTQB-foundational-level-2018-sillabus"

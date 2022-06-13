@@ -5,7 +5,9 @@ import moment from 'moment';
 import config from '../../../data/SiteConfig';
 
 class SEO extends Component {
+
   render() {
+
     const { postNode, postPath, postSEO } = this.props;
     let title;
     let description;
@@ -13,18 +15,26 @@ class SEO extends Component {
     let postURL;
 
     if (postSEO) {
+    
       const postMeta = postNode.frontmatter;
+
       ({ title } = postMeta);
+
       description = postMeta.description
         ? postMeta.description
         : postNode.html.substring(3, 250) + '...';
-      image = postMeta.cover;
-      postURL = urljoin(config.siteUrl, postPath);
-    } else {
+
+        image = postMeta.cover;
+
+        postURL = urljoin(config.siteUrl, postPath);
+
+      } else {
+
       title = config.siteTitle;
       description = config.siteDescription;
       image = config.siteLogo;
     }
+
 
     const getImagePath = (imageURI) => {
       if (
