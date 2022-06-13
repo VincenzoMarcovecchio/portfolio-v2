@@ -10,7 +10,7 @@ export const query = graphql`
   query Projects2 {
     allImageSharp(
       sort: { fields: fixed___originalName, order: ASC }
-      limit: 17
+
     ) {
       edges {
         node {
