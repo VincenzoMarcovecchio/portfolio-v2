@@ -3,7 +3,7 @@ title: "International Software Testing Qualifications Board (B)"
 cover: "sample-exam-ISTQB-foundational-level-2018-sillabus.png"
 date: "2022-06-13"
 category: "test"
-slug: "sample-exam-ISTQB-foundational-level-2018-sillabus"
+slug: "sample-exam-ISTQB-foundational-level-2018-sillabus-B"
 
 tags:
   - test

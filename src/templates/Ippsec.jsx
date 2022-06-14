@@ -135,8 +135,10 @@ export default class PostTemplatess extends React.Component {
       <>
         <Helmet>
           <title>{`${line} | ${config.siteTitle}`}</title>
+          <meta name="description" content={line} />
+
         </Helmet>
-        <SEO postPath={slug} postNode={postNode} postSEO />
+        <SEO postPath={slug} postSEO />
         <StyledSection>
           <StyledTitle>{line}</StyledTitle>
           <StyledArticle
