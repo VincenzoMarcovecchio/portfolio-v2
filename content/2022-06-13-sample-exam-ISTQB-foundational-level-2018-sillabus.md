@@ -1,5 +1,5 @@
 ---
-title: "Sample Exam ISTQB® Foundation Level 2018 Syllabus "
+title: "International Software Testing Qualifications Board (B)"
 cover: "sample-exam-ISTQB-foundational-level-2018-sillabus.png"
 date: "2022-06-13"
 category: "test"
@@ -997,7 +997,6 @@ Given the following test cases:
 
       | hours        | intensity | score      |
 
-      |--------------|-----------|------------|
 
 T1    |  1.5         | v. low    | 10         |
 
@@ -1132,17 +1131,16 @@ Thus, option C is CORRECT.
 
 Decision table testing is being performed on a speeding fine system. Two test cases have already been generated for rules 1 and 4, which are shown below:
 
-      | RULES               | R1        | R4         |
+      | RULES         | R1        | R4         |
 
----------------------------|-----------|------------|
 
-           | Speed > 50    |      T    |     F      |
+      | Speed > 50    |      T    |     F      |
             
-           | School Zone   |     T     |     F      |
+      | School Zone   |     T     |     F      |
            
-           |  $250 Fine    |     F     |     F      |
+      |  $250 Fine    |     F     |     F      |
   
-           |  Jail         |     T     |     F      |
+      |  Jail         |     T     |     F      |
             
 
 
@@ -1150,15 +1148,15 @@ Decision table testing is being performed on a speeding fine system. Two test ca
 Given the following additional test cases:
 
 
-      | RULES               | DT1       | TD2        | TD3        | TD4 |     
+      | RULES               | DT1       | TD2        | TD3        | TD4        |     
 
-      | Speed         |    55     |     44     |     66     |     77     |
+      | Speed               |    55     |     44     |     66     |     77     |
     
-      | School Zone   |     T     |     T      |     T      |      F     |
+      | School Zone         |     T     |     T      |     T      |      F     |
 
-      |  $250 Fine    |     F     |     F      |    F       |     T      | 
+      |  $250 Fine          |     F     |     F      |    F       |     T      | 
 
-      |  Jail         |     T     |     F      |     T      |     F      |
+      |  Jail               |     T     |     F      |     T      |     F      |
 
 
 
@@ -1567,19 +1565,20 @@ Given the following priorities and dependencies for these test cases:
 
 
 
-|t.case| priority     | Technical dependent on | Logical dependent on  |   
+|t.case     | priority     | Technical dependent on | Logical dependent on  |   
 
-T1    |  High        | TC4                    |                       |
 
-T2    |  Low         |                        |                       |
+T1          |  High        | TC4                    |                       |
 
-T3    |  High        |                        |          TC4          |
+T2          |  Low         |                        |                       |
 
-T4    |  Medium      |                        |                       | 
+T3          |  High        |                        |          TC4          |
 
-T5    |  Low         |                        |          TC2          |
+T4          |  Medium      |                        |                       | 
 
-T6    |  Medium      | TC5                    |                       |
+T5          |  Low         |                        |          TC2          |
+
+T6          |  Medium      | TC5                    |                       |
 
 
 

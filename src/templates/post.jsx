@@ -50,6 +50,10 @@ export const StyledArticle = styled.article`
       margin-bottom: 1rem;
     }
   }
+
+  hr {
+    margin: 5rem auto;
+  }
 `;
 
 const StyledSection = styled.section`
