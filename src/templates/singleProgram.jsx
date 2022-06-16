@@ -197,7 +197,7 @@ const singleProgram = ({ pageContext }) => {
             </p>
             <p>
               <b>Managed:&nbsp;</b>
-              {pageContext.pro.managed.toString()}
+              {pageContext.pro.managed.toString() ? pageContext.pro.managed.toString() : ""}
             </p>
             <p>
               <b>Max Bounty:&nbsp;</b>
