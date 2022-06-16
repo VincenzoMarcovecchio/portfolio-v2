@@ -995,7 +995,7 @@ hours) and the average intensity of the sunshine (very low, low, medium or high)
 Given the following test cases:
 
 
-      | hours        | intensity | score      |
+|     | hours        | intensity | score      |
 
 | T1  |  1.5         | v. low    | 10         |
 
@@ -1131,7 +1131,6 @@ Thus, option C is CORRECT.
 Decision table testing is being performed on a speeding fine system. Two test cases have already been generated for rules 1 and 4, which are shown below:
 
       | RULES         | R1        | R4         |
-
 
       | Speed > 50    |      T    |     F      |
             
@@ -1564,20 +1563,20 @@ Given the following priorities and dependencies for these test cases:
 
 
 
-|t.case     | priority     | Technical dependent on | Logical dependent on  |   
+|  t.case   | priority     | Technical dependent on | Logical dependent on  |   
 
 
-T1          |  High        | TC4                    |                       |
+| T1        |   High       | TC4                    |                       |
 
-T2          |  Low         |                        |                       |
+| T2        |  Low         |                        |                       |
 
-T3          |  High        |                        |          TC4          |
+| T3        |  High        |                        |          TC4          |
 
-T4          |  Medium      |                        |                       | 
+| T4        |  Medium      |                        |                       | 
 
-T5          |  Low         |                        |          TC2          |
+| T5        |  Low         |                        |          TC2          |
 
-T6          |  Medium      | TC5                    |                       |
+| T6        |  Medium      | TC5                    |                       |
 
 
 
