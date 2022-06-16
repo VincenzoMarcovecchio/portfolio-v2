@@ -195,10 +195,10 @@ const singleProgram = ({ pageContext }) => {
               <b>Disabled:&nbsp;</b>
               {pageContext.pro.disabled.toString()}
             </p>
-            <p>
+            {/* <p>
               <b>Managed:&nbsp;</b>
               {pageContext.pro.managed.length ? pageContext.pro.managed.toString() : ""}
-            </p>
+            </p> */}
             <p>
               <b>Max Bounty:&nbsp;</b>
               {pageContext.pro.max_bounty}
