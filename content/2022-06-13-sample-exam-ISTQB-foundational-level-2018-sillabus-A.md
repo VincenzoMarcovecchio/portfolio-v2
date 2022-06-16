@@ -1321,7 +1321,7 @@ cases is TRUE?
 
 
 
-<img src="/image/state-transition-software-testing-2" alt="state-transition-diagram" >
+<img src="/image/state-transition-software-testing-2.png" alt="state-transition-diagram" >
 
 
 
@@ -1334,7 +1334,7 @@ cases is TRUE?
 | Input         | Power on  | Power Off  |  RC On     |   RC Off   |  Power Off | 
            
 |  Expected 
-final result    |     S2    |     S1     |      S3   |     S2     |     S1      |
+|  final result |     S2    |     S1     |      S3   |     S2     |     S1      |
   
 
 
@@ -1789,7 +1789,7 @@ on R1
 
 
 
-<img src="/image/state-transition-software-testing-3" alt="diagram-logical-dependencies">
+<img src="/image/state-transition-software-testing-3.png" alt="diagram-logical-dependencies">
 
 
 
@@ -1830,7 +1830,9 @@ d) Not correct – R2 is dependent on R3, so R3 should be tested before R2.
 
 
 
+
 <hr/>
+
 
 
 
