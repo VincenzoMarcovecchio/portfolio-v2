@@ -1,9 +1,9 @@
 ---
 title: "International Software Testing Qualifications Board (B)"
-cover: "sample-exam-ISTQB-foundational-level-2018-sillabus.png"
+cover: "sample-exam-ISTQB-foundational-level-2018-sillabus"
 date: "2022-06-13"
 category: "test"
-slug: "sample-exam-ISTQB-foundational-level-2018-sillabus-B"
+slug: "sample-exam-ISTQB-foundational-level-2018-sillabus"
 
 tags:
   - test
@@ -997,17 +997,16 @@ Given the following test cases:
 
       | hours        | intensity | score      |
 
+| T1  |  1.5         | v. low    | 10         |
 
-T1    |  1.5         | v. low    | 10         |
+| T2  |  7.0         | medium    | 60         |
 
-T2    |  7.0         | medium    | 60         |
-
-T3    |  0.5         | v.low     | 10         |
-
+| T3  |  0.5         | v.low     | 10         |
 
 
-What is the minimum number of additional test cases that are needed to ensure full 
-coverage of all valid INPUT equivalence partitions?
+
+What is the minimum number of additional test cases that are needed to ensure full coverage of all valid INPUT equivalence partitions?
+
 
 A. 1 
 

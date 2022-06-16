@@ -10,7 +10,7 @@ export const query = graphql`
   query Projects2 {
     allImageSharp(
       sort: { fields: fixed___originalName, order: ASC }
-      limit: 17
+      limit: 16
     ) {
       edges {
         node {
@@ -234,17 +234,17 @@ const StyledDiv = styled.div`
 function project({ data }) {
   let links = [
     "https://vincenzomarcovecchio.github.io/Spotify-clone/",
-    "https://www.firststepintospace.com/",
+    "https://www.orbitaterrestre.com/",
     "https://vincenzomarcovecchio.github.io/Intro-Component-With-Sign-Up-Form/",
     "https://vincenzomarcovecchio.github.io/FRAINE-RICICLA/",
     "https://fragine.netlify.app/",
-    "https://eventbrite-notifier.vercel.app/",
+    "https://lemiepoesie.com/",
     "https://prolocofraine.org/",
 
     "https://vincenzomarcovecchio.github.io/BookMark-Landing-Page/",
     "https://vincenzomarcovecchio.github.io/MyFriend-Barber-Website/",
 
-    "https://resort-beach.vercel.app/",
+    "https://resort-beach.vercel.app/rooms",
 
     "https://vincenzomarcovecchio.github.io/BankEasy/",
     "https://vincenzomarcovecchio.github.io/Insure-Website/",
@@ -253,7 +253,6 @@ function project({ data }) {
     "https://dine.now.sh/",
     "https://ciatapp.herokuapp.com/",
     "https://mrtoastvastomarina.com/",
-    "https://resort-beach.vincenzomarcovecchio.now.sh/",
     "https://vincenzomarcovecchio.github.io/Minesweeper/",
   ];
 
