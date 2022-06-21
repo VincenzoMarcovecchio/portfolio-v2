@@ -1,6 +1,6 @@
 import React from "react";
 import ClientSearch from "../components/ClientSearch";
-import { StyledSection } from "./post";
+import { StyledDiv } from "../pages/projects";
 const SearchTemplate = (props) => {
   const { pageContext } = props;
   const { bugsData } = pageContext;
@@ -8,17 +8,18 @@ const SearchTemplate = (props) => {
 
 
   return (
-   
-      <StyledSection>
 
+    <StyledDiv>
+      <section className="wrapper">
         <h1 style={{ marginTop: `3em`, textAlign: `center` }}>
           Search data using JS Search using Gatsby API
         </h1>
         <div>
           <ClientSearch bugs={allBugs} engine={options} />
         </div>
-        </StyledSection>
- 
+      </section>
+    </StyledDiv>
+
   );
 };
 export default SearchTemplate;

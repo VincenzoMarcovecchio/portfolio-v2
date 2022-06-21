@@ -10,7 +10,7 @@ export const query = graphql`
   query Projects2 {
     allImageSharp(
       sort: { fields: fixed___originalName, order: ASC }
-      limit: 16
+      limit: 17
     ) {
       edges {
         node {
@@ -28,7 +28,7 @@ export const query = graphql`
   }
 `;
 
-const StyledDiv = styled.div`
+export const StyledDiv = styled.div`
   .wrapper {
     width: 90%;
     margin: 0 auto;
@@ -310,6 +310,7 @@ function project({ data }) {
                     </figure>
                   );
                 })}
+                
               </div>
             </section>
           </TabPanel>

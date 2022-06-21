@@ -1,6 +1,6 @@
 ---
 title: "International Software Testing Qualifications Board (B)"
-cover: "sample-exam-ISTQB-foundational-level-2018-sillabus-a.png"
+cover: "sample-exam-ISTQB-foundational-level-2018-sillabus-a"
 date: "2022-06-13"
 category: "test"
 slug: "sample-exam-ISTQB-foundational-level-2018-sillabus-b"
@@ -267,20 +267,13 @@ Which of the following BEST describes how value is added by maintaining traceabi
 
 
 
-A. INCORRECT – Traceability will allow existing test cases to be linked with updated 
-and deleted requirements (although there will be no support for new requirements), 
-but it will not help with the automation of maintenance testing. 
+A. INCORRECT – Traceability will allow existing test cases to be linked with updated and deleted requirements (although there will be no support for new requirements), but it will not help with the automation of maintenance testing. 
 
-B. CORRECT – If all test cases are linked with requirements, then whenever a new test 
-case (with traceability) is added, it is possible to see if any previously-uncovered 
-requirements are covered by the new test case. 
+B. CORRECT – If all test cases are linked with requirements, then whenever a new test case (with traceability) is added, it is possible to see if any previously-uncovered requirements are covered by the new test case. 
 
-C. INCORRECT – Traceability between the test basis and test artifacts will not provide 
-information on which testers found high-severity defects, and, even if this information 
-could be determined, it would be of limited value. 
+C. INCORRECT – Traceability between the test basis and test artifacts will not provide information on which testers found high-severity defects, and, even if this information could be determined, it would be of limited value. 
 
-D. INCORRECT – Traceability can help with identifying test cases affected by changes, 
-however areas impacted by side-effects would be the focus of regression testing.
+D. INCORRECT – Traceability can help with identifying test cases affected by changes, however areas impacted by side-effects would be the focus of regression testing.
 
 
 
@@ -412,20 +405,11 @@ D. Component testing
 Considering the scenario and the syllabus (2.2):
 
 
-• ‘testing is based on interface specifications’ – the test basis for component 
-integration testing includes interface specifications (along with communication 
-protocol specification), while these are not included for any of the other test levels 
+• ‘testing is based on interface specifications’ – the test basis for component integration testing includes interface specifications (along with communication protocol specification), while these are not included for any of the other test levels 
 
-• ‘testing is focused on finding failures in communication’ - failures in the 
-communication between tested components is included as a typical failure for 
-component integration testing, but failures in communication is not included for any of 
-the other test levels
+• ‘testing is focused on finding failures in communication’ - failures in the communication between tested components is included as a typical failure for component integration testing, but failures in communication is not included for any of the other test levels
 
-• ‘the test approach uses both functional and structural test types’ - functional and 
-structural test types are both included as possible approaches for component 
-integration testing, and would also be appropriate for any of the other test levels, 
-although they are only otherwise explicitly mentioned in the syllabus for system 
-testing 
+• ‘the test approach uses both functional and structural test types’ - functional and structural test types are both included as possible approaches for component integration testing, and would also be appropriate for any of the other test levels, although they are only otherwise explicitly mentioned in the syllabus for system testing 
 
 
 
@@ -459,10 +443,7 @@ Which of the following statements about test types and test levels is CORRECT?
 
 
 
-A. INCORRECT – It is possible to perform any of the test types (functional, non-functional, white-box) at any test level - so, although it is correct that functional and 
-non-functional testing can be performed at system and acceptance test levels, it is 
-incorrect to state that white-box testing is restricted to component and integration 
-testing. 
+A. INCORRECT – It is possible to perform any of the test types (functional, non-functional, white-box) at any test level - so, although it is correct that functional and non-functional testing can be performed at system and acceptance test levels, it is incorrect to state that white-box testing is restricted to component and integration testing. 
 
 B. INCORRECT – It is possible to perform any of the test types (functional, non-functional, white-box) at any test level - so, it is incorrect to state that white-box 
 testing is restricted to component testing.
@@ -491,7 +472,7 @@ regression testing?
 
 - C. The purpose of regression testing is to ensure that any changes to one part of the system have not caused another part to fail, while the purpose of confirmation testing is to check that all previously run tests still provide the same results as before 
 
-- D. The purpose of confirmation testing is to confirm that changes to the system were made successfully, while the purpose of regression testing is to run tests that previously failed to ensure that they now work correctly 
+- D. The purpose of confirmation testing is to confirm that changes to the system were made successfully, while the purpose of regression testing is to run tests that previously failed to ensure that they now work correctly
 
 
 
@@ -499,21 +480,13 @@ regression testing?
 
 
 
-A. INCORRECT – Although the description of regression testing is largely correct, the 
-description of confirmation testing (which should be testing a defect has been fixed) 
-is not correct. 
+A. INCORRECT – Although the description of regression testing is largely correct, the description of confirmation testing (which should be testing a defect has been fixed) is not correct. 
 
-B. CORRECT – The descriptions of both confirmation and regression testing match the 
-intent of those in the syllabus. 
+B. CORRECT – The descriptions of both confirmation and regression testing match the intent of those in the syllabus. 
 
-C. INCORRECT – Although the description of regression testing is largely correct, the 
-description of confirmation testing (re-running all previously run tests to get the same 
-results) is not correct, as the purpose of confirmation testing is to check that tests 
-that previously failed now pass (the fix worked). 
+C. INCORRECT – Although the description of regression testing is largely correct, the description of confirmation testing (re-running all previously run tests to get the same results) is not correct, as the purpose of confirmation testing is to check that tests that previously failed now pass (the fix worked). 
 
-D. INCORRECT – Although the description of confirmation testing is largely correct, the 
-description of regression testing (re-running tests that previously failed) is not correct 
-(this is a more detailed description of confirmation testing).
+D. INCORRECT – Although the description of confirmation testing is largely correct, the description of regression testing (re-running tests that previously failed) is not correct (this is a more detailed description of confirmation testing).
 
 
 
