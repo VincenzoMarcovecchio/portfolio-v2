@@ -36,7 +36,7 @@ export const StyledDiv = styled.div`
     padding-bottom: 4rem;
   }
   ul {
-    padding: 1.5rem;
+    padding: 1rem;
     list-style: mongolian;
   }
   h1 {

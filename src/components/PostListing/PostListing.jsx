@@ -71,7 +71,7 @@ const StyledArticle = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 1rem 1.5rem 1rem 1.5rem;
+  padding: 1rem;
   margin-top: 2rem;
   border-top-left-radius: 0.4rem;
   border-top-right-radius: 0.4rem;

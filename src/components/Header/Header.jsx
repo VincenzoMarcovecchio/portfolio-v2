@@ -113,6 +113,11 @@ const NavBar = styled.div`
         &:active {
           transform: initial;
         }
+
+        @media only screen and (max-width: 800px) {
+          font-size: 1.1rem ;
+
+        }
       }
     }
   }
