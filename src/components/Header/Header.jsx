@@ -285,12 +285,12 @@ export default function Header() {
         }}
       >
         <center>
-          🔥
+          
           <Link to="/public-bugbounty-programs/" replace>
             {" "}
             Bug Bounties{" "}
           </Link>
-          🔥
+          
         </center>
       </div>
       <NavBar>
