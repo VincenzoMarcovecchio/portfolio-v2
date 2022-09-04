@@ -205,9 +205,9 @@ class PostListing extends React.Component {
       html.clientHeight, html.scrollHeight, html.offsetHeight);
 
     function getScrollTop() {
-      if (typeof window !== undefined) {
+      if (typeof window !== `undefined`) {
 
-        if (typeof window.pageYOffset != 'undefined') {
+        if (typeof window.pageYOffset != `undefined`) {
           //most browsers except IE before #9
           return window.pageYOffset;
         } else {
@@ -220,7 +220,7 @@ class PostListing extends React.Component {
       }
     }
 
-    typeof window !== undefined && window.addEventListener('scroll', function () {
+    typeof window !== `undefined` && window.addEventListener('scroll', function () {
 
       var scroll = getScrollTop();
 
@@ -245,9 +245,6 @@ class PostListing extends React.Component {
         '-o-transform:rotate': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)'
       });
     });
-
-
-
 
     return (
       <>
