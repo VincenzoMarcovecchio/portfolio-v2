@@ -56,7 +56,8 @@ const PostListStyled = styled.section`
   height: 457px;
   margin-left: -162px;
   position: fixed;
-  top: -20vh;
+  top: 15vh;
+  left: -2vw;
 }
 
 .container-gears .gear1{
@@ -224,26 +225,26 @@ class PostListing extends React.Component {
 
       var scroll = getScrollTop();
 
-      $gear1.css({
+      $gear1.style.css = `
         'transform': 'rotate(' + (scroll / bodyHeight * 800) + 'deg)',
         '-moz-transform': 'rotate(' + (scroll / bodyHeight * 800) + 'deg)',
         '-ms-transform': 'rotate(' + (scroll / bodyHeight * 800) + 'deg)',
         '-o-transform:rotate': 'rotate(' + (scroll / bodyHeight * 800) + 'deg)'
-
-      });
-      $gear2.css({
+      `
+      $gear2.style.css = `
         'transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
         '-moz-transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
         '-ms-transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
         '-o-transform:rotate': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)'
 
-      });
-      $gear3.css({
+      `;
+
+      $gear3.style.css= `
         'transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
         '-moz-transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
         '-ms-transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
         '-o-transform:rotate': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)'
-      });
+      `;
     });
 
     return (
@@ -258,7 +259,6 @@ class PostListing extends React.Component {
         <PostListStyled>
 
           <div class="container-gears">
-            <div class="gear1"></div>
             <div class="gear2"></div>
             <div class="gear3"></div>
           </div>
