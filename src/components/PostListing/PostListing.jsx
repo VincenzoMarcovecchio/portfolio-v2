@@ -49,13 +49,50 @@ const PostListStyled = styled.section`
       font-size: 1.9rem;
     }
   }
+
+  
+.container-gears{
+  width: 443px;
+  height: 457px;
+  margin-left: -162px;
+  position: fixed;
+  top: -20vh;
+}
+
+.container-gears .gear1{
+  background: url('https://i.imgur.com/GPkyatFl.png') no-repeat;
+  width: 116px;
+  height: 128px;
+  margin-left: 267px;
+  margin-top: 22px;
+  position: absolute;
+  float: right;
+}
+
+.container-gears .gear2{
+  background: url('https://i.imgur.com/jPTWFDu.png') no-repeat;
+  width: 328px;
+  height: 328px;
+  margin-top: 73px;
+  float: left;
+}
+
+.container-gears .gear3{
+  background: url('https://i.imgur.com/BjgGPow.png') no-repeat;
+  width: 153px;
+  height: 161px;
+  position: absolute;
+  margin-top: 300px;
+  margin-left: 280px;
+}
+
+
 `;
 const StyledTag = styled.small`
   padding: 0.3rem;
   border-radius: 0.2rem;
   text-transform: uppercase;
   width: fit-content;
-  display: contents;
 
   @media ${device.tablet} {
     font-size: small;
@@ -151,9 +188,67 @@ class PostListing extends React.Component {
   }
   tag = this.props.tag;
 
+
   render() {
     const postList = this.getPostList();
     const searchIndices = [{ name: `Pages`, title: `Pages` }];
+
+
+    var $gear1 = document.querySelector('.gear1');
+    var $gear2 = document.querySelector('.gear2');
+    var $gear3 = document.querySelector('.gear3');
+    var $body = document.querySelector('body');
+    var body = document.body;
+    var html = document.documentElement;
+
+    var bodyHeight = Math.max(body.scrollHeight, body.offsetHeight,
+      html.clientHeight, html.scrollHeight, html.offsetHeight);
+
+    function getScrollTop() {
+      if (typeof window !== undefined) {
+
+        if (typeof window.pageYOffset != 'undefined') {
+          //most browsers except IE before #9
+          return window.pageYOffset;
+        } else {
+          var B = document.body; //IE 'quirks'
+          var D = document.documentElement; //IE with doctype
+          D = (D.clientHeight) ? D : B;
+          return D.scrollTop;
+        }
+
+      }
+    }
+
+    typeof window !== undefined && window.addEventListener('scroll', function () {
+
+      var scroll = getScrollTop();
+
+      $gear1.css({
+        'transform': 'rotate(' + (scroll / bodyHeight * 800) + 'deg)',
+        '-moz-transform': 'rotate(' + (scroll / bodyHeight * 800) + 'deg)',
+        '-ms-transform': 'rotate(' + (scroll / bodyHeight * 800) + 'deg)',
+        '-o-transform:rotate': 'rotate(' + (scroll / bodyHeight * 800) + 'deg)'
+
+      });
+      $gear2.css({
+        'transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
+        '-moz-transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
+        '-ms-transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
+        '-o-transform:rotate': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)'
+
+      });
+      $gear3.css({
+        'transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
+        '-moz-transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
+        '-ms-transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
+        '-o-transform:rotate': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)'
+      });
+    });
+
+
+
+
     return (
       <>
         <picture>
@@ -162,7 +257,16 @@ class PostListing extends React.Component {
           <StyledPicture src={video} alt="wet code" />
         </picture>
 
+
         <PostListStyled>
+
+          <div class="container-gears">
+            <div class="gear1"></div>
+            <div class="gear2"></div>
+            <div class="gear3"></div>
+          </div>
+
+
           <div className="blog-header">
             <h1>{this.tag ? this.tag : 'Blog'}&nbsp;📝</h1>
 
