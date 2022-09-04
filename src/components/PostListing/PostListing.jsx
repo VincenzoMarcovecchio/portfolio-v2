@@ -194,12 +194,12 @@ class PostListing extends React.Component {
     const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
 
-    var $gear1 = document.querySelector('.gear1');
-    var $gear2 = document.querySelector('.gear2');
-    var $gear3 = document.querySelector('.gear3');
-    var $body = document.querySelector('body');
-    var body = document.body;
-    var html = document.documentElement;
+    var $gear1 = typeof document !== `undefined` && document.querySelector('.gear1');
+    var $gear2 = typeof document !== `undefined` && document.querySelector('.gear2');
+    var $gear3 = typeof document !== `undefined` && document.querySelector('.gear3');
+    var $body = typeof document !== `undefined` && document.querySelector('body');
+    var body = typeof document !== `undefined` && document.body;
+    var html = typeof document !== `undefined` && document.documentElement;
 
     var bodyHeight = Math.max(body.scrollHeight, body.offsetHeight,
       html.clientHeight, html.scrollHeight, html.offsetHeight);
