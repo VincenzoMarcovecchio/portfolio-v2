@@ -1,6 +1,6 @@
 ---
 title: "Toggle the dark mode in a vuejs application"
-cover: "vuejs2-vuex-dark-mode-toggle"
+cover: "toggle-theme-mode-in-vuejs-using-vuex-store"
 date: "2022-09-02"
 category: "vuejs"
 slug: "toggle-theme-mode-in-vuejs-using-vuex-store"
