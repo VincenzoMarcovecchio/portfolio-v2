@@ -57,21 +57,11 @@ const PostListStyled = styled.section`
   margin-left: -162px;
   position: fixed;
   top: 15vh;
-  left: -2vw;
-}
-
-.container-gears .gear1{
-  background: url('https://i.imgur.com/GPkyatFl.png') no-repeat;
-  width: 116px;
-  height: 128px;
-  margin-left: 267px;
-  margin-top: 22px;
-  position: absolute;
-  float: right;
+  right: -2vw;
 }
 
 .container-gears .gear2{
-  background: url('https://i.imgur.com/jPTWFDu.png') no-repeat;
+  background: url('https://th.bing.com/th/id/OIP.64vFxAcIKV9ZUKc7V9bPpwHaHY?pid=ImgDet&rs=1') no-repeat;
   width: 328px;
   height: 328px;
   margin-top: 73px;
@@ -79,7 +69,7 @@ const PostListStyled = styled.section`
 }
 
 .container-gears .gear3{
-  background: url('https://i.imgur.com/BjgGPow.png') no-repeat;
+  background: url('https://th.bing.com/th/id/OIP.64vFxAcIKV9ZUKc7V9bPpwHaHY?pid=ImgDet&rs=1') no-repeat;
   width: 153px;
   height: 161px;
   position: absolute;
@@ -225,12 +215,7 @@ class PostListing extends React.Component {
 
       var scroll = getScrollTop();
 
-      $gear1.style.css = `
-        'transform': 'rotate(' + (scroll / bodyHeight * 800) + 'deg)',
-        '-moz-transform': 'rotate(' + (scroll / bodyHeight * 800) + 'deg)',
-        '-ms-transform': 'rotate(' + (scroll / bodyHeight * 800) + 'deg)',
-        '-o-transform:rotate': 'rotate(' + (scroll / bodyHeight * 800) + 'deg)'
-      `
+   
       $gear2.style.css = `
         'transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
         '-moz-transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
