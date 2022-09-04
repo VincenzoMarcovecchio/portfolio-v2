@@ -216,19 +216,20 @@ class PostListing extends React.Component {
       var scroll = getScrollTop();
 
    
-      $gear2.style.css = ```
+      $gear2.style.css = {
         'transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
         '-moz-transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
         '-ms-transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
         '-o-transform:rotate': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)'
-      ```;
+      };
 
-      $gear3.style.css= ```
+      $gear3.style.css= {
         'transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
         '-moz-transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
         '-ms-transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
         '-o-transform:rotate': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)'
-      ```;
+      };
+      
     });
 
     return (
