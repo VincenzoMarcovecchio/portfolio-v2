@@ -185,9 +185,9 @@ class PostListing extends React.Component {
     const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
 
-    var $gear1 = typeof document !== `undefined` && document.querySelector('.gear1');
-    var $gear2 = typeof document !== `undefined` && document.querySelector('.gear2');
-    var $gear3 = typeof document !== `undefined` && document.querySelector('.gear3');
+   // var $gear1 = typeof document !== `undefined` && document.querySelector('.gear1');
+    var gear2 = typeof document !== `undefined` && document.querySelector('.gear2');
+    var gear3 = typeof document !== `undefined` && document.querySelector('.gear3');
     var $body = typeof document !== `undefined` && document.querySelector('body');
     var body = typeof document !== `undefined` && document.body;
     var html = typeof document !== `undefined` && document.documentElement;
@@ -211,24 +211,24 @@ class PostListing extends React.Component {
       }
     }
 
-    typeof window !== `undefined` && window.addEventListener('scroll', function () {
+    typeof window !== `undefined` && gear2.length && gear3.length && window.addEventListener('scroll', function () {
 
       var scroll = getScrollTop();
 
    
-      $gear2.style.css = {
+      gear2.style.css = `
         'transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
         '-moz-transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
         '-ms-transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
         '-o-transform:rotate': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)'
-      };
+      `;
 
-      $gear3.style.css= {
+      gear3.style.css = `
         'transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
         '-moz-transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
         '-ms-transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
         '-o-transform:rotate': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)'
-      };
+      `;
       
     });
 
