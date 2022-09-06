@@ -50,33 +50,6 @@ const PostListStyled = styled.section`
     }
   }
 
-  
-.container-gears{
-  width: 443px;
-  height: 457px;
-  margin-left: -162px;
-  position: fixed;
-  top: 15vh;
-  right: 2vw;
-}
-
-.container-gears .gear2{
-  background: url('https://i.imgur.com/BjgGPow.png') no-repeat;
-  width: 328px;
-  height: 328px;
-  margin-top: 73px;
-  float: left;
-}
-
-.container-gears .gear3{
-  background: url('https://i.imgur.com/BjgGPow.png') no-repeat;
-  width: 153px;
-  height: 161px;
-  position: absolute;
-  margin-top: 300px;
-  margin-left: 280px;
-}
-
 
 `;
 const StyledTag = styled.small`
@@ -195,11 +168,6 @@ class PostListing extends React.Component {
 
 
         <PostListStyled>
-
-          <div class="container-gears">
-            <div class="gear2"></div>
-            <div class="gear3"></div>
-          </div>
 
 
           <div className="blog-header">

@@ -8,7 +8,7 @@ export default class Layout extends React.Component {
 
   componentDidMount() {
     window.addEventListener('scroll', () => {
-      document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+      document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
     }, false);
   }
   render() {
@@ -146,8 +146,21 @@ export default class Layout extends React.Component {
           />
         </Helmet>
         <Header />
-    
+
         <div className="minheight">{children}</div>
+        <div className="progress"></div>
+
+        <div className="cube-wrap">
+          <div className="cube">
+            <div className="side top"></div>
+            <div className="side bottom"></div>
+            <div className="side front"></div>
+            <div className="side back"></div>
+            <div className="side left"></div>
+            <div className="side right"></div>
+          </div>
+        </div>
+        
         <Footer config={config} />
       </React.Fragment>
     );
