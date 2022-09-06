@@ -57,7 +57,7 @@ const PostListStyled = styled.section`
   margin-left: -162px;
   position: fixed;
   top: 15vh;
-  right: -2vw;
+  right: 2vw;
 }
 
 .container-gears .gear2{
@@ -185,53 +185,6 @@ class PostListing extends React.Component {
     const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
 
-
-
-    typeof window !== `undefined` && window.addEventListener('scroll', function () {
-   // var $gear1 = typeof document !== `undefined` && document.querySelector('.gear1');
-   var gear2 = typeof document !== `undefined` && document.querySelector('.gear2');
-   var gear3 = typeof document !== `undefined` && document.querySelector('.gear3');
-   var $body = typeof document !== `undefined` && document.querySelector('body');
-   var body = typeof document !== `undefined` && document.body;
-   var html = typeof document !== `undefined` && document.documentElement;
-
-   var bodyHeight = Math.max(body.scrollHeight, body.offsetHeight,
-     html.clientHeight, html.scrollHeight, html.offsetHeight);
-
-   function getScrollTop() {
-     if (typeof window !== `undefined`) {
-
-       if (typeof window.pageYOffset != `undefined`) {
-         //most browsers except IE before #9
-         return window.pageYOffset;
-       } else {
-         var B = document.body; //IE 'quirks'
-         var D = document.documentElement; //IE with doctype
-         D = (D.clientHeight) ? D : B;
-         return D.scrollTop;
-       }
-
-     }
-   }
-      var scroll = getScrollTop();
-
-   
-      gear2.style.css = `
-        'transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
-        '-moz-transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
-        '-ms-transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
-        '-o-transform:rotate': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)'
-      `;
-
-      gear3.style.css = `
-        'transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
-        '-moz-transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
-        '-ms-transform': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)',
-        '-o-transform:rotate': 'rotate(' + (scroll / bodyHeight * ("-1000")) + 'deg)'
-      `;
-      
-    });
-
     return (
       <>
         <picture>
@@ -278,6 +231,7 @@ class PostListing extends React.Component {
             ))
           }
         </PostListStyled>
+
       </>
     );
   }
