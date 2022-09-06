@@ -5,6 +5,12 @@ import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 
 export default class Layout extends React.Component {
+
+  componentDidMount() {
+    window.addEventListener('scroll', () => {
+      document.body.style.setProperty('--scroll',window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+    }, false);
+  }
   render() {
     const { children } = this.props;
 
@@ -26,6 +32,8 @@ export default class Layout extends React.Component {
             padding: 0;
             line-height: 1.3;
             font-size: 1rem;
+            background-color: rgb(255, 255, 255);
+            animation: body 1s linear;
 
 
             }
@@ -41,6 +49,92 @@ export default class Layout extends React.Component {
             
             }
            
+
+            @keyframes body {
+              to {
+                background-color: rgb(19, 48, 97);
+              }
+            }
+            
+            .progress {
+              height: 3px;
+              width: 0%;
+              background-color: #fff;
+              position: fixed;
+              top: 0;
+              left: 0;
+              animation: progress 1s linear;
+            }
+            @keyframes progress {
+              to {
+                background-color: rgb(20, 255, 226);
+                width: 100%;
+              }
+            }
+            
+            .cube-wrap {
+              --size: 30vmin;
+              position: fixed;
+              top: 50%;
+              left: -1%;
+              width: 0;
+              height: 0;
+              perspective: 100vmin;
+            }
+            .cube {
+              transform-style: preserve-3d;
+              transform: rotateX(0deg) rotateZ(45deg) rotateY(-45deg);
+              animation: cube 1s linear;
+            }
+            @keyframes cube {
+              to {
+                transform: rotateX(360deg) rotateZ(45deg) rotateY(-45deg);
+              }
+            }
+            
+            .side {
+              position: absolute;
+              width: var(--size);
+              height: var(--size);
+              background-color: #eee;
+              backface-visibility: visible;
+              top: calc(var(--size) * -.5);
+              left: calc(var(--size) * -.5);
+            }
+            .top {
+              background-color: #fff;
+              transform: rotateX(90deg) translateZ(calc(var(--size) * .5));
+            }
+            .bottom {
+              background-color: #999;
+              transform: rotateX(90deg) translateZ(calc(var(--size) * -.5));
+            }
+            .left {
+              background-color: #ccc;
+              transform: rotateY(90deg) translateZ(calc(var(--size) * .5));
+            }
+            .right {
+              background-color: #ddd;
+              transform: rotateY(90deg) translateZ(calc(var(--size) * -.5));
+            }
+            .front {
+              background-color: #aaa;
+              transform: translateZ(calc(var(--size) * .5));
+            }
+            .back {
+              background-color: #bbb;
+              transform: translateZ(calc(var(--size) * -.5));
+            }
+            
+            :root * {
+              /* Pause the animation */
+              animation-play-state: paused;
+              /* Bind the animation to scroll */
+              animation-delay: calc(var(--scroll) * -1s);
+              /* These last 2 properites clean up overshoot weirdness */
+              animation-iteration-count: 1;
+              animation-fill-mode: both;
+            }
         `,
             },
           ]}
@@ -52,54 +146,9 @@ export default class Layout extends React.Component {
           />
         </Helmet>
         <Header />
+    
         <div className="minheight">{children}</div>
         <Footer config={config} />
-
-
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script>
-
-          var $gear1 = $(".gear1"),
-          $gear2 = $(".gear2"),
-          $gear3 = $(".gear3"),
-          $body = $("body"),
-          bodyHeight = $body.height();
-
-          function getScrollTop() {
-if (typeof pageYOffset != "undefined") {
-//most browsers except IE before #9
-return pageYOffset;
-} else {
-var B = document.body; //IE 'quirks'
-          var D = document.documentElement; //IE with doctype
-          D = D.clientHeight ? D : B;
-          return D.scrollTop;
-}
-}
-
-          $(window).scroll(function () {
-var scroll = getScrollTop();
-          $gear1.css({
-            transform: "rotate(" + (scroll / bodyHeight) * 800 + "deg)",
-          "-moz-transform": "rotate(" + (scroll / bodyHeight) * 800 + "deg)",
-          "-ms-transform": "rotate(" + (scroll / bodyHeight) * 800 + "deg)",
-          "-o-transform:rotate": "rotate(" + (scroll / bodyHeight) * 800 + "deg)"
-});
-          $gear2.css({
-            transform: "rotate(" + (scroll / bodyHeight) * "-1000" + "deg)",
-          "-moz-transform": "rotate(" + (scroll / bodyHeight) * "-1000" + "deg)",
-          "-ms-transform": "rotate(" + (scroll / bodyHeight) * "-1000" + "deg)",
-          "-o-transform:rotate": "rotate(" + (scroll / bodyHeight) * "-1000" + "deg)"
-});
-          $gear3.css({
-            transform: "rotate(" + (scroll / bodyHeight) * "-1000" + "deg)",
-          "-moz-transform": "rotate(" + (scroll / bodyHeight) * "-1000" + "deg)",
-          "-ms-transform": "rotate(" + (scroll / bodyHeight) * "-1000" + "deg)",
-          "-o-transform:rotate": "rotate(" + (scroll / bodyHeight) * "-1000" + "deg)"
-});
-});
-
-        </script>
       </React.Fragment>
     );
   }
