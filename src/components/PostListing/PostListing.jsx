@@ -185,34 +185,34 @@ class PostListing extends React.Component {
     const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
 
-   // var $gear1 = typeof document !== `undefined` && document.querySelector('.gear1');
-    var gear2 = typeof document !== `undefined` && document.querySelector('.gear2');
-    var gear3 = typeof document !== `undefined` && document.querySelector('.gear3');
-    var $body = typeof document !== `undefined` && document.querySelector('body');
-    var body = typeof document !== `undefined` && document.body;
-    var html = typeof document !== `undefined` && document.documentElement;
 
-    var bodyHeight = Math.max(body.scrollHeight, body.offsetHeight,
-      html.clientHeight, html.scrollHeight, html.offsetHeight);
-
-    function getScrollTop() {
-      if (typeof window !== `undefined`) {
-
-        if (typeof window.pageYOffset != `undefined`) {
-          //most browsers except IE before #9
-          return window.pageYOffset;
-        } else {
-          var B = document.body; //IE 'quirks'
-          var D = document.documentElement; //IE with doctype
-          D = (D.clientHeight) ? D : B;
-          return D.scrollTop;
-        }
-
-      }
-    }
 
     typeof window !== `undefined` && window.addEventListener('scroll', function () {
+   // var $gear1 = typeof document !== `undefined` && document.querySelector('.gear1');
+   var gear2 = typeof document !== `undefined` && document.querySelector('.gear2');
+   var gear3 = typeof document !== `undefined` && document.querySelector('.gear3');
+   var $body = typeof document !== `undefined` && document.querySelector('body');
+   var body = typeof document !== `undefined` && document.body;
+   var html = typeof document !== `undefined` && document.documentElement;
 
+   var bodyHeight = Math.max(body.scrollHeight, body.offsetHeight,
+     html.clientHeight, html.scrollHeight, html.offsetHeight);
+
+   function getScrollTop() {
+     if (typeof window !== `undefined`) {
+
+       if (typeof window.pageYOffset != `undefined`) {
+         //most browsers except IE before #9
+         return window.pageYOffset;
+       } else {
+         var B = document.body; //IE 'quirks'
+         var D = document.documentElement; //IE with doctype
+         D = (D.clientHeight) ? D : B;
+         return D.scrollTop;
+       }
+
+     }
+   }
       var scroll = getScrollTop();
 
    
