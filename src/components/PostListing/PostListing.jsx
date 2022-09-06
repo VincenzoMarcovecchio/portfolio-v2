@@ -211,7 +211,7 @@ class PostListing extends React.Component {
       }
     }
 
-    typeof window !== `undefined` && gear2.length && gear3.length && window.addEventListener('scroll', function () {
+    typeof window !== `undefined` && window.addEventListener('scroll', function () {
 
       var scroll = getScrollTop();
 
