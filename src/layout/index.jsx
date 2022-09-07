@@ -11,6 +11,13 @@ export default class Layout extends React.Component {
       document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
     }, false);
   }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', () => {
+      document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+    }, false);
+  }
+  
   render() {
     const { children } = this.props;
 
@@ -22,6 +29,17 @@ export default class Layout extends React.Component {
               cssText: `
 
               
+            :root * {
+              /* Pause the animation */
+              animation-play-state: paused;
+              /* Bind the animation to scroll */
+              animation-delay: calc(var(--scroll) * -1s);
+              /* These last 2 properites clean up overshoot weirdness */
+              animation-iteration-count: 1;
+              animation-fill-mode: both;
+            }
+
+
             body {
                 box-sizing: border-box;
             font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Roboto, Arial,
@@ -72,7 +90,7 @@ export default class Layout extends React.Component {
               }
             }
             
-            .cube-wrap {
+            .gears {
               --size: 30vmin;
               position: fixed;
               top: 50%;
@@ -80,61 +98,19 @@ export default class Layout extends React.Component {
               width: 0;
               height: 0;
               perspective: 100vmin;
-            }
-            .cube {
+              z-index: -5;
               transform-style: preserve-3d;
-              transform: rotateX(0deg) rotateZ(45deg) rotateY(-45deg);
+              transform: rotateX(0deg);
               animation: cube 1s linear;
             }
+  
             @keyframes cube {
               to {
-                transform: rotateX(360deg) rotateZ(45deg) rotateY(-45deg);
+                transform: rotateX(360deg) ;
               }
             }
             
-            .side {
-              position: absolute;
-              width: var(--size);
-              height: var(--size);
-              background-color: #eee;
-              backface-visibility: visible;
-              top: calc(var(--size) * -.5);
-              left: calc(var(--size) * -.5);
-            }
-            .top {
-              background-color: #fff;
-              transform: rotateX(90deg) translateZ(calc(var(--size) * .5));
-            }
-            .bottom {
-              background-color: #999;
-              transform: rotateX(90deg) translateZ(calc(var(--size) * -.5));
-            }
-            .left {
-              background-color: #ccc;
-              transform: rotateY(90deg) translateZ(calc(var(--size) * .5));
-            }
-            .right {
-              background-color: #ddd;
-              transform: rotateY(90deg) translateZ(calc(var(--size) * -.5));
-            }
-            .front {
-              background-color: #aaa;
-              transform: translateZ(calc(var(--size) * .5));
-            }
-            .back {
-              background-color: #bbb;
-              transform: translateZ(calc(var(--size) * -.5));
-            }
-            
-            :root * {
-              /* Pause the animation */
-              animation-play-state: paused;
-              /* Bind the animation to scroll */
-              animation-delay: calc(var(--scroll) * -1s);
-              /* These last 2 properites clean up overshoot weirdness */
-              animation-iteration-count: 1;
-              animation-fill-mode: both;
-            }
+      
         `,
             },
           ]}
@@ -150,17 +126,24 @@ export default class Layout extends React.Component {
         <div className="minheight">{children}</div>
         <div className="progress"></div>
 
-        <div className="cube-wrap">
-          <div className="cube">
-            <div className="side top"></div>
-            <div className="side bottom"></div>
-            <div className="side front"></div>
-            <div className="side back"></div>
-            <div className="side left"></div>
-            <div className="side right"></div>
-          </div>
-        </div>
-        
+        <svg class="gears" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 250 250" enable-background="new 0 0 250 250">
+  <path fill="#7F2A43" d="M197.7,139.7c0.9-4.8,1.4-9.7,1.4-14.7s-0.5-9.9-1.4-14.7l-23.9-0.6c-1.3-4.7-3.2-9.2-5.6-13.4L184.8,79
+	c-5.6-8.1-12.7-15.2-20.8-20.8l-17.3,16.5c-4.2-2.4-8.7-4.3-13.4-5.6l-0.6-23.9c-4.8-0.9-9.7-1.4-14.7-1.4s-9.9,0.5-14.7,1.4
+	l-0.6,23.9c-4.7,1.3-9.2,3.2-13.4,5.6L72,58.2C63.8,63.8,56.7,70.9,51.1,79l16.5,17.3c-2.4,4.2-4.3,8.7-5.6,13.4l-23.9,0.6
+	c-0.9,4.8-1.4,9.7-1.4,14.7s0.5,9.9,1.4,14.7l23.9,0.6c1.3,4.7,3.2,9.2,5.6,13.4L51.1,171c5.6,8.1,12.7,15.2,20.8,20.8l17.3-16.5
+	c4.2,2.4,8.7,4.3,13.4,5.6l0.6,23.9c4.8,0.9,9.7,1.4,14.7,1.4s9.9-0.5,14.7-1.4l0.6-23.9c4.7-1.3,9.2-3.2,13.4-5.6l17.3,16.5
+	c8.1-5.6,15.2-12.7,20.8-20.8l-16.5-17.3c2.4-4.2,4.3-8.7,5.6-13.4L197.7,139.7z M117.9,148.2c-12.8,0-23.2-10.4-23.2-23.2
+	c0-12.8,10.4-23.2,23.2-23.2s23.2,10.4,23.2,23.2C141.1,137.8,130.7,148.2,117.9,148.2z"/>
+  <defs>
+    <path id="SVGID_1_" d="M197.7,139.7c0.9-4.8,1.4-9.7,1.4-14.7s-0.5-9.9-1.4-14.7l-23.9-0.6c-1.3-4.7-3.2-9.2-5.6-13.4L184.8,79
+			c-5.6-8.1-12.7-15.2-20.8-20.8l-17.3,16.5c-4.2-2.4-8.7-4.3-13.4-5.6l-0.6-23.9c-4.8-0.9-9.7-1.4-14.7-1.4s-9.9,0.5-14.7,1.4
+			l-0.6,23.9c-4.7,1.3-9.2,3.2-13.4,5.6L72,58.2C63.8,63.8,56.7,70.9,51.1,79l16.5,17.3c-2.4,4.2-4.3,8.7-5.6,13.4l-23.9,0.6
+			c-0.9,4.8-1.4,9.7-1.4,14.7s0.5,9.9,1.4,14.7l23.9,0.6c1.3,4.7,3.2,9.2,5.6,13.4L51.1,171c5.6,8.1,12.7,15.2,20.8,20.8l17.3-16.5
+			c4.2,2.4,8.7,4.3,13.4,5.6l0.6,23.9c4.8,0.9,9.7,1.4,14.7,1.4s9.9-0.5,14.7-1.4l0.6-23.9c4.7-1.3,9.2-3.2,13.4-5.6l17.3,16.5
+			c8.1-5.6,15.2-12.7,20.8-20.8l-16.5-17.3c2.4-4.2,4.3-8.7,5.6-13.4L197.7,139.7z M117.9,148.2c-12.8,0-23.2-10.4-23.2-23.2
+			c0-12.8,10.4-23.2,23.2-23.2s23.2,10.4,23.2,23.2C141.1,137.8,130.7,148.2,117.9,148.2z"/>
+  </defs>
+
         <Footer config={config} />
       </React.Fragment>
     );
