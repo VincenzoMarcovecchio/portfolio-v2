@@ -8,13 +8,15 @@ export default class Layout extends React.Component {
 
   componentDidMount() {
     window.addEventListener('scroll', () => {
-      document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+      document.querySelector('.gears1').style.transform = "rotate(" + window.pageYOffset/2 + "deg)";
+      document.querySelector('.gears2').style.transform = "rotate(" + window.pageYOffset/2 + "deg)";
     }, false);
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', () => {
-      document.body.style.setProperty('--scroll', window.pageYOffset / (document.body.offsetHeight - window.innerHeight));
+      document.querySelector('.gears2').style.transform = "rotate(" + window.pageYOffset/2 + "deg)";
+      document.querySelector('.gears1').style.transform = "rotate(" + window.pageYOffset/2 + "deg)";
     }, false);
   }
   
@@ -67,49 +69,34 @@ export default class Layout extends React.Component {
             }
            
 
-            @keyframes body {
-              to {
-                background-color: rgb(19, 48, 97);
-              }
-            }
-            
-            .progress {
-              height: 3px;
-              width: 0%;
-              background-color: #fff;
-              position: fixed;
-              top: 0;
-              left: 0;
-              animation: progress 1s linear;
-            }
-            @keyframes progress {
-              to {
-                background-color: rgb(20, 255, 226);
-                width: 100%;
-              }
-            }
-            
-            .gears {
-              --size: 30vmin;
+              
+            .gears1 {        
               position: fixed;
               top: 50%;
-              left: -1%;
-              width: 0;
+              left: -8.5vw;
+              width: 25vw;
               height: 0;
               perspective: 100vmin;
               z-index: -5;
               transform-style: preserve-3d;
               transform: rotateX(0deg);
-              animation: cube 1s linear;
+
+            }
+
+            .gears2 {
+              position: fixed;
+              top: 15%;
+              left: -7vw;
+              width: 25vw;
+              height: 0;
+              perspective: 100vmin;
+              z-index: -5;
+              transform-style: preserve-3d;
+              transform: rotateX(0deg);
             }
   
-            @keyframes cube {
-              to {
-                transform: rotateX(360deg) ;
-              }
-            }
-            
-      
+
+    
         `,
             },
           ]}
@@ -121,7 +108,25 @@ export default class Layout extends React.Component {
           />
         </Helmet>
         <Header />
-        <svg class="gears" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 250 250" enable-background="new 0 0 250 250">
+        <svg className="gears1" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 250 250" enable-background="new 0 0 250 250">
+  <path fill="#7F2A43" d="M197.7,139.7c0.9-4.8,1.4-9.7,1.4-14.7s-0.5-9.9-1.4-14.7l-23.9-0.6c-1.3-4.7-3.2-9.2-5.6-13.4L184.8,79
+	c-5.6-8.1-12.7-15.2-20.8-20.8l-17.3,16.5c-4.2-2.4-8.7-4.3-13.4-5.6l-0.6-23.9c-4.8-0.9-9.7-1.4-14.7-1.4s-9.9,0.5-14.7,1.4
+	l-0.6,23.9c-4.7,1.3-9.2,3.2-13.4,5.6L72,58.2C63.8,63.8,56.7,70.9,51.1,79l16.5,17.3c-2.4,4.2-4.3,8.7-5.6,13.4l-23.9,0.6
+	c-0.9,4.8-1.4,9.7-1.4,14.7s0.5,9.9,1.4,14.7l23.9,0.6c1.3,4.7,3.2,9.2,5.6,13.4L51.1,171c5.6,8.1,12.7,15.2,20.8,20.8l17.3-16.5
+	c4.2,2.4,8.7,4.3,13.4,5.6l0.6,23.9c4.8,0.9,9.7,1.4,14.7,1.4s9.9-0.5,14.7-1.4l0.6-23.9c4.7-1.3,9.2-3.2,13.4-5.6l17.3,16.5
+	c8.1-5.6,15.2-12.7,20.8-20.8l-16.5-17.3c2.4-4.2,4.3-8.7,5.6-13.4L197.7,139.7z M117.9,148.2c-12.8,0-23.2-10.4-23.2-23.2
+	c0-12.8,10.4-23.2,23.2-23.2s23.2,10.4,23.2,23.2C141.1,137.8,130.7,148.2,117.9,148.2z"/>
+  <defs>
+    <path id="SVGID_1_" d="M197.7,139.7c0.9-4.8,1.4-9.7,1.4-14.7s-0.5-9.9-1.4-14.7l-23.9-0.6c-1.3-4.7-3.2-9.2-5.6-13.4L184.8,79
+			c-5.6-8.1-12.7-15.2-20.8-20.8l-17.3,16.5c-4.2-2.4-8.7-4.3-13.4-5.6l-0.6-23.9c-4.8-0.9-9.7-1.4-14.7-1.4s-9.9,0.5-14.7,1.4
+			l-0.6,23.9c-4.7,1.3-9.2,3.2-13.4,5.6L72,58.2C63.8,63.8,56.7,70.9,51.1,79l16.5,17.3c-2.4,4.2-4.3,8.7-5.6,13.4l-23.9,0.6
+			c-0.9,4.8-1.4,9.7-1.4,14.7s0.5,9.9,1.4,14.7l23.9,0.6c1.3,4.7,3.2,9.2,5.6,13.4L51.1,171c5.6,8.1,12.7,15.2,20.8,20.8l17.3-16.5
+			c4.2,2.4,8.7,4.3,13.4,5.6l0.6,23.9c4.8,0.9,9.7,1.4,14.7,1.4s9.9-0.5,14.7-1.4l0.6-23.9c4.7-1.3,9.2-3.2,13.4-5.6l17.3,16.5
+			c8.1-5.6,15.2-12.7,20.8-20.8l-16.5-17.3c2.4-4.2,4.3-8.7,5.6-13.4L197.7,139.7z M117.9,148.2c-12.8,0-23.2-10.4-23.2-23.2
+			c0-12.8,10.4-23.2,23.2-23.2s23.2,10.4,23.2,23.2C141.1,137.8,130.7,148.2,117.9,148.2z"/>
+  </defs>
+  </svg>
+  <svg className="gears2" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 250 250" enable-background="new 0 0 250 250">
   <path fill="#7F2A43" d="M197.7,139.7c0.9-4.8,1.4-9.7,1.4-14.7s-0.5-9.9-1.4-14.7l-23.9-0.6c-1.3-4.7-3.2-9.2-5.6-13.4L184.8,79
 	c-5.6-8.1-12.7-15.2-20.8-20.8l-17.3,16.5c-4.2-2.4-8.7-4.3-13.4-5.6l-0.6-23.9c-4.8-0.9-9.7-1.4-14.7-1.4s-9.9,0.5-14.7,1.4
 	l-0.6,23.9c-4.7,1.3-9.2,3.2-13.4,5.6L72,58.2C63.8,63.8,56.7,70.9,51.1,79l16.5,17.3c-2.4,4.2-4.3,8.7-5.6,13.4l-23.9,0.6
