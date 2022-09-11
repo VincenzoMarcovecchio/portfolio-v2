@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet";
 import config from "../../data/SiteConfig";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
+import { device } from '../styles/Global';
 
 export default class Layout extends React.Component {
 
@@ -70,27 +71,74 @@ export default class Layout extends React.Component {
            
 
               
-            .gears1 {        
+            .gears1 {
               position: fixed;
               top: 53%;
-              left: -;
+              left: -50vw;
               width: 371px;
               height: 420px;
               z-index: -5;
               opacity: 0.2;
+          }
+
+            .gears2 {
+              position: fixed;
+              top: 15%;
+              left: -32vw;
+              width: 371px;
+              height: 420px;
+              z-index: -5;
+              opacity: 0.99;
+          }
+
+            @media ${device.tablet} {
+           
+              .gears1 {
+                position: fixed;
+                top: 53%;
+                left: -20vw;
+                width: 371px;
+                height: 420px;
+                z-index: -5;
+                opacity: 0.2;
             }
 
-            .gears2 {  
-            position: fixed;
-            top: 15%;
-            left: -10vw;
-            width: 371px;
-            height: 420px;
-            z-index: -5;
-            opacity: 0.99;
+            .gears2 {
+              position: fixed;
+              top: 15%;
+              left: -13vw;
+              width: 371px;
+              height: 420px;
+              z-index: -5;
+              opacity: 0.99;
+          }
+
             }
 
-    
+
+            @media ${device.tablet} {
+           
+              .gears1 {
+                position: fixed;
+                top: 63%;
+                left: -20vw;
+                width: 371px;
+                height: 420px;
+                z-index: -5;
+                opacity: 0.2;
+            }
+
+            .gears2 {
+              position: fixed;
+              top: 11%;
+              left: -16vw;
+              width: 371px;
+              height: 420px;
+              z-index: -5;
+              opacity: 0.99;
+          }
+
+            }
         `,
             },
           ]}
