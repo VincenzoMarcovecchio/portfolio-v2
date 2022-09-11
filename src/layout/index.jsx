@@ -73,9 +73,9 @@ export default class Layout extends React.Component {
               
             .gears1 {
               position: fixed;
-              top: 54%;
-              left: -99px;
-              width: 271px;
+              top: 443px;
+              left: -106px;
+              width: 270px;
               height: 320px;
               z-index: -5;
               opacity: 0.2;
@@ -83,8 +83,8 @@ export default class Layout extends React.Component {
 
             .gears2 {
               position: fixed;
-              top: 9%;
-              left: -150px;
+              top: 200px;
+              left: -152px;
               width: 271px;
               height: 320px;
               z-index: -5;
@@ -94,9 +94,10 @@ export default class Layout extends React.Component {
             @media (min-width: 768px) {
            
               .gears1 {
+
                 position: fixed;
-                top: 72%;
-                left: -214px;
+                top: 269px;
+                left: -215px;
                 width: 371px;
                 height: 420px;
                 z-index: -5;
@@ -105,7 +106,7 @@ export default class Layout extends React.Component {
 
             .gears2 {
               position: fixed;
-              top: 11%;
+              top: -61px;
               left: -150px;
               width: 371px;
               height: 420px;
