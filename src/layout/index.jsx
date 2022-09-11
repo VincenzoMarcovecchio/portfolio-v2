@@ -50,8 +50,7 @@ export default class Layout extends React.Component {
             padding: 0;
             line-height: 1.3;
             font-size: 1rem;
-            background-color: rgb(255, 255, 255);
-            animation: body 1s linear;
+     
 
 
             }
@@ -122,11 +121,7 @@ export default class Layout extends React.Component {
           />
         </Helmet>
         <Header />
-
-        <div className="minheight">{children}</div>
-        <div className="progress"></div>
-
-        <svg class="gears" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 250 250" enable-background="new 0 0 250 250">
+        <svg class="gears" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 250 250" enable-background="new 0 0 250 250">
   <path fill="#7F2A43" d="M197.7,139.7c0.9-4.8,1.4-9.7,1.4-14.7s-0.5-9.9-1.4-14.7l-23.9-0.6c-1.3-4.7-3.2-9.2-5.6-13.4L184.8,79
 	c-5.6-8.1-12.7-15.2-20.8-20.8l-17.3,16.5c-4.2-2.4-8.7-4.3-13.4-5.6l-0.6-23.9c-4.8-0.9-9.7-1.4-14.7-1.4s-9.9,0.5-14.7,1.4
 	l-0.6,23.9c-4.7,1.3-9.2,3.2-13.4,5.6L72,58.2C63.8,63.8,56.7,70.9,51.1,79l16.5,17.3c-2.4,4.2-4.3,8.7-5.6,13.4l-23.9,0.6
@@ -144,6 +139,10 @@ export default class Layout extends React.Component {
 			c0-12.8,10.4-23.2,23.2-23.2s23.2,10.4,23.2,23.2C141.1,137.8,130.7,148.2,117.9,148.2z"/>
   </defs>
   </svg>
+        <div className="minheight">{children}</div>
+
+
+
 
         <Footer config={config} />
       </React.Fragment>
