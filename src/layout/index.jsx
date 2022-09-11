@@ -77,12 +77,10 @@ export default class Layout extends React.Component {
               width: 371px;
               height: 420px;
               z-index: -5;
-              height:auto;
               opacity: 0.2;
-
-
             }
-
+            
+            .gears1 {  
             position: fixed;
             top: 15%;
             left: -10vw;
@@ -94,7 +92,7 @@ export default class Layout extends React.Component {
             /* transform-style: preserve-3d; */
             /* transform: rotateX(0deg); */
             opacity: 0.99;
-  
+            }
 
     
         `,
