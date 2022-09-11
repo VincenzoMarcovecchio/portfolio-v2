@@ -9,13 +9,13 @@ export default class Layout extends React.Component {
   componentDidMount() {
     window.addEventListener('scroll', () => {
       document.querySelector('.gears1').style.transform = "rotate(" + window.pageYOffset/2 + "deg)";
-      document.querySelector('.gears2').style.transform = "rotate(" - window.pageYOffset/2 + "deg)";
+      document.querySelector('.gears2').style.transform = "rotate(-" + window.pageYOffset/2 + "deg)";
     }, false);
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', () => {
-      document.querySelector('.gears2').style.transform = "rotate(" - window.pageYOffset/2 + "deg)";
+      document.querySelector('.gears2').style.transform = "rotate(-" + window.pageYOffset/2 + "deg)";
       document.querySelector('.gears1').style.transform = "rotate(" + window.pageYOffset/2 + "deg)";
     }, false);
   }
@@ -75,7 +75,6 @@ export default class Layout extends React.Component {
               top: 50%;
               left: -8.5vw;
               width: 25vw;
-              height: 0;
               perspective: 100vmin;
               z-index: -5;
               transform-style: preserve-3d;
@@ -88,7 +87,6 @@ export default class Layout extends React.Component {
               top: 15%;
               left: -7vw;
               width: 25vw;
-              height: 0;
               perspective: 100vmin;
               z-index: -5;
               transform-style: preserve-3d;
