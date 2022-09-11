@@ -72,9 +72,10 @@ export default class Layout extends React.Component {
               
             .gears1 {        
               position: fixed;
-              top: 58%;
-              left: -14.5vw;
-              width: 25vw;
+              top: 53%;
+              left: -;
+              width: 371px;
+              height: 420px;
               z-index: -5;
               height:auto;
               opacity: 0.2;
@@ -82,16 +83,17 @@ export default class Layout extends React.Component {
 
             }
 
-            .gears2 {
-              position: fixed;
-              top: 15%;
-              left: -10vw;
-              width: 25vw;
-              z-index: -5;
-              height:auto;
-              opacity: 0.99;
-     
-            }
+            position: fixed;
+            top: 15%;
+            left: -10vw;
+            width: 371px;
+            /* max-width: 40vw; */
+            height: 420px;
+            /* perspective: 100vmin; */
+            z-index: -5;
+            /* transform-style: preserve-3d; */
+            /* transform: rotateX(0deg); */
+            opacity: 0.99;
   
 
     
