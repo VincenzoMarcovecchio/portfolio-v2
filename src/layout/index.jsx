@@ -9,13 +9,13 @@ export default class Layout extends React.Component {
   componentDidMount() {
     window.addEventListener('scroll', () => {
       document.querySelector('.gears1').style.transform = "rotate(" + window.pageYOffset/2 + "deg)";
-      document.querySelector('.gears2').style.transform = "rotate(" + window.pageYOffset/2 + "deg)";
+      document.querySelector('.gears2').style.transform = "rotate(" - window.pageYOffset/2 + "deg)";
     }, false);
   }
 
   componentWillUnmount() {
     window.removeEventListener('scroll', () => {
-      document.querySelector('.gears2').style.transform = "rotate(" + window.pageYOffset/2 + "deg)";
+      document.querySelector('.gears2').style.transform = "rotate(" - window.pageYOffset/2 + "deg)";
       document.querySelector('.gears1').style.transform = "rotate(" + window.pageYOffset/2 + "deg)";
     }, false);
   }
