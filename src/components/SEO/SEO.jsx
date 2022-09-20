@@ -42,7 +42,7 @@ class SEO extends Component {
           `(https?|ftp|file)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]`
         )
       )
-        return urljoin('./image', imageURI);
+        return urljoin('/image', imageURI);
 
       return imageURI;
     };
