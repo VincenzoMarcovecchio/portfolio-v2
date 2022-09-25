@@ -1,7 +1,7 @@
 2022-09-25-remove-all-white-spaces-glabally-from-a-string
 ---
 title: "How to remove all white-spaces globally from a string"
-cover: ""
+cover: "remove-all-white-spaces-globally-from-a-string"
 date: "2022-09-25"
 category: "regex"
 slug: "remove-all-white-spaces-globally-from-a-string"

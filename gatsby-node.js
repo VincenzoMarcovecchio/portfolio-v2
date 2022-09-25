@@ -198,6 +198,7 @@ exports.createPages = async ({ graphql, actions }) => {
         image: imageEdges,
       },
     });
+    
   });
 
   //  Create tag pages
