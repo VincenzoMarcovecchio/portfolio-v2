@@ -9,7 +9,7 @@ tags:
   - regex
 ---
 
-Regex are a powerful tool when it comes to string manipulation. For instance this expression ```jsx /\s+/g ``` in combination with ```jsx .replace()``` method works well. To note: the ```jsx /g ``` stands for globally. I find it useful when working with urls .
+Regex are a powerful tool when it comes to string manipulation. For instance this expression ```jsx /\s+/g ``` in combination with ``` .replace()``` method works well. To note: the ``` /g ``` stands for globally. I find it very useful when working with urls.
 
 
 ```jsx

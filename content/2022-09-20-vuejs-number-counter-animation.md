@@ -9,8 +9,7 @@ tags:
   - vuejs
 ---
 
-Keep track of the number changing with a sparkle of animation 
-
+Keep track of the number changing with a sparkle of animation. Can be used while fetching an API or for any similar purpose.
 
 
 
