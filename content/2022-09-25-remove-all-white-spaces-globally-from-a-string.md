@@ -1,4 +1,3 @@
-2022-09-25-remove-all-white-spaces-glabally-from-a-string
 ---
 title: "How to remove all white-spaces globally from a string"
 cover: "remove-all-white-spaces-globally-from-a-string"
