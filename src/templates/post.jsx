@@ -161,7 +161,7 @@ export default class PostTemplate extends React.Component {
         <StyledSection>
           <StyledTitle>{post.title}</StyledTitle>
           <Img
-            objectFit="cover"
+            objectFit="contain"
             fluid={result[0]?.node.childImageSharp.fluid}
             alt={post.title}
           />
