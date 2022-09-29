@@ -63,9 +63,10 @@ const StyledSection = styled.section`
     width: 80%;
     display: flex !important;
     justify-self: center;
+    object-fit:contain;
     align-self: center;
     margin: auto;
-    min-height: 78vh;
+    min-height: 38vh;
 
     @media ${device.tablet} {
       width: 95%;
