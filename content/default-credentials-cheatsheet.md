@@ -1,6 +1,6 @@
 ---
 title: "Awesome default credentials cheat sheet"
-cover: ""
+cover: "decentralized-publishing-model.jpg"
 date: "2022-09-29"
 category: "regex"
 slug: "default-credentials-cheatsheet"
