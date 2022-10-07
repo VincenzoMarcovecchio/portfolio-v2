@@ -2,7 +2,7 @@
 title: "Awesome default credentials cheat sheet"
 cover: "default-credentials-cheatsheet"
 date: "2022-09-29"
-category: "regex"
+category: "cheatsheet"
 slug: "default-credentials-cheatsheet"
 
 tags:
