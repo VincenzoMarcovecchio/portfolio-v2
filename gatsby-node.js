@@ -237,7 +237,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   datacustoma.data.forEach(async (pro) => {
     await createPage({
-      path: `/learning/${_.kebabCase(pro.line)}/`,
+      path: `/learning/${_.kebabCase(pro.line).substring(1, 100)}/`,
       component: Ippsec,
       context: { pro: pro, slug:`${_.kebabCase(pro.line)}`},
     });
