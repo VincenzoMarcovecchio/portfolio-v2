@@ -1,6 +1,6 @@
 ---
 title: "Google analytics log events integration on react form"
-cover: "a-complete-react-framer-motion-contact-form-with-google-logevent-integration"
+cover: "a-complete-react-framer-motion-contact-form-with-google-logevent-integration.png"
 date: "2022-10-10"
 category: "google-logevent"
 slug: "a-complete-react-framer-motion-contact-form-with-google-logevent-integration"
