@@ -33,7 +33,6 @@ const Feel = () => {
      const SCOPES = 'https://www.googleapis.com/auth/calendar.readonly';
 
 
-      setTimeout(() => {
 
         React.useEffect(()=> {
 
@@ -141,7 +140,7 @@ const Feel = () => {
     
     },[])
         
-      }, 2000);
+ 
 
 
 
@@ -154,8 +153,8 @@ const Feel = () => {
   
     <p>Google Calendar API Quickstart</p>
 
-    <button id="authorize_button" onclick={handleAuthClick}>Authorize</button>
-    <button id="signout_button" onclick={handleSignoutClick}>Sign Out</button>
+    <button id="authorize_button" onclick={()=> handleAuthClick()}>Authorize</button>
+    <button id="signout_button" onclick={()=> handleSignoutClick()}>Sign Out</button>
 
     <pre id="content" style="white-space: pre-wrap;"></pre>
 
