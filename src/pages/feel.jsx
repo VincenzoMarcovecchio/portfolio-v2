@@ -27,7 +27,7 @@ const codeStyles = {
 // markupkj
 const Feel = () => {
 
-useEffect(()=> {
+React.useEffect(()=> {
 /* exported gapiLoaded */
       /* exported gisLoaded */
       /* exported handleAuthClick */

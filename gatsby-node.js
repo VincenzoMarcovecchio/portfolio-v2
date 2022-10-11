@@ -235,13 +235,13 @@ exports.createPages = async ({ graphql, actions }) => {
     `https://search.redteam.fail/dataset.json`
   );
 
-  datacustoma.data.forEach(async (pro) => {
-    await createPage({
-      path: `/learning/${_.kebabCase(pro.line).substring(1, 100)}/`,
-      component: Ippsec,
-      context: { pro: pro, slug:`${_.kebabCase(pro.line)}`},
-    });
-  });
+ // datacustoma.data.forEach(async (pro) => {
+ //   await createPage({
+ //     path: `/learning/${_.kebabCase(pro.line).substring(1, 100)}/`,
+ //     component: Ippsec,
+ //     context: { pro: pro, slug:`${_.kebabCase(pro.line)}`},
+ //   });
+ // });
 
   let datacusti = await axios(
     `https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/hackerone_data.json`
