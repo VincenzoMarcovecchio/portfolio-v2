@@ -26,22 +26,15 @@ const codeStyles = {
 
 // markupkj
 const Feel = () => {
+     const GATSBY_CLIENT_ID = process.env.CLIENT_ID;
+      const GATSBY_API_KEY = process.env.API_KEY;
 
 React.useEffect(()=> {
-/* exported gapiLoaded */
-      /* exported gisLoaded */
-      /* exported handleAuthClick */
-      /* exported handleSignoutClick */
 
-      // TODO(developer): Set to client ID and API key from the Developer Console
-      const CLIENT_ID = process.env.CLIENT_ID;
-      const API_KEY = process.env.API_KEY;
+ 
 
-      // Discovery doc URL for APIs used by the quickstart
       const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest';
 
-      // Authorization scopes required by the API; multiple scopes can be
-      // included, separated by spaces.
       const SCOPES = 'https://www.googleapis.com/auth/calendar.readonly';
 
       let tokenClient;
@@ -51,17 +44,12 @@ React.useEffect(()=> {
       document.getElementById('authorize_button').style.visibility = 'hidden';
       document.getElementById('signout_button').style.visibility = 'hidden';
 
-      /**
-       * Callback after api.js is loaded.
-       */
+
       function gapiLoaded() {
         gapi.load('client', initializeGapiClient);
       }
 
-      /**
-       * Callback after the API client is loaded. Loads the
-       * discovery doc to initialize the API.
-       */
+
       async function initializeGapiClient() {
         await gapi.client.init({
           apiKey: API_KEY,
@@ -71,9 +59,7 @@ React.useEffect(()=> {
         maybeEnableButtons();
       }
 
-      /**
-       * Callback after Google Identity Services are loaded.
-       */
+
       function gisLoaded() {
         tokenClient = google.accounts.oauth2.initTokenClient({
           client_id: CLIENT_ID,
@@ -84,18 +70,14 @@ React.useEffect(()=> {
         maybeEnableButtons();
       }
 
-      /**
-       * Enables user interaction after all libraries are loaded.
-       */
+
       function maybeEnableButtons() {
         if (gapiInited && gisInited) {
           document.getElementById('authorize_button').style.visibility = 'visible';
         }
       }
 
-      /**
-       *  Sign in the user upon button click.
-       */
+
       function handleAuthClick() {
         tokenClient.callback = async (resp) => {
           if (resp.error !== undefined) {
@@ -116,9 +98,7 @@ React.useEffect(()=> {
         }
       }
 
-      /**
-       *  Sign out the user upon button click.
-       */
+
       function handleSignoutClick() {
         const token = gapi.client.getToken();
         if (token !== null) {
@@ -130,11 +110,7 @@ React.useEffect(()=> {
         }
       }
 
-      /**
-       * Print the summary and start datetime/date of the next ten events in
-       * the authorized user's calendar. If no events are found an
-       * appropriate message is printed.
-       */
+
       async function listUpcomingEvents() {
         let response;
         try {
@@ -157,7 +133,6 @@ React.useEffect(()=> {
           document.getElementById('content').innerText = 'No events found.';
           return;
         }
-        // Flatten to string to display
         const output = events.reduce(
             (str, event) => `${str}${event.summary} (${event.start.dateTime || event.start.date})\n`,
             'Events:\n');
@@ -170,7 +145,9 @@ React.useEffect(()=> {
 
   return (
     <main style={pageStyles}>
-
+    <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
+  
     <p>Google Calendar API Quickstart</p>
 
     <button id="authorize_button" onclick="handleAuthClick()">Authorize</button>
@@ -179,9 +156,7 @@ React.useEffect(()=> {
     <pre id="content" style="white-space: pre-wrap;"></pre>
 
 
-    <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
-    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
-  
+
     </main>
   )
 }
