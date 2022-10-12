@@ -252,7 +252,7 @@ class ClientSearch extends Component {
                           }}
                         >
                           {item.domains.map((ite) => (
-                            <div>{ite}</div>
+                            <div><a href={ite} target="_blank">{ite}</a></div>
                           ))}
                         </td>
                       </tr>

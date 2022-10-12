@@ -32,21 +32,31 @@ const Feel = () => {
      const DISCOVERY_DOC = 'https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest';
      const SCOPES = 'https://www.googleapis.com/auth/calendar.readonly';
 
+     function gisLoaded() {
+      tokenClient = google.accounts.oauth2.initTokenClient({
+        client_id: GATSBY_CLIENT_ID,
+        scope: SCOPES,
+        callback: '', // defined later
+      });
+      gisInited = true;
+      maybeEnableButtons();
+    }
 
+    function gapiLoaded() {
+      gapi.load('client', initializeGapiClient);
+    }
+    
 
-        React.useEffect(()=> {
 
           let tokenClient;
           let gapiInited = false;
           let gisInited = false;
     
-          document.getElementById('authorize_button').style.visibility = 'hidden';
-          document.getElementById('signout_button').style.visibility = 'hidden';
+          typeof window !== undefined && document.getElementById('authorize_button').style.visibility = 'hidden';
+          typeof window !== undefined && document.getElementById('signout_button').style.visibility = 'hidden';
     
     
-          function gapiLoaded() {
-            gapi.load('client', initializeGapiClient);
-          }
+   
     
     
           async function initializeGapiClient() {
@@ -59,20 +69,12 @@ const Feel = () => {
           }
     
     
-          function gisLoaded() {
-            tokenClient = google.accounts.oauth2.initTokenClient({
-              client_id: GATSBY_CLIENT_ID,
-              scope: SCOPES,
-              callback: '', // defined later
-            });
-            gisInited = true;
-            maybeEnableButtons();
-          }
+
     
     
           function maybeEnableButtons() {
             if (gapiInited && gisInited) {
-              document.getElementById('authorize_button').style.visibility = 'visible';
+              typeof window !== undefined && document.getElementById('authorize_button').style.visibility = 'visible';
             }
           }
     
@@ -82,8 +84,8 @@ const Feel = () => {
               if (resp.error !== undefined) {
                 throw (resp);
               }
-              document.getElementById('signout_button').style.visibility = 'visible';
-              document.getElementById('authorize_button').innerText = 'Refresh';
+              typeof window !== undefined && document.getElementById('signout_button').style.visibility = 'visible';
+              typeof window !== undefined && document.getElementById('authorize_button').innerText = 'Refresh';
               await listUpcomingEvents();
             };
     
@@ -103,9 +105,9 @@ const Feel = () => {
             if (token !== null) {
               google.accounts.oauth2.revoke(token.access_token);
               gapi.client.setToken('');
-              document.getElementById('content').innerText = '';
-              document.getElementById('authorize_button').innerText = 'Authorize';
-              document.getElementById('signout_button').style.visibility = 'hidden';
+              typeof window !== undefined && document.getElementById('content').innerText = '';
+              typeof window !== undefined && document.getElementById('authorize_button').innerText = 'Authorize';
+              typeof window !== undefined && document.getElementById('signout_button').style.visibility = 'hidden';
             }
           }
     
@@ -123,28 +125,23 @@ const Feel = () => {
               };
               response = await gapi.client.calendar.events.list(request);
             } catch (err) {
-              document.getElementById('content').innerText = err.message;
+              typeof window !== undefined && document.getElementById('content').innerText = err.message;
               return;
             }
     
             const events = response.result.items;
             if (!events || events.length == 0) {
-              document.getElementById('content').innerText = 'No events found.';
+              typeof window !== undefined && document.getElementById('content').innerText = 'No events found.';
               return;
             }
             const output = events.reduce(
                 (str, event) => `${str}${event.summary} (${event.start.dateTime || event.start.date})\n`,
                 'Events:\n');
-            document.getElementById('content').innerText = output;
+                typeof window !== undefined && document.getElementById('content').innerText = output;
           }
     
-    },[])
+
         
- 
-
-
-
-
 
   return (
     <main style={pageStyles}>
