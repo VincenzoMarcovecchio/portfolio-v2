@@ -51,7 +51,7 @@ const Feel = () => {
           let tokenClient;
           let gapiInited = false;
           let gisInited = false;
-    if(typeof document !== `undefined`){
+    if(typeof document !== undefined){
       document.getElementById('authorize_button').style.visibility = 'hidden';
       document.getElementById('signout_button').style.visibility = 'hidden';
 
@@ -154,8 +154,8 @@ const Feel = () => {
 
   return (
     <main style={pageStyles}>
-    <script  src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
-    <script  src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
+    <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
   
     <p>Google Calendar API Quickstart</p>
 
