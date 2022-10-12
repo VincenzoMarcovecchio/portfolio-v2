@@ -51,7 +51,7 @@ const Feel = () => {
           let tokenClient;
           let gapiInited = false;
           let gisInited = false;
-    if(typeof document !== undefined){
+    if(typeof document !== `undefined`){
       document.getElementById('authorize_button').style.visibility = 'hidden';
       document.getElementById('signout_button').style.visibility = 'hidden';
 
