@@ -51,9 +51,12 @@ const Feel = () => {
           let tokenClient;
           let gapiInited = false;
           let gisInited = false;
-    
-          typeof window !== undefined && document.getElementById('authorize_button').style.visibility = 'hidden';
-          typeof window !== undefined && document.getElementById('signout_button').style.visibility = 'hidden';
+    if(typeof document !== `undefined`){
+      document.getElementById('authorize_button').style.visibility = 'hidden';
+      document.getElementById('signout_button').style.visibility = 'hidden';
+
+    }
+      
     
     
    
@@ -73,8 +76,8 @@ const Feel = () => {
     
     
           function maybeEnableButtons() {
-            if (gapiInited && gisInited) {
-              typeof window !== undefined && document.getElementById('authorize_button').style.visibility = 'visible';
+            if (typeof document !== `undefined` && gapiInited && gisInited) {
+               document.getElementById('authorize_button').style.visibility = 'visible';
             }
           }
     
@@ -84,9 +87,15 @@ const Feel = () => {
               if (resp.error !== undefined) {
                 throw (resp);
               }
-              typeof window !== undefined && document.getElementById('signout_button').style.visibility = 'visible';
-              typeof window !== undefined && document.getElementById('authorize_button').innerText = 'Refresh';
-              await listUpcomingEvents();
+
+              if(typeof document !== `undefined`){
+
+                document.getElementById('signout_button').style.visibility = 'visible';
+                document.getElementById('authorize_button').innerText = 'Refresh';
+               await listUpcomingEvents();
+
+              }
+              
             };
     
             if (gapi.client.getToken() === null) {
@@ -102,12 +111,12 @@ const Feel = () => {
     
           function handleSignoutClick() {
             const token = gapi.client.getToken();
-            if (token !== null) {
+            if (typeof document !== `undefined` && token !== null) {
               google.accounts.oauth2.revoke(token.access_token);
               gapi.client.setToken('');
-              typeof window !== undefined && document.getElementById('content').innerText = '';
-              typeof window !== undefined && document.getElementById('authorize_button').innerText = 'Authorize';
-              typeof window !== undefined && document.getElementById('signout_button').style.visibility = 'hidden';
+               document.getElementById('content').innerText = '';
+               document.getElementById('authorize_button').innerText = 'Authorize';
+               document.getElementById('signout_button').style.visibility = 'hidden';
             }
           }
     
@@ -125,19 +134,19 @@ const Feel = () => {
               };
               response = await gapi.client.calendar.events.list(request);
             } catch (err) {
-              typeof window !== undefined && document.getElementById('content').innerText = err.message;
+              typeof window !== undefined ? document.getElementById('content').innerText = err.message : null
               return;
             }
     
             const events = response.result.items;
-            if (!events || events.length == 0) {
-              typeof window !== undefined && document.getElementById('content').innerText = 'No events found.';
+            if (typeof document !== `undefined` && !events || events.length == 0) {
+               document.getElementById('content').innerText = 'No events found.';
               return;
             }
             const output = events.reduce(
                 (str, event) => `${str}${event.summary} (${event.start.dateTime || event.start.date})\n`,
                 'Events:\n');
-                typeof window !== undefined && document.getElementById('content').innerText = output;
+                typeof document !== `undefined` ? document.getElementById('content').innerText = output : null
           }
     
 
