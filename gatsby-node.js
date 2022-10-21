@@ -256,7 +256,7 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  export const Queryo = graphql`
+ const Queryo = await graphql`
   {
     allEventi {
       nodes {
