@@ -247,6 +247,7 @@ exports.createPages = async ({ graphql, actions }) => {
     `https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/hackerone_data.json`
   );
 
+
   datacusti.data.forEach(async (pro) => {
     await createPage({
       path: `/hackeronedata/${pro.name.toLowerCase().replace(/\s+/g, "-")}/`,
@@ -254,6 +255,31 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { pro },
     });
   });
+
+  export const Queryo = graphql`
+  {
+    allEventi {
+      nodes {
+        name
+        city
+        cfp_details
+        twitter
+        website
+        country
+        conf_start_date
+      }
+    }
+  }
+`;
+
+Queryo.data.allEventi.forEach(async (pro) => {
+  await createPage({
+    path: `/${pro.nodes.name.toLowerCase().replace(/\s+/g, "-")}/`,
+    component: '',
+    context: { pro },
+  });
+});
+
 
   return new Promise((resolve, reject) => {
     axios
