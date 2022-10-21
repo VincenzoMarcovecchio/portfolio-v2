@@ -29,13 +29,13 @@ const Tensor = () => (
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-segmentation"></script>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/depth-estimation"></script>
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-detection"></script>
-<script src="js/gl-shaders.js"></script>
-<script src="js/gl-class.js"></script>
-<script src="js/gl-util.js"></script>
-<script src="js/ui-util.js"></script>
-<script src="js/params.js"></script>
-<script src="js/dat-gui.js"></script>
-<script src="js/index.js"></script>
+<script src="../js/gl-shaders.js"></script>
+<script src="../js/gl-class.js"></script>
+<script src="../js/gl-util.js"></script>
+<script src="../js/ui-util.js"></script>
+<script src="../js/params.js"></script>
+<script src="../js/dat-gui.js"></script>
+<script src="../js/index.js"></script>
   </div>
 );
 
