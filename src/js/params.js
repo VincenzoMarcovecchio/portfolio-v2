@@ -15,8 +15,8 @@
  * =============================================================================
  */
 
- const videoWidth = isMobile() ? 480 : 640;
- const videoHeight = isMobile() ? 480 : 480;
+ const videoWidth = window.innerWidth >  480 ? 480 : 640;
+ const videoHeight = window.innerHeight > 480 ? 480 : 480;
  
  const STATE = {
    VisualizeDepth: true,
