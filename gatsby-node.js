@@ -57,6 +57,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const landingPage = path.resolve("./src/templates/landing.jsx");
   const singleProgram = path.resolve("./src/templates/singleProgram.jsx");
   const singleProgramTwo = path.resolve("./src/templates/singleProgramTwo.jsx");
+  const stack = path.resolve("./src/templates/stack.jsx");
   const hacking = path.resolve("./src/templates/hacka.jsx");
   const Ippsec = path.resolve("./src/templates/Ippsec.jsx");
 
@@ -230,8 +231,17 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { pro },
     });
   });
+let postsStack = await axios(`https://api.stackexchange.com/2.3/posts?fromdate=1614556800&todate=1666742400&order=desc&sort=activity&site=stackoverflow&filter=!tM9SCgz7PT0ouoyqBgb6f4qCH5b1Lru`)
+  
+postsStack.data.items.forEach(async (pro) => {
+  await createPage({
+    path: `/${pro.title.replace(/\s+/g, "-")}/`,
+    component: stack,
+    context: { pro },
+  });
+});
 
-  let datacustoma = await axios(
+let datacustoma = await axios(
     `https://search.redteam.fail/dataset.json`
   );
 
