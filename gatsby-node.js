@@ -231,11 +231,12 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { pro },
     });
   });
+  
 let postsStack = await axios(`https://api.stackexchange.com/2.3/posts?fromdate=1614556800&todate=1666742400&order=desc&sort=activity&site=stackoverflow&filter=!tM9SCgz7PT0ouoyqBgb6f4qCH5b1Lru`)
   
 postsStack.data.items.forEach(async (pro) => {
   await createPage({
-    path: `/${pro.title.replace(/\s+/g, "-")}/`,
+    path: `${pro.title.toLowerCase().replace(/\s+/g, "-").replace("$","-")}/`,
     component: stack,
     context: { pro },
   });
