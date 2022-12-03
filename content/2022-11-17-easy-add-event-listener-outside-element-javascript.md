@@ -1,5 +1,5 @@
 ---
-title: "Detect event listener with only few lines of code Javascript"
+title: "Detect outside click with only few lines of Javascript code "
 cover: "easy-add-event-listener-outside-element-javascript.jpg"
 date: "2022-11-17"
 category: "javascript"
