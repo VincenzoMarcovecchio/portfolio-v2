@@ -234,7 +234,7 @@ export const StyledDiv = styled.div`
 function project({ data }) {
   let links = [
     "https://vincenzomarcovecchio.github.io/Spotify-clone/",
-    "https://www.orbitaterrestre.com/",
+    "https://www.firststepintospace.com/",
     "https://vincenzomarcovecchio.github.io/Intro-Component-With-Sign-Up-Form/",
     "https://vincenzomarcovecchio.github.io/FRAINE-RICICLA/",
     "https://fragine.netlify.app/",
@@ -263,6 +263,8 @@ function project({ data }) {
           <TabList>
             <Tab>Development</Tab>
             <Tab>Hacking</Tab>
+            <Tab>Translation</Tab>
+            <Tab>Work experience</Tab>
           </TabList>
 
           <TabPanel>
@@ -323,6 +325,20 @@ function project({ data }) {
                 </li>
                 <li>Open Redirect (out of scope)</li>
                 <li>PHP info found (disclosure of information)</li>
+              </ul>
+
+
+            </section>
+          </TabPanel>
+          <TabPanel>
+            <section className="wrapper">
+
+              <ul>
+                <li>
+                https://www.redhotcyber.com/post/satoshi-nakamoto-l-inventore-del-bitcoin/
+                </li>
+                <li>https://www.redhotcyber.com/en/post/rhc-ransomware-data-room-january-2022/</li>
+                <li>https://www.redhotcyber.com/en/post/nuclear-rearmament-cyber-guerrillas-and-cyber-crime/</li>
               </ul>
 
 
