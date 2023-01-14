@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SEOAUDIT = () => {
+function seo(){
 
   const url = setUpQuery();
   fetch(url)
@@ -25,7 +25,7 @@ const SEOAUDIT = () => {
       };
       showLighthouseContent(lighthouseMetrics);
     });
-}
+
 
 function setUpQuery() {
   const api = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
@@ -79,8 +79,8 @@ return (
     <input type="text" />
   </div>
 
-)
+);
 
 };
 
-export default React.memo(SEOAUDIT);
+export default seo;
