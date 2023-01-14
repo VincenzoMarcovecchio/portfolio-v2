@@ -8,7 +8,7 @@ function seo() {
   return (
     <>
       <Helmet>
-        <script src="/src/js/seo.js" type="text/javascript" />
+        <script src="/seo.js" type="text/javascript" />
       </Helmet>
 
       <div>
