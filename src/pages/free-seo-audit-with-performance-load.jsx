@@ -11,7 +11,7 @@ function seo() {
         <script src="/seo.js" type="text/javascript" />
       </Helmet>
 
-      <div>
+      <div id="body">
         <input type="text" />
       </div>
     </>

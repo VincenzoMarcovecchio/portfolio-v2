@@ -36,35 +36,38 @@ let query = `${api}?`;
 }
 
         function showInitialContent(id) {
-          document.body.innerHTML = '';
+          
+        const body =document.getElementById("body")
         const title = document.createElement('h1');
         title.textContent = 'PageSpeed Insights API Demo';
-        document.body.appendChild(title);
+        body.appendChild(title);
         const page = document.createElement('p');
         page.textContent = `Page tested: ${id}`;
-        document.body.appendChild(page);
+        body.appendChild(page);
 }
 
         function showCruxContent(cruxMetrics) {
+                const body =document.getElementById("body")
 const cruxHeader = document.createElement('h2');
         cruxHeader.textContent = "Chrome User Experience Report Results";
-        document.body.appendChild(cruxHeader);
+        body.appendChild(cruxHeader);
         for (key in cruxMetrics) {
   const p = document.createElement('p');
         p.textContent = `${key}: ${cruxMetrics[key]}`;
-        document.body.appendChild(p);
+        body.appendChild(p);
 }
 }
 
         function showLighthouseContent(lighthouseMetrics) {
-const lighthouseHeader = document.createElement('h2');
+                const body =document.getElementById("body")
+                const lighthouseHeader = document.createElement('h2');
         lighthouseHeader.textContent = "Lighthouse Results";
-        document.body.appendChild(lighthouseHeader);
+        body.appendChild(lighthouseHeader);
         for (key in lighthouseMetrics) {
   const p = document.createElement('p');
         p.textContent = `${key}: ${lighthouseMetrics[key]}`;
-        document.body.appendChild(p);
+        body.appendChild(p);
 }
 }
 
-        run();
+
