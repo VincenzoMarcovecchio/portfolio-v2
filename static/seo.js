@@ -11,6 +11,7 @@ fetch(url)
     };
     showCruxContent(cruxMetrics);
     const lighthouse = json.lighthouseResult;
+    console.log(lighthouse);
     const lighthouseMetrics = {
       'First Contentful Paint': lighthouse.audits['first-contentful-paint'].displayValue,
       'Speed Index': lighthouse.audits['speed-index'].displayValue,
