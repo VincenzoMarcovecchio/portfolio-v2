@@ -1,7 +1,14 @@
 import React from 'react';
+import { Helmet } from "react-helmet";
 
-function seo(){
+function seo() {
 
+
+
+  return (
+    <>
+      <Helmet>
+        <script type="text/javascript"> {`
   const url = setUpQuery();
   fetch(url)
     .then(response => response.json())
@@ -33,53 +40,55 @@ function setUpQuery() {
     url: encodeURIComponent('https://developers.google.com')
   };
   let query = `${api}?`;
-  for (key in parameters) {
-    query += `${key}=${parameters[key]}`;
+          for (key in parameters) {
+            query += `${key}=${parameters[key]}`;
   }
-  return query;
+          return query;
 }
 
-function showInitialContent(id) {
-  document.body.innerHTML = '';
-  const title = document.createElement('h1');
-  title.textContent = 'PageSpeed Insights API Demo';
-  document.body.appendChild(title);
-  const page = document.createElement('p');
-  page.textContent = `Page tested: ${id}`;
-  document.body.appendChild(page);
+          function showInitialContent(id) {
+            document.body.innerHTML = '';
+          const title = document.createElement('h1');
+          title.textContent = 'PageSpeed Insights API Demo';
+          document.body.appendChild(title);
+          const page = document.createElement('p');
+          page.textContent = `Page tested: ${id}`;
+          document.body.appendChild(page);
 }
 
-function showCruxContent(cruxMetrics) {
+          function showCruxContent(cruxMetrics) {
   const cruxHeader = document.createElement('h2');
-  cruxHeader.textContent = "Chrome User Experience Report Results";
-  document.body.appendChild(cruxHeader);
-  for (key in cruxMetrics) {
+          cruxHeader.textContent = "Chrome User Experience Report Results";
+          document.body.appendChild(cruxHeader);
+          for (key in cruxMetrics) {
     const p = document.createElement('p');
-    p.textContent = `${key}: ${cruxMetrics[key]}`;
-    document.body.appendChild(p);
+          p.textContent = `${key}: ${cruxMetrics[key]}`;
+          document.body.appendChild(p);
   }
 }
 
-function showLighthouseContent(lighthouseMetrics) {
+          function showLighthouseContent(lighthouseMetrics) {
   const lighthouseHeader = document.createElement('h2');
-  lighthouseHeader.textContent = "Lighthouse Results";
-  document.body.appendChild(lighthouseHeader);
-  for (key in lighthouseMetrics) {
+          lighthouseHeader.textContent = "Lighthouse Results";
+          document.body.appendChild(lighthouseHeader);
+          for (key in lighthouseMetrics) {
     const p = document.createElement('p');
-    p.textContent = `${key}: ${lighthouseMetrics[key]}`;
-    document.body.appendChild(p);
+          p.textContent = `${key}: ${lighthouseMetrics[key]}`;
+          document.body.appendChild(p);
   }
 }
 
-run();
+          run();
+  `}
 
-return (
+        </script>
+      </Helmet>
 
-  <div>
-    <input type="text" />
-  </div>
-
-);
+      <div>
+        <input type="text" />
+      </div>
+    </>
+  );
 
 };
 
