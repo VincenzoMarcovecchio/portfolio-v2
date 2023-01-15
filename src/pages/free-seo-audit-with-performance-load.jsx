@@ -161,7 +161,7 @@ function seo() {
         <div id="body">
           <form>
             <label for="inputId">Url</label>
-            <input id="inputId" placeholder="es https://developers.google" type="text" />
+            <input id="inputId" placeholder="es https://casafraine.com" type="text" />
             <button type="submit">Run Audit</button>
           </form>
         </div>

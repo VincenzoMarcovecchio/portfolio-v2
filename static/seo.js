@@ -26,7 +26,6 @@ form.addEventListener("submit", function(evt) {
         showLighthouseContent(lighthouseMetrics);
       });
         
-    }
   
 });
 
