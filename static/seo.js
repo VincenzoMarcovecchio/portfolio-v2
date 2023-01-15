@@ -33,7 +33,7 @@ form.addEventListener("submit", function(evt) {
 
 function setUpQuery() {
 const api = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
-let queryUrl = document.querySelector("#inputId").value
+let queryUrl = document.querySelectorAll("#inputId").value
 const parameters = {
   url: encodeURIComponent(queryUrl)
 };
