@@ -1,6 +1,6 @@
 const url = setUpQuery();
 
-var form = document.getElementsByTagName("form");
+var form = document.querySelector("#formId");
 form.addEventListener("submit", function(evt) {
       evt.preventDefault();
       evt.stopPropagation();
@@ -34,8 +34,8 @@ form.addEventListener("submit", function(evt) {
 function setUpQuery() {
 const api = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
 let queryUrl; 
-document.getElementById("inputId").addEventListener("change", function(e) {
-queryUrl += e.target.value
+document.querySelector("#inputId").addEventListener("input", function(e) {
+queryUrl += e.target.value || this.value
 })
 const parameters = {
   url: encodeURIComponent(queryUrl)
