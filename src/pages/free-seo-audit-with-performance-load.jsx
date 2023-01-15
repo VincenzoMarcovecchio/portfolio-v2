@@ -184,17 +184,15 @@ React.useEffect(()=> {
   
   
   function setUpQuery() {
-  const api = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
+  const api = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=';
   let queryUrl = document.querySelectorAll("#inputId").value
   const parameters = {
     url: encodeURIComponent(queryUrl)
   };
-  let query = `${api}?`;
-          for (key in parameters) {
-            query += `${key}=${parameters[key]}`;
-  }
-          return query;
-  }
+  let query = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${queryUrl}?`;
+  return query
+}
+
   
           function showInitialContent(id) {
             
