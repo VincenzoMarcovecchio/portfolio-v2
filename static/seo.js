@@ -1,6 +1,6 @@
 const url = setUpQuery();
 
-var form = document.querySelector("#formId");
+var form = document.querySelectorAll("#formId");
 form.addEventListener("submit", function(evt) {
       evt.preventDefault();
       evt.stopPropagation();
