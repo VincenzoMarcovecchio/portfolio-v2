@@ -3,6 +3,7 @@ const url = setUpQuery();
 var form = document.getElementsByTagName("form");
 form.addEventListener("submit", function(evt) {
       evt.preventDefault();
+      evt.stopPropagation();
       fetch(url)
       .then(response => response.json())
       .then(json => {
@@ -32,7 +33,10 @@ form.addEventListener("submit", function(evt) {
 
 function setUpQuery() {
 const api = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed';
-const queryUrl = document.getElementById("inputId").value;
+let queryUrl; 
+document.getElementById("inputId").addEventListener("change", function(e) {
+queryUrl += e.target.value
+})
 const parameters = {
   url: encodeURIComponent(queryUrl)
 };
