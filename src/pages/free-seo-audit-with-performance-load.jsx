@@ -151,7 +151,7 @@ function seo() {
 
 const [url, setUrl] = React.useState("")
 
-  const url = setUpQuery();
+  const urls = setUpQuery();
 
   function setUpQuery() {
     const api = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=';
@@ -233,7 +233,7 @@ const [url, setUrl] = React.useState("")
 
             evt.preventDefault();
             evt.stopPropagation();
-            fetch(url)
+            fetch(urls)
               .then(response => response.json())
               .then(json => {
                 // See https://developers.google.com/speed/docs/insights/v5/reference/pagespeedapi/runpagespeed#response
