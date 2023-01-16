@@ -150,6 +150,7 @@ const StyledAbout = styled.section`
 function seo() {
 
 const [url, setUrl] = React.useState("")
+const [result, setResult] = React.useState({})
 
   const urls = setUpQuery();
 
@@ -236,24 +237,10 @@ const [url, setUrl] = React.useState("")
             fetch(urls)
               .then(response => response.json())
               .then(json => {
-                // See https://developers.google.com/speed/docs/insights/v5/reference/pagespeedapi/runpagespeed#response
-                // to learn more about each of the properties in the response object.
-                showInitialContent(json.id);
-                const cruxMetrics = {
-                  "First Contentful Paint": json.loadingExperience.metrics.FIRST_CONTENTFUL_PAINT_MS.category,
-                  "First Input Delay": json.loadingExperience.metrics.FIRST_INPUT_DELAY_MS.category
-                };
-                showCruxContent(cruxMetrics);
-                const lighthouse = json.lighthouseResult;
+                setResult(json)
+  
                 console.log(json);
-                console.log(lighthouse);
-                const lighthouseMetrics = {
-                  'First Contentful Paint': lighthouse.audits['first-contentful-paint'].displayValue,
-                  'Speed Index': lighthouse.audits['speed-index'].displayValue,
-                  'Time To Interactive': lighthouse.audits['interactive'].displayValue,
-                  'First Meaningful Paint': lighthouse.audits['first-meaningful-paint'].displayValue,
-                };
-                showLighthouseContent(lighthouseMetrics);
+          
               });
 
 
@@ -263,6 +250,7 @@ const [url, setUrl] = React.useState("")
             <input id="inputId" onChange={(e) => setUrl(e.target.value)} placeholder="es https://casafraine.com" type="text" />
             <button type="submit">Run Audit</button>
           </form>
+          <pre>{result}</pre>
         </div>
       </StyledAbout>
     </>
