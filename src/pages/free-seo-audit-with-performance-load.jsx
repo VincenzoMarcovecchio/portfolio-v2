@@ -149,7 +149,53 @@ const StyledAbout = styled.section`
 `;
 function seo() {
 
+  const url = setUpQuery();
 
+  function setUpQuery() {
+    const api = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=';
+    let queryUrl = typeof window !== "undefined" && document.querySelector("#inputId").value
+    const parameters = {
+      url: encodeURIComponent(queryUrl)
+    };
+    let query = `https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=${queryUrl}?`;
+    return query
+  }
+
+
+  function showInitialContent(id) {
+
+    const body = typeof window !== "undefined" && document.getElementById("body")
+    const title = typeof window !== "undefined" && document.createElement('h1');
+    title.textContent = 'PageSpeed Insights API Demo';
+    body.appendChild(title);
+    const page = typeof window !== "undefined" && document.createElement('p');
+    page.textContent = `Page tested: ${id}`;
+    body.appendChild(page);
+  }
+
+  function showCruxContent(cruxMetrics) {
+    const body = typeof window !== "undefined" && document.getElementById("body")
+    const cruxHeader = typeof window !== "undefined" && document.createElement('h2');
+    cruxHeader.textContent = "Chrome User Experience Report Results";
+    body.appendChild(cruxHeader);
+    for (key in cruxMetrics) {
+      const p =  typeof window !== "undefined" && document.createElement('p');
+      p.textContent = `${key}: ${cruxMetrics[key]}`;
+      body.appendChild(p);
+    }
+  }
+
+  function showLighthouseContent(lighthouseMetrics) {
+    const body = typeof window !== "undefined" && document.getElementById("body")
+    const lighthouseHeader = typeof window !== "undefined" && document.createElement('h2');
+    lighthouseHeader.textContent = "Lighthouse Results";
+    body.appendChild(lighthouseHeader);
+    for (key in lighthouseMetrics) {
+      const p = typeof window !== "undefined" && document.createElement('p');
+      p.textContent = `${key}: ${lighthouseMetrics[key]}`;
+      body.appendChild(p);
+    }
+  }
   
 
 
@@ -178,7 +224,6 @@ function seo() {
   will look on Google, Facebook, Twitter and more!"/>
         <meta property="twitter:image"
           content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png" />
-      <script type="application/javascript" src="/seo.js"></script>
       </Helmet>
       <StyledAbout>
         <div id="body">
