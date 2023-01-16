@@ -149,8 +149,9 @@ const StyledAbout = styled.section`
 `;
 function seo() {
 
+React.useEffect(()=> {
 
-  const url = setUpQuery();
+const url = setUpQuery();
 
   function setUpQuery() {
     const api = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=';
@@ -197,7 +198,8 @@ function seo() {
       body.appendChild(p);
     }
   }
-
+},[])
+  
 
 
   return (
