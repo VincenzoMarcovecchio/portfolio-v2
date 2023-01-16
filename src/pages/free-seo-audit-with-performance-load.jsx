@@ -2,7 +2,7 @@ import React from 'react';
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import { device } from '../styles/Global';
-
+import d3 from "d3"
 const StyledAbout = styled.section`
   min-height: 100vh;
   max-width: 90vw;
@@ -333,7 +333,6 @@ const [result, setResult] = React.useState({})
         <meta property="twitter:description" content="A simple tool to generate google lighthouse reports with more in depth details!"/>
         <meta property="twitter:image"
           content="https://vincenzo.codes/free-seo-audits-with-performance-loadassets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png" />
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.3.10/d3.min.js"></script>
       </Helmet>
       <StyledAbout>
         <div id="body">
