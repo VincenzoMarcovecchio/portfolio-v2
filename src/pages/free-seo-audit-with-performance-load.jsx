@@ -247,8 +247,7 @@ const [result, setResult] = React.useState({})
           {result ?  (
           <pre>{result}</pre>
           ) : null}
-          <pre>{result ? result : null}</pre>
-          <code>{result && result}</code>
+
         </div>
       </StyledAbout>
     </>
