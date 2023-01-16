@@ -149,11 +149,13 @@ const StyledAbout = styled.section`
 `;
 function seo() {
 
+const [url, setUrl] = React.useState("")
+
   const url = setUpQuery();
 
   function setUpQuery() {
     const api = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=';
-    let queryUrl = typeof window !== "undefined" && document.querySelector("#inputId").value
+    let queryUrl = url
     const parameters = {
       url: encodeURIComponent(queryUrl)
     };
@@ -258,7 +260,7 @@ function seo() {
 
           }}>
             <label for="inputId">Url</label>
-            <input id="inputId" placeholder="es https://casafraine.com" type="text" />
+            <input id="inputId" onChange={(e) => setUrl(e.target.value)} placeholder="es https://casafraine.com" type="text" />
             <button type="submit">Run Audit</button>
           </form>
         </div>
