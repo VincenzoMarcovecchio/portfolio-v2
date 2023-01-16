@@ -226,7 +226,6 @@ const [result, setResult] = React.useState({})
       <StyledAbout>
         <div id="body">
           <form id="formId" onSubmit={(evt) => {
-
             evt.preventDefault();
             evt.stopPropagation();
             fetch(urls)
@@ -234,19 +233,14 @@ const [result, setResult] = React.useState({})
               .then(json => {
                 setResult(json)
                 console.log(json);
-          
               });
-
-
-
+            
           }}>
             <label for="inputId">Url</label>
             <input id="inputId" onChange={(e) => setUrl(e.target.value)} placeholder="es https://google.com" type="text" />
             <button type="submit">Run Audit</button>
           </form>
-          {result ?  (
-          <pre>{result}</pre>
-          ) : null}
+        
 
         </div>
       </StyledAbout>
