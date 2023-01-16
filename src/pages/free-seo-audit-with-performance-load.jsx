@@ -206,27 +206,22 @@ const [result, setResult] = React.useState({})
     <>
 
       <Helmet>
-        <title>Free SEO Audit Metrics with Performance Load — Vincenzo Codes</title>
-        <meta name="title" content="Free SEO Audit Metrics with Performance Load — Vincenzo Codes" />
-        <meta name="description" content="With Meta Tags you can edit and experiment with your content then preview how
- your webpage will look on Google, Facebook, Twitter and more!"/>
+        <title>Free SEO Audit with Performance Load — Google LightHouse</title>
+        <meta name="title" content="Free SEO Audit with Performance Load — Google LightHouse" />
+        <meta name="description" content="A simple tool to generate google lighthouse reports with more in depth details!"/>
 
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://metatags.io/" />
-        <meta property="og:title" content="Meta Tags — Preview, Edit and Generate" />
-        <meta property="og:description" content="With Meta Tags you can edit and
- experiment with your content then preview how 
- your webpage will look on Google, Facebook, Twitter and more!"/>
-        <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png" />
+        <meta property="og:url" content="https://vincenzo.codes/free-seo-audits-with-performance-load" />
+        <meta property="og:title" content="Free SEO Audit with Performance Load — Google LightHouse" />
+        <meta property="og:description" content="A simple tool to generate google lighthouse reports with more in depth details!"/>
+        <meta property="og:image" content="https://vincenzo.codes/free-seo-audits-with-performance-loadassets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png" />
 
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://metatags.io/" />
-        <meta property="twitter:title" content="Meta Tags — Preview, Edit and Generate" />
-        <meta property="twitter:description" content="With Meta Tags you can edit and experiment
- with your content then preview how your webpage
-  will look on Google, Facebook, Twitter and more!"/>
+        <meta property="twitter:url" content="https://vincenzo.codes/free-seo-audits-with-performance-load" />
+        <meta property="twitter:title" content="Free SEO Audit with Performance Load — Google LightHouse" />
+        <meta property="twitter:description" content="A simple tool to generate google lighthouse reports with more in depth details!"/>
         <meta property="twitter:image"
-          content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png" />
+          content="https://vincenzo.codes/free-seo-audits-with-performance-loadassets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png" />
       </Helmet>
       <StyledAbout>
         <div id="body">
@@ -250,7 +245,8 @@ const [result, setResult] = React.useState({})
             <input id="inputId" onChange={(e) => setUrl(e.target.value)} placeholder="es https://casafraine.com" type="text" />
             <button type="submit">Run Audit</button>
           </form>
-          <pre>{result}</pre>
+          <pre>{result ? result : null}</pre>
+          <code>{result && result}</code>
         </div>
       </StyledAbout>
     </>
