@@ -2,7 +2,7 @@ const url = setUpQuery();
 
   function setUpQuery() {
     const api = 'https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=';
-    let queryUrl = document.querySelectorAll("#inputId").value
+    let queryUrl = document.querySelector("#inputId").value
     const parameters = {
       url: encodeURIComponent(queryUrl)
     };
