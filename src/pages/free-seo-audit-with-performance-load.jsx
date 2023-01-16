@@ -232,7 +232,7 @@ const [result, setResult] = React.useState({})
               .then(response => response.json())
               .then(json => {
                 setResult(json)
-                console.log(json);
+                console.log(result);
               });
             
           }}>
@@ -241,7 +241,7 @@ const [result, setResult] = React.useState({})
             <button type="submit">Run Audit</button>
           </form>
         
-
+<div>Results for: {result.captchaResult}</div>
         </div>
       </StyledAbout>
     </>
