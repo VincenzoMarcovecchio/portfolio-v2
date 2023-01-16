@@ -233,7 +233,6 @@ const [result, setResult] = React.useState({})
               .then(response => response.json())
               .then(json => {
                 setResult(json)
-  
                 console.log(json);
           
               });
@@ -242,9 +241,12 @@ const [result, setResult] = React.useState({})
 
           }}>
             <label for="inputId">Url</label>
-            <input id="inputId" onChange={(e) => setUrl(e.target.value)} placeholder="es https://casafraine.com" type="text" />
+            <input id="inputId" onChange={(e) => setUrl(e.target.value)} placeholder="es https://google.com" type="text" />
             <button type="submit">Run Audit</button>
           </form>
+          {result ?  (
+          <pre>{result}</pre>
+          ) : null}
           <pre>{result ? result : null}</pre>
           <code>{result && result}</code>
         </div>
