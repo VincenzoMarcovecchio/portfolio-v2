@@ -254,7 +254,7 @@ const [result, setResult] = React.useState({})
             })
          }</div>
         </div>
-        {result &&    <Chart
+        {result.length > 1 &&    <Chart
           chartType="WordTree"
           width="100%"
           height="400px"
