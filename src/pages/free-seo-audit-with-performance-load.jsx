@@ -202,7 +202,7 @@ const [result, setResult] = React.useState({})
   }
   
 
-  export const options = {
+   const options = {
     colors: ["black", "black", "black"],
     wordtree: {
       format: "explicit",
@@ -250,14 +250,17 @@ const [result, setResult] = React.useState({})
         
 <div>Results for: {result.captchaResult}</div>
         </div>
-        <Chart
-      chartType="WordTree"
-      width="100%"
-      height="400px"
-      data={Array(  ["id", "chil", "pat", "se", { role: "stye" }], ...result
-      )}
-      options={options}
-    />
+        {
+          result.length &&    <Chart
+          chartType="WordTree"
+          width="100%"
+          height="400px"
+          data={Array(  ["id", "chil", "pat", "se", { role: "stye" }], ...result
+          )}
+          options={options}
+        />
+        }
+     
       </StyledAbout>
     </>
 
