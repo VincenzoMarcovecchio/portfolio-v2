@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import { device } from '../styles/Global';
+import { Chart } from "react-google-charts";
 
 const StyledAbout = styled.section`
   min-height: 100vh;
@@ -201,7 +202,13 @@ const [result, setResult] = React.useState({})
   }
   
 
-
+  export const options = {
+    colors: ["black", "black", "black"],
+    wordtree: {
+      format: "explicit",
+      type: "suffix",
+    },
+  };
   return (
     <>
 
@@ -243,6 +250,14 @@ const [result, setResult] = React.useState({})
         
 <div>Results for: {result.captchaResult}</div>
         </div>
+        <Chart
+      chartType="WordTree"
+      width="100%"
+      height="400px"
+      data={Array(  ["id", "chil", "pat", "se", { role: "stye" }], ...result
+      )}
+      options={options}
+    />
       </StyledAbout>
     </>
 
