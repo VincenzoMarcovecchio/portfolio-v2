@@ -258,8 +258,8 @@ const [result, setResult] = React.useState({})
           chartType="WordTree"
           width="100%"
           height="400px"
-          data={Array(  ["id", "chil", "pat", "se", { role: "stye" }], ...result
-          )}
+          data={[ ["id", "chil", "pat", "se", { role: "stye" }], ...result
+          ]}
           options={options}
         />
        
