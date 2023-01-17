@@ -254,14 +254,15 @@ const [result, setResult] = React.useState({})
             })
          }</div>
         </div>
-        <Chart
+        {result &&    <Chart
           chartType="WordTree"
           width="100%"
           height="400px"
           data={[ ["id", "chil", "pat", "se", { role: "stye" }], ...result
           ]}
           options={options}
-        />
+        /> }
+     
        
      
       </StyledAbout>
