@@ -3,7 +3,7 @@
   "description": "GatsbyJS starter that includes examples for advanced use cases.",
   "version": "1.1.0",
   "author": "Vincenzo Marcovecchio <vinceoldmark@gmail.com>",
-  "engines": { "node": "18.x" },
+  "engines": { "node": "16.x" },
   "dependencies": {
     "@loadable/component": "^5.15.0",
     "@styled-icons/fa-solid": "^10.32.0",
