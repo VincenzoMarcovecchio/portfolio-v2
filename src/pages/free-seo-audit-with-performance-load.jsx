@@ -248,10 +248,13 @@ const [result, setResult] = React.useState({})
             <button type="submit">Run Audit</button>
           </form>
         
-<div>Results for: {result.captchaResult}</div>
+<div> {
+            Object.keys(result).map((value,index)=>{
+               <p>{result[value]};</p>
+            })
+         }</div>
         </div>
-        {
-          result.length &&    <Chart
+        <Chart
           chartType="WordTree"
           width="100%"
           height="400px"
@@ -259,7 +262,7 @@ const [result, setResult] = React.useState({})
           )}
           options={options}
         />
-        }
+       
      
       </StyledAbout>
     </>
