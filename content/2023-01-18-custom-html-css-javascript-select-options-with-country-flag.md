@@ -12,6 +12,7 @@ tags:
 ---
 
 
+```js
 
 <div class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="RwBLQoG" data-preview="true" data-editable="true" data-user="Vinny92"  data-prefill='{"title":"Custom Javascript Select","description":"Customizable select with country flags","tags":["select","vanilla","javascript"],"scripts":[],"stylesheets":[]}'>
   <pre data-lang="html">&lt;STYLE>
@@ -733,3 +734,4 @@ document
   });
 </pre></div>
 <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+```
