@@ -13,7 +13,8 @@ class Landing extends React.Component {
   render() {
     const postEdges = this.props.data.allMarkdownRemark.edges;
     const { landing } = this.props.pageContext.layout;
-   
+    console.log(this.props)
+    
     return (
       <>
         <Helmet title={config.siteTitle} description={config.siteDescription} />

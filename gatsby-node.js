@@ -161,14 +161,13 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   } else {
     // Load the landing page instead
-    // createPage({
-    //   path: `/`,
-    //   component: landingPage,
-    // });
+ 
   }
 
-  // Post page creating
-  postsEdges.forEach((edge, index) => {
+
+  
+   // Post page creating
+    postsEdges.forEach((edge, index) => {
     // Generate a list of tags
     if (edge.node.frontmatter.tags) {
       edge.node.frontmatter.tags.forEach((tag) => {
@@ -180,6 +179,12 @@ exports.createPages = async ({ graphql, actions }) => {
     if (edge.node.frontmatter.category) {
       categorySet.add(edge.node.frontmatter.category);
     }
+
+    createPage({
+      path: `/`,
+      component: landingPage,
+      tags: tagSet
+  });
 
     // Create post pages
     const nextID = index + 1 < postsEdges.length ? index + 1 : 0;
@@ -260,23 +265,13 @@ let postsStack = await axios(`https://api.stackexchange.com/2.3/posts?fromdate=1
   
 postsStack.data.items.forEach(async (pro) => {
   await createPage({
-    path: slugify(pro.title),
+    path: await slugify(pro.title),
     component: stack,
     context: { pro },
   });
 });
 
-let datacustoma = await axios(
-    `https://search.redteam.fail/dataset.json`
-  );
 
- // datacustoma.data.forEach(async (pro) => {
- //   await createPage({
- //     path: `/learning/${_.kebabCase(pro.line).substring(1, 100)}/`,
- //     component: Ippsec,
- //     context: { pro: pro, slug:`${_.kebabCase(pro.line)}`},
- //   });
- // });
 
   let datacusti = await axios(
     `https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/hackerone_data.json`
