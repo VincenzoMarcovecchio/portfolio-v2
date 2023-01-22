@@ -17,7 +17,7 @@ const StyledPicture = styled.img`
 `;
 
 const PostListStyled = styled.section`
-  width: 80%;
+  width: 61%;
   margin: auto;
   display: flex;
   flex-wrap:wrap;
@@ -82,6 +82,10 @@ const StyledArticle = styled.article`
   overflow: hidden;
   transition: all 200ms ease-in-out;
   position: relative;
+  @media ${device.mobileM} {
+    margin:auto;
+    
+  }
 
   :hover {
     transform: translateY(-5px);
@@ -104,6 +108,8 @@ const StyledArticle = styled.article`
     @media ${device.mobileM} {
       margin-top: 0.7rem;
       margin-bottom: 0.3rem;
+      flex-direction:column;
+
     }
   }
 
