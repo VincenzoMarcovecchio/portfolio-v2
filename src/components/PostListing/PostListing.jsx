@@ -75,7 +75,7 @@ const StyledArticle = styled.article`
   justify-content: flex-start;
   max-width: min-content;
   padding: 1rem;
-  margin: 2rem;
+  margin: 1rem;
   border-top-left-radius: 0.4rem;
   border-top-right-radius: 0.4rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
@@ -128,7 +128,7 @@ const StyledArticle = styled.article`
     display: block;
     float:left;
     margin-bottom: 0;
-    font-size: 1.6rem;
+    font-size: 1.35rem;
     width:250px;
     @media ${device.mobileM} {
       font-size: 1.4rem;
@@ -186,7 +186,7 @@ class PostListing extends React.Component {
                 <div className="header__article">
                   <img style={{ display: "block" } }
                    height="250"
-                    width="300"
+                    width="250"
                     onError="this.style.display='none'"
                     src={`/image/${post.cover}`}
                     alt={post.title} />
