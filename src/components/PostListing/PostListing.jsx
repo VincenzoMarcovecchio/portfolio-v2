@@ -181,9 +181,11 @@ class PostListing extends React.Component {
             postList.map((post, index) => (
               <StyledArticle key={index}>
                 <div className="header__article">
-                  <img fluid={post.cover} alt={post.title}/>
+                  <img style={{display: "block"}}
+                  src={`static/image/${post.cover}`} 
+                  alt={post.title} />
                   <Link to={post.path} key={post.title}>
-                    <h2>{post.title}</h2>
+                    <h2>{post.title}</h2>&nbsp;&nbsp;&nbsp;<small>{post.timeToRead}</small>
                   </Link>
                 </div>
                 <p>{post.excerpt}</p>
@@ -195,7 +197,7 @@ class PostListing extends React.Component {
                         #{tag}&nbsp;&nbsp;
                       </Link>
                     );
-                  })}<small>{post.timeToRead}</small>
+                  })}
                 </StyledTag>
               </StyledArticle>
             ))
