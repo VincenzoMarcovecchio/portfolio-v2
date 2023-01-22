@@ -185,6 +185,7 @@ class PostListing extends React.Component {
                   <img style={{ display: "block" } }
                    height="250"
                     width="250"
+                    onError="this.style.display='none'"
                     src={`/image/${post.cover}`}
                     alt={post.title} />
                   <Link to={post.path} key={post.title}>
