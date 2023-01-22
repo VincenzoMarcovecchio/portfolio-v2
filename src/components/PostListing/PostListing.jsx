@@ -20,7 +20,7 @@ const PostListStyled = styled.section`
   width: 80%;
   margin: auto;
   display: flex;
-  flex-direction: column;
+  flex-wrap:wrap;
   align-items: center;
   justify-content: center;
   position: relative;
@@ -120,10 +120,8 @@ const StyledArticle = styled.article`
   }
   h2 {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    display: block;
+    float:left;
     margin-bottom: 0;
     font-size: 1.6rem;
     @media ${device.mobileM} {
@@ -181,11 +179,13 @@ class PostListing extends React.Component {
             postList.map((post, index) => (
               <StyledArticle key={index}>
                 <div className="header__article">
-                  <img style={{display: "block"}}
-                  src={`static/image/${post.cover}`} 
-                  alt={post.title} />
+                  <img style={{ display: "block" } }
+                   height="350"
+                    width="350"
+                    src={`/image/${post.cover}`}
+                    alt={post.title} />
                   <Link to={post.path} key={post.title}>
-                    <h2>{post.title}</h2>&nbsp;&nbsp;&nbsp;<small>{post.timeToRead}</small>
+                    <h2>{post.title}</h2>&nbsp;&nbsp;&nbsp;<small>{post.timeToRead} minutes</small>
                   </Link>
                 </div>
                 <p>{post.excerpt}</p>
