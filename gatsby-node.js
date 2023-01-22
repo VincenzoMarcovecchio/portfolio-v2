@@ -142,6 +142,21 @@ exports.createPages = async ({ graphql, actions }) => {
     return 0;
   });
 
+    
+   // Post page creating
+   postsEdges.forEach((edge, index) => {
+    // Generate a list of tags
+    if (edge.node.frontmatter.tags) {
+      edge.node.frontmatter.tags.forEach((tag) => {
+        tagSet.add(tag);
+      });
+    }
+
+    // Generate a list of categories
+    if (edge.node.frontmatter.category) {
+      categorySet.add(edge.node.frontmatter.category);
+    }
+    
   // Paging
   const { postsPerPage } = siteConfig;
   if (postsPerPage) {
@@ -160,31 +175,14 @@ exports.createPages = async ({ graphql, actions }) => {
       });
     });
   } else {
-    // Load the landing page instead
- 
-  }
-
-
-  
-   // Post page creating
-    postsEdges.forEach((edge, index) => {
-    // Generate a list of tags
-    if (edge.node.frontmatter.tags) {
-      edge.node.frontmatter.tags.forEach((tag) => {
-        tagSet.add(tag);
-      });
-    }
-
-    // Generate a list of categories
-    if (edge.node.frontmatter.category) {
-      categorySet.add(edge.node.frontmatter.category);
-    }
-
     createPage({
       path: `/`,
       component: landingPage,
       tags: tagSet
   });
+ 
+  }
+
 
     // Create post pages
     const nextID = index + 1 < postsEdges.length ? index + 1 : 0;
