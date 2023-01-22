@@ -112,6 +112,9 @@ const StyledArticle = styled.article`
   a {
     text-decoration: none;
     color: black;
+    width:300px;
+    display: flex;
+    flex-direction: column;
   }
   p {
     font-size: 1.1rem;
@@ -162,11 +165,9 @@ class PostListing extends React.Component {
 
     return (
       <>
-        <picture>
-          <source srcset={video} type="image/webp" />
-          <source srcset={video} type="image/jpeg" />
-          <StyledPicture src={video} alt="wet code" />
-        </picture>
+      <h1>
+      CHECK OUT MY MOST RECENT POST
+      </h1>
 
 
         <PostListStyled>
@@ -185,7 +186,7 @@ class PostListing extends React.Component {
                 <div className="header__article">
                   <img style={{ display: "block" } }
                    height="250"
-                    width="250"
+                    width="300"
                     onError="this.style.display='none'"
                     src={`/image/${post.cover}`}
                     alt={post.title} />
