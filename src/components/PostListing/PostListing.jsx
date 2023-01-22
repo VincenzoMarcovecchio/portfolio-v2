@@ -71,7 +71,6 @@ const StyledArticle = styled.article`
   background-color: white;
   width: 100%;
   display: flex;
-  flex-direction: column;
   justify-content: flex-start;
   max-width: min-content;
   padding: 1rem;
@@ -99,7 +98,6 @@ const StyledArticle = styled.article`
   }
   .header__article {
     display: flex;
-    flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
     margin-bottom: -0.5rem;
@@ -180,11 +178,10 @@ class PostListing extends React.Component {
           </div>
           <div style={{display:"flex",flexWrap:"wrap"}}>
           {
-            /* Your post list here. */
             postList.map((post, index) => (
               <StyledArticle key={index}>
                 <div className="header__article">
-                  <img style={{ display: "block" } }
+                  <img style={{ display: "block", marginRight:"1.5rem" }}
                    height="250"
                     width="310"
                     onError="this.style.display='none'"
@@ -193,8 +190,7 @@ class PostListing extends React.Component {
                   <Link to={post.path} key={post.title}>
                     <h2>{post.title}</h2>&nbsp;&nbsp;&nbsp;<small>Time to read: {post.timeToRead} minutes</small>
                   </Link>
-                </div>
-                <p>{post.excerpt}</p>
+                  <p>{post.excerpt}</p>
                 <StyledTag>
                   {post.tags.map((tag, i) => {
                     let tagga = tag.replace(/\s/g, '-');
@@ -205,6 +201,8 @@ class PostListing extends React.Component {
                     );
                   })}
                 </StyledTag>
+                </div>
+             
               </StyledArticle>
             ))
           }
