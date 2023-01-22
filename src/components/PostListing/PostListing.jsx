@@ -186,7 +186,7 @@ class PostListing extends React.Component {
                 <div className="header__article">
                   <img style={{ display: "block" } }
                    height="250"
-                    width="250"
+                    width="310"
                     onError="this.style.display='none'"
                     src={`/image/${post.cover}`}
                     alt={post.title} />
