@@ -72,7 +72,8 @@ const StyledArticle = styled.article`
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
+  max-width: max-content;
   padding: 1rem;
   margin-top: 2rem;
   border-top-left-radius: 0.4rem;
@@ -98,7 +99,8 @@ const StyledArticle = styled.article`
   }
   .header__article {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: space-between;
     margin-bottom: -0.5rem;
     @media ${device.mobileM} {
@@ -174,6 +176,7 @@ class PostListing extends React.Component {
 
             <Search indices={searchIndices} />
           </div>
+          <div style={{display:"flex",flexWrap:"wrap"}}>
           {
             /* Your post list here. */
             postList.map((post, index) => (
@@ -202,6 +205,7 @@ class PostListing extends React.Component {
               </StyledArticle>
             ))
           }
+          </div>
         </PostListStyled>
 
       </>
