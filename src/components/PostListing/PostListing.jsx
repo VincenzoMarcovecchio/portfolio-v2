@@ -73,9 +73,9 @@ const StyledArticle = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  max-width: max-content;
+  max-width: min-content;
   padding: 1rem;
-  margin-top: 2rem;
+  margin: 2rem;
   border-top-left-radius: 0.4rem;
   border-top-right-radius: 0.4rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
@@ -183,8 +183,8 @@ class PostListing extends React.Component {
               <StyledArticle key={index}>
                 <div className="header__article">
                   <img style={{ display: "block" } }
-                   height="350"
-                    width="350"
+                   height="250"
+                    width="250"
                     src={`/image/${post.cover}`}
                     alt={post.title} />
                   <Link to={post.path} key={post.title}>
