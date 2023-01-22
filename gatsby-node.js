@@ -171,6 +171,8 @@ exports.createPages = async ({ graphql, actions }) => {
           skip: pageNum * postsPerPage,
           pageCount,
           currentPageNum: pageNum + 1,
+          tags: tagSet
+
         },
       });
     });

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { device } from '../../styles/Global';
 import video from '../../assets/wetcode.gif';
 import Search from '../search/index';
+import Img from "gatsby-image";
 
 const StyledPicture = styled.img`
   margin: 0;
@@ -180,6 +181,7 @@ class PostListing extends React.Component {
             postList.map((post, index) => (
               <StyledArticle key={index}>
                 <div className="header__article">
+                  <img fluid={post.cover} alt={post.title}/>
                   <Link to={post.path} key={post.title}>
                     <h2>{post.title}</h2>
                   </Link>
@@ -193,7 +195,7 @@ class PostListing extends React.Component {
                         #{tag}&nbsp;&nbsp;
                       </Link>
                     );
-                  })}
+                  })}<small>{post.timeToRead}</small>
                 </StyledTag>
               </StyledArticle>
             ))
