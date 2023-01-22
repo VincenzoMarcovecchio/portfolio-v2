@@ -163,9 +163,9 @@ class PostListing extends React.Component {
 
     return (
       <>
-      <h1>
-      CHECK OUT MY MOST RECENT POST
-      </h1>
+        <h1>
+          CHECK OUT MY MOST RECENT POST
+        </h1>
 
 
         <PostListStyled>
@@ -176,36 +176,38 @@ class PostListing extends React.Component {
 
             <Search indices={searchIndices} />
           </div>
-          <div style={{display:"flex",flexWrap:"wrap"}}>
-          {
-            postList.map((post, index) => (
-              <StyledArticle key={index}>
-                <div className="header__article">
-                  <img style={{ display: "block", marginRight:"1.5rem" }}
-                   height="250"
-                    width="310"
-                    onError="this.style.display='none'"
-                    src={`/image/${post.cover}`}
-                    alt={post.title} />
-                  <Link to={post.path} key={post.title}>
-                    <h2>{post.title}</h2>&nbsp;&nbsp;&nbsp;<small>Time to read: {post.timeToRead} minutes</small>
-                  </Link>
-                  <p>{post.excerpt}</p>
-                <StyledTag>
-                  {post.tags.map((tag, i) => {
-                    let tagga = tag.replace(/\s/g, '-');
-                    return (
-                      <Link key={i} replace to={`/tags/${tagga}`}>
-                        #{tag}&nbsp;&nbsp;
+          <div style={{ display: "flex", flexWrap: "wrap" }}>
+            {
+              postList.map((post, index) => (
+                <StyledArticle key={index}>
+                  <div className="header__article">
+                    <img style={{ display: "block", marginRight: "1.5rem" }}
+                      height="250"
+                      width="310"
+                      onError="this.style.display='none'"
+                      src={`/image/${post.cover}`}
+                      alt={post.title} />
+                    <div style={{ display: "flex", flexDirection: "column" }}>
+                      <Link to={post.path} key={post.title}>
+                        <h2>{post.title}</h2>&nbsp;&nbsp;&nbsp;<small>Time to read: {post.timeToRead} minutes</small>
                       </Link>
-                    );
-                  })}
-                </StyledTag>
-                </div>
-             
-              </StyledArticle>
-            ))
-          }
+                      <p>{post.excerpt}</p>
+                      <StyledTag>
+                        {post.tags.map((tag, i) => {
+                          let tagga = tag.replace(/\s/g, '-');
+                          return (
+                            <Link key={i} replace to={`/tags/${tagga}`}>
+                              #{tag}&nbsp;&nbsp;
+                            </Link>
+                          );
+                        })}
+                      </StyledTag>
+                    </div>
+                  </div>
+
+                </StyledArticle>
+              ))
+            }
           </div>
         </PostListStyled>
 
