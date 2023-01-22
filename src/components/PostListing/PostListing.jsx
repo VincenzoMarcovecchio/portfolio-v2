@@ -188,7 +188,7 @@ class PostListing extends React.Component {
                     src={`/image/${post.cover}`}
                     alt={post.title} />
                   <Link to={post.path} key={post.title}>
-                    <h2>{post.title}</h2>&nbsp;&nbsp;&nbsp;<small>{post.timeToRead} minutes</small>
+                    <h2>{post.title}</h2>&nbsp;&nbsp;&nbsp;<small>Time to read: {post.timeToRead} minutes</small>
                   </Link>
                 </div>
                 <p>{post.excerpt}</p>
