@@ -126,6 +126,7 @@ const StyledArticle = styled.article`
     float:left;
     margin-bottom: 0;
     font-size: 1.6rem;
+    width:250px;
     @media ${device.mobileM} {
       font-size: 1.4rem;
       margin-bottom: - 0.5rem;
