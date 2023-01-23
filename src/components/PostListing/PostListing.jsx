@@ -177,23 +177,23 @@ class PostListing extends React.Component {
       <>
         <br />
         <br />
-        <div>
+  
+
+        <PostListStyled>
+        <div style={{alignSelf:"end"}}>
           <div>
             <h1>
               CHECK OUT MY MOST RECENT POST
             </h1>
           </div>
-          <div style={{ maxWidth: "350px", display: "flex", flexWrap: "wrap" }}>
+          <div style={{ maxWidth: "350px", display: "flex", flexWrap: "wrap", justifyContent:"end" }}>
             {
               postList.map((post, index) => (
                 <>
-                  <span style={{ padding: "0.3rem", borderRadius: "100vmax", border: "1px solid #404752" }}><Link key={index} replace to={`/tags/${post.tags[0]}`}>#{post.tags[0]}</Link></span>&nbsp;&nbsp;
+                  <span style={{ padding: "0.3rem", borderRadius: "100vmax", border: "1px solid #404752",margin:"1rem 1rem 1rem 0" }}><Link key={index} replace to={`/tags/${post.tags[0]}`}>#{post.tags[0]}</Link></span>
                 </>))}
           </div>
         </div>
-
-        <PostListStyled>
-
 
           <div className="blog-header">
             <h1>{this.tag ? this.tag : 'Blog'}&nbsp;📝</h1>
