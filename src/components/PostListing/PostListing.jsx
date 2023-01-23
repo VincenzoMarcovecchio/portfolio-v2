@@ -214,7 +214,7 @@ class PostListing extends React.Component {
                       <Link to={post.path} key={post.title}>
                         <h2>{post.title}</h2>&nbsp;&nbsp;&nbsp;<small>Time to read: {post.timeToRead} {post.timeToRead > 1 ? 'minutes' : 'minute'} </small>
                       </Link>
-                      <p>{post.excerpt.toSubstring(0,100) + "..."}</p>
+                      <p>{post.excerpt.substring(0,100) + "..."}</p>
                       <StyledTag>
                         {post.tags.map((tag, i) => {
                           let tagga = tag.replace(/\s/g, '-');
