@@ -175,19 +175,20 @@ class PostListing extends React.Component {
 
     return (
       <>
-      <br/>
-      <br/>
+        <br />
+        <br />
         <div>
           <div>
             <h1>
               CHECK OUT MY MOST RECENT POST
             </h1>
           </div>
-          <div style={{maxWidth:"350px",display:"flex",flexWrap:"wrap"}}>
+          <div style={{ maxWidth: "350px", display: "flex", flexWrap: "wrap" }}>
             {
               postList.map((post, index) => (
-                <span style={{padding:"0.3rem",borderRadius:"3px",border:"1px solid #404752"}}>{post.tags}&nbsp;&nbsp;</span>
-              ))}
+                <>
+                  <span style={{ padding: "0.3rem", borderRadius: "100vmax", border: "1px solid #404752" }}><Link key={index} replace to={`/tags/${post.tags[0]}`}>#{post.tags[0]}</Link></span>&nbsp;&nbsp;
+                </>))}
           </div>
         </div>
 
@@ -214,7 +215,7 @@ class PostListing extends React.Component {
                       <Link to={post.path} key={post.title}>
                         <h2>{post.title}</h2>&nbsp;&nbsp;&nbsp;<small>Time to read: {post.timeToRead} {post.timeToRead > 1 ? 'minutes' : 'minute'} </small>
                       </Link>
-                      <p>{post.excerpt.substring(0,100) + "..."}</p>
+                      <p>{post.excerpt.substring(0, 100) + "..."}</p>
                       <StyledTag>
                         {post.tags.map((tag, i) => {
                           let tagga = tag.replace(/\s/g, '-');
