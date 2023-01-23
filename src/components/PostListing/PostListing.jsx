@@ -183,10 +183,10 @@ class PostListing extends React.Component {
               CHECK OUT MY MOST RECENT POST
             </h1>
           </div>
-          <div>
+          <div style={{maxWidth:"350px",display:"flex",flexWrap:"wrap"}}>
             {
               postList.map((post, index) => (
-                <span>{post.tags}</span>
+                <span style={{padding:"0.3rem",borderRadius:"3px",border:"1px solid #404752"}}>{post.tags}&nbsp;&nbsp;</span>
               ))}
           </div>
         </div>

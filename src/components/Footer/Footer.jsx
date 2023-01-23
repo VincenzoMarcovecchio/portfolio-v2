@@ -69,27 +69,32 @@ class Footer extends Component {
     }
 
     return (
-      <FooterStyled>
-        <UserLinks config={config} rss={url} labeled />
-        <div className="notice-container">
-          <p>{copyright}</p>
-          {/* <p>
+      <>
+        <section>
+          <h3>Newsletter</h3>
+        </section>
+        <FooterStyled>
+          <UserLinks config={config} rss={url} labeled />
+          <div className="notice-container">
+            <p>{copyright}</p>
+            {/* <p>
             Based on &nbsp;
             <a href="https://github.com/Vagr9K/gatsby-advanced-starter">
               Gatsby Advanced Starter
             </a>
           </p> */}
-          <p>
-            <img
-              width="27"
-              height="15"
-              src="/image/hot2x.gif"
-              alt="hot topic"
-            />
-            <Link to="/upcoming-hacking-events-worldwide">Hacking events</Link>
-          </p>
-        </div>
-      </FooterStyled>
+            <p>
+              <img
+                width="27"
+                height="15"
+                src="/image/hot2x.gif"
+                alt="hot topic"
+              />
+              <Link to="/upcoming-hacking-events-worldwide">Hacking events</Link>
+            </p>
+          </div>
+        </FooterStyled>
+      </>
     );
   }
 }
