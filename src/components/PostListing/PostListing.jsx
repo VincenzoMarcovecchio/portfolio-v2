@@ -5,6 +5,7 @@ import { device } from '../../styles/Global';
 import video from '../../assets/wetcode.gif';
 import Search from '../search/index';
 import Img from "gatsby-image";
+import { useLocation } from '@reach/router';
 
 const StyledPicture = styled.img`
   margin: 0;
@@ -168,7 +169,7 @@ class PostListing extends React.Component {
   render() {
     const postList = this.getPostList();
     const searchIndices = [{ name: `Pages`, title: `Pages` }];
-
+    const location = useLocation();
     const imageOnError = (event) => {
       event.currentTarget.style.cssText = "display:none";
     };
@@ -177,23 +178,27 @@ class PostListing extends React.Component {
       <>
         <br />
         <br />
-  
+
 
         <PostListStyled>
-        <div style={{alignSelf:"end"}}>
-          <div>
-            <h1>
-              CHECK OUT MY MOST RECENT POST
-            </h1>
-          </div>
-          <div style={{ maxWidth: "350px", display: "flex", flexWrap: "wrap", justifyContent:"end" }}>
-            {
-              postList.map((post, index) => (
-                <>
-                  <span style={{ padding: "0.3rem", borderRadius: "100vmax", border: "1px solid #404752",margin:"1rem 1rem 1rem 0" }}><Link key={index} replace to={`/tags/${post.tags[0]}`}>#{post.tags[0]}</Link></span>
-                </>))}
-          </div>
-        </div>
+          {location.pathname == '/' &&
+
+            <div style={{ alignSelf: "end" }}>
+              <div>
+                <h1>
+                  CHECK OUT MY MOST RECENT POST
+                </h1>
+              </div>
+              <div style={{ maxWidth: "350px", display: "flex", flexWrap: "wrap", justifyContent: "end", marginLeft: "auto" }}>
+                {
+                  postList.map((post, index) => (
+                    <>
+                      <span style={{ padding: "0.3rem", borderRadius: "100vmax", border: "1px solid #404752", margin: "0.5rem 0.5rem 0.5rem 0" }}><Link key={index} replace to={`/tags/${post.tags[0]}`}>#{post.tags[0]}</Link></span>
+                    </>))}
+              </div>
+            </div>
+
+          }
 
           <div className="blog-header">
             <h1>{this.tag ? this.tag : 'Blog'}&nbsp;📝</h1>
