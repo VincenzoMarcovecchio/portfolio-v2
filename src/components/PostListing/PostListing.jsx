@@ -82,6 +82,7 @@ const StyledArticle = styled.article`
   overflow: hidden;
   transition: all 200ms ease-in-out;
   position: relative;
+  
   @media ${device.mobileM} {
     margin:auto;
     
@@ -105,10 +106,12 @@ const StyledArticle = styled.article`
     align-items: flex-start;
     justify-content: space-between;
     margin-bottom: -0.5rem;
-    @media ${device.mobileM} {
+    margin:auto;
+    @media ${device.tablet} {
       margin-top: 0.7rem;
       margin-bottom: 0.3rem;
       flex-direction:column;
+    
 
     }
   }
@@ -166,13 +169,25 @@ class PostListing extends React.Component {
     const postList = this.getPostList();
     const searchIndices = [{ name: `Pages`, title: `Pages` }];
 
+    const imageOnError = (event) => {
+      event.currentTarget.style.cssText = "display:none";
+    };
 
     return (
       <>
-        <h1>
-          CHECK OUT MY MOST RECENT POST
-        </h1>
-
+        <div>
+          <div>
+            <h1>
+              CHECK OUT MY MOST RECENT POST
+            </h1>
+          </div>
+          <div>
+            {
+              postList.tags.map((post, index) => (
+                <span>{post}</span>
+              ))}
+          </div>
+        </div>
 
         <PostListStyled>
 
@@ -190,12 +205,12 @@ class PostListing extends React.Component {
                     <img style={{ display: "block", marginRight: "1.5rem" }}
                       height="250"
                       width="310"
-                      onError="this.style.display='none'"
+                      onError={imageOnError}
                       src={`/image/${post.cover}`}
                       alt={post.title} />
                     <div style={{ display: "flex", flexDirection: "column" }}>
                       <Link to={post.path} key={post.title}>
-                        <h2>{post.title}</h2>&nbsp;&nbsp;&nbsp;<small>Time to read: {post.timeToRead} minutes</small>
+                        <h2>{post.title}</h2>&nbsp;&nbsp;&nbsp;<small>Time to read: {post.timeToRead} {post.timeToRead > 1 ? 'minutes' : 'minute'} </small>
                       </Link>
                       <p>{post.excerpt}</p>
                       <StyledTag>
