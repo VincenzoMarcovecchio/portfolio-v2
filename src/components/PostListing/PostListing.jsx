@@ -175,6 +175,8 @@ class PostListing extends React.Component {
 
     return (
       <>
+      <br/>
+      <br/>
         <div>
           <div>
             <h1>
@@ -184,7 +186,7 @@ class PostListing extends React.Component {
           <div>
             {
               postList.map((post, index) => (
-                <span>{post.tag}</span>
+                <span>{post.tags}</span>
               ))}
           </div>
         </div>
@@ -212,7 +214,7 @@ class PostListing extends React.Component {
                       <Link to={post.path} key={post.title}>
                         <h2>{post.title}</h2>&nbsp;&nbsp;&nbsp;<small>Time to read: {post.timeToRead} {post.timeToRead > 1 ? 'minutes' : 'minute'} </small>
                       </Link>
-                      <p>{post.excerpt}</p>
+                      <p>{post.excerpt.toSubstring(0,100) + "..."}</p>
                       <StyledTag>
                         {post.tags.map((tag, i) => {
                           let tagga = tag.replace(/\s/g, '-');
