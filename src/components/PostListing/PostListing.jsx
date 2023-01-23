@@ -183,8 +183,8 @@ class PostListing extends React.Component {
           </div>
           <div>
             {
-              postList.tags.map((post, index) => (
-                <span>{post}</span>
+              postList.map((post, index) => (
+                <span>{post.tag}</span>
               ))}
           </div>
         </div>
