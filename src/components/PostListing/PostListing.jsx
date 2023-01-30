@@ -171,7 +171,7 @@ class PostListing extends React.Component {
     const searchIndices = [{ name: `Pages`, title: `Pages` }];
     const location = useLocation();
     const imageOnError = (event) => {
-      event.currentTarget.style.cssText = "display:none";
+    return  event.currentTarget.style.cssText = "display:none !important";
     };
 
     return (
@@ -191,10 +191,15 @@ class PostListing extends React.Component {
               </div>
               <div style={{ maxWidth: "350px", display: "flex", flexWrap: "wrap", justifyContent: "end", marginLeft: "auto" }}>
                 {
-                  postList.map((post, index) => (
+                  [...new Set(postList)].map((post, index) => (
                     <>
-                      <span style={{ padding: "0.3rem", borderRadius: "100vmax", border: "1px solid #404752", margin: "0.5rem 0.5rem 0.5rem 0" }}><Link key={index} replace to={`/tags/${post.tags[0]}`}>#{post.tags[0]}</Link></span>
-                    </>))}
+                      <span style={{ padding: "0.5rem",textDecoration:"none", borderRadius: "100vmax", border: "1px solid #404752", margin: "0.5rem 0.5rem 0.5rem 0" }}>
+                        <Link key={index} replace to={`/tags/${post.tags[0]}`}>#{post.tags[0]}</Link>
+                        </span>
+                    </>
+                    )
+                    )
+                    }
               </div>
             </div>
 
