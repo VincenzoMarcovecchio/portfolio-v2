@@ -72,7 +72,7 @@ class Footer extends Component {
       <>
         <section>
           <center>
-        <iframe src="https://vincenzocodes.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+        <iframe style={{minHeight:"50vh"}} src="https://vincenzocodes.substack.com/embed" width="480" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
         </center></section>
         <FooterStyled>
           <UserLinks config={config} rss={url} labeled />
