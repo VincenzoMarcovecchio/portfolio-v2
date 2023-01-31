@@ -248,11 +248,10 @@ const [result, setResult] = React.useState({})
             <button type="submit">Run Audit</button>
           </form>
         
-        <div> {
-            Object.keys(result).map((value,index)=>{
-               <p>{result[value]};</p>
-            })
-         }</div>
+        <pre> {
+            Object.entries(result)
+         }
+        </pre>
         </div>
         {result.length > 1 &&    <Chart
           chartType="WordTree"
