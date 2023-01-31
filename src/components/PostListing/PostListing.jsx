@@ -185,9 +185,9 @@ class PostListing extends React.Component {
 
             <div style={{ alignSelf: "end" }}>
               <div>
-                <h1>
+                <h2>
                   CHECK OUT MY MOST RECENT POST
-                </h1>
+                </h2>
               </div>
               <div style={{ maxWidth: "350px", display: "flex", flexWrap: "wrap", justifyContent: "end", marginLeft: "auto" }}>
                 {
