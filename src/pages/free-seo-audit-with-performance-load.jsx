@@ -249,7 +249,8 @@ const [result, setResult] = React.useState({})
           </form>
         
         <pre> {
-            Object.entries(result)
+          
+            Object.entries(result).forEach((entry)=> Object.entries(entry))
          }
         </pre>
         </div>
