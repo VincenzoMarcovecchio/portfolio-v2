@@ -177,7 +177,9 @@ exports.createPages = async ({ graphql, actions }) => {
       });
     });
   } else {
-    createPage({
+
+    // Load the landing page instead
+     createPage({
       path: `/`,
       component: landingPage,
       tags: tagSet
@@ -185,6 +187,24 @@ exports.createPages = async ({ graphql, actions }) => {
  
   }
 
+
+
+  
+   // Post page creating
+    postsEdges.forEach((edge, index) => {
+    // Generate a list of tags
+    if (edge.node.frontmatter.tags) {
+      edge.node.frontmatter.tags.forEach((tag) => {
+        tagSet.add(tag);
+      });
+    }
+
+    // Generate a list of categories
+    if (edge.node.frontmatter.category) {
+      categorySet.add(edge.node.frontmatter.category);
+    }
+   
+   
 
     // Create post pages
     const nextID = index + 1 < postsEdges.length ? index + 1 : 0;
