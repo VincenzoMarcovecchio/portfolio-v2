@@ -69,27 +69,33 @@ class Footer extends Component {
     }
 
     return (
-      <FooterStyled>
-        <UserLinks config={config} rss={url} labeled />
-        <div className="notice-container">
-          <p>{copyright}</p>
-          {/* <p>
+      <>
+        <section>
+          <center>
+        <iframe src="https://vincenzocodes.substack.com/embed" width="480" height="320" style="height:50vh!important;border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+        </center></section>
+        <FooterStyled>
+          <UserLinks config={config} rss={url} labeled />
+          <div className="notice-container">
+            <p>{copyright}</p>
+            {/* <p>
             Based on &nbsp;
             <a href="https://github.com/Vagr9K/gatsby-advanced-starter">
               Gatsby Advanced Starter
             </a>
           </p> */}
-          <p>
-            <img
-              width="27"
-              height="15"
-              src="/image/hot2x.gif"
-              alt="hot topic"
-            />
-            <Link to="/upcoming-hacking-events-worldwide">Hacking events</Link>
-          </p>
-        </div>
-      </FooterStyled>
+            <p>
+              <img
+                width="27"
+                height="15"
+                src="/image/hot2x.gif"
+                alt="hot topic"
+              />
+              <Link to="/upcoming-hacking-events-worldwide">Hacking events</Link>
+            </p>
+          </div>
+        </FooterStyled>
+      </>
     );
   }
 }

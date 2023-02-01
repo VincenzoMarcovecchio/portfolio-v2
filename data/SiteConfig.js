@@ -15,7 +15,7 @@ const config = {
 
   dateFromFormat: 'YYYY-MM-DD', // Date format used in the frontmatter.
   dateFormat: 'DD/MM/YYYY', // Date format for display.
-  postsPerPage: 5, // Amount of posts displayed per listing page.
+  postsPerPage: 9, // Amount of posts displayed per listing page.
   userName: 'Vincenzo Marcovecchio', // Username to display in the author segment.
   userEmail: 'dev_vincenzo@protonmail.com', // Email used for RSS feed's author segment
   userTwitter: 'https://twitter.com/_vinny_92', // Optionally renders "Follow Me" in the UserInfo segment.

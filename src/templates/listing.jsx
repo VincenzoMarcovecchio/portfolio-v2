@@ -64,7 +64,7 @@ class Listing extends React.Component {
 
   render() {
     const postEdges = this.props.data.allMarkdownRemark.edges;
-
+    console.log(this.props)
     return (
       <>
         <Helmet title={config.siteTitle} description={config.siteDescription} />

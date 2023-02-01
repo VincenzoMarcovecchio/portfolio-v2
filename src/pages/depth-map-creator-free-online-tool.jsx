@@ -49,4 +49,3 @@ const Tensor = () => (
 
 export default React.memo(Tensor);
 
-
