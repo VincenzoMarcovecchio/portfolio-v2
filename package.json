@@ -38,7 +38,7 @@
     "gatsby-source-custom-api": "^2.1.4",
     "gatsby-source-filesystem": "^3.5.0",
     "gatsby-source-hacker-news": "^3.14.0",
-    "gatsby-transformer-remark": "^4.2.0",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^3.5.0",
     "js-search": "^2.0.0",
     "lodash": "^4.17.21",
