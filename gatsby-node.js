@@ -177,9 +177,7 @@ exports.createPages = async ({ graphql, actions }) => {
       });
     });
   } else {
-
-    // Load the landing page instead
-     createPage({
+    createPage({
       path: `/`,
       component: landingPage,
       tags: tagSet
@@ -187,24 +185,6 @@ exports.createPages = async ({ graphql, actions }) => {
  
   }
 
-
-
-  
-   // Post page creating
-    postsEdges.forEach((edge, index) => {
-    // Generate a list of tags
-    if (edge.node.frontmatter.tags) {
-      edge.node.frontmatter.tags.forEach((tag) => {
-        tagSet.add(tag);
-      });
-    }
-
-    // Generate a list of categories
-    if (edge.node.frontmatter.category) {
-      categorySet.add(edge.node.frontmatter.category);
-    }
-  })
-   
 
     // Create post pages
     const nextID = index + 1 < postsEdges.length ? index + 1 : 0;
@@ -245,7 +225,18 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
+  let datacustom = await axios(
+    `https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/yeswehack_data.json`
+  );
 
+  datacustom.data.forEach(async (pro) => {
+    await createPage({
+      path: `/yeswehackdata/${pro.id}/`,
+      component: singleProgram,
+      context: { pro },
+    });
+  });
+  
   function slugify(str)
 {
     str = str.replace(/^\s+|\s+$/g, '');
