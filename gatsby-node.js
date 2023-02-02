@@ -203,7 +203,7 @@ exports.createPages = async ({ graphql, actions }) => {
     if (edge.node.frontmatter.category) {
       categorySet.add(edge.node.frontmatter.category);
     }
-   
+  })
    
 
     // Create post pages
@@ -245,18 +245,7 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  let datacustom = await axios(
-    `https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/yeswehack_data.json`
-  );
 
-  datacustom.data.forEach(async (pro) => {
-    await createPage({
-      path: `/yeswehackdata/${pro.id}/`,
-      component: singleProgram,
-      context: { pro },
-    });
-  });
-  
   function slugify(str)
 {
     str = str.replace(/^\s+|\s+$/g, '');
