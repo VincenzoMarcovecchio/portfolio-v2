@@ -77,9 +77,7 @@ class Footer extends Component {
     return (
       <>
         <section>
-          <center>
-        <iframe src="https://vincenzocodes.substack.com/embed" width="480" height="320" style="height:50vh!important;border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
-        </center></section>
+  </section>
         <FooterStyled>
           <UserLinks config={config} rss={url} labeled />
           <div className="notice-container">
