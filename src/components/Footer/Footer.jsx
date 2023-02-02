@@ -57,6 +57,12 @@ const FooterStyled = styled.footer`
     color: white;
     background-color: darkslategray;
   }
+ center iframe {
+    height:50vh !important;
+    overflow:hidden;
+    width:100%;
+    max-width:100vw;
+  }
 `;
 
 class Footer extends Component {
