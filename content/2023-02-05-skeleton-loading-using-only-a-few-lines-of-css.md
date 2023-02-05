@@ -1,9 +1,9 @@
 ---
 title: "Skeleton loading using only a few lines of CSS"
-cover: "skeleton-loading-using-only-a-few-lines-of-CSS"
+cover: "skeleton-loading-using-only-a-few-lines-of-css"
 date: "2022-02-01"
 category: "skeleton"
-slug: "skeleton-loading-using-only-a-few-lines-of-CSS"
+slug: "skeleton-loading-using-only-a-few-lines-of-css"
 
 tags:
   - skeleton
