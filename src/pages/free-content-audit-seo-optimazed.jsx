@@ -16,7 +16,11 @@ const Test = () => (
 			.seooverview .good{color:#81bf3d}
 			.seooverview .vgood{color:#1fce1f}
 			.seooverview .perfect{color:green}
-			
+			.container {
+				max-width: 600px;
+				margin: auto;
+				padding: 3rem 0px;
+			}
 			#targetkw, #ptitle{margin-bottom:10px; padding:5px; width:100%;}
 			.keypoints .main{font-weight: bold; font-size: 18px;}
 			.keypoints .detail{font-style: italic;}
@@ -35,7 +39,7 @@ const Test = () => (
 		<script async defer src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5.2.0-75/tinymce.min.js" referrerpolicy="origin"></script>
 		 <script async defer type="text/javascript" src="/tiny.js"></script>
 </Helmet>
-<div>
+<div className="container">
 			<strong>Primary Keyword</strong> <i>You can change this keyword at anytime to see how you rank for a different word</i>
 			<input type="text" id="targetkw" placeholder="Enter the keywords you are looking to target" onkeyup="generateContentReportDelayed()" />
 		</div>
