@@ -33,7 +33,7 @@ const Test = () => (
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script async defer type="text/javascript" src="/tiny.js"></script>
 
-		<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+		<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5.2.0-75/tinymce.min.js" referrerpolicy="origin"></script>
 		
 </Helmet>
 <div>
