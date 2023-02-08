@@ -104,7 +104,7 @@ const StyledArticle = styled.article`
   }
   .header__article {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: space-between;
     margin-bottom: -0.5rem;
     margin:auto;
@@ -168,6 +168,9 @@ class PostListing extends React.Component {
 
   render() {
     const postList = this.getPostList();
+    
+    postList.sort((a,b)=> a.date > b.date)
+
     const searchIndices = [{ name: `Pages`, title: `Pages` }];
     const location = useLocation();
     const imageOnError = (event) => {
@@ -193,8 +196,8 @@ class PostListing extends React.Component {
                 {
                   [...new Set(postList)].map((post, index) => (
                     <>
-                      <span style={{ padding: "0.5rem",textDecoration:"none !important", borderRadius: "100vmax", border: "1px solid #404752", margin: "0.5rem 0.5rem 0.5rem 0" }}>
-                        <Link key={index} replace to={`/tags/${post.tags[0]}`}>#{post.tags[0]}</Link>
+                      <span style={{ padding: "0.5rem",textDecoration:"none !important",  color:"#333", borderRadius: "100vmax", border: "1px solid #404752", margin: "0.5rem 0.5rem 0.5rem 0" }}>
+                        <Link style={{ textDecoration:"none !important", color:"#333" }} key={index} replace to={`/tags/${post.tags[0]}`}>#{post.tags[0]}</Link>
                         </span>
                     </>
                     )
@@ -222,8 +225,8 @@ class PostListing extends React.Component {
                       src={`/image/${post.cover}`}
                       alt={post.title} />
                     <div style={{ display: "flex", flexDirection: "column" }}>
-                      <Link to={post.path} key={post.title}>
-                        <h2>{post.title}</h2>&nbsp;&nbsp;&nbsp;<small>Time to read: {post.timeToRead} {post.timeToRead > 1 ? 'minutes' : 'minute'} </small>
+                      <Link to={post.path} key={post.title}> 
+                        <h2>{post.title}</h2>&nbsp;&nbsp;&nbsp;<small style={{color:"#333"}}>Time to read: {post.timeToRead} {post.timeToRead > 1 ? 'minutes' : 'minute'} </small>
                       </Link>
                       <p>{post.excerpt.substring(0, 100) + "..."}</p>
                       <StyledTag>
