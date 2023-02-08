@@ -31,7 +31,7 @@ const Test = () => (
 			.detailedpoints .pointlevel .title{font-size:18px; font-weight:bold; border-bottom:1px solid black;margin-bottom:15px;}
 		`}</style>
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-        <script type="text/javascript" src="../js/tiny.js"></script>
+        <script async defer type="text/javascript" src="/tiny.js"></script>
 
 		<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 		
