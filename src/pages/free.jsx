@@ -5,7 +5,7 @@ const Test = () => (
     <div>
     <Helmet>
 
-	<style>{```
+	<style type="text/css">{`
 			#contenteditor{height:500px;}
 			.seooverview .score .num{font-size: 50px;float: left;width: 20%;text-align:center}
 			.seooverview .score {font-weight:bold}
@@ -29,7 +29,7 @@ const Test = () => (
 			.detailedpoints .level4{background-color:#d6d6d6;}
 			.detailedpoints .pointlevel{display:none; padding:10px;margin-top:10px;border: 1px solid gray;border-radius:2px;}
 			.detailedpoints .pointlevel .title{font-size:18px; font-weight:bold; border-bottom:1px solid black;margin-bottom:15px;}
-		```}</style>
+		`}</style>
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <script type="text/javascript">{`
 			var scorePoints = [];
