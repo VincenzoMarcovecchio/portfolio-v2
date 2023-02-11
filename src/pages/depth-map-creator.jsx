@@ -13,13 +13,13 @@ const Tensor = () => (
       <script async defer src="https://cdn.jsdelivr.net/npm/@tensorflow-models/body-segmentation"></script>
       <script async defer src="https://cdn.jsdelivr.net/npm/@tensorflow-models/depth-estimation"></script>
       <script async defer src="https://cdn.jsdelivr.net/npm/@tensorflow-models/face-detection"></script>
-      <script async defer src="../js/gl-shaders.js"></script>
-      <script async defer src="../js/gl-class.js"></script>
-      <script async defer src="../js/gl-util.js"></script>
-      <script async defer src="../js/ui-util.js"></script>
-      <script async defer src="../js/params.js"></script>
-      <script async defer src="../js/dat-gui.js"></script>
-      <script async defer src="../js/index.js"></script>
+      <script async defer src="/gl-shaders.js"></script>
+      <script async defer src="/gl-class.js"></script>
+      <script async defer src="/gl-util.js"></script>
+      <script async defer src="/ui-util.js"></script>
+      <script async defer src="/params.js"></script>
+      <script async defer src="/dat-gui.js"></script>
+      <script async defer src="/index.js"></script>
 
     </Helmet>
     <div>

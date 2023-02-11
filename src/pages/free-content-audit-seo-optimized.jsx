@@ -1,9 +1,11 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import config from '../../data/SiteConfig';
 
 const Test = () => (
     <div className="container">
-    <Helmet>
+    <Helmet    title={`Free AI audit | ${config.siteTitle}`}
+          description={`Get your content audited before release`}>
 
 	<style type="text/css">{`
 			#contenteditor{height:500px;}
@@ -40,6 +42,10 @@ const Test = () => (
 		 <script async defer type="text/javascript" src="/tiny.js"></script>
 </Helmet>
 <div >
+	<br/>
+	<h2>Get your content audited before release</h2>
+	<small style={{color:"red"}}>Please refresh the page if not working</small>
+	<br/>
 			<strong>Primary Keyword</strong> <i>You can change this keyword at anytime to see how you rank for a different word</i>
 			<input type="text" id="targetkw" placeholder="Enter the keywords you are looking to target" onkeyup="generateContentReportDelayed()" />
 		</div>
@@ -72,4 +78,4 @@ const Test = () => (
         </div>
 );
 
-export default React.memo(Test);
+export default Test
