@@ -330,7 +330,7 @@ export default function Header() {
                 </Link>
               </li>
               <li>
-                <Link className="header__link" to="/free-content-audit-seo-optimazed">
+                <Link className="header__link" to="/free-content-audit-seo-optimized">
                   tools
                 </Link>
               </li>
