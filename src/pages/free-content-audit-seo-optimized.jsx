@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
 import config from '../../data/SiteConfig';
-
+import { withPrefix, Link } from "gatsby"
 const Test = () => (
     <div className="container">
     <Helmet    title={`Free AI audit | ${config.siteTitle}`}
@@ -38,13 +38,13 @@ const Test = () => (
 		`}</style>
 		<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
        
-		<script async defer src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5.2.0-75/tinymce.min.js" referrerpolicy="origin"></script>
-		 <script async defer type="text/javascript" src="/tiny.js"></script>
+		<script  src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5.2.0-75/tinymce.min.js" referrerpolicy="origin"></script>
+		 <script  type="text/javascript" type="text/javascript" src={withPrefix('tiny.js')}></script>
 </Helmet>
 <div >
 	<br/>
 	<h1>Get your content audited before release</h1>
-	<small style={{color:"red"}}>Please refresh the page if not working</small>
+	
 	<br/>
 	<br/>
 	<br/>
