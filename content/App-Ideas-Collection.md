@@ -1,6 +1,6 @@
 ---
 title: "A collection of app ideas, great for improving your coding skills 💪"
-cover: "App-Ideas-Collection"
+cover: "App-Ideas-Collection.png"
 date: "2022-09-29"
 category: "ideas"
 slug: "App-Ideas-Collection"

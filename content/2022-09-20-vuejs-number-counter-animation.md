@@ -1,6 +1,6 @@
 ---
 title: "Vuejs (only) number counter animation"
-cover: "vuejs-number-counter-animation"
+cover: "vuejs-number-counter-animation.png"
 date: "2022-09-20"
 category: "vuejs"
 slug: "vuejs-number-counter-animation"

@@ -1,6 +1,6 @@
 ---
 title: "How to remove all white-spaces globally from a string"
-cover: "remove-all-white-spaces-globally-from-a-string"
+cover: "remove-all-white-spaces-globally-from-a-string.png"
 date: "2022-09-25"
 category: "regex"
 slug: "remove-all-white-spaces-globally-from-a-string"
