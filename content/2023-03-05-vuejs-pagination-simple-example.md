@@ -1,6 +1,6 @@
 ---
 title: "Pagination with Vuejs plus a checkbox filter"
-cover: "vuejs-pagination-simple-example.webp"
+cover: "vuejs-pagination-simple-example.png"
 date: "2022-03-05"
 category: "pagination"
 slug: "vuejs-pagination-simple-example"
@@ -192,3 +192,12 @@ watch: {
 
 
 In summary, this Vue code creates a product listing page with checkboxes for filtering by category, pagination, and product cards displaying product information. The code fetches product data from a dummy API and allows the user to filter and paginate the products displayed on the page.
+
+
+
+
+<iframe height="300" style="width: 100%;" scrolling="no" title="vue e-commerce pagination" src="https://codepen.io/Vinny92/embed/YzOQGLa?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+  See the Pen <a href="https://codepen.io/Vinny92/pen/YzOQGLa">
+  vue e-commerce pagination</a> by Vincenzo Marcovecchio (<a href="https://codepen.io/Vinny92">@Vinny92</a>)
+  on <a href="https://codepen.io">CodePen</a>.
+</iframe>
