@@ -68,7 +68,9 @@ exports.createPages = async ({ graphql, actions }) => {
   // Get a full list of markdown posts
   const markdownQueryResult = await graphql(`
     {
-      allMarkdownRemark {
+      allMarkdownRemark(
+        sort: {  order: DESC }
+      ) {
         edges {
           node {
             fields {
@@ -136,8 +138,8 @@ exports.createPages = async ({ graphql, actions }) => {
       siteConfig.dateFromFormat
     );
 
-    if (dateA.isBefore(dateB)) return 1;
-    if (dateB.isBefore(dateA)) return -1;
+    if (dateA.isBefore(dateB)) return -1;
+    if (dateB.isBefore(dateA)) return 1;
 
     return 0;
   });
