@@ -1,6 +1,6 @@
 ---
 title: "Nginxpwner is a simple tool to look for common Nginx misconfigurations and vulnerabilities."
-cover: "Nginxpwner-is-a-simple-tool-to-look-for-common-Nginx-misconfigurations-and-vulnerabilities"
+cover: "Nginxpwner-is-a-simple-tool-to-look-for-common-Nginx-misconfigurations-and-vulnerabilities.png"
 date: "2022-10-09"
 category: "ngnx"
 slug: "Nginxpwner-is-a-simple-tool-to-look-for-common-Nginx-misconfigurations-and-vulnerabilities"

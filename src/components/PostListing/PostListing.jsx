@@ -41,7 +41,7 @@ const PostListStyled = styled.section`
   }
   h1 {
     width: 100%;
-    margin: 4rem auto 2rem auto;
+    margin: 2rem auto 2rem auto;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -51,7 +51,9 @@ const PostListStyled = styled.section`
       font-size: 1.9rem;
     }
   }
-
+  a {
+    text-decoration:none;
+  }
 
 `;
 const StyledTag = styled.small`

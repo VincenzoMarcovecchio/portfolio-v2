@@ -1,6 +1,6 @@
 ---
 title: "Awesome default credentials cheat sheet"
-cover: "default-credentials-cheatsheet"
+cover: "default-credentials-cheatsheet.png"
 date: "2022-09-29"
 category: "cheatsheet"
 slug: "default-credentials-cheatsheet"

@@ -1,7 +1,7 @@
 ---
 title: "Pagination with Vuejs plus a checkbox filter"
 cover: "vuejs-pagination-simple-example.png"
-date: "2022-03-05"
+date: "2023-03-05"
 category: "pagination"
 slug: "vuejs-pagination-simple-example"
 
@@ -77,7 +77,7 @@ Now let's take a closer look at the Vue code that powers this application.
 
 ```js
 
- <script >
+ <script>
     new Vue({
     	el: "#app",
 	    delimiters: ["{_", "_}"],	
@@ -86,8 +86,8 @@ Now let's take a closer look at the Vue code that powers this application.
         return {
         prodotti:[],
         perPage: 20,
-		page:1,
-		pages: [],
+		    page:1,
+		    pages: [],
         computedLength: null,
         checkBoxFilters: [],
         }
