@@ -211,22 +211,22 @@ class PostListing extends React.Component {
           }
 
           <div className="blog-header">
-            <h1>{this.tag ? this.tag : 'Blog'}&nbsp;📝</h1>
+            <h1>{this.tag ? this.tag : 'Blog'}&nbsp;📝&nbsp;&nbsp; <Search indices={searchIndices} /></h1>
 
-            <Search indices={searchIndices} />
+            
           </div>
           <div style={{ display: "flex", flexWrap: "wrap" }}>
             {
               postList.map((post, index) => (
                 <StyledArticle key={index}>
                   <div className="header__article">
-                    <img style={{ display: "block", marginRight: "1.5rem" }}
+                    <img style={{ display: "block" }}
                       height="250"
                       width="310"
                       onError={imageOnError}
                       src={`/image/${post.cover}`}
                       alt={post.title} />
-                    <div style={{ display: "flex", flexDirection: "column" }}>
+                    <div style={{ display: "flex", flexDirection: "column", padding:"1rem" }}>
                       <Link to={post.path} key={post.title}> 
                         <h2>{post.title}</h2>&nbsp;&nbsp;&nbsp;<small style={{color:"#333"}}>Time to read: {post.timeToRead} {post.timeToRead > 1 ? 'minutes' : 'minute'} </small>
                       </Link>
