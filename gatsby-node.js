@@ -136,8 +136,8 @@ exports.createPages = async ({ graphql, actions }) => {
       siteConfig.dateFromFormat
     );
 
-    if (dateA.isBefore(dateB)) return 1;
-    if (dateB.isBefore(dateA)) return -1;
+    if (dateA.isBefore(dateB)) return -1;
+    if (dateB.isBefore(dateA)) return s1;
 
     return 0;
   });
@@ -255,7 +255,7 @@ let postsStack = await axios(`https://api.stackexchange.com/2.3/posts?fromdate=1
   
 postsStack.data.items.forEach(async (pro) => {
   await createPage({
-    path: await slugify(pro.title),
+    path: ` ${slugify(pro.title)}`,
     component: stack,
     context: { pro },
   });

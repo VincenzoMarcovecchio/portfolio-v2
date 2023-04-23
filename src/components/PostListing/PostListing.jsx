@@ -211,9 +211,9 @@ class PostListing extends React.Component {
           }
 
           <div className="blog-header">
-            <h1>{this.tag ? this.tag : 'Blog'}&nbsp;📝&nbsp;&nbsp; <Search indices={searchIndices} /></h1>
+            <h1>{this.tag ? this.tag : 'Blog'}&nbsp;📝 </h1>
 
-            
+            <Search indices={searchIndices} />&nbsp;&nbsp;&nbsp;&nbsp;
           </div>
           <div style={{ display: "flex", flexWrap: "wrap" }}>
             {
