@@ -68,7 +68,7 @@ exports.createPages = async ({ graphql, actions }) => {
   // Get a full list of markdown posts
   const markdownQueryResult = await graphql(`
     {
-      allMarkdownRemarks {
+      allMarkdownRemark {
         edges {
           node {
             fields {
@@ -225,17 +225,7 @@ exports.createPages = async ({ graphql, actions }) => {
     });
   });
 
-  let datacustom = await axios(
-    `https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/yeswehack_data.json`
-  );
 
-  datacustom.data.forEach(async (pro) => {
-    await createPage({
-      path: `/yeswehackdata/${pro.id}/`,
-      component: singleProgram,
-      context: { pro },
-    });
-  });
   
   function slugify(str)
 {
@@ -273,18 +263,6 @@ postsStack.data.items.forEach(async (pro) => {
 
 
 
-  let datacusti = await axios(
-    `https://raw.githubusercontent.com/arkadiyt/bounty-targets-data/master/data/hackerone_data.json`
-  );
-
-
-  datacusti.data.forEach(async (pro) => {
-    await createPage({
-      path: `/hackeronedata/${pro.name.toLowerCase().replace(/\s+/g, "-")}/`,
-      component: singleProgramTwo,
-      context: { pro },
-    });
-  });
 
   return new Promise((resolve, reject) => {
     axios
