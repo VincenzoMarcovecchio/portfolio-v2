@@ -9,17 +9,20 @@ class Stack extends React.Component {
   
   render() {
 
-    console.log(this.props)
-    let title = this.props.pageContext.pro.title
-    let body = this.props.pageContext.pro.body_markdown
-    
+    let {pro} = this.props
+
+    let {pageContext} = this.props
+
+
+    console.log(pro,pageContext)
+
     return (
       <>
 
   <section>
 
-  <h3>{this.props.pageContext.pro.title}</h3>
-  {this.props.pageContext.pro.body_markdown}
+  <h3>{pageContext.pro.title}</h3>
+  {pageContext.pro.body_markdown}
 
   </section>
 
