@@ -18,8 +18,8 @@ class Stack extends React.Component {
 
   <section>
 
-  <h3>{title}</h3>
-  {body}
+  <h3>{this.props.pageContext.pro.title}</h3>
+  {this.props.pageContext.pro.body_markdown}
 
   </section>
 
