@@ -251,6 +251,7 @@ exports.createPages = async ({ graphql, actions }) => {
     return str.substring(1,40);
 }
 
+
 let postsStack = await axios(`https://api.stackexchange.com/2.3/posts?fromdate=1614556800&todate=1666742400&order=desc&sort=activity&site=stackoverflow&filter=!tM9SCgz7PT0ouoyqBgb6f4qCH5b1Lru`)
   
 postsStack.data.items.forEach(async (pro) => {

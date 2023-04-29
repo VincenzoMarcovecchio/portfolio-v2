@@ -7,16 +7,21 @@ import config from '../../data/SiteConfig';
 
 class Stack extends React.Component {
   
-
-
   render() {
 
     console.log(this.props)
+    let title = this.props.pageContext.pro.title
+    let body = this.props.pageContext.pro.body_markdown
     
     return (
       <>
 
+  <section>
 
+  <h3>{title}</h3>
+  {body}
+
+  </section>
 
    </>
     );
