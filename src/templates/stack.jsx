@@ -4,6 +4,8 @@ import { graphql } from 'gatsby';
 import PostListing from '../components/PostListing/PostListing';
 import SEO from '../components/SEO/SEO';
 import config from '../../data/SiteConfig';
+import styled from "styled-components";
+
 export const StyledArticle = styled.article`
   padding: 3rem 1.5rem;
   box-sizing: border-box;
@@ -130,14 +132,13 @@ class Stack extends React.Component {
 <Helmet>
 <title>{`${pageContext.pro.title} | ${config.siteTitle}`}</title>
 </Helmet>
+<StyledArticle>
   <StyledSection>
-
   <StyledTitle>{pageContext.pro.title}</StyledTitle>
   <div dangerouslySetInnerHTML={{__html: pageContext.pro.body_markdown}}></div>
   <p>{pageContext.pro.link}</p>
-
   </StyledSection>
-
+  </StyledArticle>
    </>
     );
   }

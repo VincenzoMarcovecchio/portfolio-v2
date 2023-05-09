@@ -257,7 +257,7 @@ for (let index = 0; index < 100; index++) {
   
 postsStack.data.items.forEach(async (pro) => {
   await createPage({
-    path: ` ${pro.title} `,
+    path: slugify(pro.title),
     component: stack,
     context: { pro },
   });
