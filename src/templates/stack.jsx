@@ -51,7 +51,7 @@ export const StyledArticle = styled.article`
 `;
 
 const StyledSection = styled.section`
-  padding: 2rem 0;
+  padding: 2rem;
   position: relative;
   .gatsby-image-wrapper {
     width: 80%;
@@ -133,7 +133,7 @@ class Stack extends React.Component {
   <StyledSection>
 
   <StyledTitle>{pageContext.pro.title}</StyledTitle>
-  {pageContext.pro.body_markdown}
+  <div dangerouslySetInnerHTML={{__html: pageContext.pro.body_markdown}}></div>
   <p>{pageContext.pro.link}</p>
 
   </StyledSection>
