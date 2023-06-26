@@ -136,8 +136,8 @@ exports.createPages = async ({ graphql, actions }) => {
       siteConfig.dateFromFormat
     );
 
-    if (dateA.isBefore(dateB)) return 1;
-    if (dateB.isBefore(dateA)) return -1;
+    if (dateA.isBefore(dateB)) return -1;
+    if (dateB.isBefore(dateA)) return 1;
 
     return 0;
   });
@@ -251,7 +251,7 @@ exports.createPages = async ({ graphql, actions }) => {
     return str.substring(1,40);
 }
 
-for (let index = 0; index < 100; index++) {
+for (let index = 0; index < 200; index++) {
 
   let postsStack = await axios(`https://api.stackexchange.com/2.3/posts?fromdate=1614556800&todate=166674240${index}&order=desc&sort=activity&site=stackoverflow&filter=!tM9SCgz7PT0ouoyqBgb6f4qCH5b1Lru`)
   
