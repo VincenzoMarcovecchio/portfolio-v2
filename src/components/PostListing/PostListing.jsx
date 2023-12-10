@@ -199,7 +199,7 @@ class PostListing extends React.Component {
                   [...new Set(postList)].map((post, index) => (
                     <>
                       <span style={{ padding: "0.5rem",textDecoration:"none !important",  color:"#333", borderRadius: "100vmax", border: "1px solid #404752", margin: "0.5rem 0.5rem 0.5rem 0" }}>
-                        <Link style={{ textDecoration:"none !important", color:"#333" }} key={index} replace to={`/tags/${post.tags[0]}`}>#{post.tags[0]}</Link>
+                        <Link style={{ textDecoration:"none !important", color:"#333" }} key={index} replace to={`/tags/${post.tags[0].replace(" ", "-")}`}>#{post.tags[0].replace(" ", "-")}</Link>
                         </span>
                     </>
                     )
