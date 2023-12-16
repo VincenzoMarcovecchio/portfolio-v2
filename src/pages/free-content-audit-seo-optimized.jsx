@@ -48,7 +48,7 @@ const Test = () => (
 	<br/>
 	<br/>
 	<br/>
-	<small style="color:red">Please refresh the page if not working</small><br/>
+	<small style="color:red">Please refresh the page if not working</small><br/><br/>
 			<strong>Primary Keyword</strong> <i>You can change this keyword at anytime to see how you rank for a different word</i>
 			<input type="text" id="targetkw" placeholder="Enter the keywords you are looking to target" onkeyup="generateContentReportDelayed()" />
 		</div>

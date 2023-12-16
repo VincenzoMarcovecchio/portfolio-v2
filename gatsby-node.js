@@ -136,8 +136,8 @@ exports.createPages = async ({ graphql, actions }) => {
       siteConfig.dateFromFormat
     );
 
-    if (dateB.isBefore(dateA)) return -1;
-    if (dateA.isBefore(dateB)) return 1;
+    if (dateB.isBefore(dateA)) return 1;
+    if (dateA.isBefore(dateB)) return -1;
 
     return 0;
   });
