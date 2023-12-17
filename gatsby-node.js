@@ -125,7 +125,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const imageEdges = imageQueryResults.data.allFile.edges;
 
   // Sort posts
-  postsEdges.sort((postA, postB) => {
+ /* postsEdges.sort((postA, postB) => {
     const dateA = moment(
       postA.node.frontmatter.date,
       siteConfig.dateFromFormat
@@ -141,7 +141,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     return 0;
   });
-
+*/
     
    // Post page creating
    postsEdges.forEach((edge, index) => {
