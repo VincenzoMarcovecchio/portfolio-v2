@@ -124,6 +124,7 @@ export default class Layout extends React.Component {
             name="viewport"
             content="width=device-width, initial-scale=1, minimum-scale=1, shrink-to-fit=no"
           />
+          <meta name="google-site-verification" content="I83ESLPhetPjpkrYKxSwRv8CNjQW1hx_zajrGpM7GUI" />
         </Helmet>
         <Header />
 
